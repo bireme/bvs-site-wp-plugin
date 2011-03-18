@@ -1,0 +1,18 @@
+/*
+Theme Name: BVS Classic
+Theme URI: http://www.bvsalud.org/
+Version: 1.0
+Author: BIREME (DGI)
+*/
+
+/* General descriptions (fonts, background...) */
+@import url(css/general.css);
+
+/* Website layout (changes are not recomended) */
+@import url(css/layout.css);
+
+/* General styles descriptions (banner, footer and general boxes look-and-feel) */
+@import url(css/styles.css);
+
+/* Boxes descriptions (detailed boxes styles) */
+@import url(css/components.css);
