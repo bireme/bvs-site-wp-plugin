@@ -1,7 +1,7 @@
 <?php
 
 function create_vhl_post_type() {
-    register_post_type( 'vhl',
+    register_post_type( 'vhl_collection',
         array(
        'labels' => array(                
                 'name' => __( 'BVS Collection' ),
@@ -41,7 +41,7 @@ $meta_fields[] = array( "name" => "Base search url",
 
 
 function add_vhl_metaboxes() {
-    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_inner_custom_box', 'vhl' ,'normal', 'high');
+    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_inner_custom_box', 'vhl_collection' ,'normal', 'high');
 
 }
 

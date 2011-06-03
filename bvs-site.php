@@ -15,7 +15,7 @@ define('BVS_PATH', dirname(__FILE__) );
 
 
 // Load plugin files
-//require_once(BVS_PATH . '/bvs-core/widgets.php');
+require_once(BVS_PATH . '/bvs-core/widgets.php');
 require_once(BVS_PATH . '/bvs-core/post_types.php');
 
 
@@ -23,12 +23,10 @@ function vhl_init() {
 
     wp_enqueue_script("jquery");
 
-    wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');  
-    wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');  
+    wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');
+    wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');
 
-    /* Register BVS themes contained within the bp-theme folder */
-    if ( function_exists( 'register_theme_directory') )
-        register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/themes' );
+    register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/themes' );
 
 }
 
@@ -44,7 +42,6 @@ function bvs_add_admin_menu() {
     ) );
 
     add_submenu_page( 'bvs-general-settings', __( 'General Settings', 'bvs-site'), __( 'General Settings', 'bvs-site' ), 'manage_options', 'bvs-general-settings', 'bvs_admin_settings' );
-    add_submenu_page( 'bvs-general-settings', __( 'Component Setup', 'bvs-site'), __( 'Component Setup', 'bvs-site' ), 'manage_options', 'bvs-component-setup', 'bvs_admin_component_setup' );
 }
 
 /**
