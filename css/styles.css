@@ -1,0 +1,59 @@
+#dashboard_right_now .vhl a {
+    color: #E66F00;
+}
+
+.vhl-metabox-field,
+.vhl-metabox-field-add {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.vhl-metabox-field-file {
+    height: 64px;
+}
+
+.vhl-metabox-field-file-col1 {
+    width: 46px;
+    height: 46px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.vhl-metabox-field-group{
+    padding: 10px;
+}
+
+.vhl-metabox-field{
+    margin-bottom: 20px;
+    width: 100%;
+    clear: both;
+    
+}
+
+.vhl-metabox-field-file-col2 {
+
+}
+
+.vhl-metabox-field-col1{
+    margin-bottom: 7px;
+}
+
+.vhl-metabox-field-col2{
+    
+}
+
+.vhl-metabox-field input.text {
+    border: 1px solid #dfdfdf;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.vhl-metabox-field input.text,
+.vhl-metabox-field textarea{
+    width: 69%;
+}
+
+.vhl-metabox-field label{
+    font-weight: bold;
+}
