@@ -26,7 +26,7 @@ function vhl_init() {
     wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');
     wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');
 
-    register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/themes' );
+    register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/bvs-themes' );
 
 }
 

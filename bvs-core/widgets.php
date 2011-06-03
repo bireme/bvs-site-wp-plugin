@@ -4,7 +4,7 @@
 class VHL_Widget_Collection extends WP_Widget {
 
     function VHL_Widget_Collection() {
-        $widget_ops = array('classname' => __('VHL Collection'), 'description' => __('Adds a vhl collection on page') );
+        $widget_ops = array('classname' => __('VHL Collection'), 'description' => __('Adds a vhl collection on your site') );
         parent::WP_Widget('vhl_collection', __('VHL Collection'), $widget_ops);
     }
  
@@ -32,7 +32,6 @@ class VHL_Widget_Collection extends WP_Widget {
     function form($instance) {        
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
-        
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
@@ -42,14 +41,28 @@ class VHL_Widget_Collection extends WP_Widget {
             </p>
             <p>
                 <label>
-                    <?php _e('Collection id:'); ?> 
-                    <input size="3" id="<?php echo $this->get_field_id('collection_id'); ?>" name="<?php echo $this->get_field_name('collection_id'); ?>" type="text" value="<?php echo $collection_id; ?>" />
+                    <?php _e('Collection: '); ?>
+                    <select id="<?php echo $this->get_field_id('collection_id'); ?>" name="<?php echo $this->get_field_name('collection_id'); ?>" class="widefat"> 
+                        <option value="">
+                            <?php echo attribute_escape(__('Select a collection')); ?>
+                        </option> 
+                        <?php 
+                          $collection_list = get_pages('post_type=vhl_collection&parent=0'); 
+                          foreach ($collection_list as $col) {
+                            // check if the instance have a value for collection_id  
+                            $selected = ($col->ID == $collection_id ? 'selected="true"' : '');
+                              
+                            $option = '<option value="'. $col->ID.'" ' . $selected . '>';
+                            $option .= $col->post_title;
+                            $option .= '</option>';
+                            echo $option;
+                         }
+                        ?>
+                    </select>
                 </label>
-            </p>
+             </p>   
         <?php 
-
     }
- 
 }
 function register_vhl_widgets() {
     register_widget("VHL_Widget_Collection");
