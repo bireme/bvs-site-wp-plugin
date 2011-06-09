@@ -3,7 +3,7 @@
 class VHL_Collection_Widget extends WP_Widget {
 
     function VHL_Collection_Widget() {
-        $widget_ops = array('classname' => __('VHL Collection'), 'description' => __('Adds a VHL collection on your site') );
+        $widget_ops = array('classname' => 'vhl-collection', 'description' => __('Adds a VHL collection on your site') );
         parent::WP_Widget('vhl_collection', __('VHL Collection'), $widget_ops);
     }
  

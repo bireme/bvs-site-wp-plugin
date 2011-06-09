@@ -17,7 +17,7 @@ define('BVS_PATH', dirname(__FILE__) );
 // Load plugin files
 require_once(BVS_PATH . '/bvs-core/widgets.php');
 require_once(BVS_PATH . '/bvs-core/post_types.php');
-require_once(BVS_PATH . '/bvs-core/page_links_to.php');
+require_once(BVS_PATH . '/bvs-core/page-links-to.php');
 
 
 function vhl_init() {
