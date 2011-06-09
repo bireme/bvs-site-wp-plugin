@@ -17,23 +17,26 @@ define('BVS_PATH', dirname(__FILE__) );
 // Load plugin files
 require_once(BVS_PATH . '/bvs-core/widgets.php');
 require_once(BVS_PATH . '/bvs-core/post_types.php');
+require_once(BVS_PATH . '/bvs-core/page_links_to.php');
 
 
 function vhl_init() {
 
-    wp_enqueue_script("jquery");
+    wp_enqueue_script('jquery');
 
     wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');
     wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');
 
     register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/bvs-themes' );
 
+    new VHL_PageLinksTo;
+
 }
 
 
-function bvs_add_admin_menu() {
+function vhl_add_admin_menu() {
     /* Add the administration tab under the "Site Admin" tab for site administrators */
-    bvs_add_admin_menu_page( array(
+    vhl_add_admin_menu_page( array(
         'menu_title' => __( 'BVS Site', 'bvs-site' ),
         'page_title' => __( 'BVS Site', 'bvs-site' ),
         'access_level' => 10, 'file' => 'bvs-general-settings',
@@ -45,11 +48,11 @@ function bvs_add_admin_menu() {
 }
 
 /**
- * bvs_add_admin_menu_page()
+ * vhl_add_admin_menu_page()
  *
  * A better version of add_admin_menu_page() that allows positioning of menus.
  */
-function bvs_add_admin_menu_page( $args = '' ) {
+function vhl_add_admin_menu_page( $args = '' ) {
     global $menu, $admin_page_hooks, $_registered_pages;
 
     $defaults = array(
@@ -89,7 +92,7 @@ function bvs_add_admin_menu_page( $args = '' ) {
     return $hookname;
 }
 
-add_action('plugins_loaded','vhl_init');
-add_action('admin_menu', 'bvs_add_admin_menu' );
+
+add_action( 'plugins_loaded','vhl_init' );
 
 ?>

@@ -34,47 +34,58 @@ function create_vhl_post_type() {
 /* Adds a box to the main column on the Post and Page edit screens */
 
 
-$meta_fields[] = array( "name" => "Base search url",
-                        "desc" => "Examples of a creator include a person or an organisation. Use Surname, Name. Ex. Duncan, Phyllis-Anne",
+$meta_fields['metasearch'][] = array( "name" => "Base search url",
+                        "desc" => "",
                         "id" => "_vhl_base_search_url",
                         "type" => "text");
-
+$meta_fields['page_links_to'][] = array( "name" => "Point to this URL:",
+                        "desc" => "",
+                        "id" => "_vhl_links_to",
+                        "type" => "text");
+$meta_fields['page_links_to'][] = array( "name" => "Open this link in a new window",
+                        "desc" => "",
+                        "id" => "_vhl_links_to_new_window",
+                        "type" => "checkbox");
 
 function add_vhl_metaboxes() {
-    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_inner_custom_box', 'vhl_collection' ,'normal', 'high');
+    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box', 'vhl_collection' ,'normal', 'high');
+    //add_meta_box( 'vhl_page_links_to', 'Page Links To', 'vhl_links_to_custom_box', 'vhl_collection' ,'normal', 'high');
 
 }
 
 /* Prints the box content */
-function vhl_inner_custom_box() {
+function vhl_metasearch_custom_box() {
     global $post, $meta_fields;
     
-    // Noncename needed to verify where the data originated
     echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-   
     echo '<div class="vhl-metabox-field-group">';
-    
-    foreach ($meta_fields as $field){
-          vhl_print_metafield($field);  
+    foreach ($meta_fields['metasearch'] as $field){       
+        vhl_print_metafield($field);  
     }
-
     echo '</div>';
-    
-    // Get the location data if its already been entered
-    $meta['author'] = get_post_meta($post->ID, '_meta_author', true);
-    $meta['abstract'] = get_post_meta($post->ID, '_meta_abstract', true);
-
 }
+
+function vhl_links_to_custom_box() {
+    global $post, $meta_fields;
+    
+    echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+    echo '<div class="vhl-metabox-field-group">';
+    foreach ($meta_fields['page_links_to'] as $field){
+        vhl_print_metafield($field);  
+    }
+    echo '</div>';
+}
+
 
 function vhl_print_metafield($field){
     global $post;
-    
+ 
     $field_id = $field["id"];
     $field_name = $field["name"];
     $field_type = $field["type"];
     $field_description = $field["desc"];
     $field_repeatable = $field["repeatable"];
-    
+
     if ($field_repeatable == true){    
         $field_value = get_post_custom_values($field_id, $post->ID);
     }else{            
@@ -116,6 +127,15 @@ function vhl_print_metafield($field){
             echo '        <textarea id="' . $field_id . '" name="'. $field_id . '" rows="5">' . $field_value . '</textarea>';
             echo '     </div>';
             break;
+
+        case 'checkbox':
+            ?>
+            <label for="<?php echo $field_id; ?>">            
+                <input type='checkbox' name='<?php echo $field_id;?>' id='<?php echo $field_id; ?>' value='_blank' <?php checked( '_blank', $field_value ); ?> > <?php echo $field_name; ?>
+            </label>
+            <?php
+            break;
+
         case 'file':
             $attachment_id = (int) $field_value;
 
@@ -168,14 +188,14 @@ function save_vhl_meta($post_id, $post) {
  
     // OK, we're authenticated: we need to find and save the data
     // We'll put it into an array to make it easier to loop though.    
-    foreach ($meta_fields as $meta){    
-        $id = $meta['id'];
-        $vhl_meta[$id] = $_POST[$id];
-    }    
-
+    foreach ($meta_fields as $meta_fields_group){
+        foreach ($meta_fields_group as $meta){
+            $id = $meta['id'];
+            $vhl_meta[$id] = $_POST[$id];
+        }
+    }
 
     // Add values of $vhl_meta as custom fields
- 
     foreach ($vhl_meta as $key => $value) { // Cycle through the $vhl_meta array!
         if( $post->post_type == 'revision' ) return; // Don't store custom data twice
         
@@ -206,10 +226,7 @@ function save_vhl_meta($post_id, $post) {
  
 }
 
- 
 add_action('init', 'create_vhl_post_type');
 add_action('save_post', 'save_vhl_meta', 1, 2); // save the custom fields
-
-
 
 ?>
