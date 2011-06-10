@@ -111,7 +111,8 @@ class VHL_PageLinksTo {
      * @param string $context the current context
      */
     function do_meta_boxes( $page, $context ) {
-        if ( ( 'vhl_collection' === $page ) && 'advanced' === $context )
+        // register meta_box for vhl_collection and translations (ex. vhl_collection_t_en)
+        if ( (  substr($page, 0, 14) === 'vhl_collection' ) && 'advanced' === $context )
             add_meta_box( 'page-links-to', 'Page Links To', array( &$this, 'meta_box' ), $page, 'advanced', 'low' );
     }
 

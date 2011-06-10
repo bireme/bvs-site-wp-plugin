@@ -11,9 +11,7 @@ class VHL_Collection_Widget extends WP_Widget {
     function widget($args, $instance) {
         extract($args);
 
-        $post_type_name = $this->get_post_type();
-        print "post_type_name: " . $post_type_name;
-
+        $post_type_name = $this->get_post_type_name();
         echo $before_widget;
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
             if($instance['title']) echo $before_title, $instance['title'], $after_title;
@@ -38,7 +36,7 @@ class VHL_Collection_Widget extends WP_Widget {
     function form($instance) {        
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
-        $post_type_name = $this->get_post_type();
+        $post_type_name = $this->get_post_type_name();
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
@@ -71,7 +69,7 @@ class VHL_Collection_Widget extends WP_Widget {
         <?php 
     }
 
-    function get_post_type(){
+    function get_post_type_name(){
         // check for Multi Language Framework plugin options
         $mlf_options = get_option('mlf_config');
         if ( isset($mlf_options) ){    

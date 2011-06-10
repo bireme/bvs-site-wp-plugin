@@ -1,5 +1,25 @@
 <?php
 
+add_action( 'init', 'create_vhl_post_type');
+add_action( 'add_meta_boxes', 'vhl_add_custom_box' );
+add_action( 'save_post', 'save_vhl_meta', 1, 2); // save the custom fields
+
+
+/* define custom fields */
+$meta_fields['metasearch'][] = array( "name" => "Base search url",
+                        "desc" => "",
+                        "id" => "_vhl_base_search_url",
+                        "type" => "text");
+$meta_fields['page_links_to'][] = array( "name" => "Point to this URL:",
+                        "desc" => "",
+                        "id" => "_vhl_links_to",
+                        "type" => "text");
+$meta_fields['page_links_to'][] = array( "name" => "Open this link in a new window",
+                        "desc" => "",
+                        "id" => "_vhl_links_to_new_window",
+                        "type" => "checkbox");
+
+
 function create_vhl_post_type() {
     register_post_type( 'vhl_collection',
         array(
@@ -25,32 +45,27 @@ function create_vhl_post_type() {
             'supports' => array('title','editor','revisions','page-attributes'),
             'menu_position' => 20,
             'capability_type' => 'page',
-            'register_meta_box_cb' => 'add_vhl_metaboxes'
         )
     );
 
 }
 
-/* Adds a box to the main column on the Post and Page edit screens */
 
+function vhl_add_custom_box() {
 
-$meta_fields['metasearch'][] = array( "name" => "Base search url",
-                        "desc" => "",
-                        "id" => "_vhl_base_search_url",
-                        "type" => "text");
-$meta_fields['page_links_to'][] = array( "name" => "Point to this URL:",
-                        "desc" => "",
-                        "id" => "_vhl_links_to",
-                        "type" => "text");
-$meta_fields['page_links_to'][] = array( "name" => "Open this link in a new window",
-                        "desc" => "",
-                        "id" => "_vhl_links_to_new_window",
-                        "type" => "checkbox");
+    // register metabox for vhl_collection post_type
+    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box',  'vhl_collection' ,'normal', 'high');        
 
-function add_vhl_metaboxes() {
-    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box', 'vhl_collection' ,'normal', 'high');
+    // check for multi language framework
+    $mlf_options = get_option('mlf_config');
+    if ( isset($mlf_options) ){
+        //register metabox for each vhl_collection post_type translation 
+        foreach ( $mlf_options['enabled_languages'] as $lng ){
+            $post_type_name = 'vhl_collection_t_' . $lng;
+            add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');        
+        }
+    }
     //add_meta_box( 'vhl_page_links_to', 'Page Links To', 'vhl_links_to_custom_box', 'vhl_collection' ,'normal', 'high');
-
 }
 
 /* Prints the box content */
@@ -223,10 +238,6 @@ function save_vhl_meta($post_id, $post) {
         }
 
     }
- 
 }
-
-add_action('init', 'create_vhl_post_type');
-add_action('save_post', 'save_vhl_meta', 1, 2); // save the custom fields
 
 ?>
