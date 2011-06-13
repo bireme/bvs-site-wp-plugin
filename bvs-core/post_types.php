@@ -19,11 +19,19 @@ $meta_fields['page_links_to'][] = array( "name" => "Open this link in a new wind
                         "id" => "_vhl_links_to_new_window",
                         "type" => "checkbox");
 
+// check for multi language framework and create list of custom post_type (including translations)
+$mlf_config = get_option('mlf_config');
+$vhl_post_type_list[] = 'vhl_collection';
+foreach ( $mlf_config['enabled_languages'] as $lng )
+    $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
+
 
 function create_vhl_post_type() {
+    global $vhl_post_type_list;
+
     register_post_type( 'vhl_collection',
         array(
-       'labels' => array(                
+       'labels' => array(
                 'name' => __( 'BVS Collection' ),
                 'singular_name' => __( 'Item' ),
                 'add_new' => __( 'Add New Item' ),
@@ -42,41 +50,36 @@ function create_vhl_post_type() {
             'has_archive' => true,
             'hierarchical' => true,
             'rewrite' => array('slug' => 'vhl'),
-            'supports' => array('title','editor','revisions','page-attributes'),
             'menu_position' => 20,
             'capability_type' => 'page',
         )
     );
 
+    // register support for each custom post_type (including translation)
+    foreach ( $vhl_post_type_list as $post_type_name )
+        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes') );
+        
 }
 
 
 function vhl_add_custom_box() {
+    global $vhl_post_type_list;
 
-    // register metabox for vhl_collection post_type
-    add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box',  'vhl_collection' ,'normal', 'high');        
+    // register custom_meta_box for each custom post_type (including translation)
+    foreach ( $vhl_post_type_list as $post_type_name )       
+        add_meta_box( $post_type_name, 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');
 
-    // check for multi language framework
-    $mlf_options = get_option('mlf_config');
-    if ( isset($mlf_options) ){
-        //register metabox for each vhl_collection post_type translation 
-        foreach ( $mlf_options['enabled_languages'] as $lng ){
-            $post_type_name = 'vhl_collection_t_' . $lng;
-            add_meta_box( 'vhl_metasearch', 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');        
-        }
-    }
-    //add_meta_box( 'vhl_page_links_to', 'Page Links To', 'vhl_links_to_custom_box', 'vhl_collection' ,'normal', 'high');
 }
 
 /* Prints the box content */
 function vhl_metasearch_custom_box() {
     global $post, $meta_fields;
-    
+
     echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
     echo '<div class="vhl-metabox-field-group">';
-    foreach ($meta_fields['metasearch'] as $field){       
+    foreach ($meta_fields['metasearch'] as $field)
         vhl_print_metafield($field);  
-    }
+    
     echo '</div>';
 }
 
@@ -85,9 +88,9 @@ function vhl_links_to_custom_box() {
     
     echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
     echo '<div class="vhl-metabox-field-group">';
-    foreach ($meta_fields['page_links_to'] as $field){
+    foreach ($meta_fields['page_links_to'] as $field)
         vhl_print_metafield($field);  
-    }
+
     echo '</div>';
 }
 
