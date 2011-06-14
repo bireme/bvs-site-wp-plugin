@@ -18,6 +18,7 @@ define('BVS_PATH', dirname(__FILE__) );
 require_once(BVS_PATH . '/bvs-core/widgets.php');
 require_once(BVS_PATH . '/bvs-core/post_types.php');
 require_once(BVS_PATH . '/bvs-core/page-links-to.php');
+require_once(BVS_PATH . '/bvs-core/settings.php');
 
 
 function vhl_init() {
@@ -35,64 +36,43 @@ function vhl_init() {
 
 
 function vhl_add_admin_menu() {
-    /* Add the administration tab under the "Site Admin" tab for site administrators */
-    vhl_add_admin_menu_page( array(
-        'menu_title' => __( 'BVS Site', 'bvs-site' ),
-        'page_title' => __( 'BVS Site', 'bvs-site' ),
-        'access_level' => 10, 'file' => 'bvs-general-settings',
-        'function' => 'bvs_admin_settings',
-        'position' => 2
-    ) );
 
-    add_submenu_page( 'bvs-general-settings', __( 'General Settings', 'bvs-site'), __( 'General Settings', 'bvs-site' ), 'manage_options', 'bvs-general-settings', 'bvs_admin_settings' );
+    add_submenu_page( 'options-general.php', __('BVS Site Settings', 'vhl'), 'BVS Site', 'manage_options', 'vhl', 
+                      'vhl_page_admin');
+
+    //call register settings function
+    add_action( 'admin_init', 'vhl_register_settings' );
+
 }
 
-/**
- * vhl_add_admin_menu_page()
- *
- * A better version of add_admin_menu_page() that allows positioning of menus.
- */
-function vhl_add_admin_menu_page( $args = '' ) {
-    global $menu, $admin_page_hooks, $_registered_pages;
+function vhl_register_settings(){
+    
+    register_setting('vhl-settings-group', 'vhl_config');
 
-    $defaults = array(
-        'page_title' => '',
-        'menu_title' => '',
-        'access_level' => 2,
-        'file' => false,
-        'function' => false,
-        'icon_url' => false,
-        'position' => 100
-    );
-
-    $r = wp_parse_args( $args, $defaults );
-    extract( $r, EXTR_SKIP );
-
-    $file = plugin_basename( $file );
-
-    $admin_page_hooks[$file] = sanitize_title( $menu_title );
-
-    $hookname = get_plugin_page_hookname( $file, '' );
-    if (!empty ( $function ) && !empty ( $hookname ))
-        add_action( $hookname, $function );
-
-    if ( empty($icon_url) )
-        $icon_url = 'images/generic.png';
-    elseif ( is_ssl() && 0 === strpos($icon_url, 'http://') )
-        $icon_url = 'https://' . substr($icon_url, 7);
-
-    do {
-        $position++;
-    } while ( !empty( $menu[$position] ) );
-
-    $menu[$position] = array ( $menu_title, $access_level, $file, $page_title, 'menu-top ' . $hookname, $hookname, $icon_url );
-
-    $_registered_pages[$hookname] = true;
-
-    return $hookname;
 }
 
+function vhl_google_analytics_code(){
+    $vhl_config = get_option('vhl_config');
+?>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<?php echo $vhl_config['google_analytics_code'] ?>']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<?php
+}
 
 add_action( 'plugins_loaded','vhl_init' );
+add_action( 'admin_menu', 'vhl_add_admin_menu');
+add_action( 'wp_head', 'vhl_google_analytics_code');
 
 ?>

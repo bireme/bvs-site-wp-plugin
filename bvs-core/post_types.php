@@ -58,7 +58,7 @@ function create_vhl_post_type() {
     // register support for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )
         add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes') );
-        
+
 }
 
 
