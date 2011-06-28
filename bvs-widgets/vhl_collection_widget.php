@@ -70,17 +70,18 @@ class VHL_Collection_Widget extends WP_Widget {
     }
 
     function get_post_type_name(){
+        //default post_type_name
+        $post_type_name = 'vhl_collection';
+        
         // check for Multi Language Framework plugin options
         $mlf_options = get_option('mlf_config');
         if ( isset($mlf_options) ){    
             $current_language = strtolower(get_bloginfo('language'));
 
             // mlf register the translation post_type using only first 2 letters of language code (pt-BR = pt)
-            $lng = substr($current_language, 0,2);      
-        
-            $post_type_name = 'vhl_collection_t_' . $lng;
-        }else{
-            $post_type_name = 'vhl_collection';
+            $lng = substr($current_language, 0,2);
+            if ($mlf_options['default_language'] != $lng)        
+                $post_type_name = 'vhl_collection_t_' . $lng;
         }
         
         return $post_type_name;
