@@ -5,14 +5,226 @@ Version: 1.0
 Author: BIREME (DGI)
 */
 
-/* General descriptions (fonts, background...) */
-@import url(css/general.css);
+/*
+	CSS RESET
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	/* END CSS RESET */
+	.spacer {
+		width: 100%;
+		height: 1px;
+		clear: both;
+	}
+	body {
+		background: #E4E0E0;
+		color: #000;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+	}
+	strong {
+		font-weight: bold;
+	}
+	h1, h2, h3 {
+		font-family: "Trebuchet MS", Arial;
+		font-weight: bold;
+	}
+	h3 {
+		margin: 0px;
+		padding: 5px;
+		background: #EEF1F1;
+		border-top: 2px solid #B1C1C1;
+	}
+	h3 span {
+		font-size: 110%;
+		border-left: 6px solid #567A7A;
+		display: block;
+		padding-left: 3px;	
+	}
+	
+	a {
+		color: #000;
+	}
+	.container {
+		max-width: 1004px;
+		min-width: 780px;
+		margin: 0 auto;
+		position: relative;
+		background: #FFF;
+	}
+		.bar {
+			padding-top:2px;
+			position:absolute;
+			right:0;
+			top:0;
+			width:50%;
+			font-size:75%;
+			font-weight:bold;
+			text-align:right;
+			margin: 2px 5px;
+		}
+		.bar, .bar a {
+			color:white;
+		}
+			#otherVersions img {
+				display: none;
+			}
+			#otherVersions li {
+				display: inline-block;
+				padding: 0px 5px;
+				border-left: 1px solid #fff;
+			}
+			#otherVersions li:first-child {
+				border: none;
+			}
+			#otherVersions, #contact {
+				display: inline-block;
+			}
+			#contact {
+				background: url(images/bt_contact.gif) top left no-repeat;
+				padding: 2px;
+				padding-left: 20px;
+			}
+		.top {
+			background: url("images/banner.jpg") no-repeat scroll right top #7A98A9;
+			height: 110px;
+			display: block;
+		}
+			#parent {
+				float: left;
+				margin: 8px 20px;
+			}
+			#identification {
+				float: left;
+				width: 60%;
+			}
+				#identification h1 {
+					color: #FFF;
+					font-size: 180%;
+					margin: 75px 0 0 100px;	
+				}
+			#institutionList {
+				float: right;
+				width: 125px;
+				margin: 20px 20px 0px 0px;
+			}
+				#institutionList li {
+					display: inline-block;
+				}
+		.middle {
+			clear:both;
+			padding:0.3em;
+			position:relative;
+		}
+			.middle .firstColumn {
+				float: left;
+				width: 18.5%;
+			}
+			.middle .secondColumn {
+				float:left;
+				margin-left:0.3em;
+				margin-right:0.3em;
+				width:58%;
+			}
+			.middle .thirdColumn {
+				float:left;
+				width:22.4%;
+			}
+		.footer {
+			background: #67A0C1;
+			border-left: 50px solid #33617B;
+			display: block;
+			padding: 12px;
+			font-size: 90%;
+			line-height: 130%;
+			color: #DFEBF2;
+		}
 
-/* Website layout (changes are not recomended) */
-@import url(css/layout.css);
-
-/* General styles descriptions (banner, footer and general boxes look-and-feel) */
-@import url(css/styles.css);
-
-/* Boxes descriptions (detailed boxes styles) */
-@import url(css/components.css);
+/* WIDGETS */
+		.widget {
+			margin-bottom: 10px;
+		}
+		.vhl-network {
+		}
+			.vhl-network ul {
+				margin: 8px 8px 8px 10px;
+			}
+				.vhl-network li {
+					margin-bottom:10px;	
+				}
+		.vhl-search {
+		}
+			.vhl-search form {
+				margin: 2.5%;
+				display: inline-block;
+				width: 95%;
+			}
+				.vhl-search form .vhl-search-input {
+					width: 70%;
+				}
+		.vhl-collection {
+			
+		}
+			.vhl-collection ul {
+				padding: 8px;
+				margin: 8px;
+			}
+				.vhl-collection ul li.page_item {
+					margin: 0px 0px 8px 0px;
+					font-weight: bold;
+					font-size: 110%;
+				}
+					.vhl-collection ul li.page_item ul {
+						margin: 4px 00px 0px 0px;
+						padding: 0px;
+					}
+						.vhl-collection ul li.page_item ul li.page_item{
+							margin: 0;
+							font-weight: normal;
+							font-size: 90%;
+							display: inline-block;
+						}

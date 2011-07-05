@@ -26,8 +26,7 @@
 
         <div class="bar">
             <div id="otherVersions">
-                <span class="español"><a href="../php/index.php?lang=es">español</a></span> | 
-                <span class="english"><a href="../php/index.php?lang=en">english</a></span>
+            	<?php mlf_links_to_languages(); ?>
             </div>
             <div id="contact"> 
                 <span><a href="../php/contact.php?lang=pt">Contato</a></span>

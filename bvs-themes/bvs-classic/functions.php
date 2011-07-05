@@ -14,8 +14,8 @@ if ( function_exists('register_sidebar') )
             'description' => __('Rede Social da BVS', 'example'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h2 class="widgettitle">',
-            'after_title' => '</h2>',
+            'before_title' => '<h3 class="widgettitle"><span>',
+            'after_title' => '</span></h3>',
         ));
     register_sidebar(
         array('name'=>'Coluna 2 ' . $current_language, 
@@ -23,8 +23,8 @@ if ( function_exists('register_sidebar') )
             'description' => __('Rede de Conteúdos da BVS', 'example'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h2 class="widgettitle">',
-            'after_title' => '</h2>',
+            'before_title' => '<h3 class="widgettitle"><span>',
+            'after_title' => '</span></h3>',
         ));
     register_sidebar(
         array('name'=>'Coluna 3 ' . $current_language, 
@@ -32,9 +32,17 @@ if ( function_exists('register_sidebar') )
             'description' => __('Rede de Notícias', 'example'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h2 class="widgettitle">',
-            'after_title' => '</h2>',
+            'before_title' => '<h3 class="widgettitle"><span>',
+            'after_title' => '</span></h3>',
         ));
-
+	   register_sidebar(
+        array('name'=>'Footer ' . $current_language, 
+            'id' => 'vhl_footer_' . $current_language,
+            'description' => __('Rodapé', 'example'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widgettitle"><span>',
+            'after_title' => '</span></h3>',
+        ));
        
 ?>
