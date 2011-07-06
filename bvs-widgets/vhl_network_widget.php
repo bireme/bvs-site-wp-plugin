@@ -13,11 +13,16 @@ class VHL_Network_Widget extends WP_Widget {
  
     function widget($args, $instance) {
         extract($args);
+
+        $current_language = strtolower(get_bloginfo('language'));
+        // network lang parameter only accept 2 letters language code (pt, es, en)
+        $lng = substr($current_language, 0,2);
+        
         echo $before_widget;
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
             if($instance['title']) echo $before_title, $instance['title'], $after_title;
 
-            $rss_url = $this->service_url . '&' . $instance['params'];
+            $rss_url = $this->service_url . '&lang=' . $lng . '&' . $instance['params'];
             
             $rss = fetch_feed($rss_url);
             $rss->strip_htmltags(false);
