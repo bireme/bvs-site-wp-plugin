@@ -113,7 +113,7 @@ class VHL_PageLinksTo {
     function do_meta_boxes( $page, $context ) {
         // register meta_box for vhl_collection and translations (ex. vhl_collection_t_en)
         if ( (  substr($page, 0, 14) === 'vhl_collection' ) && 'advanced' === $context )
-            add_meta_box( 'page-links-to', 'Page Links To', array( &$this, 'meta_box' ), $page, 'advanced', 'low' );
+            add_meta_box( 'page-links-to', 'Page URL', array( &$this, 'meta_box' ), $page, 'advanced', 'low' );
     }
 
     function meta_box() {
@@ -125,7 +125,7 @@ class VHL_PageLinksTo {
         if ( !$url )
             $url = 'http://';
     ?>
-        <p>Point to this URL: <input name="txfx_links_to" type="text" style="width:75%" id="txfx_links_to" value="<?php echo esc_attr( $url ); ?>" /></p>
+        <p>URL: <input name="txfx_links_to" type="text" style="width:75%" id="txfx_links_to" value="<?php echo esc_attr( $url ); ?>" /></p>
         <p><label for="txfx_links_to_new_window"><input type="checkbox" name="txfx_links_to_new_window" id="txfx_links_to_new_window" value="_blank" <?php checked( '_blank', get_post_meta( $post->ID, '_links_to_target', true ) ); ?>> Open this link in a new window</label></p>
         <!--
         <p><label for="txfx_links_to_302"><input type="checkbox" name="txfx_links_to_302" id="txfx_links_to_302" value="302" <?php checked( '302', get_post_meta( $post->ID, '_links_to_type', true ) ); ?>> Use a temporary <code>302</code> redirect (default is a permanent <code>301</code> redirect)</label></p>
