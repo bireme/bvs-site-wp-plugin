@@ -65,9 +65,10 @@ function create_vhl_post_type() {
 function vhl_add_custom_box() {
     global $vhl_post_type_list;
 
-    // register custom_meta_box for each custom post_type (including translation)
+    /* register custom_meta_box for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )       
         add_meta_box( $post_type_name, 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');
+    */
 
 }
 

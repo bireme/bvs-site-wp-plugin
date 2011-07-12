@@ -10,15 +10,21 @@ class VHL_Search_Widget extends WP_Widget {
  
     function widget($args, $instance) {
         extract($args);
+
+        $current_language = strtolower(get_bloginfo('language'));
+        // network lang parameter only accept 2 letters language code (pt, es, en)
+        $lng = substr($current_language, 0,2);
+
         echo $before_widget;
             if($instance['title']) echo $before_title, $instance['title'], $after_title;
 
              echo '<form action="' . $instance['action'] . '" method="get" name="searchForm">';
-             echo '   <input type="hidden" value="pt" name="lang">';
+             echo '   <input type="hidden" value="pt" name="' . $lng . '">';
              echo '   <input type="hidden" name="home_url" value="' . get_bloginfo('home') . '">';
              echo '   <input type="hidden" name="home_text" value="' . get_bloginfo('name') . '">';
              echo '   <input type="text" value="" class="vhl-search-input" name="q" id="vhl-search-input">';
              echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="Pesquisar">';
+             echo '</form>';
 
         echo $after_widget;
     }
