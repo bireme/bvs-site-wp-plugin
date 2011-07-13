@@ -1,7 +1,9 @@
 <?php
+
+apply_filters( '', 'vhl_list_pages');
+
 /*** VHL Collection Widget ****************/
 class VHL_Collection_Widget extends WP_Widget {
-
 
     function VHL_Collection_Widget() {
         $widget_ops = array('classname' => 'vhl-collection', 'description' => __('Adds a VHL collection on your site') );
@@ -10,6 +12,7 @@ class VHL_Collection_Widget extends WP_Widget {
  
     function widget($args, $instance) {
         extract($args);
+        add_filter( 'the_title', array($this, 'vhl_list_title'));
 
         $post_type_name = $this->get_post_type_name();
         echo $before_widget;
@@ -19,10 +22,10 @@ class VHL_Collection_Widget extends WP_Widget {
             echo '<ul>';
             wp_list_pages('post_type=' . $post_type_name . '&title_li=&child_of=' . $instance['collection_id']);
             echo '</ul>';
-            
+
+        remove_filter( 'the_title',  array($this, 'vhl_list_title') );
         echo $after_widget;
     }
-
 
     
     function update($new_instance, $old_instance) {
@@ -86,6 +89,14 @@ class VHL_Collection_Widget extends WP_Widget {
         
         return $post_type_name;
     }
-    
+
+   function vhl_list_title($title) {
+        $dash = strpos($title, '&#8211;');
+
+        if ($dash !== false)
+            $title = substr($title, 0, $dash);
+
+        return $title;
+    }
 }
 ?>
