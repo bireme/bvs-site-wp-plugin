@@ -1,7 +1,5 @@
 <?php
 
-apply_filters( '', 'vhl_list_pages');
-
 /*** VHL Collection Widget ****************/
 class VHL_Collection_Widget extends WP_Widget {
 
@@ -12,19 +10,26 @@ class VHL_Collection_Widget extends WP_Widget {
  
     function widget($args, $instance) {
         extract($args);
-        add_filter( 'the_title', array($this, 'vhl_list_title'));
 
-        $post_type_name = $this->get_post_type_name();
-        echo $before_widget;
-            $blank = ($instance['target'] == 'sim') ? '_blank' : '';
-            if($instance['title']) echo $before_title, $instance['title'], $after_title;
-            
-            echo '<ul>';
-            wp_list_pages('post_type=' . $post_type_name . '&title_li=&child_of=' . $instance['collection_id']);
-            echo '</ul>';
+        if ( $instance['collection_id'] != '' ){
+            add_filter( 'the_title', array($this, 'vhl_list_title'));
 
-        remove_filter( 'the_title',  array($this, 'vhl_list_title') );
-        echo $after_widget;
+            $post_type_name = $this->get_post_type_name();
+            echo $before_widget;
+                $blank = ($instance['target'] == 'sim') ? '_blank' : '';
+                if( $instance['title'] ){
+                    echo $before_title, $instance['title'], $after_title;
+                }else{
+                    echo $before_title, get_the_title($instance['collection_id']), $after_title;
+                }
+
+                echo '<ul>';
+                wp_list_pages('post_type=' . $post_type_name . '&title_li=&child_of=' . $instance['collection_id']);
+                echo '</ul>';
+            echo $after_widget;
+
+            remove_filter( 'the_title',  array($this, 'vhl_list_title') );
+       }
     }
 
     
