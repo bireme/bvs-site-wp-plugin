@@ -44,5 +44,13 @@ if ( function_exists('register_sidebar') )
             'before_title' => '<h3 class="widgettitle"><span>',
             'after_title' => '</span></h3>',
         ));
-       
+     
+     if (function_exists('add_theme_support')) {
+        add_theme_support('post-thumbnails');
+		set_post_thumbnail_size(200, 70, true);
+        add_image_size('large_highlight', 580, 340, true);
+        add_image_size('medium_highlight', 220, 130, true);
+        add_image_size('small_highlight', 60, 40, true);
+        add_image_size('icon', 16, 16, true);
+	}
 ?>
