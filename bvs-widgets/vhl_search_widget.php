@@ -4,8 +4,8 @@
 class VHL_Search_Widget extends WP_Widget {
 
     function VHL_Search_Widget() {
-        $widget_ops = array('classname' => 'vhl-search', 'description' => __('Adds a VHL search on your site') );
-        parent::WP_Widget('vhl_search', __('VHL Search'), $widget_ops);
+        $widget_ops = array('classname' => 'vhl-search', 'description' => __('Adds a VHL search on your site', 'vhl') );
+        parent::WP_Widget('vhl_search', __('VHL Search', 'vhl'), $widget_ops);
     }
  
     function widget($args, $instance) {
@@ -43,13 +43,13 @@ class VHL_Search_Widget extends WP_Widget {
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
-                    <?php _e('Title:'); ?> 
+                    <?php _e('Title:', 'vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
                 </label>
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('action'); ?>">
-                    <?php _e('Search URL:'); ?> 
+                    <?php _e('Search URL:', 'vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('action'); ?>" name="<?php echo $this->get_field_name('action'); ?>" type="text" value="<?php echo $action; ?>" />
                 </label>
             </p>

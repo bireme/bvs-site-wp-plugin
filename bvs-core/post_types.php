@@ -4,7 +4,6 @@ add_action( 'init', 'create_vhl_post_type');
 add_action( 'add_meta_boxes', 'vhl_add_custom_box' );
 add_action( 'save_post', 'save_vhl_meta', 1, 2); // save the custom fields
 
-
 /* define custom fields */
 $meta_fields['metasearch'][] = array( "name" => "Base search url",
                         "desc" => "",
@@ -32,18 +31,18 @@ function create_vhl_post_type() {
     register_post_type( 'vhl_collection',
         array(
        'labels' => array(
-                'name' => __( 'BVS Collection' ),
-                'singular_name' => __( 'Item' ),
-                'add_new' => __( 'Add New Item' ),
-                'add_new_item' => __( 'Add New Item' ),
-                'edit_item' => __( 'Edit Item' ),
-                'new_item' => __( 'Add New Item' ),
-                'view_item' => __( 'View Item' ),
-                'search_items' => __( 'Search Item' ),
-                'parent_item_colon' => __('Item pai'), 
-                'not_found' => __( 'No items found' ),
-                'not_found_in_trash' => __( 'No item found in trash' ),
-                'menu_name' => 'BVS Collection',
+                'name' => __('VHL Collection', 'vhl'),
+                'singular_name' => __('Item', 'vhl' ),
+                'add_new' => __('Add New Item', 'vhl'),
+                'add_new_item' => __('Add New Item', 'vhl'),
+                'edit_item' => __('Edit Item', 'vhl'),
+                'new_item' => __('Add New Item', 'vhl'),
+                'view_item' => __('View Item', 'vhl'),
+                'search_items' => __('Search Item', 'vhl'),
+                'parent_item_colon' => __('Item pai', 'vhl'), 
+                'not_found' => __('No items found', 'vhl'),
+                'not_found_in_trash' => __('No item found in trash', 'vhl'),
+                'menu_name' => __('VHL Collection', 'vhl'),
             ),
             'public' => true,
             'show_ui' => true,
@@ -57,7 +56,7 @@ function create_vhl_post_type() {
 
     // register support for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )
-        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes') );
+        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes', 'thumbnail') );
 
 }
 

@@ -6,8 +6,8 @@ class VHL_Certification_Widget extends WP_Widget {
     var $service_url = 'http://cert.bvsalud.org/';
 
     function VHL_Certification_Widget() {
-        $widget_ops = array('classname' => 'vhl-certification', 'description' => __('Adds a VHL certification on your site') );
-        parent::WP_Widget('vhl_certification', __('VHL Certification'), $widget_ops);
+        $widget_ops = array('classname' => 'vhl-certification', 'description' => __('Adds a VHL certification on your site', 'vhl') );
+        parent::WP_Widget('vhl_certification', __('VHL Certification', 'vhl'), $widget_ops);
     }
  
     function widget($args, $instance) {
@@ -47,7 +47,7 @@ class VHL_Certification_Widget extends WP_Widget {
             <!--
             <p>
                 <label for="<?php echo $this->get_field_id('params'); ?>">
-                    <?php _e('Parâmetros adicionais:'); ?> 
+                    <?php _e('Parameters:', 'vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('params'); ?>" name="<?php echo $this->get_field_name('params'); ?>" type="text" value="<?php echo $params; ?>" />
                 </label>
             </p>

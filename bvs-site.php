@@ -13,7 +13,6 @@ define('BVS_VERSION', '0.1' );
 define('BVS_URL', WP_PLUGIN_URL . '/bvs-site/');
 define('BVS_PATH', dirname(__FILE__) );
 
-
 // Load plugin files
 require_once(BVS_PATH . '/bvs-core/widgets.php');
 require_once(BVS_PATH . '/bvs-core/post_types.php');
@@ -34,10 +33,14 @@ function vhl_init() {
 
 }
 
+function vhl_load_translation(){
+    // Translations
+    load_plugin_textdomain( 'vhl', false,  basename( dirname( __FILE__ ) )  . '/languages' );
+}
 
 function vhl_add_admin_menu() {
 
-    add_submenu_page( 'options-general.php', __('BVS Site Settings', 'vhl'), 'BVS Site', 'manage_options', 'vhl', 
+    add_submenu_page( 'options-general.php', __('VHL Site Settings', 'vhl'), __('VHL Site', 'vhl'), 'manage_options', 'vhl', 
                       'vhl_page_admin');
 
     //call register settings function
@@ -71,6 +74,7 @@ function vhl_google_analytics_code(){
 <?php
 }
 
+add_action( 'init', 'vhl_load_translation' );
 add_action( 'plugins_loaded','vhl_init' );
 add_action( 'admin_menu', 'vhl_add_admin_menu');
 add_action( 'wp_head', 'vhl_google_analytics_code');
