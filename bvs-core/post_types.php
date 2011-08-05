@@ -18,12 +18,13 @@ $meta_fields['page_links_to'][] = array( "name" => "Open this link in a new wind
                         "id" => "_vhl_links_to_new_window",
                         "type" => "checkbox");
 
-// check for multi language framework and create list of custom post_type (including translations)
-$mlf_config = get_option('mlf_config');
 $vhl_post_type_list[] = 'vhl_collection';
-foreach ( $mlf_config['enabled_languages'] as $lng )
-    $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
-
+// check for multi language framework and create list of custom post_type (including translations)
+$mlf_options = get_option('mlf_config');
+if ( isset($mlf_options) ) {
+    foreach ( $mlf_options['enabled_languages'] as $lng )
+        $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
+}
 
 function create_vhl_post_type() {
     global $vhl_post_type_list;
