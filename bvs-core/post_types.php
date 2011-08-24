@@ -54,6 +54,7 @@ function create_vhl_post_type() {
             'capability_type' => 'page',
         )
     );
+    flush_rewrite_rules();
 
     // register support for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )

@@ -123,7 +123,7 @@ class VHL_PageLinksTo {
         echo '</p>';
         $url = get_post_meta( $post->ID, '_links_to', true);
         if ( !$url )
-            $url = 'http://';
+            $url = '';
     ?>
         <p>URL: <input name="txfx_links_to" type="text" style="width:75%" id="txfx_links_to" value="<?php echo esc_attr( $url ); ?>" /></p>
         <p><label for="txfx_links_to_new_window"><input type="checkbox" name="txfx_links_to_new_window" id="txfx_links_to_new_window" value="_blank" <?php checked( '_blank', get_post_meta( $post->ID, '_links_to_target', true ) ); ?>> Open this link in a new window</label></p>
