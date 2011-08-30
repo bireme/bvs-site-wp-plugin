@@ -19,10 +19,12 @@ get_header();
         </div>
 		<div class="childPages">
 			<ul>
-			  <?php wp_list_pages(); ?>
+			  <?php
+				 global $id;
+				 $post_type = get_post_type( $id );
+				 wp_list_pages("post_type=" . $post_type. "&title_li=&child_of=" . $id);
+			  ?>
 			</ul>
-
-						
 		</div>
         <div class="feedback">
             <?php wp_link_pages(); ?>
