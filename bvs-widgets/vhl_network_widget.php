@@ -7,8 +7,8 @@ class VHL_Network_Widget extends WP_Widget {
     var $service_url = 'http://srv.bvsalud.org/bvsnet/rss?bvs=regional.bvsalud.org';
 
     function VHL_Network_Widget() {
-        $widget_ops = array('classname' => 'vhl-network', 'description' => __('Adds a VHL network on your site') );
-        parent::WP_Widget('vhl_network', __('VHL Network'), $widget_ops);
+        $widget_ops = array('classname' => 'vhl-network', 'description' => __('Adds a VHL network on your site', 'vhl') );
+        parent::WP_Widget('vhl_network', __('VHL Network','vhl'), $widget_ops);
     }
  
     function widget($args, $instance) {
@@ -56,7 +56,7 @@ class VHL_Network_Widget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('params'); ?>">
-                    <?php _e('Parâmetros adicionais:'); ?> 
+                    <?php _e('Parameters:','vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('params'); ?>" name="<?php echo $this->get_field_name('params'); ?>" type="text" value="<?php echo $params; ?>" />
                 </label>
             </p>

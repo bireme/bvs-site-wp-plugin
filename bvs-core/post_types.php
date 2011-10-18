@@ -4,7 +4,6 @@ add_action( 'init', 'create_vhl_post_type');
 add_action( 'add_meta_boxes', 'vhl_add_custom_box' );
 add_action( 'save_post', 'save_vhl_meta', 1, 2); // save the custom fields
 
-
 /* define custom fields */
 $meta_fields['metasearch'][] = array( "name" => "Base search url",
                         "desc" => "",
@@ -19,12 +18,13 @@ $meta_fields['page_links_to'][] = array( "name" => "Open this link in a new wind
                         "id" => "_vhl_links_to_new_window",
                         "type" => "checkbox");
 
-// check for multi language framework and create list of custom post_type (including translations)
-$mlf_config = get_option('mlf_config');
 $vhl_post_type_list[] = 'vhl_collection';
-foreach ( $mlf_config['enabled_languages'] as $lng )
-    $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
-
+// check for multi language framework and create list of custom post_type (including translations)
+$mlf_options = get_option('mlf_config');
+if ( isset($mlf_options) ) {
+    foreach ( $mlf_options['enabled_languages'] as $lng )
+        $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
+}
 
 function create_vhl_post_type() {
     global $vhl_post_type_list;
@@ -32,18 +32,18 @@ function create_vhl_post_type() {
     register_post_type( 'vhl_collection',
         array(
        'labels' => array(
-                'name' => __( 'BVS Collection' ),
-                'singular_name' => __( 'Item' ),
-                'add_new' => __( 'Add New Item' ),
-                'add_new_item' => __( 'Add New Item' ),
-                'edit_item' => __( 'Edit Item' ),
-                'new_item' => __( 'Add New Item' ),
-                'view_item' => __( 'View Item' ),
-                'search_items' => __( 'Search Item' ),
-                'parent_item_colon' => __('Item pai'), 
-                'not_found' => __( 'No items found' ),
-                'not_found_in_trash' => __( 'No item found in trash' ),
-                'menu_name' => 'BVS Collection',
+                'name' => __('VHL Collection', 'vhl'),
+                'singular_name' => __('Item', 'vhl' ),
+                'add_new' => __('Add New Item', 'vhl'),
+                'add_new_item' => __('Add New Item', 'vhl'),
+                'edit_item' => __('Edit Item', 'vhl'),
+                'new_item' => __('Add New Item', 'vhl'),
+                'view_item' => __('View Item', 'vhl'),
+                'search_items' => __('Search Item', 'vhl'),
+                'parent_item_colon' => __('Item pai', 'vhl'), 
+                'not_found' => __('No items found', 'vhl'),
+                'not_found_in_trash' => __('No item found in trash', 'vhl'),
+                'menu_name' => __('VHL Collection', 'vhl'),
             ),
             'public' => true,
             'show_ui' => true,
@@ -54,10 +54,11 @@ function create_vhl_post_type() {
             'capability_type' => 'page',
         )
     );
+    flush_rewrite_rules();
 
     // register support for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )
-        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes') );
+        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes', 'thumbnail') );
 
 }
 
@@ -65,9 +66,10 @@ function create_vhl_post_type() {
 function vhl_add_custom_box() {
     global $vhl_post_type_list;
 
-    // register custom_meta_box for each custom post_type (including translation)
+    /* register custom_meta_box for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )       
         add_meta_box( $post_type_name, 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');
+    */
 
 }
 
