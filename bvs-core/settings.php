@@ -8,13 +8,13 @@ function vhl_page_admin() {
             <form method="post" action="options.php">
 
                 <?php settings_fields('vhl-settings-group'); ?>
-                
-                <h2><?php _e('BVS Site Options', 'vhl'); ?></h2>
-                
+
+                <h2><?php _e('VHL Site Options', 'vhl'); ?></h2>
+
                 <h3><?php _e('Google Analytics Integration', 'vhl'); ?></h3>
                 
-                    Google Analytics Code: <input type="text" name="vhl_config[google_analytics_code]" value="<?php echo $vhl_config[google_analytics_code] ?>" class="regular-text code">
-                
+                <?php _e('Google Analytics Code:', 'vhl'); ?> <input type="text" name="vhl_config[google_analytics_code]" value="<?php echo $vhl_config[google_analytics_code] ?>" class="regular-text code">
+
                 <p class="submit">
                 <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
                 </p>
