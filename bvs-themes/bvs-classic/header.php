@@ -24,10 +24,13 @@
 <body>
     <div class="container">
 
+
         <div class="bar">
-            <div id="otherVersions">
-            	<?php mlf_links_to_languages(); ?>
-            </div>
+            <?php if (function_exists('mlf_links_to_languages')) { ?>
+                <div id="otherVersions">
+                	<?php mlf_links_to_languages(); ?>
+                </div>
+            <?php } ?>    
             <div id="contact"> 
                 <span><a href="../php/contact.php?lang=pt">Contato</a></span>
             </div>
