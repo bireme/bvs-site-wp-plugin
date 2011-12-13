@@ -50,7 +50,7 @@ class VHL_Collection_Widget extends WP_Widget {
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
         $post_type_name = $this->get_post_type_name();
-
+print $post_type_name;
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
@@ -88,7 +88,8 @@ class VHL_Collection_Widget extends WP_Widget {
         $post_type_name = 'vhl_collection';
         
         // check for Multi Language Framework plugin options
-        if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+        $mlf_options = get_option('mlf_config');
+        if ( is_array($mlf_options) ) {
             $mlf_options = get_option('mlf_config');
             $current_language = strtolower(get_bloginfo('language'));
 
