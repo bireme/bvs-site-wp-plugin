@@ -19,11 +19,11 @@ class VHL_Search_Widget extends WP_Widget {
             if($instance['title']) echo $before_title, $instance['title'], $after_title;
 
              echo '<form action="' . $instance['action'] . '" method="get" name="searchForm">';
-             echo '   <input type="hidden" value="pt" name="' . $lng . '">';
+             echo '   <input type="hidden" name="lang" value="' . $lng . '">';
              echo '   <input type="hidden" name="home_url" value="' . get_bloginfo('home') . '">';
              echo '   <input type="hidden" name="home_text" value="' . get_bloginfo('name') . '">';
              echo '   <input type="text" value="" class="vhl-search-input" name="q" id="vhl-search-input">';
-             echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="Pesquisar">';
+             echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="' .__('Search') .'">';
              echo '</form>';
 
         echo $after_widget;
