@@ -12,7 +12,7 @@ class VHL_Collection_Widget extends WP_Widget {
         extract($args);
 
         if ( $instance['collection_id'] != '' ){
-            add_filter( 'the_title', array($this, 'vhl_list_title'));
+            //add_filter( 'the_title', array($this, 'vhl_list_title'));
 
             $post_type_name = $this->get_post_type_name();
             echo $before_widget;
@@ -36,7 +36,12 @@ class VHL_Collection_Widget extends WP_Widget {
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         
-        $instance['title'] = strip_tags($new_instance['title']);
+        if ( $new_instance['title'] == '' ){
+            $instance['title'] = get_the_title($instance['collection_id']);
+        }else{
+            $instance['title'] = strip_tags($new_instance['title']);
+        }
+       
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
         return $instance;
     }
@@ -45,10 +50,11 @@ class VHL_Collection_Widget extends WP_Widget {
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
         $post_type_name = $this->get_post_type_name();
+print $post_type_name;
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
-                    <?php _e('Title:', 'vhl'); ?> 
+                    <?php _e('Title:', 'vhl'); ?>
                     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
                 </label>
             </p>
@@ -83,15 +89,16 @@ class VHL_Collection_Widget extends WP_Widget {
         
         // check for Multi Language Framework plugin options
         $mlf_options = get_option('mlf_config');
-        if ( isset($mlf_options) ){    
+        if ( is_array($mlf_options) ) {
+            $mlf_options = get_option('mlf_config');
             $current_language = strtolower(get_bloginfo('language'));
 
             // mlf register the translation post_type using only first 2 letters of language code (pt-BR = pt)
             $lng = substr($current_language, 0,2);
-            if ($mlf_options['default_language'] != $lng)        
+            if ($mlf_options['default_language'] != $lng){
                 $post_type_name = 'vhl_collection_t_' . $lng;
-        }
-        
+            }
+        }    
         return $post_type_name;
     }
 
