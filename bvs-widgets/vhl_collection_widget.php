@@ -22,13 +22,17 @@ class VHL_Collection_Widget extends WP_Widget {
                 }else{
                     echo $before_title, get_the_title($instance['collection_id']), $after_title;
                 }
+                $levels = $instance['levels'];
 
                 echo '<ul>';
-                wp_list_pages('post_type=' . $post_type_name . '&title_li=&child_of=' . $instance['collection_id']);
+                if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+                    echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
+                }
+                wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
                 echo '</ul>';
             echo $after_widget;
 
-            remove_filter( 'the_title',  array($this, 'vhl_list_title') );
+            //remove_filter( 'the_title',  array($this, 'vhl_list_title') );
        }
     }
 
@@ -43,14 +47,16 @@ class VHL_Collection_Widget extends WP_Widget {
         }
        
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
+        $instance['levels'] = strip_tags($new_instance['levels']);
         return $instance;
     }
     
     function form($instance) {        
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
+        $levels = esc_attr($instance['levels']);
         $post_type_name = $this->get_post_type_name();
-print $post_type_name;
+
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
@@ -79,6 +85,13 @@ print $post_type_name;
                         ?>
                     </select>
                 </label>
+             </p>
+             <p>
+                <label>
+                    <?php _e('Number of levels to display:', 'vhl'); ?>
+                    <input id="<?php echo $this->get_field_id('levels'); ?>" name="<?php echo $this->get_field_name('levels'); ?>" type="text" value="<?php echo $levels; ?>" size="3"/>
+                </label>
+
              </p>   
         <?php 
     }
