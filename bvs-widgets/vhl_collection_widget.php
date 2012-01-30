@@ -11,28 +11,33 @@ class VHL_Collection_Widget extends WP_Widget {
     function widget($args, $instance) {
         extract($args);
 
-        if ( $instance['collection_id'] != '' ){
-            //add_filter( 'the_title', array($this, 'vhl_list_title'));
-
+       if ( $instance['collection_id'] != '' ){
             $post_type_name = $this->get_post_type_name();
-            echo $before_widget;
-                $blank = ($instance['target'] == 'sim') ? '_blank' : '';
-                if( $instance['title'] ){
-                    echo $before_title, $instance['title'], $after_title;
-                }else{
-                    echo $before_title, get_the_title($instance['collection_id']), $after_title;
-                }
-                $levels = $instance['levels'];
 
-                echo '<ul>';
-                if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
-                    echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
-                }
-                wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-                echo '</ul>';
+            // add subclass thumbnail when collection first level item have featured image associated
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+                echo str_replace('class="', 'class="thumbnail ',$before_widget);
+            }else{
+                echo $before_widget;
+            }
+
+            $blank = ($instance['target'] == 'sim') ? '_blank' : '';
+            if( $instance['title'] ){
+                echo $before_title, $instance['title'], $after_title;
+            }else{
+                echo $before_title, get_the_title($instance['collection_id']), $after_title;
+            }
+            $levels = $instance['levels'];
+
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+                echo '<div class="vhl_collection_thumb">';
+                echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
+                echo '</div>';
+            }
+            echo "<ul>";
+            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
+            echo '</ul>';
             echo $after_widget;
-
-            //remove_filter( 'the_title',  array($this, 'vhl_list_title') );
        }
     }
 
