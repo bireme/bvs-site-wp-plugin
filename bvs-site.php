@@ -9,9 +9,12 @@ Author URI: http://reddes.bvsalud.org/
 Site Wide Only: true
 */
 
-define('BVS_VERSION', '0.1' );
-define('BVS_URL', WP_PLUGIN_URL . '/bvs-site/');
+
+define('BVS_VERSION', '0.2' );
+
 define('BVS_PATH', dirname(__FILE__) );
+define('BVS_PLUGIN_DIR', '/' . dirname(plugin_basename(__FILE__)));
+define('BVS_URL', WP_PLUGIN_URL . BVS_PLUGIN_DIR );
 
 // Load plugin files
 require_once(BVS_PATH . '/bvs-core/widgets.php');
@@ -27,7 +30,7 @@ function vhl_init() {
     wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');
     wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');
 
-    register_theme_directory( WP_PLUGIN_DIR . '/bvs-site/bvs-themes' );
+    register_theme_directory( WP_PLUGIN_DIR . BVS_PLUGIN_DIR . '/bvs-themes' );
 
     new VHL_PageLinksTo;
 

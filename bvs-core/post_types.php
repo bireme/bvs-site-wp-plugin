@@ -21,7 +21,7 @@ $meta_fields['page_links_to'][] = array( "name" => "Open this link in a new wind
 $vhl_post_type_list[] = 'vhl_collection';
 // check for multi language framework and create list of custom post_type (including translations)
 $mlf_options = get_option('mlf_config');
-if ( isset($mlf_options) ) {
+if ( isset($mlf_options) && $mlf_options != null) {
     foreach ( $mlf_options['enabled_languages'] as $lng )
         $vhl_post_type_list[] = 'vhl_collection_t_' . $lng;
 }
