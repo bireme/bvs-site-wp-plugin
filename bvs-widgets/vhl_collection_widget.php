@@ -11,28 +11,34 @@ class VHL_Collection_Widget extends WP_Widget {
     function widget($args, $instance) {
         extract($args);
 
-        if ( $instance['collection_id'] != '' ){
-            //add_filter( 'the_title', array($this, 'vhl_list_title'));
-
+       if ( $instance['collection_id'] != '' ){
             $post_type_name = $this->get_post_type_name();
-            echo $before_widget;
-                $blank = ($instance['target'] == 'sim') ? '_blank' : '';
-                if( $instance['title'] ){
-                    echo $before_title, $instance['title'], $after_title;
-                }else{
-                    echo $before_title, get_the_title($instance['collection_id']), $after_title;
-                }
-                $levels = $instance['levels'];
 
-                echo '<ul>';
-                if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
-                    echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
-                }
-                wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-                echo '</ul>';
+            // add subclass thumbnail when collection first level item have featured image associated
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+                echo str_replace('class="', 'class="thumbnail ',$before_widget);
+            }else{
+                echo $before_widget;
+            }
+
+            $blank = ($instance['target'] == 'sim') ? '_blank' : '';
+            if( $instance['title'] ){
+                echo $before_title, $instance['title'], $after_title;
+            }else{
+                echo $before_title, get_the_title($instance['collection_id']), $after_title;
+            }
+            $levels = $instance['levels'];
+            $columns = $instance['columns'];
+
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+                echo '<div class="vhl_collection_thumb">';
+                echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
+                echo '</div>';
+            }
+            echo '<ul class="' . $columns .'">';
+            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
+            echo '</ul>';
             echo $after_widget;
-
-            //remove_filter( 'the_title',  array($this, 'vhl_list_title') );
        }
     }
 
@@ -48,6 +54,7 @@ class VHL_Collection_Widget extends WP_Widget {
        
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
         $instance['levels'] = strip_tags($new_instance['levels']);
+        $instance['columns'] = strip_tags($new_instance['columns']);
         return $instance;
     }
     
@@ -55,6 +62,7 @@ class VHL_Collection_Widget extends WP_Widget {
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
         $levels = esc_attr($instance['levels']);
+        $columns = esc_attr($instance['columns']);
         $post_type_name = $this->get_post_type_name();
 
         ?>
@@ -91,8 +99,16 @@ class VHL_Collection_Widget extends WP_Widget {
                     <?php _e('Number of levels to display:', 'vhl'); ?>
                     <input id="<?php echo $this->get_field_id('levels'); ?>" name="<?php echo $this->get_field_name('levels'); ?>" type="text" value="<?php echo $levels; ?>" size="3"/>
                 </label>
-
-             </p>   
+             </p>
+             <p>
+                <label>
+                    <?php _e('Number of columns:', 'vhl'); ?>                    
+                    <select name="<?php echo $this->get_field_name('columns'); ?>" > 
+                        <option value="onecolumn" <?php if ($columns == 'onecolumn'): echo ' selected="true"'; endif?> >1</option>
+                        <option value="twocolumn" <?php if ($columns == 'twocolumn' || $columns == ''): echo ' selected="true"'; endif?> >2</option>
+                    </select>
+                </label>
+             </p>
         <?php 
     }
 
