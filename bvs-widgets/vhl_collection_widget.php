@@ -13,13 +13,17 @@ class VHL_Collection_Widget extends WP_Widget {
 
        if ( $instance['collection_id'] != '' ){
             $post_type_name = $this->get_post_type_name();
+            $levels = $instance['levels'];
+            $columns = $instance['columns'];
 
             // add subclass thumbnail when collection first level item have featured image associated
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
-                echo str_replace('class="', 'class="thumbnail ',$before_widget);
-            }else{
-                echo $before_widget;
+                $before_widget = str_replace('class="', 'class="thumbnail ',$before_widget);
             }
+            // add subclass that inform columns selected for the widget
+            $before_widget = str_replace('class="', 'class="' . $columns .' ',$before_widget);
+
+            echo $before_widget;
 
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
             if( $instance['title'] ){
@@ -27,15 +31,13 @@ class VHL_Collection_Widget extends WP_Widget {
             }else{
                 echo $before_title, get_the_title($instance['collection_id']), $after_title;
             }
-            $levels = $instance['levels'];
-            $columns = $instance['columns'];
 
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
                 echo '<div class="vhl_collection_thumb">';
                 echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
                 echo '</div>';
             }
-            echo '<ul class="' . $columns .'">';
+            echo '<ul>';
             wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
             echo '</ul>';
             echo $after_widget;
