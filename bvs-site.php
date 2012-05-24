@@ -9,36 +9,34 @@ Author URI: http://reddes.bvsalud.org/
 Site Wide Only: true
 */
 
+define('BVS_VERSION', '0.3' );
 
-define('BVS_VERSION', '0.2' );
-
-define('BVS_PATH', dirname(__FILE__) );
-define('BVS_PLUGIN_DIR', '/' . dirname(plugin_basename(__FILE__)));
-define('BVS_URL', WP_PLUGIN_URL . BVS_PLUGIN_DIR );
+define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
+define('BVS_PLUGIN_DIR',   plugin_basename( dirname(__FILE__) ) );
+define('BVS_PLUGIN_URL',   plugin_dir_url(__FILE__) );
 
 // Load plugin files
-require_once(BVS_PATH . '/bvs-core/widgets.php');
-require_once(BVS_PATH . '/bvs-core/post_types.php');
-require_once(BVS_PATH . '/bvs-core/page-links-to.php');
-require_once(BVS_PATH . '/bvs-core/settings.php');
 
+require_once(BVS_PLUGIN_PATH . '/bvs-core/widgets.php');
+require_once(BVS_PLUGIN_PATH . '/bvs-core/post_types.php');
+require_once(BVS_PLUGIN_PATH . '/bvs-core/page-links-to.php');
+require_once(BVS_PLUGIN_PATH . '/bvs-core/settings.php');
 
 function vhl_init() {
 
-    wp_enqueue_script('jquery');
-
-    wp_enqueue_script('vhl-edit', BVS_URL . 'js/scripts.js');
-    wp_enqueue_style ('vhl-edit', BVS_URL . 'css/styles.css');
-
-    register_theme_directory( WP_PLUGIN_DIR . BVS_PLUGIN_DIR . '/bvs-themes' );
+    if (is_admin()) {        
+        wp_enqueue_script('vhl-edit', BVS_PLUGIN_URL . 'js/scripts.js');
+        wp_enqueue_style ('vhl-edit', BVS_PLUGIN_URL . 'css/styles.css');
+    }  
 
     new VHL_PageLinksTo;
 
+    register_theme_directory( BVS_PLUGIN_PATH . '/bvs-themes' );
 }
 
 function vhl_load_translation(){
     // Translations
-    load_plugin_textdomain( 'vhl', false,  basename( dirname( __FILE__ ) )  . '/languages' );
+    load_plugin_textdomain( 'vhl', false,  BVS_PLUGIN_DIR . '/languages' );
 }
 
 function vhl_add_admin_menu() {
@@ -78,8 +76,8 @@ function vhl_google_analytics_code(){
 }
 
 add_action( 'init', 'vhl_load_translation' );
-add_action( 'plugins_loaded','vhl_init' );
 add_action( 'admin_menu', 'vhl_add_admin_menu');
+add_action( 'plugins_loaded','vhl_init' );
 add_action( 'wp_head', 'vhl_google_analytics_code');
 
 ?>
