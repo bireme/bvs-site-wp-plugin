@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bvs-site-wp-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-27 13:45-0300\n"
-"PO-Revision-Date: 2012-01-27 13:46-0300\n"
+"POT-Creation-Date: 2012-07-12 18:15-0300\n"
+"PO-Revision-Date: 2012-07-12 18:17-0300\n"
 "Last-Translator: Vinicius Andrade <vinicius.andrade@bireme.org>\n"
 "Language-Team: BIREME\n"
 "Language: \n"
@@ -14,378 +14,386 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Language: Portuguese\n"
-"X-Poedit-SearchPath-0: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site\n"
+"X-Poedit-SearchPath-0: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site\n"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-site.php:43
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-site.php:44
 msgid "VHL Site Settings"
 msgstr "BVS Site Ajustes"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-site.php:43
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-site.php:44
 msgid "VHL Site"
 msgstr "BVS Site"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:35
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:46
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:8
-msgid "VHL Collection"
-msgstr "BVS Coleção"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:36
-msgid "Item"
-msgstr "Item"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:37
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:38
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:40
-msgid "Add New Item"
-msgstr "Adiciona novo item"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:39
-msgid "Edit Item"
-msgstr "Editar item"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:41
-msgid "View Item"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:42
-msgid "Search Item"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:43
-msgid "Item pai"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:44
-msgid "No items found"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/post_types.php:45
-msgid "No item found in trash"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/settings.php:12
-msgid "VHL Site Options"
-msgstr "BVS Site Ajustes"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/settings.php:14
-msgid "Google Analytics Integration"
-msgstr "Integração com o Google Analytics"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/settings.php:16
-msgid "Google Analytics Code:"
-msgstr "Código do Google Analytics"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-core/settings.php:19
-msgid "Save Changes"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:14
-msgid "Rede Social da BVS"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:23
-msgid "Rede de Conteúdos da BVS"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:32
-msgid "Rede de Notícias"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:41
-msgid "Rodapé"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:13
-msgid "Pages:"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:15
-msgid "Categories:"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:17
-msgid "Search:"
-msgstr "Pesquisa:"
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:25
-msgid "Archives:"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:30
-msgid "Meta:"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:34
-msgid "Syndicate this site using RSS"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:34
-msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:35
-msgid "The latest comments to all posts in RSS"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:35
-msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:36
-msgid "This page validates as XHTML 1.0 Transitional"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:36
-msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:38
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:115
-msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:18
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:19
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:18
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:19
 msgid "(more...)"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
 msgid "Comments (0)"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
 msgid "Comments (1)"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:31
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:24
 msgid "Comments (%)"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:39
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:32
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:39
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:32
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:42
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:35
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:42
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:35
 msgid "&laquo; Newer Posts"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:42
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:35
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/single.php:42
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:35
 msgid "Older Posts &raquo;"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:8
-msgid "Enter your password to view comments."
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:13
+msgid "Pages:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
-msgid "No Comments"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:15
+msgid "Categories:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
-msgid "1 Comment"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:17
+msgid "Search:"
+msgstr "Pesquisa:"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:25
+msgid "Archives:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
-msgid "% Comments"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:30
+msgid "Meta:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:13
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:42
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:62
-msgid "Leave a comment"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:34
+msgid "Syndicate this site using RSS"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
-msgid "Trackback"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:34
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
-msgid "Pingback"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:35
+msgid "The latest comments to all posts in RSS"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
-msgid "by"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:35
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
-msgid "Edit This"
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:36
+msgid "This page validates as XHTML 1.0 Transitional"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:32
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:58
-msgid "No comments yet."
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:36
+msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:35
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:31
-msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/sidebar.php:38
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:115
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:37
-msgid "TrackBack <abbr title=\"Universal Resource Locator\">URL</abbr>"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:45
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
-#, php-format
-msgid "Logged in as %s."
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
-msgid "Log out of this account"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
-msgid "Log out &raquo;"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:57
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:71
-msgid "Name"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:57
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:60
-msgid "(required)"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:60
-msgid "Mail (will not be published)"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:63
-msgid "Website"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:67
-#, php-format
-msgid "You can use these tags: %s"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:81
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:99
-msgid "Sorry, the comment form is closed at this time."
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
-msgid "Filed under:"
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
-msgid "Tags: "
-msgstr ""
-
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:9
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:9
 #, php-format
 msgid "Comments on %s"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:29
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:29
 msgid "Comments"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:34
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:31
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:35
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:34
 msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:63
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
+msgid "Trackback"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
+msgid "Pingback"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:52
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
+msgid "by"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:58
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:32
+msgid "No comments yet."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:62
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:13
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:42
+msgid "Leave a comment"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:63
 msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:76
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
+#, php-format
+msgid "Logged in as %s."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
+msgid "Log out of this account"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:67
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:52
+msgid "Log out &raquo;"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:71
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:57
+msgid "Name"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:76
 msgid "E-mail"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:81
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:81
 msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:86
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:86
 msgid "Your Comment"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:104
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:99
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:81
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:104
 msgid "Close this window."
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:115
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments-popup.php:115
 #, php-format
 msgid "<cite>Powered by <a href=\"http://wordpress.org\" title=\"%s\"><strong>WordPress</strong></a></cite>"
 msgstr ""
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:7
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
+msgid "Filed under:"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
+msgid "Tags: "
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/index.php:16
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:24
+msgid "Edit This"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:8
+msgid "Enter your password to view comments."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
+msgid "No Comments"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
+msgid "1 Comment"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:11
+msgid "% Comments"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:37
+msgid "TrackBack <abbr title=\"Universal Resource Locator\">URL</abbr>"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:45
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:57
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:60
+msgid "(required)"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:60
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:63
+msgid "Website"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/comments.php:67
+#, php-format
+msgid "You can use these tags: %s"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:14
+msgid "Rede Social da BVS"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:23
+msgid "Rede de Conteúdos da BVS"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:32
+msgid "Rede de Notícias"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-themes/bvs-classic/functions.php:41
+msgid "Rodapé"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:35
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:46
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:8
+msgid "VHL Collection"
+msgstr "BVS Coleção"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:36
+msgid "Item"
+msgstr "Item"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:37
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:38
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:40
+msgid "Add New Item"
+msgstr "Adiciona novo item"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:39
+msgid "Edit Item"
+msgstr "Editar item"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:41
+msgid "View Item"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:42
+msgid "Search Item"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:43
+msgid "Item pai"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:44
+msgid "No items found"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/post_types.php:45
+msgid "No item found in trash"
+msgstr ""
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/settings.php:12
+msgid "VHL Site Options"
+msgstr "BVS Site Ajustes"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/settings.php:14
+msgid "Google Analytics Integration"
+msgstr "Integração com o Google Analytics"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/settings.php:16
+msgid "Google Analytics Code:"
+msgstr "Código do Google Analytics"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-core/settings.php:19
+msgid "Save Changes"
+msgstr "Gravar Alteração"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:7
 msgid "Adds a VHL collection on your site"
 msgstr "Adicione uma Coleção BVS em seu site"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:63
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:53
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:82
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:53
 msgid "Title:"
 msgstr "Título:"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:69
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:88
 msgid "Collection:"
 msgstr "Coleção:"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:72
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:91
 msgid "Select a collection"
 msgstr "Selecione uma coleção"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:91
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:110
+msgid "Show link to collection page"
+msgstr "Mostrar link para a página da coleção"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:115
 msgid "Number of levels to display:"
 msgstr "Número de níveis a exibir:"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:10
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_collection_widget.php:121
+msgid "Number of columns:"
+msgstr "Número de colunas:"
+
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:10
 msgid "Adds a VHL network on your site"
 msgstr "Adicione a lista da Rede BVS no seu site"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:11
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:11
 msgid "VHL Network"
 msgstr "Rede BVS"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:59
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_network_widget.php:59
 msgid "Parameters:"
 msgstr "Parâmetros:"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_certification_widget.php:9
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_certification_widget.php:9
 msgid "Adds a VHL certification on your site"
 msgstr "Adicione o certificado da BVS em seu site"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_certification_widget.php:10
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_certification_widget.php:10
 msgid "VHL Certification"
 msgstr "BVS Certificado"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:7
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:7
 msgid "Adds a VHL search on your site"
 msgstr "Adicione a Pesquisa da BVS em seu site"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:8
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:8
 msgid "VHL Search"
 msgstr "Pesquisa BVS"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:26
-#, fuzzy
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:26
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:27
 msgid "Search"
-msgstr "Pesquisa:"
+msgstr "Pesquisa"
 
-#: /home/vinicius/Projects/wp-plugins/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:52
+#: /home/projects/wp-plugins/htdocs/wp-content/plugins/bvs-site/bvs-widgets/vhl_search_widget.php:53
 msgid "Search URL:"
 msgstr "URL de pesquisa:"
 
