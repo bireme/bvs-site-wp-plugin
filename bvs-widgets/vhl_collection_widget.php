@@ -15,6 +15,7 @@ class VHL_Collection_Widget extends WP_Widget {
             $post_type_name = $this->get_post_type_name();
             $levels = $instance['levels'];
             $columns = $instance['columns'];
+            $show_link = $instance['show_link'];
 
             // add subclass thumbnail when collection first level item have featured image associated
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
@@ -25,12 +26,18 @@ class VHL_Collection_Widget extends WP_Widget {
 
             echo $before_widget;
 
-            $blank = ($instance['target'] == 'sim') ? '_blank' : '';
             if( $instance['title'] ){
-                echo $before_title, $instance['title'], $after_title;
+                $col_title = $instance['title'];
             }else{
-                echo $before_title, get_the_title($instance['collection_id']), $after_title;
+                $col_title = get_the_title($instance['collection_id']);
             }
+
+            if( $show_link ){
+                $before_title .= '<a href="' . get_permalink($instance['collection_id']) . '" title="' . $col_title . '">';
+                $after_title .= '</a>';
+            }                
+
+            echo $before_title, $col_title, $after_title;
 
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
                 echo '<div class="vhl_collection_thumb">';
@@ -57,6 +64,7 @@ class VHL_Collection_Widget extends WP_Widget {
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
         $instance['levels'] = strip_tags($new_instance['levels']);
         $instance['columns'] = strip_tags($new_instance['columns']);
+        $instance['show_link'] = strip_tags($new_instance['show_link']);
         return $instance;
     }
     
@@ -65,6 +73,7 @@ class VHL_Collection_Widget extends WP_Widget {
         $collection_id = esc_attr($instance['collection_id']);
         $levels = esc_attr($instance['levels']);
         $columns = esc_attr($instance['columns']);
+        $show_link = esc_attr($instance['show_link']);
         $post_type_name = $this->get_post_type_name();
 
         ?>
@@ -94,6 +103,11 @@ class VHL_Collection_Widget extends WP_Widget {
                          }
                         ?>
                     </select>
+                </label>
+             </p>
+             <p>
+                <label>
+                    <input type="checkbox" name="<?php echo $this->get_field_name('show_link'); ?>" value="true" <?php if ($show_link == 'true'): echo ' checked="true"'; endif?> ><?php _e('Show link to collection page', 'vhl'); ?>
                 </label>
              </p>
              <p>
