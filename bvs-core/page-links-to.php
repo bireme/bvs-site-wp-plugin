@@ -209,6 +209,8 @@ class VHL_PageLinksTo {
         $links = $this->get_links();
         $page_links_to_target_cache = $this->get_targets();
 
+
+
         if ( !$links && !$page_links_to_target_cache )
             return $pages;
 
@@ -229,7 +231,7 @@ class VHL_PageLinksTo {
             foreach ( $targets as  $p => $t ) {
                 $p = esc_url( $p );
                 $t = esc_attr( $t );
-                $pages = str_replace( '<a href="' . $p . '" ', '<a href="' . $p . '" target="' . $t . '" ', $pages );
+                $pages = str_replace( '<a href="' . $p . '"', '<a href="' . $p . '" target="' . $t . '"', $pages );
             }
         }
 
