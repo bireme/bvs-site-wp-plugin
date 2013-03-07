@@ -304,3 +304,20 @@ Author: BIREME (DGI)
     background: url(images/icon_minus.gif) no-repeat scroll 0 2px;
     padding-left: 14px;
 }
+
+.vhl-themes ul li {
+    margin: 5px 0;
+}
+.vhl-themes ul li h4 {
+    margin: 15px 0 0 0;
+}
+
+.vhl-themes ul li img {
+    float: left;
+    margin: 0 7px 0 0;
+} 
+.vhl-themes ul.double li {
+    float:left;
+    display:inline;
+    width: 50%;
+}

@@ -2,7 +2,7 @@
 
 if (function_exists('add_theme_support')) {
     add_theme_support('post-thumbnails');
-    add_image_size('vhl-themes', 60, 60, true);
+    add_image_size('vhl-themes', 50, 50, true);
 }
 
 /*** VHL Themes Widget ****************/
@@ -34,22 +34,19 @@ class VHL_Themes_Widget extends WP_Widget {
             
             echo $before_title, $col_title, $after_title;
 
-            $count = 0;
+            if ($two_columns) {
+                echo "<ul class='double'>";
+            } else {
+                echo "<ul>";
+            }
 
-            echo "<ul>";
             foreach(get_children($id) as $child) {
                 $cur_title = get_the_title($child->ID);
                 $permalink = get_permalink($child->ID);
 
-                $class = 'left';
+                print "<li>";  
                 
-                if($count % 2 != 0 and $two_columns) {
-                    $class = 'right';
-                }
-
-                print '<li>';                
-                
-                print get_the_post_thumbnail($child->ID, 'vhl-themes', array('class' => $class));
+                print get_the_post_thumbnail($child->ID, 'vhl-themes');
                 print "<h4><a href='$permalink' title='$cur_title'>$cur_title</a></h4>";
 
                 print '</li>';
@@ -60,6 +57,8 @@ class VHL_Themes_Widget extends WP_Widget {
             echo "</ul>";
 
         }
+
+        print '<div class="spacer"></div>';
     }
 
     
