@@ -293,3 +293,14 @@ Author: BIREME (DGI)
                             font-size: 90%;
                             display: inline-block;
                         }
+
+
+#portal LI A.closed {
+    background: url(images/icon_plus.gif) no-repeat scroll 0 2px;
+    padding-left: 14px;
+}
+
+#portal LI A.opened {
+    background: url(images/icon_minus.gif) no-repeat scroll 0 2px;
+    padding-left: 14px;
+}
