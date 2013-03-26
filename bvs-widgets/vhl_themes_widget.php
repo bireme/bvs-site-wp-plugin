@@ -41,16 +41,20 @@ class VHL_Themes_Widget extends WP_Widget {
             }
 
             foreach(get_children($id) as $child) {
-                $cur_title = get_the_title($child->ID);
-                $permalink = get_permalink($child->ID);
 
-                print "<li>";  
-                
-                print get_the_post_thumbnail($child->ID, 'vhl-themes');
-                print "<h4><a href='$permalink' title='$cur_title'>$cur_title</a></h4>";
+                if ($child->post_status == "publish") {
+                    
+                    $cur_title = get_the_title($child->ID);
+                    $permalink = get_permalink($child->ID);
 
-                print '</li>';
-                $count = 1;
+                    print "<li>";  
+                    
+                    print get_the_post_thumbnail($child->ID, 'vhl-themes');
+                    print "<h4><a href='$permalink' title='$cur_title'>$cur_title</a></h4>";
+
+                    print '</li>';
+                    $count = 1;
+                }
             }
 
             echo $after_widget;
