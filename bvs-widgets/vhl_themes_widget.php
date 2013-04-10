@@ -40,7 +40,7 @@ class VHL_Themes_Widget extends WP_Widget {
                 echo "<ul>";
             }
 
-            foreach(get_children($id) as $child) {
+            foreach(get_children(array('post_parent' =>$id, 'orderby' => 'menu_order', 'order' => 'ASC')) as $child) {
 
                 if ($child->post_status == "publish") {
                     
