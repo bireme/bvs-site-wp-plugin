@@ -18,6 +18,7 @@ class VHL_Themes_Widget extends WP_Widget {
         extract($args);
 
         if ( $instance['collection_id'] != '' ){
+            $post_type_name = $this->get_post_type_name();
 
             extract($instance);            
             $post_type_name = $this->get_post_type_name();
@@ -40,7 +41,7 @@ class VHL_Themes_Widget extends WP_Widget {
                 echo "<ul>";
             }
 
-            foreach(get_children(array('post_parent' =>$id, 'orderby' => 'menu_order', 'order' => 'ASC')) as $child) {
+            foreach(get_children(array('post_type' => $post_type_name, 'post_parent' =>$id, 'orderby' => 'menu_order', 'order' => 'ASC')) as $child) {
 
                 if ($child->post_status == "publish") {
                     
