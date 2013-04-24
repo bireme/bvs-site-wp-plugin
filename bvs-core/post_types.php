@@ -50,7 +50,7 @@ function create_vhl_post_type() {
             'has_archive' => true,
             'hierarchical' => true,
             'rewrite' => array('slug' => 'vhl'),
-            'menu_position' => 20,
+            'menu_position' => 16,
             'capability_type' => 'page',
         )
     );
