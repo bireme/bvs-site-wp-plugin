@@ -116,6 +116,9 @@ $site_lang = substr($current_language, 0,2);
 		}
 	?>			
 	</style>
+
+	<!-- block extrahead -->
+	<?= stripslashes( $header['extrahead'] ) ?>
 	</head>
 
 	<body <?php body_class(); ?>>

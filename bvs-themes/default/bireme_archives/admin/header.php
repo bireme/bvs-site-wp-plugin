@@ -33,3 +33,9 @@
 		</select>
 	</td>
 </tr>
+<tr>
+	<th><label for="header-extrahead">Customizações extra de CSS e Javascript</label></th>
+	<td>
+		<textarea id="header-extrahead" rows="7" cols="70" name="header[extrahead]"><?= stripslashes( $header['extrahead'] ) ?></textarea>
+	</td>
+</tr>
