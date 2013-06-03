@@ -8,11 +8,14 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
 $mlf_options = get_option('mlf_config');
-//print_r($mlf_options);
+
 $current_language = get_bloginfo('language');
 $site_lang = substr($current_language, 0,2);
+
 ?>
+
 <!DOCTYPE html>
 	<!--[if IE 7]>
 	<html class="ie ie7" <?php language_attributes(); ?>>
@@ -121,7 +124,7 @@ $site_lang = substr($current_language, 0,2);
 		<div class="header">
 			<div class="bar">
 				<div id="otherVersions">
-					<?php mlf_links_to_languages(); ?>	
+					<?php if(function_exists('mlf_links_to_languages')) { mlf_links_to_languages(); } ?>	
 				</div>
 				<div id="contact"> 
 					<span><a href="/<?php echo ( $site_lang ); ?>/contact/">Contato</a></span>
