@@ -11,8 +11,16 @@ Site Wide Only: true
 
 define('BVS_VERSION', '0.3' );
 
-define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
-define('BVS_PLUGIN_DIR',   plugin_basename( dirname(__FILE__) ) );
+define('BVS_SYMBOLIC_LINK', false );
+define('BVS_PLUGIN_DIRNAME', 'bvs-site' );
+
+if(BVS_SYMBOLIC_LINK == true) {
+    define('BVS_PLUGIN_PATH',  ABSPATH . "wp-content/plugins/" . BVS_PLUGIN_DIRNAME );
+} else {
+    define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
+}
+
+define('BVS_PLUGIN_DIR',   plugin_basename( BVS_PLUGIN_PATH ) );
 define('BVS_PLUGIN_URL',   plugin_dir_url(__FILE__) );
 
 // Load plugin files
