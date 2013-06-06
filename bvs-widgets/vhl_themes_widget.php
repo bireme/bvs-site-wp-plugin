@@ -49,8 +49,7 @@ class VHL_Themes_Widget extends WP_Widget {
 
                     print "<li>";
 
-                    print get_the_post_thumbnail($child->ID, 'vhl-themes');
-                    print "<strong><a href='$permalink' title='$cur_title'>$cur_title</a></strong>";
+                    print "<strong><a href='$permalink' title='$cur_title'>" . get_the_post_thumbnail($child->ID, 'vhl-themes') . $cur_title . "</a></strong>";
 
                     print '</li>';
                     $count = 1;
