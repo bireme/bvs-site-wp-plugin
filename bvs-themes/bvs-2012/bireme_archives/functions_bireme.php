@@ -5,6 +5,10 @@
  *
  */
  /* Load up our theme options page and related code. */
+$current_language = strtolower(get_bloginfo('language'));
+
+load_plugin_textdomain( 'vhl', false,  BVS_PLUGIN_DIR . '/languages' );
+
 if ( is_admin() ) require_once( TEMPLATEPATH . '/bireme_archives/admin_settings.php' );
 
 $settings = get_option( "wp_bvs_theme_settings" );
@@ -15,8 +19,8 @@ $footer_sidebar = $layout['footer-sidebar'];
 
 // sidebars do template
 register_sidebar( array(
-    'name' => 'Header',
-    'id' => 'header',
+    'name' => __('Header','vhl'),
+    'id' => 'header_' . $current_language,
     'description' => '',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
@@ -27,8 +31,8 @@ register_sidebar( array(
 //SideBar Auxiliar Top só aparece se ativado
 if ($top_sidebar == true){
     register_sidebar( array(
-        'name' => 'SideBar Auxiliar Top',
-        'id' => 'top_sidebar',
+        'name' => __('Top Auxiliary SideBar','vhl'),
+        'id' => 'top_sidebar_' . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -41,8 +45,8 @@ if ($top_sidebar == true){
 for($i=1; $i <= $total_columns; $i++) {
 
     register_sidebar( array(
-        'name' => 'Coluna ' . $i,
-        'id' => 'column-' . $i,
+        'name' => __('Column', 'vhl') . ' ' . $i,
+        'id' => 'column-' . $i,'_' . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -54,8 +58,8 @@ for($i=1; $i <= $total_columns; $i++) {
 //SideBar Auxiliar Footer só aparece se ativado
 if ($footer_sidebar == true){
     register_sidebar( array(
-        'name' => 'SideBar Auxiliar Footer',
-        'id' => 'footer_sidebar',
+        'name' => __('Footer Auxiliary SideBar','vhl'),
+        'id' => 'footer_sidebar_' . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -65,8 +69,8 @@ if ($footer_sidebar == true){
 }
 
 register_sidebar( array(
-    'name' => 'Footer',
-    'id' => 'footer',
+    'name' => __('Footer','vhl'),
+    'id' => 'footer_' . $current_language,
     'description' => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
@@ -75,9 +79,8 @@ register_sidebar( array(
 ) );
 
 register_sidebar( array(
-    'name' => 'Level2',
-    'id' => 'level2',
-    'description' => 'Widgets que aparecerão em segundo nível',
+    'name' => __('Level 2','vhl'),
+    'id' => 'level2_' . $current_language,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<strong class="widget-title">',
