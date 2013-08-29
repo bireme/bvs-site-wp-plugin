@@ -33,16 +33,17 @@ function create_vhl_post_type() {
         array(
        'labels' => array(
                 'name' => __('VHL Collection', 'vhl'),
-                'singular_name' => __('Item', 'vhl' ),
-                'add_new' => __('Add New Item', 'vhl'),
-                'add_new_item' => __('Add New Item', 'vhl'),
-                'edit_item' => __('Edit Item', 'vhl'),
-                'new_item' => __('Add New Item', 'vhl'),
-                'view_item' => __('View Item', 'vhl'),
-                'search_items' => __('Search Item', 'vhl'),
-                'parent_item_colon' => __('Item pai', 'vhl'), 
+                'singular_name' => __('Collection', 'vhl' ),
+                'add_new' => __('Add New', 'vhl'),
+                'add_new_item' => __('Add New Collection', 'vhl'),
+                'edit_item' => __('Edit Collection','vhl'),
+                'new_item' => __('New Collection', 'vhl'),
+                'all_items' => __('All Collections','vhl'),
+                'view_item' => __('View Collection','vhl'),
+                'search_items' => __('Search', 'vhl'),
+                'parent_item_colon' => __('Parent Collection', 'vhl'),
                 'not_found' => __('No items found', 'vhl'),
-                'not_found_in_trash' => __('No item found in trash', 'vhl'),
+                'not_found_in_trash' => __('No items found in trash', 'vhl'),
                 'menu_name' => __('VHL Collection', 'vhl'),
             ),
             'public' => true,
@@ -58,7 +59,7 @@ function create_vhl_post_type() {
 
     // register support for each custom post_type (including translation)
     foreach ( $vhl_post_type_list as $post_type_name )
-        add_post_type_support( $post_type_name,  array('title','editor','revisions','page-attributes', 'thumbnail') );
+        add_post_type_support( $post_type_name,  array('title','excerpt','editor','revisions','page-attributes', 'thumbnail', 'revisions', 'custom-fields') );
 
 }
 
@@ -67,7 +68,7 @@ function vhl_add_custom_box() {
     global $vhl_post_type_list;
 
     /* register custom_meta_box for each custom post_type (including translation)
-    foreach ( $vhl_post_type_list as $post_type_name )       
+    foreach ( $vhl_post_type_list as $post_type_name )
         add_meta_box( $post_type_name, 'Meta Search', 'vhl_metasearch_custom_box',  $post_type_name ,'normal', 'high');
     */
 
@@ -80,18 +81,18 @@ function vhl_metasearch_custom_box() {
     echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
     echo '<div class="vhl-metabox-field-group">';
     foreach ($meta_fields['metasearch'] as $field)
-        vhl_print_metafield($field);  
-    
+        vhl_print_metafield($field);
+
     echo '</div>';
 }
 
 function vhl_links_to_custom_box() {
     global $post, $meta_fields;
-    
+
     echo '<input type="hidden" name="vhl_noncename" id="vhl_noncename" value="' . wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
     echo '<div class="vhl-metabox-field-group">';
     foreach ($meta_fields['page_links_to'] as $field)
-        vhl_print_metafield($field);  
+        vhl_print_metafield($field);
 
     echo '</div>';
 }
@@ -99,16 +100,16 @@ function vhl_links_to_custom_box() {
 
 function vhl_print_metafield($field){
     global $post;
- 
+
     $field_id = $field["id"];
     $field_name = $field["name"];
     $field_type = $field["type"];
     $field_description = $field["desc"];
     $field_repeatable = $field["repeatable"];
 
-    if ($field_repeatable == true){    
+    if ($field_repeatable == true){
         $field_value = get_post_custom_values($field_id, $post->ID);
-    }else{            
+    }else{
         $field_value = get_post_meta($post->ID, $field_id, true);
     }
 
@@ -121,7 +122,7 @@ function vhl_print_metafield($field){
             echo '        <p class="howto">' . $field_description . '</p>';
             echo '    </div>';
             echo '    <div class="vhl-metabox-field-col2" id="' . $field_id .'">';
-            
+
             if ($field_repeatable == true){
                 echo '<input class="text" name="'. $field_id . '[]" id="' . $field_id . '" value="' . $field_value[0] . '">';
                 echo '<input type="button" class="addButton" value="add +"/>';
@@ -129,13 +130,13 @@ function vhl_print_metafield($field){
                     $count_item = 0;
                     foreach ($field_value as $item_value){
                             $count_item++;
-                            if ($count_item > 1 && $item_value != '') 
+                            if ($count_item > 1 && $item_value != '')
                                 echo '<input class="text" name="'. $field_id . '[]" id="' . $field_id . '" value="' . $item_value . '">';
                     }
                 }
             }else{
                 echo '<input class="text" name="'. $field_id . '" id="' . $field_id . '" value="' . $field_value . '">';
-            }            
+            }
             echo '    </div>';
             break;
         case 'textarea':
@@ -143,14 +144,14 @@ function vhl_print_metafield($field){
             echo '         <label for="' . $field_id . '">'. $field_name .'</label>';
             echo '     </div>';
 
-            echo '     <div class="vhl-metabox-field-col2">';            
+            echo '     <div class="vhl-metabox-field-col2">';
             echo '        <textarea id="' . $field_id . '" name="'. $field_id . '" rows="5">' . $field_value . '</textarea>';
             echo '     </div>';
             break;
 
         case 'checkbox':
             ?>
-            <label for="<?php echo $field_id; ?>">            
+            <label for="<?php echo $field_id; ?>">
                 <input type='checkbox' name='<?php echo $field_id;?>' id='<?php echo $field_id; ?>' value='_blank' <?php checked( '_blank', $field_value ); ?> > <?php echo $field_name; ?>
             </label>
             <?php
@@ -168,13 +169,13 @@ function vhl_print_metafield($field){
                 $file_post = get_post($attachment_id);
                 $file_name = esc_html($file_post->post_title);
             }
-        
+
             echo '<div class="simple-fields-metabox-field">';
             echo '   <div class="simple-fields-metabox-field-file"><label>' . $field_name . '</label>';
             echo '      <div class="simple-fields-metabox-field-file-col1">';
             echo '      <div class="simple-fields-metabox-field-file-selected-image">' . $file_html  . '</div>';
             echo '   </div>';
-        
+
             echo '   <div class="simple-fields-metabox-field-file-col2">';
             echo '      <input type="hidden" name="' . $field_id .'" id="'. $field_id .'" value="' . $field_value .'" />';
             echo '      <div class="simple-fields-metabox-field-file-selected-image-name">' . $file_name . '</div>';
@@ -185,29 +186,29 @@ function vhl_print_metafield($field){
             break;
 
 
-    }    
+    }
     echo '</div>';
-    
+
 }
 
 
 
-// Save the Metabox Data 
+// Save the Metabox Data
 function save_vhl_meta($post_id, $post) {
     global $post, $meta_fields;
- 
+
     // verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times
     if ( !wp_verify_nonce( $_POST['vhl_noncename'], plugin_basename(__FILE__) )) {
         return $post->ID;
     }
- 
+
     // Is the user allowed to edit the post or page?
     if ( !current_user_can( 'edit_post', $post->ID ))
         return $post->ID;
- 
+
     // OK, we're authenticated: we need to find and save the data
-    // We'll put it into an array to make it easier to loop though.    
+    // We'll put it into an array to make it easier to loop though.
     foreach ($meta_fields as $meta_fields_group){
         foreach ($meta_fields_group as $meta){
             $id = $meta['id'];
@@ -218,7 +219,7 @@ function save_vhl_meta($post_id, $post) {
     // Add values of $vhl_meta as custom fields
     foreach ($vhl_meta as $key => $value) { // Cycle through the $vhl_meta array!
         if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-        
+
         //$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
 
         // treatment for repeatable fields
@@ -227,14 +228,14 @@ function save_vhl_meta($post_id, $post) {
             $repeatable_values = get_post_custom_values($key, $post->ID);
             foreach ( $repeatable_values as $old_rep_value ){
                 delete_post_meta($post->ID, $key, $old_rep_value);
-            }    
+            }
             // add new values for meta field
             foreach ($value as $new_rep_value){
                 add_post_meta($post->ID, $key, $new_rep_value);
             }
         // treatment for single fields
-        }else{        
-            if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value            
+        }else{
+            if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
                 update_post_meta($post->ID, $key, $value);
             } else { // If the custom field doesn't have a value
                 add_post_meta($post->ID, $key, $value);
