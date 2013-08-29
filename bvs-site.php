@@ -32,10 +32,10 @@ require_once(BVS_PLUGIN_PATH . '/bvs-core/settings.php');
 
 function vhl_init() {
 
-    if (is_admin()) {        
+    if (is_admin()) {
         wp_enqueue_script('vhl-edit', BVS_PLUGIN_URL . 'js/scripts.js');
         wp_enqueue_style ('vhl-edit', BVS_PLUGIN_URL . 'css/styles.css');
-    }  
+    }
 
     new VHL_PageLinksTo;
 
@@ -49,7 +49,7 @@ function vhl_load_translation(){
 
 function vhl_add_admin_menu() {
 
-    add_submenu_page( 'options-general.php', __('VHL Site Settings', 'vhl'), __('VHL Site', 'vhl'), 'manage_options', 'vhl', 
+    add_submenu_page( 'options-general.php', __('VHL Site Settings', 'vhl'), __('VHL Site', 'vhl'), 'manage_options', 'vhl',
                       'vhl_page_admin');
 
     //call register settings function
@@ -58,13 +58,14 @@ function vhl_add_admin_menu() {
 }
 
 function vhl_register_settings(){
-    
+
     register_setting('vhl-settings-group', 'vhl_config');
 
 }
 
 function vhl_google_analytics_code(){
     $vhl_config = get_option('vhl_config');
+    if ($vhl_config['google_analytics_code'] != ''){
 ?>
 
 <script type="text/javascript">
@@ -81,6 +82,7 @@ function vhl_google_analytics_code(){
 </script>
 
 <?php
+    } //endif
 }
 
 add_action( 'init', 'vhl_load_translation' );
