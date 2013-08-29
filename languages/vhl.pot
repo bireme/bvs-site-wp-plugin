@@ -5,101 +5,96 @@ msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
 "POT-Creation-Date: 2013-08-29 15:14:50+00:00\n"
-"PO-Revision-Date: 2013-08-29 12:23-0300\n"
-"Last-Translator: Vinicius Andrade <vinicius.andrade@bireme.org>\n"
-"Language-Team: RedDes <reddes@gmail.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: bvs-core/post_types.php:35
-#: bvs-core/post_types.php:47
+#: bvs-core/post_types.php:35 bvs-core/post_types.php:47
 #: bvs-widgets/vhl_collection_widget.php:8
 msgid "VHL Collection"
-msgstr "Coleção BVS"
+msgstr ""
 
 #: bvs-core/post_types.php:36
 msgid "Collection"
-msgstr "Coleção"
+msgstr ""
 
 #: bvs-core/post_types.php:37
 msgid "Add New"
-msgstr "Adicionar Novo"
+msgstr ""
 
 #: bvs-core/post_types.php:38
 msgid "Add New Collection"
-msgstr "Adicionar Nova Coleção"
+msgstr ""
 
 #: bvs-core/post_types.php:39
 msgid "Edit Collection"
-msgstr "Editar Coleção"
+msgstr ""
 
 #: bvs-core/post_types.php:40
 msgid "New Collection"
-msgstr "Nova Coleção"
+msgstr ""
 
 #: bvs-core/post_types.php:41
 msgid "All Collections"
-msgstr "Todas Coleções"
+msgstr ""
 
 #: bvs-core/post_types.php:42
 msgid "View Collection"
-msgstr "Ver Coleção"
+msgstr ""
 
-#: bvs-core/post_types.php:43
-#: bvs-themes/bvs-classic/sidebar.php:21
-#: bvs-widgets/vhl_search_widget.php:21
-#: bvs-widgets/vhl_search_widget.php:26
+#: bvs-core/post_types.php:43 bvs-themes/bvs-classic/sidebar.php:21
+#: bvs-widgets/vhl_search_widget.php:21 bvs-widgets/vhl_search_widget.php:26
 #: bvs-widgets/vhl_search_widget.php:27
 msgid "Search"
-msgstr "Pesquisa"
+msgstr ""
 
 #: bvs-core/post_types.php:44
 msgid "Parent Collection"
-msgstr "Coleção Pai"
+msgstr ""
 
 #: bvs-core/post_types.php:45
 msgid "No items found"
-msgstr "Nenhum item encontrado"
+msgstr ""
 
 #: bvs-core/post_types.php:46
 msgid "No items found in trash"
-msgstr "Nenhum item encontrado na lixeira"
+msgstr ""
 
 #: bvs-core/settings.php:12
 msgid "VHL Site Options"
-msgstr "BVS Site Opções"
+msgstr ""
 
 #: bvs-core/settings.php:14
 msgid "Google Analytics Integration"
-msgstr "Integração com o Google Analytics"
+msgstr ""
 
 #: bvs-core/settings.php:16
 msgid "Google Analytics Code:"
-msgstr "Código Google Analytics"
+msgstr ""
 
 #: bvs-core/settings.php:19
 msgid "Save Changes"
-msgstr "Salvar Alterações"
+msgstr ""
 
 #: bvs-site.php:52
 msgid "VHL Site Settings"
-msgstr "Ajustes BVS Site"
+msgstr ""
 
 #: bvs-site.php:52
 msgid "VHL Site"
-msgstr "BVS Site"
+msgstr ""
 
 #: bvs-themes/bvs-2012/404.php:17
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr ""
 
 #: bvs-themes/bvs-2012/404.php:21
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: bvs-themes/bvs-2012/archive.php:29
@@ -138,28 +133,28 @@ msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:22
 msgid "Header"
-msgstr "Cabeçalho"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:34
 msgid "Top Auxiliary SideBar"
-msgstr "Área Auxiliar no Topo"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:48
 msgid "Column"
-msgstr "Coluna"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:61
 msgid "Footer Auxiliary SideBar"
-msgstr "Área Auxiliar no Rodapé"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:72
 #: bvs-themes/bvs-classic/functions.php:36
 msgid "Footer"
-msgstr "Rodapé"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:82
 msgid "Level 2"
-msgstr "Nível 2"
+msgstr ""
 
 #: bvs-themes/bvs-2012/category.php:21
 msgid "Category Archives: %s"
@@ -239,8 +234,7 @@ msgstr ""
 #: bvs-themes/bvs-2012/content-page.php:21
 #: bvs-themes/bvs-2012/content-quote.php:23
 #: bvs-themes/bvs-2012/content-status.php:30
-#: bvs-themes/bvs-2012/functions.php:309
-#: bvs-themes/bvs-2012/image.php:37
+#: bvs-themes/bvs-2012/functions.php:309 bvs-themes/bvs-2012/image.php:37
 msgid "Edit"
 msgstr ""
 
@@ -248,20 +242,19 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: bvs-themes/bvs-2012/content-none.php:13
-#: bvs-themes/bvs-2012/index.php:37
+#: bvs-themes/bvs-2012/content-none.php:13 bvs-themes/bvs-2012/index.php:37
 #: bvs-themes/bvs-2012/search.php:34
 msgid "Nothing Found"
 msgstr ""
 
 #: bvs-themes/bvs-2012/content-none.php:17
-msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
 msgstr ""
 
-#: bvs-themes/bvs-2012/content-page.php:18
-#: bvs-themes/bvs-2012/content.php:40
-#: bvs-themes/bvs-2012/image.php:92
-#: bvs-themes/bvs-classic/sidebar.php:13
+#: bvs-themes/bvs-2012/content-page.php:18 bvs-themes/bvs-2012/content.php:40
+#: bvs-themes/bvs-2012/image.php:92 bvs-themes/bvs-classic/sidebar.php:13
 msgid "Pages:"
 msgstr ""
 
@@ -274,7 +267,7 @@ msgid "Primary Menu"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported
-#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. 	   by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
 #: bvs-themes/bvs-2012/functions.php:120
 msgctxt "Open Sans font: on or off"
@@ -283,7 +276,7 @@ msgstr ""
 
 #. translators: To add an additional Open Sans character subset specific to
 #. your language, translate
-#. this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your
+#. 		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your
 #. own language.
 #: bvs-themes/bvs-2012/functions.php:125
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
@@ -332,8 +325,7 @@ msgid "Reply"
 msgstr ""
 
 #. Translators: used between list items, there is a space after the comma.
-#: bvs-themes/bvs-2012/functions.php:332
-#: bvs-themes/bvs-2012/functions.php:335
+#: bvs-themes/bvs-2012/functions.php:332 bvs-themes/bvs-2012/functions.php:335
 msgid ", "
 msgstr ""
 
@@ -344,11 +336,15 @@ msgstr ""
 #. Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's
 #. name.
 #: bvs-themes/bvs-2012/functions.php:352
-msgid "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
 msgstr ""
 
 #: bvs-themes/bvs-2012/functions.php:354
-msgid "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
 msgstr ""
 
 #: bvs-themes/bvs-2012/functions.php:356
@@ -356,7 +352,12 @@ msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 
 #: bvs-themes/bvs-2012/image.php:26
-msgid "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>."
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></"
+"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
+"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
+"a>."
 msgstr ""
 
 #: bvs-themes/bvs-2012/image.php:41
@@ -368,7 +369,9 @@ msgid "Next &rarr;"
 msgstr ""
 
 #: bvs-themes/bvs-2012/index.php:41
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
 msgstr ""
 
 #: bvs-themes/bvs-2012/search.php:18
@@ -376,7 +379,9 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: bvs-themes/bvs-2012/search.php:38
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: bvs-themes/bvs-2012/tag.php:21
@@ -393,11 +398,15 @@ msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:31
 #: bvs-themes/bvs-classic/comments.php:35
-msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgid ""
+"<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on "
+"this post."
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:34
-msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is:"
+msgid ""
+"The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this "
+"entry is:"
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:52
@@ -433,7 +442,9 @@ msgid "Leave a comment"
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:63
-msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgid ""
+"Line and paragraph breaks automatic, e-mail address never displayed, "
+"<acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:67
@@ -482,12 +493,15 @@ msgid "Close this window."
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:115
-msgid "<cite>Powered by <a href=\"http://wordpress.org\" title=\"%s\"><strong>WordPress</strong></a></cite>"
+msgid ""
+"<cite>Powered by <a href=\"http://wordpress.org\" title=\"%s"
+"\"><strong>WordPress</strong></a></cite>"
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments-popup.php:115
 #: bvs-themes/bvs-classic/sidebar.php:38
-msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgid ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
 #: bvs-themes/bvs-classic/comments.php:8
@@ -506,8 +520,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: bvs-themes/bvs-classic/comments.php:24
-#: bvs-themes/bvs-classic/index.php:16
+#: bvs-themes/bvs-classic/comments.php:24 bvs-themes/bvs-classic/index.php:16
 msgid "Edit This"
 msgstr ""
 
@@ -542,15 +555,15 @@ msgstr ""
 
 #: bvs-themes/bvs-classic/functions.php:12
 msgid "Column 1"
-msgstr "Coluna 1"
+msgstr ""
 
 #: bvs-themes/bvs-classic/functions.php:20
 msgid "Column 2"
-msgstr "Coluna 2"
+msgstr ""
 
 #: bvs-themes/bvs-classic/functions.php:28
 msgid "Column 3"
-msgstr "Coluna 3"
+msgstr ""
 
 #: bvs-themes/bvs-classic/index.php:16
 msgid "Filed under:"
@@ -560,38 +573,31 @@ msgstr ""
 msgid "Tags: "
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:19
-#: bvs-themes/bvs-classic/single.php:17
+#: bvs-themes/bvs-classic/index.php:19 bvs-themes/bvs-classic/single.php:17
 msgid "(more...)"
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:24
-#: bvs-themes/bvs-classic/single.php:33
+#: bvs-themes/bvs-classic/index.php:24 bvs-themes/bvs-classic/single.php:33
 msgid "Comments (0)"
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:24
-#: bvs-themes/bvs-classic/single.php:33
+#: bvs-themes/bvs-classic/index.php:24 bvs-themes/bvs-classic/single.php:33
 msgid "Comments (1)"
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:24
-#: bvs-themes/bvs-classic/single.php:33
+#: bvs-themes/bvs-classic/index.php:24 bvs-themes/bvs-classic/single.php:33
 msgid "Comments (%)"
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:32
-#: bvs-themes/bvs-classic/single.php:38
+#: bvs-themes/bvs-classic/index.php:32 bvs-themes/bvs-classic/single.php:38
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:35
-#: bvs-themes/bvs-classic/single.php:46
+#: bvs-themes/bvs-classic/index.php:35 bvs-themes/bvs-classic/single.php:46
 msgid "&laquo; Newer Posts"
 msgstr ""
 
-#: bvs-themes/bvs-classic/index.php:35
-#: bvs-themes/bvs-classic/single.php:46
+#: bvs-themes/bvs-classic/index.php:35 bvs-themes/bvs-classic/single.php:46
 msgid "Older Posts &raquo;"
 msgstr ""
 
@@ -637,82 +643,81 @@ msgstr ""
 
 #: bvs-widgets/vhl_certification_widget.php:9
 msgid "Adds a VHL certification on your site"
-msgstr "Adiciona o Certificado BVS no seu site"
+msgstr ""
 
 #: bvs-widgets/vhl_certification_widget.php:10
 msgid "VHL Certification"
-msgstr "Certificado BVS"
+msgstr ""
 
 #: bvs-widgets/vhl_certification_widget.php:43
 #: bvs-widgets/vhl_collection_widget.php:82
-#: bvs-widgets/vhl_network_widget.php:53
-#: bvs-widgets/vhl_search_widget.php:47
+#: bvs-widgets/vhl_network_widget.php:53 bvs-widgets/vhl_search_widget.php:47
 msgid "Title:"
-msgstr "Título:"
+msgstr ""
 
 #: bvs-widgets/vhl_certification_widget.php:50
 #: bvs-widgets/vhl_network_widget.php:59
 msgid "Parameters:"
-msgstr "Parâmetros:"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:7
 msgid "Adds a VHL collection on your site"
-msgstr "Adiciona uma Coleção BVS no site"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:88
 #: bvs-widgets/vhl_themes_widget.php:92
 msgid "Collection:"
-msgstr "Coleção:"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:91
 #: bvs-widgets/vhl_themes_widget.php:95
 msgid "Select a collection"
-msgstr "Seleciona a coleção"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:110
 #: bvs-widgets/vhl_themes_widget.php:114
 msgid "Show link to collection page"
-msgstr "Mostrar link para a página da coleção"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:115
 msgid "Number of levels to display:"
-msgstr "Número de níveis para mostrar"
+msgstr ""
 
 #: bvs-widgets/vhl_collection_widget.php:121
 msgid "Number of columns:"
-msgstr "Número de colunas:"
+msgstr ""
 
 #: bvs-widgets/vhl_network_widget.php:10
 msgid "Adds a VHL network on your site"
-msgstr "Adiciona a Rede BVS no seu site"
+msgstr ""
 
 #: bvs-widgets/vhl_network_widget.php:11
 msgid "VHL Network"
-msgstr "Rede BVS"
+msgstr ""
 
 #: bvs-widgets/vhl_search_widget.php:7
 msgid "Adds a VHL search on your site"
-msgstr "Adiciona a Pesquisa BVS no seu site"
+msgstr ""
 
 #: bvs-widgets/vhl_search_widget.php:8
 msgid "VHL Search"
-msgstr "Pesquisa BVS"
+msgstr ""
 
 #: bvs-widgets/vhl_search_widget.php:53
 msgid "Search URL:"
-msgstr "Link da Pesquisa"
+msgstr ""
 
 #: bvs-widgets/vhl_themes_widget.php:12
 msgid "Adds a VHL theme on your site"
-msgstr "Adiciona um Tema BVS no seu site"
+msgstr ""
 
 #: bvs-widgets/vhl_themes_widget.php:13
 msgid "VHL Themes"
-msgstr "Temas BVS"
+msgstr ""
 
 #: bvs-widgets/vhl_themes_widget.php:119
 msgid "Display in two columns?"
-msgstr "Mostrar em duas colunas?"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "BVS Site"
@@ -733,4 +738,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://reddes.bvsalud.org/"
 msgstr ""
-
