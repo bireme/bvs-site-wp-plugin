@@ -12,29 +12,29 @@
 	</td>
 </tr>
 <tr>
-	<th><label for="header[language]">Exibe Título no Banner?</label></th>
+	<th><label for="header[language]"><?php echo __('Display title on banner?','vhl');?></label></th>
 	<td>
 		<input id="header[title_view]" name="header[title_view]" type="checkbox" class="" value="true" <?php if($header['title_view'] == 'true') { echo "checked"; } ?> ></br>
 	</td>
 </tr>
 
 <tr>
-	<th><label for="header[language]">Exibe Idiomas disponíveis?</label></th>
+	<th><label for="header[language]"><?php echo __('Display available languages?','vhl');?></label></th>
 	<td>
 		<input id="header[language]" name="header[language]" type="checkbox" class="" value="true" <?php if($header['language'] == 'true') { echo "checked"; } ?> ></br>
 	</td>
 </tr>
 <tr>
-	<th><label for="header-language-position">Posição da Barra de Idiomas</label></th>
+	<th><label for="header-language-position"><?php echo __('Language bar position','vhl');?></label></th>
 	<td>
 		<select class="header-language-position" id="language-position" name="header[language-position]">
-			<option <?php if($header['language-position'] == "1") echo "selected='selected'"; ?> value="1">Acima</option>
-			<option <?php if($header['language-position'] == "2") echo "selected='selected'"; ?> value="2">Abaixo</option>
+			<option <?php if($header['language-position'] == "1") echo "selected='selected'"; ?> value="1"><?php echo __('Top','vhl');?></option>
+			<option <?php if($header['language-position'] == "2") echo "selected='selected'"; ?> value="2"><?php echo __('Bottom','vhl');?></option>
 		</select>
 	</td>
 </tr>
 <tr>
-	<th><label for="header-extrahead">Customizações extra de CSS e Javascript</label></th>
+	<th><label for="header-extrahead"><?php echo __('Custom CSS and Javascript','vhl');?></label></th>
 	<td>
 		<textarea id="header-extrahead" rows="7" cols="70" name="header[extrahead]"><?= stripslashes( $header['extrahead'] ) ?></textarea>
 	</td>

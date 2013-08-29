@@ -1,67 +1,67 @@
 <?php
 
 /**
- * color dict com os labels, para poder formar dinamicamente as cores 
+ * color dict com os labels, para poder formar dinamicamente as cores
  */
 
 $color_dict = array(
 
-	'general' => "Cores Gerais",
-	'header' => "Cores do Cabeçalho",
-	'first' => "Cores da Primeira Coluna",
-	'second' => "Cores da Segunda Coluna",
-	'third' => "Cores da Terceira Coluna",
-	'footer' => "Cores do Rodapé",
+	'general' => __("General Colors",'vhl'),
+	'header' => __("Header Colors",'vhl'),
+	'first' => __("First Column Colors",'vhl'),
+	'second' => __("Second Column Colors",'vhl'),
+	'third' => __("Third Column Colors",'vhl'),
+	'footer' => __("Footer Colors",'vhl'),
 
-	"general-background" => "Background",
-	"general-container" => "Container Background",
-	"general-text" => "Texto",
-	"general-title-first" => "Título de Primeiro Nível",
-	"general-title-second" => "Título de Segundo Nível",
-	"general-title-third" => "Título de Terceiro Nível",
-	"general-link-visited" => "Link visitado",
-	"general-link-active" => "Link Ativo",
-	
-	"header-background" => "Background",
-	"header-text" => "Texto",
-	"header-title-first" => "Título do Site",
-	"header-title-second" => "Título da segunda coluna",
-	"header-title-third" => "Título da terceira coluna",
-	"header-link-visited" => "Link visitado",
-	"header-link-active" => "Link Ativo",
-	
-	"first-background" => "Background",
-	"first-text" => "Texto",
-	"first-title-first" => "Título da primeira coluna",
-	"first-title-second" => "Título da segunda coluna",
-	"first-title-third" => "Título da terceira coluna",
-	"first-link-visited" => "Link visitado",
-	"first-link-active" => "Link Ativo",
-	
-	"second-background" => "Background",
-	"second-text" => "Texto",
-	"second-title-first" => "Título da primeira coluna",
-	"second-title-second" => "Título da segunda coluna",
-	"second-title-third" => "Título da terceira coluna",
-	"second-link-visited" => "Link visitado",
-	"second-link-active" => "Link Ativo",
-	
-	"third-background" => "Background",
-	"third-text" => "Texto",
-	"third-title-first" => "Título Primário",
-	"third-title-second" => "Título da segunda coluna",
-	"third-title-third" => "Título da terceira coluna",
-	"third-link-visited" => "Link visitado",
-	"third-link-active" => "Link Ativo",
-	
-	"footer-background" => "Background",
-	"footer-text" => "Texto",
-	"footer-title-first" => "Título da primeira coluna",
-	"footer-title-second" => "Título da segunda coluna",
-	"footer-title-third" => "Título da terceira coluna",
-	"footer-link-visited" => "Link visitado",
-	"footer-link-active" => "Link Ativo",
-		
+	"general-background" => __("Background",'vhl'),
+	"general-container" => __("Container background",'vhl'),
+	"general-text" => __("Text",'vhl'),
+	"general-title-first" => __("First level title",'vhl'),
+	"general-title-second" => __("Second level title",'vhl'),
+	"general-title-third" => __("Third level title",'vhl'),
+	"general-link-visited" => __("Visited link",'vhl'),
+	"general-link-active" => __("Active link",'vhl'),
+
+	"header-background" => __("Background",'vhl'),
+	"header-text" => __("Text",'vhl'),
+	"header-title-first" => __("Site title",'vhl'),
+	"header-title-second" => __("Second column title",'vhl'),
+	"header-title-third" => __("Third column title",'vhl'),
+	"header-link-visited" => __("Visited link",'vhl'),
+	"header-link-active" => __("Active link",'vhl'),
+
+	"first-background" => __("Background",'vhl'),
+	"first-text" => __("Text",'vhl'),
+	"first-title-first" => __("First column title",'vhl'),
+	"first-title-second" => __("Second column title",'vhl'),
+	"first-title-third" => __("Third column title",'vhl'),
+	"first-link-visited" => __("Visited link",'vhl'),
+	"first-link-active" => __("Active link",'vhl'),
+
+	"second-background" => __("Background",'vhl'),
+	"second-text" => __("Text",'vhl'),
+	"second-title-first" => __("First column title",'vhl'),
+	"second-title-second" => __("Second column title",'vhl'),
+	"second-title-third" => __("Third column title",'vhl'),
+	"second-link-visited" => __("Visited link",'vhl'),
+	"second-link-active" => __("Active link",'vhl'),
+
+	"third-background" => __("Background",'vhl'),
+	"third-text" => __("Text",'vhl'),
+	"third-title-first" => __("First column title",'vhl'),
+	"third-title-second" => __("Second column title",'vhl'),
+	"third-title-third" => __("Third column title",'vhl'),
+	"third-link-visited" => __("Visited link",'vhl'),
+	"third-link-active" => __("Active link",'vhl'),
+
+	"footer-background" => __("Background",'vhl'),
+	"footer-text" => __("Text",'vhl'),
+	"footer-title-first" => __("First column title",'vhl'),
+	"footer-title-second" => __("Second column title",'vhl'),
+	"footer-title-third" => __("Third column title",'vhl'),
+	"footer-link-visited" => __("Visited link",'vhl'),
+	"footer-link-active" => __("Active link",'vhl'),
+
 );
 
 ?>

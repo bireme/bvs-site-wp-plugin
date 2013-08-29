@@ -1,8 +1,8 @@
 <?php
 /**
- * Settings Theme Page 
+ * Settings Theme Page
  */
- 
+
 require_once(dirname(__FILE__) . "/default.php");
 
 add_action( 'init', 'wp_bvs_admin_init' );
@@ -13,19 +13,19 @@ function wp_bvs_admin_init() {
 	if ( empty( $settings ) ) {
 		$settings = $default_settings;
 		add_option( "wp_bvs_theme_settings", $settings, '', 'yes' );
-	}	
+	}
 }
 
 function wp_bvs_settings_page_init() {
 	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css' );
-	$settings_page = add_theme_page( $theme_data['Name']. ' Theme Settings', 'Theme Settings', 'edit_theme_options', 'theme-settings', 'wp_bvs_settings_page' );
+	$settings_page = add_theme_page( __('Theme Options','vhl'), __('Theme Options', 'vhl'), 'edit_theme_options', 'theme-settings', 'wp_bvs_settings_page' );
 	add_action( "load-{$settings_page}", 'wp_bvs_load_settings_page' );
 }
 
 function wp_bvs_load_settings_page() {
-	
+
 	if ( $_POST["wp_bvs-settings-submit"] == 'Y' ) {
-		check_admin_referer( "wp_bvs-settings-page" );		
+		check_admin_referer( "wp_bvs-settings-page" );
 		wp_bvs_save_theme_settings();
 		$url_parameters = isset($_GET['tab'])? 'updated=true&tab='.$_GET['tab'] : 'updated=true';
 		wp_redirect(admin_url('themes.php?page=theme-settings&'.$url_parameters));
@@ -34,42 +34,42 @@ function wp_bvs_load_settings_page() {
 }
 
 function wp_bvs_save_theme_settings() {
-	
+
 	global $pagenow;
 	$settings = get_option("wp_bvs_theme_settings");
-	
-	if ($pagenow == 'themes.php' && $_GET['page'] == 'theme-settings'){ 
-		
+
+	if ($pagenow == 'themes.php' && $_GET['page'] == 'theme-settings'){
+
 		if ( isset ( $_GET['tab'] ) )
-	        $tab = $_GET['tab']; 
+	        $tab = $_GET['tab'];
 	    else
 			$tab = "layout";
-	        
 
-	    switch ( $tab ){ 
-				        
-			case 'header' : 
+
+	    switch ( $tab ){
+
+			case 'header' :
 				$settings['header']  = $_POST['header'];
 			break;
-			
-			case 'colors' : 
+
+			case 'colors' :
 				if(!empty($_POST['colors']['pallete'])) {
 					$pallete = $_POST['colors']['pallete'];
-					
+
 					include(TEMPLATEPATH . "/bireme_archives/color_pallete/" . $pallete . ".php");
 					$settings['colors'] = $colors;
-					
+
 				} else {
 						$settings['colors']  = $_POST['colors'];
 				}
 			break;
-			
+
 			case 'layout' :
 				$settings['layout'] = $_POST['layout'];
-			break; 				
+			break;
 	    }
-	} 
-	
+	}
+
 	if( !current_user_can( 'unfiltered_html' ) ){
 		if ( $settings['wp_bvs_ga']  )
 			$settings['wp_bvs_ga'] = stripslashes( esc_textarea( wp_filter_post_kses( $settings['wp_bvs_ga'] ) ) );
@@ -83,16 +83,16 @@ function wp_bvs_save_theme_settings() {
 	$updated = update_option( "wp_bvs_theme_settings", $settings );
 }
 
-function wp_bvs_admin_tabs( $current = 'layout' ) { 
+function wp_bvs_admin_tabs( $current = 'layout' ) {
 
-    $tabs = array('header' => 'Header', 'colors' => 'Colors', 'layout' => 'Layout' ); 
+    $tabs = array('header' => __('Header','vhl'), 'colors' => __('Colors','vhl'), 'layout' => __('Layout','vhl') );
     $links = array();
     echo '<div id="icon-themes" class="icon32"><br></div>';
     echo '<h2 class="nav-tab-wrapper">';
     foreach( $tabs as $tab => $name ){
         $class = ( $tab == $current ) ? ' nav-tab-active' : '';
         echo "<a class='nav-tab$class' href='?page=theme-settings&tab=$tab'>$name</a>";
-        
+
     }
     echo '</h2>';
 }
@@ -102,42 +102,42 @@ function wp_bvs_settings_page() {
 	$settings = get_option( "wp_bvs_theme_settings" );
 	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css' );
 	?>
-	
+
 	<div class="wrap">
-		<h2><?php echo $theme_data['Name']; ?> Theme Settings</h2>
-		
+		<h2><?php echo __('Theme Options','vhl'); ?></h2>
+
 		<?php
-			if ( 'true' == esc_attr( $_GET['updated'] ) ) echo '<div class="updated" ><p>Theme Settings updated.</p></div>';
-			
+			if ( 'true' == esc_attr( $_GET['updated'] ) ) echo '<div class="updated" ><p>' . __('Theme options updated','vhl') . '</p></div>';
+
 			if ( isset ( $_GET['tab'] ) ) wp_bvs_admin_tabs($_GET['tab']); else wp_bvs_admin_tabs('layout');
 		?>
 
 		<div id="poststuff">
 			<form method="post" action="<?php admin_url( 'themes.php?page=theme-settings' ); ?>">
 				<?php
-				wp_nonce_field( "wp_bvs-settings-page" ); 
-				
-				if ( $pagenow == 'themes.php' && $_GET['page'] == 'theme-settings' ){ 
-				
-					if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab']; 
-					else $tab = 'homepage'; 
-					
+				wp_nonce_field( "wp_bvs-settings-page" );
+
+				if ( $pagenow == 'themes.php' && $_GET['page'] == 'theme-settings' ){
+
+					if ( isset ( $_GET['tab'] ) ) $tab = $_GET['tab'];
+					else $tab = 'homepage';
+
 					echo '<table class="form-table">';
 					switch ( $tab ){
 						case 'header' : include(TEMPLATEPATH . "/bireme_archives/admin/header.php"); break;
 						case 'colors' : include(TEMPLATEPATH . "/bireme_archives/admin/colors.php"); break;
 						case 'layout': default: include(TEMPLATEPATH . "/bireme_archives/admin/layout.php"); break;
-							
+
 					}
 					echo '</table>';
 				}
 				?>
 				<p class="submit" style="clear: both;">
-					<input type="submit" name="Submit"  class="button-primary" value="Update Settings" />
+					<input type="submit" name="Submit"  class="button-primary" value="<?php echo __('Update'); ?>" />
 					<input type="hidden" name="wp_bvs-settings-submit" value="Y" />
 				</p>
 			</form>
-			
+
 		</div>
 
 	</div>

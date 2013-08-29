@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2013-08-29 15:14:50+00:00\n"
-"PO-Revision-Date: 2013-08-29 12:23-0300\n"
+"POT-Creation-Date: 2013-08-29 19:59:03+00:00\n"
+"PO-Revision-Date: 2013-08-29 17:06-0300\n"
 "Last-Translator: Vinicius Andrade <vinicius.andrade@bireme.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: \n"
@@ -86,11 +86,11 @@ msgstr "Código Google Analytics"
 msgid "Save Changes"
 msgstr "Salvar Alterações"
 
-#: bvs-site.php:52
+#: bvs-site.php:51
 msgid "VHL Site Settings"
 msgstr "Ajustes BVS Site"
 
-#: bvs-site.php:52
+#: bvs-site.php:51
 msgid "VHL Site"
 msgstr "BVS Site"
 
@@ -136,9 +136,210 @@ msgstr ""
 msgid "About %s"
 msgstr ""
 
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:15
+msgid "Display title on banner?"
+msgstr "Mostrar título no banner?"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:22
+msgid "Display available languages?"
+msgstr "Mostrar idiomas disponíveis?"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:28
+msgid "Language bar position"
+msgstr "Posição da barra de idiomas"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:31
+msgid "Top"
+msgstr "Topo"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:32
+msgid "Bottom"
+msgstr "Abaixo"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/header.php:37
+msgid "Custom CSS and Javascript"
+msgstr "CSS e Javascript customizados"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:29
+msgid "Theme Background"
+msgstr "Fundo do Tema"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:33
+msgid "Background image"
+msgstr "Imagem de fundo"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:41
+msgid "Site Columns"
+msgstr "Colunas do Site"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:45
+msgid "Columns"
+msgstr "Colunas"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:48
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:49
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:50
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:51
+msgid "column"
+msgstr "coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:58
+msgid "Column Width"
+msgstr "Largura das Colunas"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:62
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:66
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:70
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:74
+msgid "Width of column"
+msgstr "Largura da coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:63
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:67
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:71
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:75
+msgid "ou"
+msgstr "ou"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:79
+msgid "Auxiliary SideBars"
+msgstr "Áreas Auxiliares"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:84
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:88
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:22
 msgid "Header"
 msgstr "Cabeçalho"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
+#: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:72
+#: bvs-themes/bvs-classic/functions.php:36
+msgid "Footer"
+msgstr "Rodapé"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:9
+msgid "General Colors"
+msgstr "Cores Gerais"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:10
+msgid "Header Colors"
+msgstr "Cores do Cabeçalho"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:11
+msgid "First Column Colors"
+msgstr "Cores da Primeira Coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:12
+msgid "Second Column Colors"
+msgstr "Cores da Segunda Coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:13
+msgid "Third Column Colors"
+msgstr "Cores da Terceira Coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:14
+msgid "Footer Colors"
+msgstr "Cores do Rodapé"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:16
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:25
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:33
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:41
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:49
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:57
+msgid "Background"
+msgstr "Fundo"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:17
+msgid "Container background"
+msgstr "Fundo container"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:18
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:26
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:34
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:42
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:50
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:58
+msgid "Text"
+msgstr "Texto"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:19
+msgid "First level title"
+msgstr "Título primeiro nível"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:20
+msgid "Second level title"
+msgstr "Título segundo nível"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:21
+msgid "Third level title"
+msgstr "Título terceira nível"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:22
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:30
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:38
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:46
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:54
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:62
+msgid "Visited link"
+msgstr "Link visitado"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:23
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:31
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:39
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:47
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:55
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:63
+msgid "Active link"
+msgstr "Link ativo"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:27
+msgid "Site title"
+msgstr "Título do Site"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:28
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:36
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:44
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:52
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:60
+msgid "Second column title"
+msgstr "Título segunda coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:29
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:37
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:45
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:53
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:61
+msgid "Third column title"
+msgstr "Título terceira coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:35
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:43
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:51
+#: bvs-themes/bvs-2012/bireme_archives/admin/structure.php:59
+msgid "First column title"
+msgstr "Título primeira coluna"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:21
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:107
+msgid "Theme Options"
+msgstr "Opções do Tema"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:88
+msgid "Colors"
+msgstr "Cores"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:88
+msgid "Layout"
+msgstr "Disposição"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:110
+msgid "Theme options updated"
+msgstr "Opções do tema atualizadas"
+
+#: bvs-themes/bvs-2012/bireme_archives/admin_settings.php:136
+msgid "Update"
+msgstr ""
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:34
 msgid "Top Auxiliary SideBar"
@@ -151,11 +352,6 @@ msgstr "Coluna"
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:61
 msgid "Footer Auxiliary SideBar"
 msgstr "Área Auxiliar no Rodapé"
-
-#: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:72
-#: bvs-themes/bvs-classic/functions.php:36
-msgid "Footer"
-msgstr "Rodapé"
 
 #: bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:82
 msgid "Level 2"
@@ -263,7 +459,7 @@ msgstr ""
 #: bvs-themes/bvs-2012/image.php:92
 #: bvs-themes/bvs-classic/sidebar.php:13
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"
 
 #: bvs-themes/bvs-2012/content.php:14
 msgid "Featured post"
