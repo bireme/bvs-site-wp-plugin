@@ -49,7 +49,11 @@ $site_lang = substr($current_language, 0,2);
 
 	<!-- block extrahead -->
 	<?= stripslashes( $header['extrahead'] ) ?>
-	
+
+	<!-- block extra files -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/network.js"></script>
+
 	</head>
 
 	<body <?php body_class(); ?>>
