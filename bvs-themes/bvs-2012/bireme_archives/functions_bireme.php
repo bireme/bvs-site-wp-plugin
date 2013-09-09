@@ -101,4 +101,6 @@ $custom_include_file = TEMPLATEPATH . '/bireme_archives/custom/include.php';
 if(file_exists($custom_include_file)) {
     require_once($custom_include_file);
 }
+
+add_filter('widget_text', 'do_shortcode');
 ?>
