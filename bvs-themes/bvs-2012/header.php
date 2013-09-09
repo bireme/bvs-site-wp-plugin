@@ -65,18 +65,18 @@ $site_lang = substr($current_language, 0,2);
 					<?php if(function_exists('mlf_links_to_languages')) { mlf_links_to_languages(); } ?>	
 				</div>
 				<div id="contact"> 
-					<span><a href="/<?php echo ( $site_lang ); ?>/contact/">Contato</a></span>
+					<span><a href="<?php echo $contactPage;?>">Contato</a></span>
 				</div>
 			</div>
 	        <div class="top top_<?php echo ($current_language);?>">
 	            <div id="parent">
-	            	<a href="http://regional.bvsalud.org/php/index.php?lang=<?php echo ( $site_lang ) ?>" alt="Portal Regional da BVS">
+	            	<a href="<?php echo $linkLogo;?>" title="Portal Regional da BVS"> 
 		                <img src="<?php echo $logo;?>" alt="BVS LOGO"/>
 	        		</a>
 	            </div>
 	           	<?php if ($title == true) {	?>
 		            <div class="site_name">
-						<h1><a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" href="<?php echo esc_url( home_url( '/'.( $site_lang ) ) ); ?>"><span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span></a></h1>            
+						<h1><a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" href="<?php echo $bannerLink;?>"><span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span></a></h1>
 		            </div>
 				<?php } ?>
 				<div class="headerWidget">
