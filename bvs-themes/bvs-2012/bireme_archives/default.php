@@ -4,8 +4,11 @@ $default_settings = array(
 
 	'header' => array(
 		'logo' => "",
+		'linkLogo' => "",
 		'banner' => "",
+		'bannerLink' => "",
 		'language' => "",
+		'contactPage' => "",
 	),
 	
 	'layout' => array(

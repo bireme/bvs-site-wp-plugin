@@ -7,6 +7,9 @@
     $languages = $header['language'];//$settings['header'][language];
     $title = $header['title_view'];//$settings['header'][title_view];
     $logo = $header['logo'];//$settings['header']['logo'];
+    $linkLogo = $header['linkLogo'];
+    $bannerLink = $header['bannerLink'];
+    $contactPage = $header['contactPage'];
     $general_background = $colors['general-background'];//$settings['colors']['general-background'];
     $general_container = $colors['general-container'];//$settings['colors']['general-container'];
     $general_title_first = $colors['general-title-first'];//$settings['colors']['general-title-first'];

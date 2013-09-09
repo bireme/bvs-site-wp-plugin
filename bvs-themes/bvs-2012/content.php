@@ -18,6 +18,7 @@
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<?php the_excerpt(); ?>
 			<?php else : ?>
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -30,6 +31,42 @@
 			<?php endif; // comments_open() ?>
 		</header><!-- .entry-header -->
 
+		<!-- displays child items -->
+		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+	        <div class="storycontent">
+	            <?php the_content(__('(more...)')); ?>            
+	        </div>
+			<div class="childPages">
+				<ul>
+				<?php
+					global $id;
+					$post_type = get_post_type( $id );
+					$args=array(
+					  'post_type' => $post_type,
+					  'post_status' => 'publish',
+					  'posts_per_page' => -1,
+					  'caller_get_posts' => 1,
+					  'post_parent' => $id,
+					  'orderby' => 'title',
+					  'order' => 'ASC',
+					);
+					$my_query = null;
+					$my_query = new WP_Query($args);
+					if( $my_query->have_posts() ) {
+					  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+					    <?php
+					    the_excerpt(); ?>
+
+					    </li>
+					    <?
+					  endwhile;
+					}
+					wp_reset_query();  // Restore global post data stomped by the_post().
+				?>
+				</ul>
+			</div>
+	    </div>
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
