@@ -18,7 +18,12 @@
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php the_excerpt(); ?>
+			<?php
+                            if(the_excerpt())
+                                the_excerpt();
+                            else
+                                get_the_content();
+                        ?>
 			<?php else : ?>
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -55,8 +60,8 @@
 					if( $my_query->have_posts() ) {
 					  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-					    <?php
-					    the_excerpt(); ?>
+
+					    <?php the_excerpt(); ?>
 
 					    </li>
 					    <?
