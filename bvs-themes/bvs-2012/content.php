@@ -17,12 +17,9 @@
 		<header class="entry-header">
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h1 class="entry-title"><?php the_title(); ?></h1><br />
 			<?php
-                            if(the_excerpt())
-                                the_excerpt();
-                            else
-                                get_the_content();
+                            the_content();
                         ?>
 			<?php else : ?>
 			<h1 class="entry-title">
@@ -39,12 +36,13 @@
 		<!-- displays child items -->
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 	        <div class="storycontent">
-	            <?php the_content(__('(more...)')); ?>            
+	            <?php //the_content(__('(more...)')); ?>            
 	        </div>
 			<div class="childPages">
 				<ul>
 				<?php
 					global $id;
+					global $post;
 					$post_type = get_post_type( $id );
 					$args=array(
 					  'post_type' => $post_type,
@@ -61,7 +59,7 @@
 					  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 
-					    <?php the_excerpt(); ?>
+					    <?php echo "<p>" . $post->post_excerpt . "</p>"; // echo get_post($post->ID)->post_excerpt; ?>
 
 					    </li>
 					    <?
@@ -78,8 +76,8 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
+			<?php //the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
+			<?php //wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 
