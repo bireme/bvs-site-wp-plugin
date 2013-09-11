@@ -53,7 +53,6 @@ $site_lang = substr($current_language, 0,2);
 	<!-- block extra files -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/network.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.carouFredSel-6.1.0.js"></script>
 
 	</head>
 

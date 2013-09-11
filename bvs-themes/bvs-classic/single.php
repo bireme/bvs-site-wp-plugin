@@ -17,8 +17,6 @@ get_header();
             <?php the_content(__('(more...)')); ?>            
         </div>
 		<div class="childPages">
-
-
 			<ul>                
 			  <?php
 				 global $id;
@@ -26,8 +24,7 @@ get_header();
 				 wp_list_pages("post_type=" . $post_type. "&title_li=&child_of=" . $id);
 			  ?>
 			</ul>
-		</div>
-        
+		</div> 
         <!--div class="feedback">
             <?php wp_link_pages(); ?>
             <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?>
