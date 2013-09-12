@@ -60,7 +60,6 @@ class VHL_Themes_Widget extends WP_Widget {
             echo $after_widget;
             echo "</ul>";
         }
-	//print '<div class="spacer"></div>';
     }
 
     function update($new_instance, $old_instance) {
