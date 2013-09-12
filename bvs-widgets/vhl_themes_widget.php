@@ -61,7 +61,7 @@ class VHL_Themes_Widget extends WP_Widget {
 
         }
 
-        print '<div class="spacer"></div>';
+        print '<div class="spacer" style="margin-bottom: 20px"></div>';
     }
 
 

@@ -41,7 +41,8 @@ class VHL_Collection_Widget extends WP_Widget {
 
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
                 echo '<div class="vhl_collection_thumb">';
-                echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
+                //echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
+		echo "<a href='" . get_permalink($instance['collection_id']) . "' title='$col_title'>" . get_the_post_thumbnail($instance['collection_id'], 'thumbnail') . "</a>";
                 echo '</div>';
             }
             echo '<ul>';

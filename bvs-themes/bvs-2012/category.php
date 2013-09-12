@@ -33,8 +33,14 @@ get_header(); ?>
 				 * this in a child theme then include a file called called content-___.php
 				 * (where ___ is the post format) and that will be used instead.
 				 */
-				get_template_part( 'content', get_post_format() );
-
+				//get_template_part( 'content', get_post_format() );
+			?>
+				<header class="entry-header">
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<?php the_excerpt(); ?>
+				</header>
+				<hr />
+			<?php
 			endwhile;
 
 			twentytwelve_content_nav( 'nav-below' );

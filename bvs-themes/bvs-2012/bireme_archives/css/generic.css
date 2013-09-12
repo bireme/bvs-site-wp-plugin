@@ -195,3 +195,5 @@ strong {
 .vhl_collection .childPages li p {
 	line-height: 150%;
 }
+.category .entry-header p { margin: 20px; }
+.category .entry-title, .category .archive-title { margin-left: 10px; }
