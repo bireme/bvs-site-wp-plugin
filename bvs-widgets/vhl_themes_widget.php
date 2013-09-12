@@ -56,14 +56,12 @@ class VHL_Themes_Widget extends WP_Widget {
                 }
             }
 
+	    print '<div class="spacer"></div>';
             echo $after_widget;
             echo "</ul>";
-
         }
-
-        print '<div class="spacer" style="margin-bottom: 20px"></div>';
+	//print '<div class="spacer"></div>';
     }
-
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
