@@ -4,6 +4,11 @@
  *
  */
 	$settings = get_option( "wp_bvs_theme_settings" );
+	$current_language = strtolower(get_bloginfo('language'));
+
+	if ($current_language != ''){
+		$current_language = '_' . $current_language;
+	}
 ?>
 <style>
 	.footer {
@@ -18,7 +23,7 @@
 	}
 </style>
 <div class="footer">
-	<?php dynamic_sidebar('footer'); ?>	
+	<?php dynamic_sidebar( 'footer' . $current_language ); ?>
 	<div class="spacer"></div>
 </div>
 <div class="siteInfo">

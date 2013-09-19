@@ -7,6 +7,10 @@
  /* Load up our theme options page and related code. */
 $current_language = strtolower(get_bloginfo('language'));
 
+if ($current_language != ''){
+   $current_language = '_' . $current_language;
+}
+
 load_plugin_textdomain( 'vhl', false,  BVS_PLUGIN_DIR . '/languages' );
 
 if ( is_admin() ) require_once( TEMPLATEPATH . '/bireme_archives/admin_settings.php' );
@@ -20,7 +24,7 @@ $footer_sidebar = $layout['footer-sidebar'];
 // sidebars do template
 register_sidebar( array(
     'name' => __('Header','vhl'),
-    'id' => 'header_' . $current_language,
+    'id' => 'header' . $current_language,
     'description' => '',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
@@ -32,7 +36,7 @@ register_sidebar( array(
 if ($top_sidebar == true){
     register_sidebar( array(
         'name' => __('Top Auxiliary SideBar','vhl'),
-        'id' => 'top_sidebar_' . $current_language,
+        'id' => 'top_sidebar' . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -46,7 +50,7 @@ for($i=1; $i <= $total_columns; $i++) {
 
     register_sidebar( array(
         'name' => __('Column', 'vhl') . ' ' . $i,
-        'id' => 'column-' . $i,'_' . $current_language,
+        'id' => 'column-' . $i . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -59,7 +63,7 @@ for($i=1; $i <= $total_columns; $i++) {
 if ($footer_sidebar == true){
     register_sidebar( array(
         'name' => __('Footer Auxiliary SideBar','vhl'),
-        'id' => 'footer_sidebar_' . $current_language,
+        'id' => 'footer_sidebar' . $current_language,
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -70,7 +74,7 @@ if ($footer_sidebar == true){
 
 register_sidebar( array(
     'name' => __('Footer','vhl'),
-    'id' => 'footer_' . $current_language,
+    'id' => 'footer' . $current_language,
     'description' => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
@@ -80,7 +84,7 @@ register_sidebar( array(
 
 register_sidebar( array(
     'name' => __('Level 2','vhl'),
-    'id' => 'level2_' . $current_language,
+    'id' => 'level2' . $current_language,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<strong class="widget-title">',

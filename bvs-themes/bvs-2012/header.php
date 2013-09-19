@@ -10,10 +10,12 @@
  */
 
 $mlf_options = get_option('mlf_config');
-
-$current_language = get_bloginfo('language');
+$current_language = strtolower(get_bloginfo('language'));
 $site_lang = substr($current_language, 0,2);
 
+if ($current_language != ''){
+	$current_language = '_' . $current_language;
+}
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +70,7 @@ $site_lang = substr($current_language, 0,2);
 					<span><a href="<?php echo $contactPage;?>">Contato</a></span>
 				</div>
 			</div>
-	        <div class="top top_<?php echo ($current_language);?>">
+	        <div class="top top<?php echo ($current_language);?>">
 	            <div id="parent">
 	            	<a href="<?php echo $linkLogo;?>" title="Portal Regional da BVS"> 
 		                <img src="<?php echo $logo;?>" alt="BVS LOGO"/>
@@ -80,7 +82,7 @@ $site_lang = substr($current_language, 0,2);
 		            </div>
 				<?php } ?>
 				<div class="headerWidget">
-					<?php dynamic_sidebar( 'header' ); ?>
+					<?php dynamic_sidebar( 'header' . $current_language ); ?>
 				</div>
 	        </div>
 			<div class="spacer"></div>	

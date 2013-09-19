@@ -11,8 +11,12 @@ get_header(); ?>
 
 <?php
 
-    $current_language = get_bloginfo('language');
+    $current_language = strtolower(get_bloginfo('language'));
     $site_lang = substr($current_language, 0,2);
+
+    if ($current_language != ''){
+        $current_language = '_' . $current_language;
+    }
 
 ?>
 	<div class="breadcrumb"><a href="<?php echo esc_url( home_url( '/'.( $site_lang ) ) ); ?>" class="home">Home</a> > <?php the_title(); ?></div>
@@ -24,7 +28,7 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- #content -->
 	<div class="single2column">
-		<?php dynamic_sidebar( 'level2' ); ?>
+		<?php dynamic_sidebar( 'level2' . $current_language ); ?>
 	</div>
 	</div><!-- #primary -->
 <?php get_footer(); ?>

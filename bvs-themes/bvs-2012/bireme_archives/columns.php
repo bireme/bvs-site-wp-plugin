@@ -2,7 +2,7 @@
 	if ($top_sidebar == true){
 	?>
 	<div class="top_sidebar">
-			<?php dynamic_sidebar('top_sidebar'); ?>	
+			<?php dynamic_sidebar( 'top_sidebar' . $current_language ); ?>	
 	</div>	
 	<?php	
 	}
@@ -41,7 +41,7 @@
 			}
 		</style>
 		<div class="column column_<?php echo $i;?>" style="width: <?php echo $column_width; ?>; ">
-				<?php dynamic_sidebar('column-'.$i.''); ?>
+				<?php dynamic_sidebar( 'column-' . $i . $current_language ); ?>
 		</div>
 	<?php
 	}
@@ -50,8 +50,8 @@
 <?php 
 	if ($footer_sidebar == true){
 	?>
-	<div class="top_sidebar">
-			<?php dynamic_sidebar('footer_sidebar'); ?>	
+	<div class="footer_sidebar">
+			<?php dynamic_sidebar( 'footer_sidebar' . $current_language ); ?>	
 	</div>	
 	<div class="spacer"></div>	
 	<?php	
