@@ -95,7 +95,8 @@ body {
     float: left;
     width: 45%;
     margin: 0% 3% 1% 2%;
-    height: 45px;
+    display: block;
+	padding: 4px 0;
     line-height: 120% !important;
 }
 .double li img {
@@ -108,8 +109,7 @@ body {
 }
 .double li h4 a {
     font-weight: bold;
-}
-	
+}	
 .footer {
 	padding: 10px;
 	font-size: 0.75rem;
@@ -167,11 +167,11 @@ strong {
 }
 .double li strong {
     clear: none;
-
 }
 .double li strong a {
     font-weight: bold;
 }
+
 /*SECOND LEVEL*/
 .vhl_collection .entry-header p {
 	line-height: 150%;
@@ -197,4 +197,21 @@ strong {
 }
 .category .entry-header p { margin: 20px; }
 .category .entry-title, .category .archive-title { margin-left: 10px; }
-.vhl-themes div.spacer { padding: 0; }
+.vhl-themes div.spacer, .vhl-collection div.spacer { padding: 0; }
+.vhl-collection ul.double { padding-top: 0; }
+.vhl-collection ul.double li {
+	width: 43%;
+	margin: 5px 5% 5px 9px;
+	height: auto !important;
+}
+.vhl-collection ul.double li li {
+	width: auto;
+	margin: 6px 5px 6px 1px;
+}
+.vhl_collection img { margin-top: 10px; }
+.column .twocolumn {
+	margin: 0;
+	padding: 0;
+}
+.widget_recent_entries li { margin-bottom: 10px; }
+ul.double { padding-top: 10px; }
