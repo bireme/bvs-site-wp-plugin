@@ -31,10 +31,10 @@
 
 		<!-- displays child items -->
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-	        <div class="storycontent">
-	            <?php //the_content(__('(more...)')); ?>
+	                <div class="storycontent">
+	                        <?php //the_content(__('(more...)')); ?>
+	                </div>
 	        </div>
-	    </div>
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
@@ -44,7 +44,7 @@
 			<?php the_post_thumbnail(); ?>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
- 		<div class="childPages">
+ 		        <div class="childPages">
                                 <ul>
                                 <?php
                                         global $id;
@@ -79,5 +79,4 @@
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 
-		
 	</article><!-- #post -->
