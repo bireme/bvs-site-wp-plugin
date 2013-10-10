@@ -127,11 +127,22 @@ function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4
 	
 	if (!is_array($customField)) {
 		if (trim($customField)!= "") {
-			echo preg_replace("/label/", $label, $html4label);
-			echo preg_replace("/custom_field/", $customField, $html4custom_field);
+			if ($html4label != "")
+				echo preg_replace("/label/", $label, $html4label);
+			else
+				echo $label;
+
+			if ($html4custom_field != "")
+				echo preg_replace("/custom_field/", $customField, $html4custom_field);
+			else
+				echo $customField;
 		}
 	} else {
-		echo preg_replace("/label/", $label, $html4label);
+		if ($html4label != "")
+			echo preg_replace("/label/", $label, $html4label);
+		else
+			 echo $label;
+
 		$count = count($customField);
 		$lastValue = end($customField);
 		$text = "";
@@ -139,7 +150,10 @@ function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4
 			$text .= $value;	
 			if ($value != $lastValue) $text .= $separator . " ";
 		}	 
-		echo preg_replace("/custom_field/", $text, $html4custom_field);
+		if ($html4custom_field != "")
+			echo preg_replace("/custom_field/", $text, $html4custom_field);
+		else
+			 echo $text;
 	}
 }
 
