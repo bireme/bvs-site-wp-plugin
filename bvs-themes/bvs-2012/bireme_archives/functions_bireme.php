@@ -21,10 +21,25 @@ $total_columns = $layout['total'];
 $top_sidebar = $layout['top-sidebar'];
 $footer_sidebar = $layout['footer-sidebar'];
 
+//Set default variables related to current language when multi-language-framework is not installed
+$variables_mlf = array (
+			'header' => "header",
+			'top_sidebar' => "top_sidebar",
+			'footer_sidebar' => "footer_sidebar",
+			'footer' => "footer",
+			'level2' => "level2",
+		);
+if(is_plugin_active('multi-language-framework')) {
+	foreach ($variables_mlf as $vmlf) {
+		$variables_mlf [$vmlf] = $vmlf . $current_language;
+	}
+}
+
 // sidebars do template
 register_sidebar( array(
 	'name' => __('Header','vhl'),
-	'id' => 'header' . $current_language,
+	//'id' => 'header' . $current_language,
+	'id' => $variables_mlf['header'],
 	'description' => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -36,7 +51,8 @@ register_sidebar( array(
 if ($top_sidebar == true){
     register_sidebar( array(
 	'name' => __('Top Auxiliary SideBar','vhl'),
-	'id' => 'top_sidebar' . $current_language,
+	//'id' => 'top_sidebar' . $current_language,
+	'id' => $variables_mlf['top_sidebar'],
 	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -47,10 +63,14 @@ if ($top_sidebar == true){
 
 // gerando as sidebars dinamicamente
 for($i=1; $i <= $total_columns; $i++) {
-
+    $column = "column-" . $i;
+    if(is_plugin_active('multi-language-framework')) {
+      $column .= $current_language;
+    }
     register_sidebar( array(
 	'name' => __('Column', 'vhl') . ' ' . $i,
-	'id' => 'column-' . $i . $current_language,
+	//'id' => 'column-' . $i . $current_language,
+	'id' => $column,
 	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -63,7 +83,8 @@ for($i=1; $i <= $total_columns; $i++) {
 if ($footer_sidebar == true){
     register_sidebar( array(
 	'name' => __('Footer Auxiliary SideBar','vhl'),
-	'id' => 'footer_sidebar' . $current_language,
+	//'id' => 'footer_sidebar' . $current_language,
+	'id' => $variables_mlf['footer_sidebar'],
 	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -74,7 +95,8 @@ if ($footer_sidebar == true){
 
 register_sidebar( array(
 	'name' => __('Footer','vhl'),
-	'id' => 'footer' . $current_language,
+	//'id' => 'footer' . $current_language,
+	'id' => $variables_mlf['footer'],
 	'description' => '',
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
@@ -84,7 +106,8 @@ register_sidebar( array(
 
 register_sidebar( array(
 	'name' => __('Level 2','vhl'),
-	'id' => 'level2' . $current_language,
+	//'id' => 'level2' . $current_language,
+	'id' => $variables_mlf['level2'],
 	'description' => 'Widgets que aparecerão em segundo nível',
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
