@@ -31,10 +31,10 @@
 
 		<!-- displays child items -->
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-	        <div class="storycontent">
-	            <?php //the_content(__('(more...)')); ?>
+	                <div class="storycontent">
+	                        <?php //the_content(__('(more...)')); ?>
+	                </div>
 	        </div>
-	    </div>
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
@@ -44,32 +44,32 @@
 			<?php the_post_thumbnail(); ?>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
- 		<div class="childPages">
+ 		        <div class="childPages">
                                 <ul>
                                 <?php
                                         global $id;
                                         global $post;
                                         $post_type = get_post_type( $id );
                                         $args=array(
-                                          'post_type' => $post_type,
-                                          'post_status' => 'publish',
-                                          'posts_per_page' => -1,
-                                          'caller_get_posts' => 1,
-                                          'post_parent' => $id,
-                                          'orderby' => 'title',
-                                          'order' => 'ASC',
+                                                'post_type' => $post_type,
+                                                'post_status' => 'publish',
+                                                'posts_per_page' => -1,
+                                                'caller_get_posts' => 1,
+                                                'post_parent' => $id,
+                                                'orderby' => 'title',
+                                                'order' => 'ASC',
                                         );
                                         $my_query = null;
                                         $my_query = new WP_Query($args);
                                         if( $my_query->have_posts() ) {
-                                          while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                            <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-
-                                            <?php echo "<p>" . $post->post_excerpt . "</p>"; // echo get_post($post->ID)->post_excerpt; ?>
-
-                                            </li>
-                                            <?
-                                          endwhile;
+                                                while ($my_query->have_posts()) : $my_query->the_post();
+                                ?>
+                                                <li>
+                                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                                                        <?php echo "<p>" . $post->post_excerpt . "</p>"; // echo get_post($post->ID)->post_excerpt; ?>
+                                                </li>
+                                <?php
+                                                endwhile;
                                         }
                                         wp_reset_query();  // Restore global post data stomped by the_post().
                                 ?>
@@ -79,5 +79,4 @@
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 
-		
 	</article><!-- #post -->
