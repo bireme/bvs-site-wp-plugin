@@ -143,4 +143,21 @@ function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4
 	}
 }
 
+function bir_has_no_empty_custom_field ($post_id, $custom_field_keys, $single=true) {
+        $found = false;
+        foreach ($custom_field_keys as $cfk) {
+                $custom_field = get_post_meta($post_id, $cfk, $single);
+                if (!is_array($custom_field)) {
+                        if (trim($custom_field)!= "") {
+                                $found = true;
+                                break;
+                        }
+                } else {
+                        $found = true;
+                        break;
+                }
+        }
+        return $found;
+}
+
 ?>
