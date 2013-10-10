@@ -5,6 +5,14 @@
  *
  */
  /* Load up our theme options page and related code. */
+$current_language = strtolower(get_bloginfo('language'));
+
+if ($current_language != ''){
+   $current_language = '_' . $current_language;
+}
+
+load_plugin_textdomain( 'vhl', false,  BVS_PLUGIN_DIR . '/languages' );
+
 if ( is_admin() ) require_once( TEMPLATEPATH . '/bireme_archives/admin_settings.php' );
 
 $settings = get_option( "wp_bvs_theme_settings" );
@@ -15,21 +23,21 @@ $footer_sidebar = $layout['footer-sidebar'];
 
 // sidebars do template
 register_sidebar( array(
-    'name' => 'Header',
-    'id' => 'header',
-    'description' => '',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<strong class="widget-title">',
-    'after_title' => '</strong>',
+	'name' => __('Header','vhl'),
+	'id' => 'header' . $current_language,
+	'description' => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<strong class="widget-title">',
+	'after_title' => '</strong>',
 ) );
 
 //SideBar Auxiliar Top só aparece se ativado
 if ($top_sidebar == true){
     register_sidebar( array(
-        'name' => 'SideBar Auxiliar Top',
-        'id' => 'top_sidebar',
-        'description' => '',
+	'name' => __('Top Auxiliary SideBar','vhl'),
+	'id' => 'top_sidebar' . $current_language,
+	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<strong class="widget-title">',
@@ -41,9 +49,9 @@ if ($top_sidebar == true){
 for($i=1; $i <= $total_columns; $i++) {
 
     register_sidebar( array(
-        'name' => 'Coluna ' . $i,
-        'id' => 'column-' . $i,
-        'description' => '',
+	'name' => __('Column', 'vhl') . ' ' . $i,
+	'id' => 'column-' . $i . $current_language,
+	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<strong class="widget-title">',
@@ -54,9 +62,9 @@ for($i=1; $i <= $total_columns; $i++) {
 //SideBar Auxiliar Footer só aparece se ativado
 if ($footer_sidebar == true){
     register_sidebar( array(
-        'name' => 'SideBar Auxiliar Footer',
-        'id' => 'footer_sidebar',
-        'description' => '',
+	'name' => __('Footer Auxiliary SideBar','vhl'),
+	'id' => 'footer_sidebar' . $current_language,
+	'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<strong class="widget-title">',
@@ -65,23 +73,23 @@ if ($footer_sidebar == true){
 }
 
 register_sidebar( array(
-    'name' => 'Footer',
-    'id' => 'footer',
-    'description' => '',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => '</aside>',
-    'before_title' => '<strong class="widget-title">',
-    'after_title' => '</strong>',
+	'name' => __('Footer','vhl'),
+	'id' => 'footer' . $current_language,
+	'description' => '',
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget' => '</aside>',
+	'before_title' => '<strong class="widget-title">',
+	'after_title' => '</strong>',
 ) );
 
 register_sidebar( array(
-    'name' => 'Level2',
-    'id' => 'level2',
-    'description' => 'Widgets que aparecerão em segundo nível',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => '</aside>',
-    'before_title' => '<strong class="widget-title">',
-    'after_title' => '</strong>',
+	'name' => __('Level 2','vhl'),
+	'id' => 'level2' . $current_language,
+	'description' => 'Widgets que aparecerão em segundo nível',
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget' => '</aside>',
+	'before_title' => '<strong class="widget-title">',
+	'after_title' => '</strong>',
 ) );
 
 $custom_header_file = TEMPLATEPATH . '/bireme_archives/custom/custom-header.php';
@@ -98,6 +106,8 @@ $custom_include_file = TEMPLATEPATH . '/bireme_archives/custom/include.php';
 if(file_exists($custom_include_file)) {
     require_once($custom_include_file);
 }
+
+add_filter('widget_text', 'do_shortcode');
 
 // Display the value of custom fields 
 function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4custom_field="", $single=true, $separator=",") {
