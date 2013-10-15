@@ -37,8 +37,6 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
 		$variables_mlf [$vmlf] = $vmlf . $current_language;
 	}
 }
-else
-    $var = "False";
 
 // sidebars do template
 register_sidebar( array(
