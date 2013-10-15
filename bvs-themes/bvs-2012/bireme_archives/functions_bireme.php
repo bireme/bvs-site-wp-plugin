@@ -5,6 +5,11 @@
  *
  */
  /* Load up our theme options page and related code. */
+
+include_once(ABSPATH.'wp-admin/includes/plugin.php');
+
+$var = "";
+
 $current_language = strtolower(get_bloginfo('language'));
 
 if ($current_language != ''){
@@ -29,11 +34,13 @@ $variables_mlf = array (
 			'footer' => "footer",
 			'level2' => "level2",
 		);
-if(is_plugin_active('multi-language-framework')) {
+if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
 	foreach ($variables_mlf as $vmlf) {
 		$variables_mlf [$vmlf] = $vmlf . $current_language;
 	}
 }
+else
+    $var = "False";
 
 // sidebars do template
 register_sidebar( array(
@@ -64,7 +71,7 @@ if ($top_sidebar == true){
 // gerando as sidebars dinamicamente
 for($i=1; $i <= $total_columns; $i++) {
     $column = "column-" . $i;
-    if(is_plugin_active('multi-language-framework')) {
+    if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
       $column .= $current_language;
     }
     register_sidebar( array(
