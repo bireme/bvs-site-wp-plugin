@@ -9,6 +9,12 @@
 	if ($current_language != ''){
 		$current_language = '_' . $current_language;
 	}
+
+        $footer = "footer";
+
+        if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
+                $footer .= $current_language;
+
 ?>
 <style>
 	.footer {
@@ -23,7 +29,7 @@
 	}
 </style>
 <div class="footer">
-	<?php dynamic_sidebar( 'footer' . $current_language ); ?>
+	<?php dynamic_sidebar( $footer ); ?>
 	<div class="spacer"></div>
 </div>
 <div class="siteInfo">

@@ -1,16 +1,31 @@
-<?php 
+<?php
+
+	//Set default variables related to current language when multi-language-framework is not installed
+	$top_sidebar = "top_sidebar";
+	$footer_sidebar = "footer_sidebar";
+
+	if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+        	$top_sidebar .= $current_language;
+        	$footer_sidebar .= $current_language;
+	}
+
 	if ($top_sidebar == true){
-	?>
+?>
 	<div class="top_sidebar">
-			<?php dynamic_sidebar( 'top_sidebar' . $current_language ); ?>	
+			<?php dynamic_sidebar( $top_sidebar ); ?>
 	</div>	
-	<?php	
+<?php	
 	}
 ?>
 <?php 
 	$colors = $settings['colors'];
 	$layout = $settings['layout'];
 	for($i=1; $i <= $total_columns; $i++) {
+
+		$column = "column-" . $i;
+		if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
+			$column .= $current_language;
+
 		$column_width = $layout[''.$i.''];
 		if ($i==1){
 			$column_name='first';			
@@ -41,7 +56,7 @@
 			}
 		</style>
 		<div class="column column_<?php echo $i;?>" style="width: <?php echo $column_width; ?>; ">
-				<?php dynamic_sidebar( 'column-' . $i . $current_language ); ?>
+				<?php dynamic_sidebar( $column ); ?>
 		</div>
 	<?php
 	}
@@ -51,7 +66,7 @@
 	if ($footer_sidebar == true){
 	?>
 	<div class="footer_sidebar">
-			<?php dynamic_sidebar( 'footer_sidebar' . $current_language ); ?>	
+			<?php dynamic_sidebar( $footer_sidebar ); ?>
 	</div>	
 	<div class="spacer"></div>	
 	<?php	

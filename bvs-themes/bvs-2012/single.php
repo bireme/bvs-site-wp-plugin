@@ -18,6 +18,11 @@ get_header(); ?>
         $current_language = '_' . $current_language;
     }
 
+    $level2 = "level2";
+
+    if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
+            $level2 .= $current_language;
+
 ?>
 	<div class="breadcrumb"><a href="<?php echo esc_url( home_url( '/'.( $site_lang ) ) ); ?>" class="home">Home</a> > <?php the_title(); ?></div>
 	<div id="primary" class="site-content">
@@ -28,7 +33,7 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- #content -->
 	<div class="single2column">
-		<?php dynamic_sidebar( 'level2' . $current_language ); ?>
+		<?php dynamic_sidebar( $level2 ); ?>
 	</div>
 	</div><!-- #primary -->
 <?php get_footer(); ?>

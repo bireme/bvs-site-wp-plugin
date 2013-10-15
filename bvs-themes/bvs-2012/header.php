@@ -16,6 +16,11 @@ $site_lang = substr($current_language, 0,2);
 if ($current_language != ''){
 	$current_language = '_' . $current_language;
 }
+
+$top = "header";
+
+if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
+	$top .= $current_language;
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +87,7 @@ if ($current_language != ''){
 		            </div>
 				<?php } ?>
 				<div class="headerWidget">
-					<?php dynamic_sidebar( 'header' . $current_language ); ?>
+					<?php dynamic_sidebar( $top ); ?>
 				</div>
 	        </div>
 			<div class="spacer"></div>	
