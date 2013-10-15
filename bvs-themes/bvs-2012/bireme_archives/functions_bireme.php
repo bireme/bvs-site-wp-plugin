@@ -8,8 +8,6 @@
 
 include_once(ABSPATH.'wp-admin/includes/plugin.php');
 
-$var = "";
-
 $current_language = strtolower(get_bloginfo('language'));
 
 if ($current_language != ''){
