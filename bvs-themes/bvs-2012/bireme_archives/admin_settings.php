@@ -139,6 +139,14 @@ function wp_bvs_settings_page() {
 	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css' );
 	?>
 
+	<style type="text/css">
+                #imgLoading1, #imgLoading2, #imgLoading3 {
+                        display: none;
+                        position: absolute;
+                        padding: 5px;
+                }
+        </style>
+
 	<div class="wrap">
 		<h2><?php echo __('Theme Options','vhl'); ?></h2>
 

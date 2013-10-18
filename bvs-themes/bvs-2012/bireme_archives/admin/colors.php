@@ -39,12 +39,6 @@ foreach(glob($palette_dir . "*.php") as $item) {
 		.td-title {
 			font-size: 150%;
 		}
-
-		#imgLoading1, #imgLoading2, #imgLoading3 {
-			display: none;
-			position: absolute;
-			padding: 5px;
-		}
 	</style>
 
 <script language="javascript">
