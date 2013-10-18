@@ -4,8 +4,6 @@ require_once("structure.php");
 
 global $default_settings;
 
-$load_gif = ABSPATH . 'wp-admin/images/wpspin_light.gif';
-
 $settings = get_option( "wp_bvs_theme_settings");
 if ( empty( $settings ) ) {
         $settings = $default_settings;
