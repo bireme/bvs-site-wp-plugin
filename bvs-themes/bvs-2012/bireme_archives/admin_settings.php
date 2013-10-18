@@ -53,15 +53,51 @@ function wp_bvs_save_theme_settings() {
 			break;
 
 			case 'colors' :
-				if(!empty($_POST['colors']['pallete'])) {
-					$pallete = $_POST['colors']['pallete'];
+				if($_POST['colors']['palette'] == "bireme_default") {
 
-					include(TEMPLATEPATH . "/bireme_archives/color_pallete/" . $pallete . ".php");
-					$settings['colors'] = $colors;
+                                        include(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
+                                        $settings['colors'] = $colors;
 
-				} else {
-						$settings['colors']  = $_POST['colors'];
-				}
+                                } else {
+
+					if($_POST['submit-palette'] == "Y") {
+
+                                        	include(TEMPLATEPATH . "/bireme_archives/color_palette/".$_POST['colors']['palette'].".php");
+                                        	$settings['colors'] = $colors;
+
+					} elseif($_POST['submit-palette'] == "R") {
+
+						include(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
+                                        	$settings['colors'] = $colors;
+						$settings['colors']['palette'] = $_POST['colors']['palette'];
+
+						$palette = file_get_contents(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
+						$palette = str_replace("bireme_default", $_POST['colors']['palette'], $palette);
+
+						$handle = fopen(TEMPLATEPATH."/bireme_archives/color_palette/".$_POST['colors']['palette'].".php","w+");
+                                                fwrite($handle, $palette);
+                                                fclose($handle);
+
+					} else {
+
+						$init_tag = file_get_contents(TEMPLATEPATH . "/bireme_archives/default/header.txt");
+						$end_tag  = file_get_contents(TEMPLATEPATH . "/bireme_archives/default/footer.txt");
+						$fbody    = "";
+
+						foreach($_POST['colors'] as $key => $value) {
+							$fbody .= "\"" . $key . "\" => \"" .$value . "\",\n";
+						}
+
+						$handle = fopen(TEMPLATEPATH."/bireme_archives/color_palette/".$_POST['colors']['palette'].".php","w+");
+						fwrite($handle, $init_tag);
+						fwrite($handle, $fbody);
+						fwrite($handle, $end_tag);
+						fclose($handle);
+
+	                                        $settings['colors'] = $_POST['colors'];
+
+					}
+                                }
 			break;
 
 			case 'layout' :
@@ -133,8 +169,9 @@ function wp_bvs_settings_page() {
 				}
 				?>
 				<p class="submit" style="clear: both;">
-					<input type="submit" name="Submit"  class="button-primary" value="<?php echo __('Update'); ?>" />
+					<input type="submit" name="Submit"  class="button-primary" value="<?php echo __('Update'); ?>" onclick="document.getElementById('imgLoading3').style.display='inline'" />
 					<input type="hidden" name="wp_bvs-settings-submit" value="Y" />
+					<span id="imgLoading3"><img src="./images/wpspin_light.gif"/></span>
 				</p>
 			</form>
 
