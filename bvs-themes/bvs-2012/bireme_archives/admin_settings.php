@@ -179,7 +179,7 @@ function wp_bvs_settings_page() {
 				<p class="submit" style="clear: both;">
 					<input type="submit" name="Submit"  class="button-primary" value="<?php echo __('Update'); ?>" onclick="document.getElementById('imgLoading3').style.display='inline'" />
 					<input type="hidden" name="wp_bvs-settings-submit" value="Y" />
-					<span id="imgLoading3"><img src="./images/wpspin_light.gif"/></span>
+					<span id="imgLoading3"><img src="/wp-content/plugins/bvs-site/bvs-themes/bvs-2012/bireme_archives/default/load.gif"/></span>
 				</p>
 			</form>
 

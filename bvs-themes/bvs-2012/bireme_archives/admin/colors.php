@@ -3,6 +3,7 @@
 require_once("structure.php");
 
 global $default_settings;
+$load_gif = "/wp-content/plugins/bvs-site/bvs-themes/bvs-2012/bireme_archives/default/load.gif";
 
 $settings = get_option( "wp_bvs_theme_settings");
 if ( empty( $settings ) ) {
@@ -102,12 +103,12 @@ foreach(glob($palette_dir . "*.php") as $item) {
 					<option value="<?php echo $item; ?>" <?php selected( $item, $settings['colors']['palette'] ); ?>><?php echo $str; ?></option>
 				<?php } ?>
 			</select>
-			<span id="imgLoading1"><img src="./images/wpspin_light.gif"/></span>
+			<span id="imgLoading1"><img src="<?php echo $load_gif; ?>"/></span>
                         <input type="hidden" id="submit-palette" name="submit-palette" value="N" />
                         <?php if($settings['colors']['palette'] != "bireme_default") { ?>
                                 <span><input type="button" id="restart-palette" value="Reiniciar Paleta" style="margin-left: 50px" class="button-primary"></span>
                         <?php } ?>
-                        <span id="imgLoading2"><img src="./images/wpspin_light.gif"/></span>
+                        <span id="imgLoading2"><img src="<?php echo $load_gif; ?>"/></span>
 		</td>
 	</tr>
 </table>
