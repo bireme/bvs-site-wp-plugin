@@ -9,19 +9,35 @@ Author URI: http://reddes.bvsalud.org/
 Site Wide Only: true
 */
 
-define('BVS_VERSION', '0.3' );
+define( 'SYSTEM', strtoupper(PHP_OS) );
+define( 'BVS_VERSION', '0.3' );
+define( 'BVS_SYMBOLIC_LINK', false );
+define( 'BVS_PLUGIN_DIRNAME', 'bvs-site' );
 
-define('BVS_SYMBOLIC_LINK', false );
-define('BVS_PLUGIN_DIRNAME', 'bvs-site' );
+if ( BVS_SYMBOLIC_LINK == true )
+{
+    define( 'BVS_PLUGIN_PATH',  WP_CONTENT_DIR . "plugins/" . BVS_PLUGIN_DIRNAME );
+}
+else
+{
+    // Conditional to fix theme_root configurations on WINDOWS systems
+    if ( substr( SYSTEM, 0, 3 ) == "WIN" )
+    {
+        $abs_path      = untrailingslashit( ABSPATH );
+        $bvs_site_dir  = str_replace( $abs_path, '', plugin_dir_path(__FILE__) );
+        $bvs_site_dir  = str_replace( '\\', '/', $bvs_site_dir );
+        $full_path_dir = $abs_path . $bvs_site_dir;
 
-if(BVS_SYMBOLIC_LINK == true) {
-    define('BVS_PLUGIN_PATH',  ABSPATH . "wp-content/plugins/" . BVS_PLUGIN_DIRNAME );
-} else {
-    define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
+        define('BVS_PLUGIN_PATH',  $full_path_dir );
+    }
+    else
+    {
+        define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
+    }
 }
 
-define('BVS_PLUGIN_DIR',   plugin_basename( BVS_PLUGIN_PATH ) );
-define('BVS_PLUGIN_URL',   plugin_dir_url(__FILE__) );
+define( 'BVS_PLUGIN_DIR',   plugin_basename( BVS_PLUGIN_PATH ) );
+define( 'BVS_PLUGIN_URL',   plugin_dir_url(__FILE__) );
 
 // Load plugin files
 
@@ -40,6 +56,7 @@ function vhl_init() {
     new VHL_PageLinksTo;
 
     register_theme_directory( BVS_PLUGIN_PATH . '/bvs-themes' );
+
 }
 
 function vhl_load_translation(){
