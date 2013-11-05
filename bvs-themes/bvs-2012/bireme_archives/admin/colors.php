@@ -3,10 +3,10 @@
 require_once("structure.php");
 
 global $default_settings;
-$load_gif = "/wp-content/plugins/bvs-site/bvs-themes/bvs-2012/bireme_archives/default/load.gif";
+$load_gif = get_template_directory_uri() . "/bireme_archives/default/load.gif";
 
 $settings = get_option( "wp_bvs_theme_settings");
-if ( empty( $settings ) ) {
+if ( empty( $settings ) || ! isset( $settings['colors'] ) ) {
         $settings = $default_settings;
 }
 
