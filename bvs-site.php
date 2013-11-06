@@ -12,32 +12,20 @@ Site Wide Only: true
 define( 'SYSTEM', strtoupper(PHP_OS) );
 define( 'BVS_VERSION', '0.3' );
 define( 'BVS_SYMBOLIC_LINK', false );
-define( 'BVS_PLUGIN_DIRNAME', 'bvs-site' );
+define( 'BVS_PLUGIN_DIRNAME', '/plugins/bvs-site/' );
 
-if ( BVS_SYMBOLIC_LINK == true )
+// Conditional to fix theme_root configurations on WINDOWS systems
+if ( BVS_SYMBOLIC_LINK == true || substr( SYSTEM, 0, 3 ) == "WIN" )
 {
-    define( 'BVS_PLUGIN_PATH',  WP_CONTENT_DIR . "plugins/" . BVS_PLUGIN_DIRNAME );
+    define( 'BVS_PLUGIN_PATH', WP_CONTENT_DIR . BVS_PLUGIN_DIRNAME );
 }
 else
 {
-    // Conditional to fix theme_root configurations on WINDOWS systems
-    if ( substr( SYSTEM, 0, 3 ) == "WIN" )
-    {
-        $abs_path      = untrailingslashit( ABSPATH );
-        $bvs_site_dir  = str_replace( $abs_path, '', plugin_dir_path(__FILE__) );
-        $bvs_site_dir  = str_replace( '\\', '/', $bvs_site_dir );
-        $full_path_dir = $abs_path . $bvs_site_dir;
-
-        define('BVS_PLUGIN_PATH',  $full_path_dir );
-    }
-    else
-    {
-        define('BVS_PLUGIN_PATH',  plugin_dir_path(__FILE__) );
-    }
+    define( 'BVS_PLUGIN_PATH', plugin_dir_path(__FILE__) );
 }
 
-define( 'BVS_PLUGIN_DIR',   plugin_basename( BVS_PLUGIN_PATH ) );
-define( 'BVS_PLUGIN_URL',   plugin_dir_url(__FILE__) );
+define( 'BVS_PLUGIN_DIR', plugin_basename( BVS_PLUGIN_PATH ) );
+define( 'BVS_PLUGIN_URL', plugin_dir_url(__FILE__) );
 
 // Load plugin files
 
@@ -103,8 +91,8 @@ function vhl_google_analytics_code(){
 }
 
 add_action( 'init', 'vhl_load_translation' );
-add_action( 'admin_menu', 'vhl_add_admin_menu');
+add_action( 'admin_menu', 'vhl_add_admin_menu' ;
 add_action( 'plugins_loaded','vhl_init' );
-add_action( 'wp_head', 'vhl_google_analytics_code');
+add_action( 'wp_head', 'vhl_google_analytics_code' );
 
 ?>
