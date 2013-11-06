@@ -91,7 +91,7 @@ function vhl_google_analytics_code(){
 }
 
 add_action( 'init', 'vhl_load_translation' );
-add_action( 'admin_menu', 'vhl_add_admin_menu' ;
+add_action( 'admin_menu', 'vhl_add_admin_menu' );
 add_action( 'plugins_loaded','vhl_init' );
 add_action( 'wp_head', 'vhl_google_analytics_code' );
 
