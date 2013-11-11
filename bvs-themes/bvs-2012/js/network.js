@@ -5,6 +5,7 @@ var imgpath = "./wp-content/plugins/bvs-site/bvs-themes/bvs-2012/bireme_archives
 var image  = null;
 
 $(document).ready(function(){
+        $(".vhl-network").show();
 	$(".closed").next().hide();
 	$(".closed").css({ "background": "url("+ imgpath +"icon_plus.gif) no-repeat scroll 0 5px", "padding-left": "12px" });
 	$(".closed", this).click(function(){
