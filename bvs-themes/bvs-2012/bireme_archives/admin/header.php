@@ -1,6 +1,6 @@
 <?php $header = $settings['header']; ?>
 <tr>
-	<th><label for="wp_bvs_tag_class">Logo URL</label></th>
+	<th><label for="header[logo]">Logo URL</label></th>
 	<td>
 		<input id="header[logo]" name="header[logo]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["logo"] ) ); ?>"></br>
 	</td>
@@ -19,7 +19,7 @@
 	</td>
 </tr>
 <tr>
-	<th><label for="header[language]"><?php echo __('Display title on banner?','vhl');?></label></th>
+	<th><label for="header[title_view]"><?php echo __('Display title on banner?','vhl');?></label></th>
 	<td>
 		<input id="header[title_view]" name="header[title_view]" type="checkbox" class="" value="true" <?php if($header['title_view'] == 'true') { echo "checked"; } ?> ></br>
 	</td>
@@ -38,7 +38,7 @@
 	</td>
 </tr>
 <tr>
-	<th><label for="header-language-position"><?php echo __('Language bar position','vhl');?></label></th>
+	<th><label for="language-position"><?php echo __('Language bar position','vhl');?></label></th>
 	<td>
 		<select class="header-language-position" id="language-position" name="header[language-position]">
 			<option <?php if($header['language-position'] == "1") echo "selected='selected'"; ?> value="1"><?php echo __('Top','vhl');?></option>
@@ -47,13 +47,17 @@
 		<hr/>
 	</td>
 </tr>
+<?php
+// Show contact text field only WP Contact Form 7 Plugin is active.
+if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 <tr>
-	<th><label for="header[bannerLink]">Contact page</label></th>
+	<th><label for="header[contactPage]">Contact page</label></th>
 	<td>
 		<input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"><br/>
 		<hr/>
 	</td>
 </tr>
+<?php } ?>
 <tr>
 	<th><label for="header-extrahead"><?php echo __('Custom CSS and Javascript','vhl');?></label></th>
 	<td>

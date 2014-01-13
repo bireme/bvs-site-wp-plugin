@@ -214,6 +214,7 @@ strong {
 	margin: 0;
 	padding: 0;
 }
+
 .widget_recent_entries li { margin-bottom: 10px; }
 ul.double { padding-top: 10px; }
 .vhl-network { display: none; }
@@ -222,4 +223,11 @@ ul.double { padding-top: 10px; }
 .site-content article .entry-header .entry-title, .site-content article .entry-summary {
     margin-left: 2rem;
     margin-right: 2rem;
+}
+
+.bar #contact A {
+    background: url(../default/bt_contact.gif) no-repeat;
+}
+#contact A {
+    padding-left: 20px;
 }

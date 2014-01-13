@@ -60,6 +60,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<!-- block extra files -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/network.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/search.js"></script>
 
 	</head>
 
@@ -71,9 +72,13 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				<div id="otherVersions">
 					<?php if(function_exists('mlf_links_to_languages')) { mlf_links_to_languages(); } ?>	
 				</div>
-				<div id="contact"> 
-					<span><a href="<?php echo $contactPage;?>">Contato</a></span>
-				</div>
+				<?php
+				// Conditional to show contact link.
+				if(is_plugin_active('contact-form-7/wp-contact-form-7.php' && !empty($contactPage))) { ?>
+					<div id="contact"> 
+						<span><a href="<?php echo $contactPage; ?>"><?php echo ucwords($contactPage); ?></a></span>
+					</div>
+				<?php } ?>
 			</div>
 	        <div class="top top<?php echo ($current_language);?>">
 	            <div id="parent">
