@@ -60,7 +60,6 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<!-- block extra files -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/network.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/search.js"></script>
 
 	</head>
 
@@ -74,9 +73,10 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				</div>
 				<?php
 				// Conditional to show contact link.
-				if(is_plugin_active('contact-form-7/wp-contact-form-7.php' && !empty($contactPage))) { ?>
+				$contact = trim($contactPage);
+				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && !empty($contact)) { ?>
 					<div id="contact"> 
-						<span><a href="<?php echo $contactPage; ?>"><?php echo ucwords($contactPage); ?></a></span>
+						<span><a href="<?php echo $contact; ?>"><?php echo ucwords($contact); ?></a></span>
 					</div>
 				<?php } ?>
 			</div>
