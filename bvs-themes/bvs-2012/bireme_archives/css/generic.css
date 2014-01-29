@@ -231,3 +231,7 @@ ul.double { padding-top: 10px; }
 #contact A {
     padding-left: 20px;
 }
+
+.vhl_collection .entry-content strong {
+    display: inline;
+}
