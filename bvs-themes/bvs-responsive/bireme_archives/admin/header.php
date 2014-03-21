@@ -1,8 +1,8 @@
 <?php $header = $settings['header']; ?>
 <tr>
-	<th>Logo</th>
-	<th>URL da Imagem</th>
-	<th>Link</th>
+	<th><?php echo __('Logo','vhl');?></th>
+	<th><?php echo __('Image URL','vhl');?></th>
+	<th><?php echo __('Link','vhl');?></th>
 </tr>
 <tr>
 	<th><label>PT</label></th>
@@ -23,9 +23,9 @@
 	<td colspan="3"><hr/></td>
 </tr>
 <tr>
-	<th>Banner</th>
-	<th>URL da Imagem</th>
-	<th>Link</th>
+	<th><?php echo __('Banner','vhl');?></th>
+	<th><?php echo __('Image URL','vhl');?></th>
+	<th><?php echo __('Link','vhl');?></th>
 </tr>
 <tr>
 	<th><label>PT</label></th>
@@ -68,10 +68,6 @@
 </tr>
 <tr>
 	<td colspan="3"><hr/></td>
-</tr>
-<tr>
-	<th><label for="header[bannerLink]">Contact page</label></th>
-	<td colspan="2"><input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"></td>
 </tr>
 <tr>
 	<th><label for="header-extrahead"><?php echo __('Custom CSS and Javascript','vhl');?></label></th>
