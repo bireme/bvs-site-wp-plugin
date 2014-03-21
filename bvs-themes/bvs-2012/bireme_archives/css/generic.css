@@ -13,6 +13,7 @@ body {
 	font-size: 80%;
 	float: right;
 	padding: 4px;
+	width:992px !important;
 	}
 
 .bar div {
@@ -23,12 +24,15 @@ body {
 	margin: 0px 5px;
 }
 .header {
-	height: 110px;	
+	height: 116px;	
 	}
+.headerWidget {
+	float: right;
+	margin-top: 25px;
+}
 #parent {
-	margin-top: 10px;		
+	margin: 12px 0 11px 20px;		
 	float: left;
-	margin-left: 10px;
 	}
 .site_name {
 	float: left;

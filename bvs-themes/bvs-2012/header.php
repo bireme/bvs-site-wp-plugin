@@ -79,11 +79,12 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 						<span><a href="<?php echo $contact; ?>"><?php echo ucwords($contact); ?></a></span>
 					</div>
 				<?php } ?>
+				<?php wp_nav_menu( $args ); ?>
 			</div>
 	        <div class="top top<?php echo ($current_language);?>">
 	            <div id="parent">
-	            	<a href="<?php echo $linkLogo;?>" title="Portal Regional da BVS"> 
-		                <img src="<?php echo $logo;?>" alt="BVS LOGO"/>
+	            	<a href="<?php echo $linkLogo;?>" title="<?php echo __('Virtual Health Library','vhl');?>"> 
+		                <img src="<?php echo $logo;?>" alt="<?php echo __('VHL Logo','vhl');?>"/>
 	        		</a>
 	            </div>
 	           	<?php if ($title == true) {	?>

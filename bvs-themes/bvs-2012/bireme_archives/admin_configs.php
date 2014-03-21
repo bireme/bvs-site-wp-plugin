@@ -1,4 +1,7 @@
 <?php 
+    $current_language = strtolower(get_bloginfo('language'));
+    $site_lang = substr($current_language, 0,2);
+
     $settings = get_option( "wp_bvs_theme_settings" );
     $layout = $settings['layout'];
     $header = $settings['header'];
@@ -6,9 +9,10 @@
     $total_columns = $layout['total'];
     $languages = $header['language'];//$settings['header'][language];
     $title = $header['title_view'];//$settings['header'][title_view];
-    $logo = $header['logo'];//$settings['header']['logo'];
-    $linkLogo = $header['linkLogo'];
-    $bannerLink = $header['bannerLink'];
+    $logo = $header['logo-'.$site_lang];//$settings['header']['logo'];
+    $linkLogo = $header['linkLogo-'.$site_lang];    
+    $header_banner = $header['banner-'.$site_lang];
+    $bannerLink = $header['bannerLink-'.$site_lang];
     $contactPage = $header['contactPage'];
     $general_background = $colors['general-background'];//$settings['colors']['general-background'];
     $general_container = $colors['general-container'];//$settings['colors']['general-container'];
@@ -19,8 +23,7 @@
     $general_color = $colors['general-text'];//$settings['colors']['general-text'];
     $general_link_active = $colors['general-link-active'];//$settings['colors']['general-link-active'];
     $general_link_visited = $colors['general-link-visited'];//$settings['colors']['general-link-visited'];
-    $header_banner = $header['banner'];//$settings['header']['banner'];
-    $header_background_color = "#" . $colors['header-background'];//$settings['colors']['header-background']; 
+    $header_background_color = $colors['header-background'];//$settings['colors']['header-background']; 
     $header_title_color = $colors['header-title-frist'];//$settings['colors']['header-title-first'];
     $header_link_color = $colors['header-link-active'];//$settings['colors']['header-link-active'];
     $top_sidebar = $layout['top-sidebar'];//$settings['layout']['top-sidebar'];
@@ -52,7 +55,7 @@
         color: #<?php echo $header_link_color;?>;   
     }
     .header {
-        background: <?php echo $header_background_color;?> url(<?php echo $header_banner;?>)top left no-repeat;    
+        background: <?php if($header_background_color) echo '#' . $header_background_color;?> url(<?php echo $header_banner;?>)top left no-repeat;    
     }
     .header h1 a {
         color: #<?php echo $header_title_color;?>;
