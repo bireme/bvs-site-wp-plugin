@@ -69,7 +69,7 @@
 if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 <tr>
 	<th><label for="header[contactPage]">Contact page</label></th>
-	<td>
+	<td colspan="2">
 		<input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"><br/>
 		<hr/>
 	</td>
@@ -77,7 +77,7 @@ if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 <?php } ?>
 <tr>
 	<th><label for="header-extrahead"><?php echo __('Custom CSS and Javascript','vhl');?></label></th>
-	<td>
+	<td colspan="2">
 		<textarea id="header-extrahead" rows="7" cols="70" name="header[extrahead]"><?= stripslashes( $header['extrahead'] ) ?></textarea>
 	</td>
 </tr>
