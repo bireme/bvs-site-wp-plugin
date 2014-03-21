@@ -8,9 +8,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-03-21 11:37-0300\n"
+"Last-Translator: Julio Takayama <takayama@paho.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: bvs-core/post_types.php:35 bvs-core/post_types.php:47
 #: bvs-widgets/vhl_collection_widget.php:8
@@ -463,7 +464,7 @@ msgid "Primary Menu"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported
-#. 	   by Open Sans, translate this to 'off'. Do not translate into your own
+#. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
 #: bvs-themes/bvs-2012/functions.php:120
 msgctxt "Open Sans font: on or off"
@@ -472,7 +473,7 @@ msgstr ""
 
 #. translators: To add an additional Open Sans character subset specific to
 #. your language, translate
-#. 		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your
+#. this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your
 #. own language.
 #: bvs-themes/bvs-2012/functions.php:125
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
