@@ -68,7 +68,7 @@
 // Show contact text field only WP Contact Form 7 Plugin is active.
 if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 <tr>
-	<th><label for="header[contactPage]">Contact page</label></th>
+	<th><label for="header[contactPage]"><?php echo __('Contact page','vhl');?></label></th>
 	<td colspan="2">
 		<input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"><br/>
 		<hr/>
