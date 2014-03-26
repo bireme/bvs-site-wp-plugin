@@ -12,7 +12,8 @@ Site Wide Only: true
 define( 'SYSTEM', strtoupper(PHP_OS) );
 define( 'BVS_VERSION', '0.3' );
 define( 'BVS_SYMBOLIC_LINK', false );
-define( 'BVS_PLUGIN_DIRNAME', '/plugins/bvs-site/' );
+define( 'BVS_PLUGIN_BASENAME', preg_replace('/\/.*$/', '', plugin_basename(__FILE__)) );
+define( 'BVS_PLUGIN_DIRNAME', '/plugins/' . BVS_PLUGIN_BASENAME . '/' );
 
 // Conditional to fix theme_root configurations on WINDOWS systems
 if ( BVS_SYMBOLIC_LINK == true || substr( SYSTEM, 0, 3 ) == "WIN" )
