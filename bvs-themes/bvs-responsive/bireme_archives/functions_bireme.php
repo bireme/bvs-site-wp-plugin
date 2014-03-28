@@ -217,4 +217,19 @@ function scripts_method() {
 }
 add_action('wp_enqueue_scripts', 'scripts_method');
 
+function comment_reply_filter($link){
+    if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+        $language = strtolower(get_bloginfo('language'));
+        $prefix = substr($language, 0,2);
+        if($prefix == mlf_get_option('default_language'))
+            $prefix = '';
+        else
+            $prefix = '/'.$prefix;
+    }
+    else
+        $prefix = '';
+
+    return str_replace($_SERVER[REQUEST_URI], $prefix.$_SERVER[REQUEST_URI], $link);
+}
+add_filter('comment_reply_link', 'comment_reply_filter');
 ?>
