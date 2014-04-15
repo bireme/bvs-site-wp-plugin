@@ -23,7 +23,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	$top .= $current_language;
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 	<!--[if IE 7]>
 	<html class="ie ie7" <?php language_attributes(); ?>>
 	<![endif]-->
@@ -31,7 +31,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<html class="ie ie8" <?php language_attributes(); ?>>
 	<![endif]-->
 	<!--[if !(IE 7) | !(IE 8)  ]><!-->
-	<html>
+	<html <?php language_attributes(); ?>>
 	<!--<![endif]-->
 	
 	<head>
@@ -58,8 +58,6 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<?= stripslashes( $header['extrahead'] ) ?>
 
 	<!-- block extra files -->
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/network.js"></script>
 
 	</head>
 

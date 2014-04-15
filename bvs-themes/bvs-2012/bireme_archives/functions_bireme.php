@@ -200,4 +200,36 @@ function bir_has_no_empty_custom_field ($post_id, $custom_field_keys, $single=tr
         return $found;
 }
 
+function scripts_method() {
+	wp_enqueue_script(
+		'jquery_script',
+		get_template_directory_uri() . '/js/jquery.min.js'
+	);
+	wp_enqueue_script(
+		'network_script',
+		get_template_directory_uri() . '/js/network.js'
+	);
+	wp_localize_script('network_script', 'network_script_vars', array(
+			'imgpath' => get_template_directory_uri() . "/bireme_archives/default/",
+			'group' => array('cl_bvs', 'sub_bvs', 'subdev_bvs', 'cl_cvsp', 'cl_scielo', 'sub_scielo', 'subdev_scielo')
+		)
+	);
+}
+add_action('wp_enqueue_scripts', 'scripts_method');
+
+function comment_reply_filter($link){
+    if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+        $language = strtolower(get_bloginfo('language'));
+        $prefix = substr($language, 0,2);
+        if($prefix == mlf_get_option('default_language'))
+            $prefix = '';
+        else
+            $prefix = '/'.$prefix; 
+    }
+    else
+        $prefix = '';
+
+    return str_replace($_SERVER[REQUEST_URI], $prefix.$_SERVER[REQUEST_URI], $link);
+}
+add_filter('comment_reply_link', 'comment_reply_filter');
 ?>
