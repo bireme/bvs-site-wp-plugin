@@ -54,8 +54,21 @@
 			.column_<?php echo $i;?> h3 {
 				border-color: #<?php echo $colors[''.$column_name.'-title-first'];?>;	
 			}
+			.column_<?php echo $i;?> {
+				width: <?php echo $column_width; ?>;
+			}
+			@media (max-width: 480px) {
+				.column_<?php echo $i;?> {
+					width: 96%;
+				}
+			}
+			@media (min-width: 481px) and (max-width: 729px) {
+				.column_<?php echo $i;?> {
+					width: 96%;
+				}
+			}
 		</style>
-		<div class="column column_<?php echo $i;?>" style="width: <?php echo $column_width; ?>; ">
+		<div class="column column_<?php echo $i;?>">
 				<?php dynamic_sidebar( $column ); ?>
 		</div>
 	<?php

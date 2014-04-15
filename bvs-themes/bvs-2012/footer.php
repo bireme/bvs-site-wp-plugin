@@ -32,12 +32,11 @@
 	<?php dynamic_sidebar( $bottom ); ?>
 	<div class="spacer"></div>
 </div>
-<div class="siteInfo">
-	<?php 
-		echo '<a href="http://wordpress.org" title="WordPress.org">WordPress</a> version ' . get_bloginfo ( 'version' );  
-	?>
-	 | 
-	<?php echo '<a href="https://github.com/bireme/bvs-site-wp-plugin" title="plugin repository">BVS-Site Plugin</a> version ' . BVS_VERSION;  ?>
+<div class="siteInfo" role="site-info">
+	<ul>
+		<li><?php echo '<a href="http://wordpress.org" title="WordPress.org">WordPress</a> version ' . get_bloginfo ( 'version' ); ?></li>
+		<li><?php echo '<a href="https://github.com/bireme/bvs-site-wp-plugin" title="plugin repository">BVS-Site Plugin</a> version ' . BVS_VERSION;  ?></li>
+	</ul>
 </div>
 </div><!-- .container -->
 <?php wp_footer(); ?>

@@ -13,8 +13,8 @@ body {
 	font-size: 80%;
 	float: right;
 	padding: 4px;
-	width:992px !important;
-	}
+	width:55% !important;;
+}
 
 .bar div {
 	float: right;
@@ -40,13 +40,11 @@ body {
 	margin-top: 50px;
 	margin-left: 30px;
 	width: 300px;		
-	}
-		
+}		
 .column {
 	float: left;
-	margin: 5px;
-	}
-	
+	margin: 0.37em;
+}	
 .spacer {
 	clear: both;
 	display: block;	
@@ -238,4 +236,13 @@ ul.double { padding-top: 10px; }
 
 .vhl_collection .entry-content strong {
     display: inline;
+}
+.siteInfo li {
+	display: inline-block;
+	margin-right: 6px;
+	padding-right: 6px;
+	border-right: 1px solid;
+}
+.siteInfo li:last-child {
+	border-right: none;	
 }
