@@ -45,7 +45,6 @@ class VHL_Collection_Widget extends WP_Widget {
 		echo "<a href='" . get_permalink($instance['collection_id']) . "' title='$col_title'>" . get_the_post_thumbnail($instance['collection_id'], 'thumbnail') . "</a>";
                 echo '</div>';
             }
-	    //echo '<ul>';
 
             if ($columns == "twocolumn") {
                 echo "<ul class='double'>";
@@ -54,10 +53,9 @@ class VHL_Collection_Widget extends WP_Widget {
             }
 
             wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-            //echo '</ul>';
 	    print '<div class="spacer"></div>';
-            echo $after_widget;
 	    echo "</ul>";
+            echo $after_widget;
        }
     }
 
