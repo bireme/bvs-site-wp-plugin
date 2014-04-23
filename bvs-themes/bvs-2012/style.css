@@ -1767,6 +1767,12 @@ img#wpstats {
 	.double li{width:100% !important;}
 	.vhl-search-input {width:75%;}
 }
+@media (max-width: 729px) {
+	.column aside .widget-title + * {display:none;}
+	/*.column_2 .vhl-search .widget-title + * {display:block;}*/
+	.column {float: none;}
+	.column .widget {padding-bottom:0px;margin-bottom:12px !important;}
+}
 @media (min-width: 481px) and (max-width: 729px) {
 	.column.column_2 {background: #fff;}
 	.bar {width: 40%;}
