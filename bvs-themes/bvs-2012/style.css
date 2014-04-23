@@ -1762,32 +1762,23 @@ img#wpstats {
 /* Media queries
 -------------------------------------------------------------- */
 @media (max-width: 480px) {
-	.container {
-		width: 97%;
-	}
-	.site_name {
-		width: auto;
-	}
+	.container {width: 97%;}
+	.site_name {width: auto;}
+	.double li{width:100% !important;}
+	.vhl-search-input {width:75%;}
 }
 @media (min-width: 481px) and (max-width: 729px) {
-	.column.column_2 {
-		
-		background: #fff;
-	}
-	.bar {
-		width: 40%;
-	}
+	.column.column_2 {background: #fff;}
+	.bar {width: 40%;}
 	.double li{width:100% !important;}
 }
 @media (min-width: 730px) and (max-width: 867px) {	
 	.double li{width:100% !important;}
-
+	.vhl-search-input {width:75%;}
 }
 @media (min-width: 868px) and (max-width: 1015px) {	
 	.double li{width:100% !important;}
 }
 @media (min-width: 481px) and (max-width: 1015px) {
-	.container {
-		width: 97%;
-	}
+	.container {width: 97%;}
 }
