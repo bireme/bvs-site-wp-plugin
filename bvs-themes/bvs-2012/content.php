@@ -42,14 +42,13 @@
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_post_thumbnail(); ?>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
  		        <div class="childPages">
                                 <ul>
                                 <?php
                                         global $id;
                                         $post_type = get_post_type( $id );
-                                        $pages = get_pages('post_type=' . $post_type . '&child_of=' . $id);
+                                        $pages = get_pages( 'post_type=' . $post_type . '&parent=' . $id . '&sort_column=menu_order' );
 
                                         foreach ( $pages as $page ) { ?>
 
@@ -61,8 +60,8 @@
                                 <?php } ?>
                                 </ul>
                         </div>
-
 		</div><!-- .entry-content -->
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 		<?php endif; ?>
 
 	</article><!-- #post -->
