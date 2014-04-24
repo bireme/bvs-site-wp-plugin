@@ -1765,7 +1765,7 @@ img#wpstats {
 	.container {width: 97%;}
 	.site_name {width: auto;}
 	.double li{width:100% !important;}
-	.vhl-search-input {width:75%;}
+	.vhl-search-input {width:72%;}
 }
 @media (max-width: 729px) {
 	.column_2 .vhl-search .widget-title + * {display:block;}
