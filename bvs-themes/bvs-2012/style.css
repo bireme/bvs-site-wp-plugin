@@ -1768,8 +1768,7 @@ img#wpstats {
 	.vhl-search-input {width:75%;}
 }
 @media (max-width: 729px) {
-	.column aside .widget-title + * {display:none;}
-	/*.column_2 .vhl-search .widget-title + * {display:block;}*/
+	.column_2 .vhl-search .widget-title + * {display:block;}
 	.column {float: none;}
 	.column .widget {padding-bottom:0px;margin-bottom:12px !important;}
 }

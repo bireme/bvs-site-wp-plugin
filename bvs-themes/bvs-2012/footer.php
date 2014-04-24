@@ -40,5 +40,20 @@
 </div>
 </div><!-- .container -->
 <?php wp_footer(); ?>
+	<script type="text/javascript">
+
+		$(document).load($(window).bind("resize", listenWidth));
+
+	    function listenWidth( e ) {
+
+	        if($(window).width()<729)
+	        {
+	            $(".column_1").remove().insertAfter($(".column_3"));
+	        } else {
+	            $(".column_1").remove().insertBefore($(".column_2"));
+	        }
+	    }
+	    
+	</script>
 </body>
 </html>
