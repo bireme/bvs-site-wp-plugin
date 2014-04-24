@@ -43,6 +43,7 @@
 	<script type="text/javascript">
 
 		$(document).load($(window).bind("resize", listenWidth));
+		$(document).load($(window).bind("load", listenWidth));
 
 	    function listenWidth( e ) {
 
