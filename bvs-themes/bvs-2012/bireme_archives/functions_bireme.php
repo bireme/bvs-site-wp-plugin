@@ -57,8 +57,8 @@ if ($top_sidebar == true){
 	//'id' => 'top_sidebar' . $current_language,
 	'id' => $variables_mlf['top_sidebar'],
 	'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
         'before_title' => '<strong class="widget-title">',
         'after_title' => '</strong>',
     ) );
@@ -75,8 +75,8 @@ for($i=1; $i <= $total_columns; $i++) {
 	//'id' => 'column-' . $i . $current_language,
 	'id' => $column,
 	'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
         'before_title' => '<strong class="widget-title">',
         'after_title' => '</strong>',
     ) );
@@ -89,8 +89,8 @@ if ($footer_sidebar == true){
 	//'id' => 'footer_sidebar' . $current_language,
 	'id' => $variables_mlf['footer_sidebar'],
 	'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
         'before_title' => '<strong class="widget-title">',
         'after_title' => '</strong>',
     ) );
@@ -101,8 +101,8 @@ register_sidebar( array(
 	//'id' => 'footer' . $current_language,
 	'id' => $variables_mlf['footer'],
 	'description' => '',
-	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-	'after_widget' => '</aside>',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
 	'before_title' => '<strong class="widget-title">',
 	'after_title' => '</strong>',
 ) );
