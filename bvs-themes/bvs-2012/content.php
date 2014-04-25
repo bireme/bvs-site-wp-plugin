@@ -51,14 +51,16 @@
                                         $post_type = get_post_type( $id );
                                         $pages = get_pages( 'post_type=' . $post_type . '&parent=' . $id . '&sort_column=menu_order' );
 
-                                        foreach ( $pages as $page ) { ?>
+                                        if ($pages) {
+                                            foreach ( $pages as $page ) { ?>
 
-                                            <li>
-                                                <a href="<?php echo get_page_link( $page->ID ) ?>" rel="bookmark" title="Permanent Link to <?php echo esc_attr(strip_tags($page->post_title)); ?>"><?php echo $page->post_title; ?></a>
-                                                <?php echo "<p>" . $page->post_excerpt . "</p>"; ?>
-                                            </li>
+                                                <li>
+                                                    <a href="<?php echo get_page_link( $page->ID ) ?>" rel="bookmark" title="Permanent Link to <?php echo esc_attr(strip_tags($page->post_title)); ?>"><?php echo $page->post_title; ?></a>
+                                                    <?php echo "<p>" . $page->post_excerpt . "</p>"; ?>
+                                                </li>
 
-                                <?php } ?>
+                               <?php        }
+                                        }        ?>
                                 </ul>
                         </div>
 		</div><!-- .entry-content -->
