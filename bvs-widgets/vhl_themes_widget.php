@@ -57,8 +57,8 @@ class VHL_Themes_Widget extends WP_Widget {
             }
 
 	    print '<div class="spacer"></div>';
-            echo $after_widget;
             echo "</ul>";
+            echo $after_widget;
         }
     }
 
