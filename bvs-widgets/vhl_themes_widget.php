@@ -29,7 +29,7 @@ class VHL_Themes_Widget extends WP_Widget {
             $col_title = get_the_title($id);
             if( $show_link ){
                 $before_title .= '<a href="' . get_permalink($instance['collection_id']) . '" title="' . $col_title . '">';
-                $after_title .= '</a>';
+                $after_title = '</a>' . $after_title;
             }
 
             echo $before_title, $col_title, $after_title;
