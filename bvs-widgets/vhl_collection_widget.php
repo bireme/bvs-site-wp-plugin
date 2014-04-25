@@ -53,7 +53,6 @@ class VHL_Collection_Widget extends WP_Widget {
             }
 
             wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-	    print '<div class="spacer"></div>';
 	    echo "</ul>";
             echo $after_widget;
        }
