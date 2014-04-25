@@ -31,7 +31,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<html class="ie ie8" <?php language_attributes(); ?>>
 	<![endif]-->
 	<!--[if !(IE 7) | !(IE 8)  ]><!-->
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo ( $current_language ); ?>">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:<?php language_attributes(); ?>>
 	<!--<![endif]-->
 	
 	<head>
