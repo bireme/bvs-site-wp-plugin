@@ -40,21 +40,22 @@
 </div>
 </div><!-- .container -->
 <?php wp_footer(); ?>
-	<script type="text/javascript">
+<script type="text/javascript">
 
-		$(document).load($(window).bind("resize", listenWidth));
-		$(document).load($(window).bind("load", listenWidth));
+    $(document).on("ready", listenWidth);
+    $(document).on("ready", network);
+    $(document).ready($(window).on("resize", listenWidth));
+    $(document).ready($(window).on("resize", network));
 
-	    function listenWidth( e ) {
-
-	        if($(window).width()<729)
-	        {
-	            $(".column_1").remove().insertAfter($(".column_3"));
-	        } else {
-	            $(".column_1").remove().insertBefore($(".column_2"));
-	        }
-	    }
+    function listenWidth( e ) {
+        if($(window).width()<729)
+        {
+            $(".column_1").remove().insertAfter($(".column_3"));
+        } else {
+            $(".column_1").remove().insertBefore($(".column_2"));
+        }
+    }
 	    
-	</script>
+</script>
 </body>
 </html>
