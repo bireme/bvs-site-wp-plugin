@@ -34,7 +34,7 @@ class VHL_Collection_Widget extends WP_Widget {
 
             if( $show_link ){
                 $before_title .= '<a href="' . get_permalink($instance['collection_id']) . '" title="' . $col_title . '">';
-                $after_title .= '</a>';
+                $after_title = '</a>' . $after_title;
             }                
 
             echo $before_title, $col_title, $after_title;
@@ -53,7 +53,6 @@ class VHL_Collection_Widget extends WP_Widget {
             }
 
             wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-	    print '<div class="spacer"></div>';
 	    echo "</ul>";
             echo $after_widget;
        }
