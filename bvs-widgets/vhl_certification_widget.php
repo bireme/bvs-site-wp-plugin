@@ -21,7 +21,7 @@ class VHL_Certification_Widget extends WP_Widget {
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
             if($instance['title']) echo $before_title, $instance['title'], $after_title;
 
-            echo '<script type="text/javascript" src="' . $this->service_url . 'code.php?bvs_url=' .$bvs_url . '&lang=' . $lng . '">//</script>';
+            echo '<script type="text/javascript" src="' . $this->service_url . 'code.php?bvs_url=' .$bvs_url . '&amp;lang=' . $lng . '">/* certification */</script>';
 
         echo $after_widget;
     }

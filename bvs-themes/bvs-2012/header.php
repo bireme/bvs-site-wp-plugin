@@ -18,7 +18,7 @@ $top = "header";
 if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	$top .= $current_language;
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -26,11 +26,11 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:<?php language_attributes(); ?> <?php language_attributes(); ?> >
 <!--<![endif]-->
 	
 	<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="content-type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -40,7 +40,6 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
-	<noscript>Your browser does not support JavaScript!</noscript>
 	<!-- extract the admin configs -->
 	<?php include "bireme_archives/admin_configs.php"; ?>
 	<!-- wp_head -->
@@ -51,7 +50,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	</head>
 
 	<body <?php body_class(); ?>>
-
+	<!--noscript>Your browser does not support JavaScript!</noscript-->
 	<div class="container <?php echo $total_columns;?>_columns">
 		<div class="header">
 			<div class="bar">
