@@ -47,13 +47,13 @@
 </tr>
 <tr>
 	<th><?php echo __('Languages bar','vhl');?></th>
-	<th><?php echo __('Available languages','vhl');?></th>
-	<th><?php echo __('Language bar position','vhl');?></th>
+	<!--th><?php echo __('Available languages','vhl');?></th-->
+	<th colspan="2"><?php echo __('Language bar position','vhl');?></th>
 </tr>
 <tr>
 	<th><label></label></th>
-	<td><input id="header[language]" name="header[language]" type="checkbox" class="" value="true" <?php if($header['language'] == 'true') { echo "checked"; } ?> ><?php echo __('Check to display available languages','vhl');?></td>
-	<td>
+	<!--td><input id="header[language]" name="header[language]" type="checkbox" class="" value="true" <?php if($header['language'] == 'true') { echo "checked"; } ?> ><?php echo __('Check to display available languages','vhl');?></td-->
+	<td colspan="2">
 		<label for="header-language-position"><?php echo __('Choose language bar position','vhl');?></label>
 		<select class="header-language-position" id="language-position" name="header[language-position]">
 			<option <?php if($header['language-position'] == "1") echo "selected='selected'"; ?> value="1"><?php echo __('Top','vhl');?></option>
@@ -71,8 +71,10 @@ if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 	<th><label for="header[contactPage]"><?php echo __('Contact page','vhl');?></label></th>
 	<td colspan="2">
 		<input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"><br/>
-		<hr/>
 	</td>
+</tr>
+<tr>
+        <td colspan="3"><hr/></td>
 </tr>
 <?php } ?>
 <tr>
