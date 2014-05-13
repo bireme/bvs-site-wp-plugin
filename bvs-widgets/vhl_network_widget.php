@@ -30,7 +30,8 @@ class VHL_Network_Widget extends WP_Widget {
             
             if (!is_wp_error( $rss ) ) { // Checks that the object is created correctly 
                 $item = $rss->get_item(0);
-                echo $item->get_description();
+                //echo $item->get_description();
+                echo html_tidy($item->get_description());
             }
 
         echo $after_widget;
