@@ -69,11 +69,14 @@
     $(document).ready($(window).on("resize", network));
 
     function listenWidth( e ) {
-        if($(window).width() < 729)
+        if($(window).width()<729)
         {
-            $(".column_1").remove().insertAfter($(".column_3"));
+            if ($('body').find('.3_columns').length)
+            {
+                $(".column_1").remove().insertAfter($(".column_3"));
+            }
         } else {
-            $(".column_1").remove().insertBefore($(".column_2"));
+           $(".column_1").remove().insertBefore($(".column_2"));
         }
     }
 //]]>
