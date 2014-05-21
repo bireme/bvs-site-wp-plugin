@@ -31,6 +31,17 @@
 <script type="text/javascript">
 //<![CDATA[
     $(document).ready(function() {
+       $('.read_more').on('click', function(e) {
+           $(this).parent().hide();
+           $(this).closest('div').next().fadeToggle('slow');
+       });
+       $('.show_excerpt').on('click', function(e) {
+           $(this).parent().hide();
+           $(this).closest('div').prev().children().fadeToggle('slow');
+       });
+    });
+
+    $(document).ready(function() {
         inputval = $( ".vhl-search-submit" ).val();
         $( "#vhl-search-input", this).focus(function() {
             if (inputval == $(this).val())
@@ -51,6 +62,7 @@
             }
         });
     });
+
     $(document).on("ready", listenWidth);
     $(document).on("ready", network);
     $(document).ready($(window).on("resize", listenWidth));
