@@ -26,7 +26,7 @@
 	});
 </script>
 
-<h3 class="title"><u><?php echo mb_strtoupper(__('Theme Background', 'vhl'), 'UTF-8'); ?></u></h3>
+<h3 class="title"><?php echo __('Theme Background', 'vhl'); ?></h3>
 <table class="form-table">
 	<tbody>
 		<tr>
@@ -38,7 +38,7 @@
 	</tbody>
 </table>
 
-<h3 class="title"><u><?php echo mb_strtoupper(__('Site Columns', 'vhl'), 'UTF-8'); ?></u></h3>
+<h3 class="title"><?php echo __('Site Columns', 'vhl'); ?></h3>
 <table class="form-table">
 	<tbody>
 		<tr>
@@ -55,7 +55,7 @@
 	</tbody>
 </table>
 
-<h3 class="title"><u><?php echo mb_strtoupper(__('Column Width','vhl'), 'UTF-8'); ?></u></h3>
+<h3 class="title"><?php echo __('Column Width','vhl'); ?></h3>
 <table class="form-table">
 	<tbody>
 		<tr id="wp_bvs_column1-width-tr" class="columns-tr">
@@ -76,7 +76,7 @@
 		</tr>
 	</tbody>
  </table>
-<h3 class="title"><u><?php echo mb_strtoupper(__('Auxiliary SideBars', 'vhl'), 'UTF-8'); ?></u></h3>
+<h3 class="title"><?php echo __('Auxiliary SideBars', 'vhl'); ?></u></h3>
 
 <table class="form-table">
 	<tbody>

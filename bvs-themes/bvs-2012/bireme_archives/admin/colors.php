@@ -36,9 +36,10 @@ foreach(glob($palette_dir . "*.php") as $item) {
 			border: 1px solid #666;
 			margin: 1px 5px 0 0;
 		}
-
 		.td-title {
-			font-size: 150%;
+                        font-size: 125% !important;
+                        text-transform: uppercase;
+                        text-decoration: underline;
 		}
 	</style>
 
@@ -136,7 +137,7 @@ foreach(glob($palette_dir . "*.php") as $item) {
 				if($key_strip[0] != $currentblock) {
 					$currentblock = $key_strip[0];
 
-					print "<tr><th colspan=2 class='td-title'><u>" . mb_strtoupper($color_dict[$currentblock], 'UTF-8') . "</u></th></tr>";
+					print "<tr><th colspan=2 class='td-title'>" . $color_dict[$currentblock] . "</th></tr>";
 				}
 			?>
 
