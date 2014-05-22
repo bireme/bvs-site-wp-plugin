@@ -76,7 +76,7 @@
 		</tr>
 	</tbody>
  </table>
-<h3 class="title"><?php echo __('Auxiliary SideBars', 'vhl'); ?></u></h3>
+<h3 class="title"><?php echo __('Auxiliary SideBars', 'vhl'); ?></h3>
 
 <table class="form-table">
 	<tbody>
