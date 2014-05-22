@@ -1774,7 +1774,8 @@ img#wpstats {
 	.top_sidebar .vhl-search {width: auto !important;margin: 0px !important;}
 	.headerWidget {float: right;position: absolute;margin-top: -22px;right: 0;}
 @media (min-width: 481px) and (max-width: 1015px) {
-        .container, .bar {width: 97% !important;}
+        .bar {width: 97% !important;}
+        .container {width: 97% !important;}
         .column_1 {width: 67% !important; margin:0px !important;}
 }
 @media (max-width: 867px) {
