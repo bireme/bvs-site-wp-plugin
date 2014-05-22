@@ -1773,10 +1773,11 @@ img#wpstats {
 	.top_sidebar .vhl-search .vhl-search-input {width:235px !important;}
 	.top_sidebar .vhl-search {width: auto !important;margin: 0px !important;}
 	.headerWidget {float: right;position: absolute;margin-top: -22px;right: 0;}
+}
 @media (min-width: 481px) and (max-width: 1015px) {
-        .bar {width: 97% !important;}
-        .container {width: 97% !important;}
-        .column_1 {width: 67% !important; margin:0px !important;}
+    .bar {width: 97% !important;}
+    .container {width: 97% !important;}
+    .column_1 {width: 67% !important; margin:0px !important;}
 }
 @media (max-width: 867px) {
 	.column_2 .vhl-search .widget-title + * {display:block;}
