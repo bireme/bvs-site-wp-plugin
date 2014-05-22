@@ -1766,16 +1766,28 @@ img#wpstats {
 	.site_name {width: auto;}
 	.double li{width:100% !important;}
 	.vhl-search-input {width:72%;}
+	.column_1 {margin:0 10px 0 8px !important;}
+	.column_1 .vhl-collection {float:none !important; width: 100% !important;}
+	.footer_sidebar .menu .menu-item {display: block !important;width:100% !important;}
+	.top_pt-br .site_name h1 a {width:260px !important;} 
+	.top_sidebar .vhl-search .vhl-search-input {width:235px !important;}
+	.top_sidebar .vhl-search {width: auto !important;margin: 0px !important;}
+	.headerWidget {float: right;position: absolute;margin-top: -22px;right: 0;}
+@media (min-width: 481px) and (max-width: 1015px) {
+        .container, .bar {width: 97% !important;}
+        .column_1 {width: 67% !important; margin:0px !important;}
 }
-@media (max-width: 729px) {
+@media (max-width: 867px) {
 	.column_2 .vhl-search .widget-title + * {display:block;}
-	.column {float: none;}
+	.3_columns .column {float: none;}
 	.column .widget {padding-bottom:0px;margin-bottom:12px !important;}
 }
 @media (min-width: 481px) and (max-width: 729px) {
 	.column.column_2 {background: #fff;}
 	.bar {width: 40%;}
 	.double li{width:100% !important;}
+	.column_1 {float:none; width:100% !important;} 
+	.column_1 .vhl-collection {float:none !important; width: 100% !important;}
 }
 @media (min-width: 730px) and (max-width: 867px) {	
 	.double li{width:100% !important;}
@@ -1783,7 +1795,4 @@ img#wpstats {
 }
 @media (min-width: 868px) and (max-width: 1015px) {	
 	.double li{width:100% !important;}
-}
-@media (min-width: 481px) and (max-width: 1015px) {
-	.container {width: 97%;}
 }
