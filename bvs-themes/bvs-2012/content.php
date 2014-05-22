@@ -54,13 +54,31 @@
                                         if ($pages) {
                                             foreach ( $pages as $page ) { ?>
 
+                                                <?php
+                                                    $meta = get_post_meta( $page->ID );
+                                                ?>
+
                                                 <li>
                                                     <a href="<?php echo get_page_link( $page->ID ) ?>" rel="bookmark" title="Permanent Link to <?php echo esc_attr(strip_tags($page->post_title)); ?>"><?php echo $page->post_title; ?></a>
-                                                    <?php echo "<p>" . $page->post_excerpt . "</p>"; ?>
+                                                    <?php if ($page->post_excerpt) { ?>
+							<div class="excerpt">
+							<?php echo '<p>' . $page->post_excerpt;
+                                                        if ($meta['_links_to']) { ?>
+						            <span class="read_more"><a href="javascript:void(0)">[ Read More &rarr; ]</a></span>
+                                                        <?php } ?>
+                                                        <?php echo '</p>'; ?>
+							</div>
+						    <?php } ?>
+                                                    <?php if ($page->post_content) { ?>
+						        <div class="desc">
+							    <span class="show_excerpt"><a href="javascript:void(0)">[ Show Excerpt &rarr; ]</a></span>
+							    <?php echo wpautop($page->post_content); ?>
+							</div>
+						    <?php } ?>
                                                 </li>
 
                                <?php        }
-                                        }        ?>
+                                        }       ?>
                                 </ul>
                         </div>
 		</div><!-- .entry-content -->
