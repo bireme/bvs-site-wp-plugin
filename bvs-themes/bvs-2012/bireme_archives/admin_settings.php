@@ -145,6 +145,11 @@ function wp_bvs_settings_page() {
                         position: absolute;
                         padding: 5px;
                 }
+                #poststuff h3.title {
+                        font-size: 125%;
+                        text-transform: uppercase;
+                        text-decoration: underline;
+                }
         </style>
 
 	<div class="wrap">

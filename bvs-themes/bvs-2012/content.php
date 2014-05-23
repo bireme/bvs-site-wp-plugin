@@ -49,7 +49,7 @@
                                 <?php
                                         global $id;
                                         $post_type = get_post_type( $id );
-                                        $pages = get_pages( 'post_type=' . $post_type . '&parent=' . $id . '&sort_column=menu_order' );
+                                        $pages = get_pages( 'post_type=' . $post_type . '&child_of=' . $id . '&parent=' . $id . '&sort_column=menu_order' );
 
                                         if ($pages) {
                                             foreach ( $pages as $page ) { ?>
@@ -63,7 +63,7 @@
                                                     <?php if ($page->post_excerpt) { ?>
 							<div class="excerpt">
 							<?php echo '<p>' . $page->post_excerpt;
-                                                        if ($meta['_links_to']) { ?>
+                                                        if ($meta['_links_to'] && $page->post_content) { ?>
 						            <span class="read_more"><a href="javascript:void(0)">[ Read More &rarr; ]</a></span>
                                                         <?php } ?>
                                                         <?php echo '</p>'; ?>
