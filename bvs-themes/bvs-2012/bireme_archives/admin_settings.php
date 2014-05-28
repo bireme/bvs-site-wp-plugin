@@ -147,6 +147,7 @@ function wp_bvs_settings_page() {
                 }
                 #poststuff h3.title {
                         font-size: 125%;
+                        font-family: "Open Sans", sans-serif;
                         text-transform: uppercase;
                         text-decoration: underline;
                 }

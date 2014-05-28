@@ -245,4 +245,13 @@ function html_tidy($src){
     $done=trim(str_replace('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">','',$ret));
     return $done;
 }
+
+function http_request_local( $args, $url ) {
+   if ( preg_match('/xml|rss|feed/', $url) ){
+      $args['reject_unsafe_urls'] = false;      
+   }
+   return $args;
+}
+add_filter( 'http_request_args', 'http_request_local', 5, 2 );
+
 ?>

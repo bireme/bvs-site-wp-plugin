@@ -72,7 +72,7 @@
                                                     <?php if ($page->post_content) { ?>
 						        <div class="desc">
 							    <span class="show_excerpt"><a href="javascript:void(0)">[ Show Excerpt &rarr; ]</a></span>
-							    <?php echo wpautop($page->post_content); ?>
+							    <?php echo html_tidy(wpautop($page->post_content)); ?>
 							</div>
 						    <?php } ?>
                                                 </li>
