@@ -1786,7 +1786,7 @@ img#wpstats {
 	.3_columns .column {float: none;}
 	.column .widget {padding-bottom:0px;margin-bottom:12px !important;}
 	.onecolumn .page_item {margin: 5px 5% 5px 9px;}
-	.twocolumn div.spacer {margin: none;}
+	.twocolumn div.spacer {padding: 0;}
 }
 @media (min-width: 481px) and (max-width: 729px) {
 	.column.column_2 {background: #fff;}
