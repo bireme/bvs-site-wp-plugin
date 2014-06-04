@@ -48,6 +48,9 @@ body {
 .spacer {
 	clear: both;
 	display: block;	
+	margin:0;
+	padding:0;
+	height: 1px;
 	}
 	
 .archive-title, .page-title, .widget-title, .entry-content th, .comment-content th {

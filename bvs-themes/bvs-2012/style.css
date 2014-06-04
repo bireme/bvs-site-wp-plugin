@@ -1763,7 +1763,7 @@ img#wpstats {
 -------------------------------------------------------------- */
 @media (max-width: 480px) {
 	.container {width: 97%;}
-	.site_name {width: 220px;}
+	.site_name {width: 180px;}
 	.site_name a {background-size: 250px auto !important; background-repeat: no-repeat !important;}
 	.bar div {font-size: 82%;}
 	.bar div li {margin: 0 4px;}
@@ -1785,6 +1785,8 @@ img#wpstats {
 	.column_2 .vhl-search .widget-title + * {display:block;}
 	.3_columns .column {float: none;}
 	.column .widget {padding-bottom:0px;margin-bottom:12px !important;}
+	.onecolumn .page_item {margin: 5px 5% 5px 9px;}
+	.twocolumn div.spacer {margin: none;}
 }
 @media (min-width: 481px) and (max-width: 729px) {
 	.column.column_2 {background: #fff;}
