@@ -260,13 +260,3 @@ ul.double { padding-top: 10px; }
 .siteInfo li:last-child {
 	border-right: none;	
 }
-
-.dpe-flexible-posts li { padding-bottom: 10px; }
-.dpe-flexible-posts h4 {
-        display: inline;
-        font-weight: normal;
-}
-.dpe-flexible-posts img {
-        float: left;
-        padding-right: 10px;
-}

@@ -41,28 +41,6 @@
        });
     });
 
-    $(document).ready(function() {
-        inputval = $( ".vhl-search-submit" ).val();
-        $( "#vhl-search-input", this).focus(function() {
-            if (inputval == $(this).val())
-            {
-                $(this).attr('value', '');
-            }
-        });
-        $( "#vhl-search-input", this ).blur(function() {
-            if (!$(this).val())
-            {
-                $(this).attr('value', inputval);
-            }
-        });
-        $( "#searchForm", this ).submit(function() {
-            if ($(this).children('#vhl-search-input').val() == inputval)
-            {
-                $(this).children('#vhl-search-input').attr('value', '');
-            }
-        });
-    });
-
     $(document).on("ready", listenWidth);
     $(document).on("ready", network);
     $(document).ready($(window).on("resize", listenWidth));

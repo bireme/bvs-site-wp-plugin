@@ -27,7 +27,7 @@ class VHL_Search_Widget extends WP_Widget {
              echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="' .__('Search') .'" />';
              echo '</form>';
 
-        echo $after_widget;
+        echo $after_widget; $this->footer();
     }
  
     function update($new_instance, $old_instance) {
@@ -56,6 +56,40 @@ class VHL_Search_Widget extends WP_Widget {
             </p>
 
         <?php 
+    }
+
+    function footer( $instance = null ){
+
+        echo "\n<script type=\"text/javascript\">/* <![CDATA[ */";
+        echo "\n$(document).ready(function() { \n";
+                  
+    ?>
+            inputval = $( ".vhl-search-submit" ).val();
+            $( "#vhl-search-input", this).focus(function() {
+                if (inputval == $(this).val())
+                {
+                    $(this).attr('value', '');
+                }
+            });
+            $( "#vhl-search-input", this ).blur(function() {
+                if (!$(this).val())
+                {
+                    $(this).attr('value', inputval);
+                }
+            });
+            $( "#searchForm", this ).submit(function() {
+                if ($(this).children('#vhl-search-input').val() == inputval)
+                {
+                    $(this).children('#vhl-search-input').attr('value', '');
+                }
+            });
+    <?php
+
+        echo "\n});";
+        echo "\n/* ]]> */</script>";
+        echo "\n<noscript>Your browser does not support JavaScript!</noscript>";
+        echo "\n\n ";
+
     }
 }
 ?>
