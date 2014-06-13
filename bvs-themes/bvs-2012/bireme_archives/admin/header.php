@@ -4,39 +4,30 @@
     $current_language = strtolower(get_bloginfo('language'));
     $site_lang = substr($current_language, 0,2);
 
-    if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
-        $enabled_langs = mlf_get_option('enabled_languages');
-    else
-        $enabled_langs = array($site_lang);
-
 ?>
 <tr>
-	<th><?php echo __('Logo','vhl');?></th>
+	<th></th>
 	<th><?php echo __('Image URL','vhl');?></th>
 	<th><?php echo __('Link','vhl');?></th>
 </tr>
-<?php foreach ( $enabled_langs as $lang ) { ?>
 <tr>
-	<th><label><?php echo strtoupper($lang); ?></label></th>
-	<td><input id="header[logo-<?php echo $lang; ?>]" name="header[logo-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["logo-" . $lang] ) ); ?>"></td>
-	<td><input id="header[linkLogo-<?php echo $lang; ?>]" name="header[linkLogo-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $lang] ) ); ?>"><br/></td>
+	<th><label><?php echo strtoupper(__('Logo','vhl'));?></label></th>
+	<td><input id="header[logo-<?php echo $site_lang; ?>]" name="header[logo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["logo-" . $site_lang] ) ); ?>"></td>
+	<td><input id="header[linkLogo-<?php echo $site_lang; ?>]" name="header[linkLogo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $site_lang] ) ); ?>"><br/></td>
 </tr>
-<?php } ?>
 <tr>
 	<td colspan="3"><hr/></td>
 </tr>
 <tr>
-	<th><?php echo __('Banner','vhl');?></th>
+	<th></th>
 	<th><?php echo __('Image URL','vhl');?></th>
 	<th><?php echo __('Link','vhl');?></th>
 </tr>
-<?php foreach ( $enabled_langs as $lang ) { ?>
 <tr>
-	<th><label><?php echo strtoupper($lang); ?></label></th>
-	<td><input id="header[banner-<?php echo $lang; ?>]" name="header[banner-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["banner-" . $lang] ) ); ?>"></td>
-	<td><input id="header[bannerLink-<?php echo $lang; ?>]" name="header[bannerLink-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $lang] ) ); ?>"></td>
+	<th><label><?php echo strtoupper(__('Banner','vhl'));?></label></th>
+	<td><input id="header[banner-<?php echo $site_lang; ?>]" name="header[banner-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["banner-" . $site_lang] ) ); ?>"></td>
+	<td><input id="header[bannerLink-<?php echo $site_lang; ?>]" name="header[bannerLink-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $site_lang] ) ); ?>"></td>
 </tr>
-<?php } ?>
 <tr>
 	<th></th>
 	<td><input id="header[title_view]" name="header[title_view]" type="checkbox" class="" value="true" <?php if($header['title_view'] == 'true') { echo "checked"; } ?> > <label for="header[language]"><?php echo __('Check to display title on banner','vhl');?></label></td>
