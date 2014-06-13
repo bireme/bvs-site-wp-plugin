@@ -6,6 +6,7 @@ class VHL_Search_Widget extends WP_Widget {
     function VHL_Search_Widget() {
         $widget_ops = array('classname' => 'vhl-search', 'description' => __('Adds a VHL search on your site', 'vhl') );
         parent::WP_Widget('vhl_search', __('VHL Search', 'vhl'), $widget_ops);
+        add_action( 'wp_footer', array(&$this, 'footer'), 20, 1 );
     }
  
     function widget($args, $instance) {
@@ -27,7 +28,7 @@ class VHL_Search_Widget extends WP_Widget {
              echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="' .__('Search') .'" />';
              echo '</form>';
 
-        echo $after_widget; $this->footer();
+        echo $after_widget;
     }
  
     function update($new_instance, $old_instance) {
