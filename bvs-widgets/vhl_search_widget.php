@@ -62,6 +62,7 @@ class VHL_Search_Widget extends WP_Widget {
     function footer( $instance = null ){
 
         echo "\n<script type=\"text/javascript\">/* <![CDATA[ */";
+        echo "\n$ = jQuery;";
         echo "\n$(document).ready(function() { \n";
                   
     ?>
