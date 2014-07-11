@@ -1,8 +1,14 @@
 <?php 
+    require_once(dirname(__FILE__) . "/default.php");
+
     $current_language = strtolower(get_bloginfo('language'));
     $site_lang = substr($current_language, 0,2);
 
-    $settings = get_option( "wp_bvs_theme_settings" );
+    $settings = get_option( "wp_bvs_theme_settings");
+    if ( empty( $settings ) ) {
+            $settings = $default_settings;
+    }
+
     $layout = $settings['layout'];
     $header = $settings['header'];
     $colors = $settings['colors'];
