@@ -67,11 +67,13 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				<?php wp_nav_menu( array( 'fallback_cb' => 'false' ) ); ?>
 			</div>
 	        <div class="top top_<?php echo ($current_language);?>">
-	            <div id="parent">
-	            	<a href="<?php echo $linkLogo;?>" title="<?php echo __('Virtual Health Library','vhl');?>"> 
-		                <img src="<?php echo $logo;?>" alt="<?php echo __('VHL Logo','vhl');?>"/>
-	        		</a>
-	            </div>
+	        	<?php if($logo) { ?>
+		            <div id="parent">
+		            	<a href="<?php echo $linkLogo;?>" title="<?php echo __('Virtual Health Library','vhl');?>"> 
+			                <img src="<?php echo $logo;?>" alt="<?php echo __('VHL Logo','vhl');?>"/>
+		        		</a>
+		            </div>
+	            <?php } ?>
 	           	<?php if ($title == true) {	?>
 		            <div class="site_name">
 						<h1><a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" href="<?php echo $bannerLink;?>"><span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span></a></h1>
