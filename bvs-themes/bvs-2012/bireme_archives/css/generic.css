@@ -266,6 +266,7 @@ ul.double { padding-top: 10px; }
 }
 .widget_ultimate_posts li {
         display: table;
+        padding-bottom: 10px;
 }
 .upw-image {
         padding-top: 0 !important;
@@ -273,8 +274,14 @@ ul.double { padding-top: 10px; }
 }
 .upw-content {
         padding-top: 0 !important;
+        padding-bottom: 0 !important;
 }
 .upw-image img {
         float: left;
-        padding: 0 10px 15px 0;
+        padding: 3px 10px 0 0;
+}
+.centralize.widget_ultimate_posts ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
