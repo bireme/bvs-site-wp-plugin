@@ -20,6 +20,7 @@
     $header_banner = $header['banner-'.$site_lang];
     $bannerLink = $header['bannerLink-'.$site_lang];
     $contactPage = $header['contactPage'];
+    $headerMenu = $header['headerMenu'];
     $general_background = $colors['general-background'];//$settings['colors']['general-background'];
     $general_container = $colors['general-container'];//$settings['colors']['general-container'];
     $general_title_first = $colors['general-title-first'];//$settings['colors']['general-title-first'];

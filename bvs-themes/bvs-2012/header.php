@@ -64,7 +64,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 						<span><a href="<?php echo $contact; ?>"><?php echo ucwords($contact); ?></a></span>
 					</div>
 				<?php } ?>
-				<?php wp_nav_menu( array( 'fallback_cb' => 'false' ) ); ?>
+				<?php if ($headerMenu != true) wp_nav_menu( array( 'fallback_cb' => 'false' ) ); ?>
 			</div>
 	        <div class="top top_<?php echo ($current_language);?>">
 	        	<?php if($logo) { ?>
