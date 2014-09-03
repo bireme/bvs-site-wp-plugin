@@ -21,7 +21,7 @@ get_header(); ?>
     $level2 = "level2";
 
     if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
-            $level2 .= $current_language;
+        $level2 .= $current_language;
 
 ?>
 	<div class="breadcrumb"><a href="<?php echo esc_url( home_url( '/'.( $site_lang ) ) ); ?>" class="home">Home</a> > <?php the_title(); ?></div>

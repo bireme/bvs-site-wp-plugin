@@ -209,6 +209,8 @@ strong {
         margin-top: 10px;
         width: 143%;
 }
+.childPages .desc.single { width: 94%; }
+
 .category .entry-header p { margin: 20px; }
 .category .entry-title, .category .archive-title { margin-left: 10px; }
 .vhl-themes div.spacer, .vhl-collection div.spacer { padding: 0; }

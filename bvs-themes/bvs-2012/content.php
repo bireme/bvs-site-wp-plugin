@@ -6,6 +6,32 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
+global $post;
+global $level2;
+
+$all_options = wp_load_alloptions();
+$list = unserialize($all_options['widget_vhl_collection']);
+$ancestors = get_post_ancestors( $post->ID );
+
+if($ancestors) {
+    $first_ancestor = array_slice($ancestors, -1);
+    foreach( $list as $key => $value ) {
+        if($value['collection_id'] == $first_ancestor[0])
+            $collection = $list[$key];
+    }
+}
+
+if ($collection && isset($collection['child_order']))
+    $child_sort = $collection['child_order'];
+else
+    $child_sort = 'menu_order';
+
+if (is_active_sidebar($level2))
+    $single = "single";
+else
+    $single = "";
+
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -45,42 +71,42 @@
 		        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
  		        <div class="childPages">
-                                <ul>
-                                <?php
-                                        global $id;
-                                        $post_type = get_post_type( $id );
-                                        $pages = get_pages( 'post_type=' . $post_type . '&child_of=' . $id . '&parent=' . $id . '&sort_column=menu_order' );
+                    <ul>
+                    <?php
+                        global $id;
+                        $post_type = get_post_type( $id );
+                        $pages = get_pages( 'post_type=' . $post_type . '&child_of=' . $id . '&parent=' . $id . '&sort_column=' . $child_sort );
 
-                                        if ($pages) {
-                                            foreach ( $pages as $page ) { ?>
+                        if ($pages) {
+                            foreach ( $pages as $page ) { ?>
 
-                                                <?php
-                                                    $meta = get_post_meta( $page->ID );
-                                                ?>
+                                <?php $meta = get_post_meta( $page->ID ); ?>
 
-                                                <li>
-                                                    <a href="<?php echo get_page_link( $page->ID ) ?>" rel="bookmark" title="Permanent Link to <?php echo esc_attr(strip_tags($page->post_title)); ?>"><?php echo $page->post_title; ?></a>
-                                                    <?php if ($page->post_excerpt) { ?>
-							<div class="excerpt">
-							<?php echo '<p>' . $page->post_excerpt;
-                                                        if ($meta['_links_to'] && $page->post_content) { ?>
-						            <span class="read_more"><a href="javascript:void(0)">[ Read More &rarr; ]</a></span>
-                                                        <?php } ?>
-                                                        <?php echo '</p>'; ?>
-							</div>
-						    <?php } ?>
-                                                    <?php if ($page->post_content) { ?>
-						        <div class="desc">
-							    <span class="show_excerpt"><a href="javascript:void(0)">[ Show Excerpt &rarr; ]</a></span>
-							    <?php echo html_tidy(wpautop($page->post_content)); ?>
-							</div>
-						    <?php } ?>
-                                                </li>
+                                <li>
+                                    <a href="<?php echo get_permalink( $page->ID ) ?>" rel="bookmark" title="Permanent Link to <?php echo esc_attr(strip_tags($page->post_title)); ?>"><?php echo $page->post_title; ?></a>
+                                    <?php if ($page->post_excerpt) { ?>
+                        				<div class="excerpt">
+                        				    <?php echo '<p>' . $page->post_excerpt;
+                                                if ($meta['_links_to'] && $page->post_content) { ?>
+                        			                <br />
+                                                    <span class="read_more"><a href="javascript:void(0)">[ Read More &rarr; ]</a></span>
+                                                <?php } ?>
+                                            <?php echo '</p>'; ?>
+                        				</div>
+    			                    <?php } ?>
+                                    <?php if ($page->post_content) { ?>
+                    			        <div class="desc <?php echo $single; ?>">
+                    				        <span class="show_excerpt"><a href="javascript:void(0)">[ Show Excerpt &rarr; ]</a></span>
+                    				        <?php echo html_tidy(wpautop($page->post_content)); ?>
+                    				    </div>
+                			        <?php } ?>
+                                </li>
 
-                               <?php        }
-                                        }       ?>
-                                </ul>
-                        </div>
+                            <?php }
+                        }
+                    ?>
+                    </ul>
+                </div>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 

@@ -16,6 +16,8 @@ class VHL_Collection_Widget extends WP_Widget {
             $levels = $instance['levels'];
             $columns = $instance['columns'];
             $show_link = $instance['show_link'];
+            $order_by = $instance['order_by'];
+            $child_order = $instance['child_order'];
 
             // add subclass thumbnail when collection first level item have featured image associated
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
@@ -42,7 +44,7 @@ class VHL_Collection_Widget extends WP_Widget {
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
                 echo '<div class="vhl_collection_thumb">';
                 //echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
-		echo "<a href='" . get_permalink($instance['collection_id']) . "' title='$col_title'>" . get_the_post_thumbnail($instance['collection_id'], 'thumbnail') . "</a>";
+		        echo "<a href='" . get_permalink($instance['collection_id']) . "' title='$col_title'>" . get_the_post_thumbnail($instance['collection_id'], 'thumbnail') . "</a>";
                 echo '</div>';
             }
 
@@ -52,8 +54,8 @@ class VHL_Collection_Widget extends WP_Widget {
                 echo "<ul>";
             }
 
-            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id']);
-	    echo "</ul>";
+            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id'] . '&sort_column=' . $order_by);
+	        echo "</ul>";
             echo "<div class='spacer'></div>";
             echo $after_widget;
        }
@@ -73,6 +75,8 @@ class VHL_Collection_Widget extends WP_Widget {
         $instance['levels'] = strip_tags($new_instance['levels']);
         $instance['columns'] = strip_tags($new_instance['columns']);
         $instance['show_link'] = strip_tags($new_instance['show_link']);
+        $instance['order_by'] = strip_tags($new_instance['order_by']);
+        $instance['child_order'] = strip_tags($new_instance['child_order']);
         return $instance;
     }
     
@@ -82,6 +86,8 @@ class VHL_Collection_Widget extends WP_Widget {
         $levels = esc_attr($instance['levels']);
         $columns = esc_attr($instance['columns']);
         $show_link = esc_attr($instance['show_link']);
+        $order_by = esc_attr($instance['order_by']);
+        $child_order = esc_attr($instance['child_order']);
         $post_type_name = $this->get_post_type_name();
 
         ?>
@@ -130,6 +136,34 @@ class VHL_Collection_Widget extends WP_Widget {
                     <select name="<?php echo $this->get_field_name('columns'); ?>" > 
                         <option value="onecolumn" <?php if ($columns == 'onecolumn'): echo ' selected="true"'; endif?> >1</option>
                         <option value="twocolumn" <?php if ($columns == 'twocolumn' || $columns == ''): echo ' selected="true"'; endif?> >2</option>
+                    </select>
+                </label>
+             </p>
+             <p>
+                <label>
+                    <?php _e('Order by:', 'vhl'); ?>
+                    <select name="<?php echo $this->get_field_name('order_by'); ?>" >
+                        <option value="post_title"<?php if ($order_by == 'post_title' || $order_by == '') echo ' selected'; ?> ><?php _e('Title', 'vhl'); ?></option>
+                        <option value="menu_order"<?php if ($order_by == 'menu_order') echo ' selected'; ?>><?php _e('Order field', 'vhl'); ?></option>
+                        <option value="post_date"<?php if ($order_by == 'post_date') echo ' selected'; ?>><?php _e('Published date', 'vhl'); ?></option>
+                        <option value="post_modified"<?php if ($order_by == 'post_modified') echo ' selected'; ?>><?php _e('Last modified', 'vhl'); ?></option>
+                        <option value="ID"<?php if ($order_by == 'ID') echo ' selected'; ?>><?php _e('ID', 'vhl'); ?></option>
+                        <option value="post_author"<?php if ($order_by == 'post_author') echo ' selected'; ?>><?php _e('Author', 'vhl'); ?></option>
+                        <option value="post_name"<?php if ($order_by == 'post_name') echo ' selected'; ?>><?php _e('Slug', 'vhl'); ?></option>
+                    </select>
+                </label>
+             </p>
+             <p>
+                <label>
+                    <?php _e('Child order:', 'vhl'); ?>
+                    <select name="<?php echo $this->get_field_name('child_order'); ?>" >
+                        <option value="post_title"<?php if ($child_order == 'post_title' || $child_order == '') echo ' selected'; ?> ><?php _e('Title', 'vhl'); ?></option>
+                        <option value="menu_order"<?php if ($child_order == 'menu_order') echo ' selected'; ?>><?php _e('Order field', 'vhl'); ?></option>
+                        <option value="post_date"<?php if ($child_order == 'post_date') echo ' selected'; ?>><?php _e('Published date', 'vhl'); ?></option>
+                        <option value="post_modified"<?php if ($child_order == 'post_modified') echo ' selected'; ?>><?php _e('Last modified', 'vhl'); ?></option>
+                        <option value="ID"<?php if ($child_order == 'ID') echo ' selected'; ?>><?php _e('ID', 'vhl'); ?></option>
+                        <option value="post_author"<?php if ($child_order == 'post_author') echo ' selected'; ?>><?php _e('Author', 'vhl'); ?></option>
+                        <option value="post_name"<?php if ($child_order == 'post_name') echo ' selected'; ?>><?php _e('Slug', 'vhl'); ?></option>
                     </select>
                 </label>
              </p>
