@@ -22,10 +22,10 @@ if($ancestors) {
     }
 }
 
-if ($collection && isset($collection['child_order']))
-    $child_sort = $collection['child_order'];
+if ($collection && isset($collection['order_by']))
+    $order_by = $collection['order_by'];
 else
-    $child_sort = 'menu_order';
+    $order_by = 'menu_order';
 
 if (is_active_sidebar($level2))
     $single = "single";
@@ -75,7 +75,7 @@ else
                     <?php
                         global $id;
                         $post_type = get_post_type( $id );
-                        $pages = get_pages( 'post_type=' . $post_type . '&child_of=' . $id . '&parent=' . $id . '&sort_column=' . $child_sort );
+                        $pages = get_pages( 'post_type=' . $post_type . '&child_of=' . $id . '&parent=' . $id . '&sort_column=' . $order_by );
 
                         if ($pages) {
                             foreach ( $pages as $page ) { ?>

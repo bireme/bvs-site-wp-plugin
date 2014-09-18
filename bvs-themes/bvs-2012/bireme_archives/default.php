@@ -3,25 +3,29 @@
 $default_settings = array(
 
 	'header' => array(
+
 		'logo' => "",
 		'linkLogo' => "",
 		'banner' => "",
 		'bannerLink' => "",
 		'language' => "",
 		'contactPage' => "",
+
 	),
 	
 	'layout' => array(
+
 		'total' => 3,
 		'1' => "25%",
 		'2' => "25%",
 		'3' => "25%",
 		'4' => "25%",
+
 	),
 	
 	'colors' => array(
 
-                "palette" => "bireme_default",
+		"palette" => "bireme_default",
 
 		"general-background" => "FFF",
 		"general-container" => "FFF",
@@ -71,7 +75,8 @@ $default_settings = array(
 		"footer-title-third" => "ccc",
 		"footer-link-visited" => "c0c0c0",
 		"footer-link-active" => "ccc",
-	),
+		
+    )
 );
 
 ?>

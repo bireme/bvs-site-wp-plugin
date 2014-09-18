@@ -3,25 +3,16 @@
 require_once("structure.php");
 
 global $default_settings;
+global $palettes_configs;
 $load_gif = get_template_directory_uri() . "/bireme_archives/default/load.gif";
 
 $settings = get_option( "wp_bvs_theme_settings");
-if ( empty( $settings ) || ! isset( $settings['colors'] ) ) {
-        $settings = $default_settings;
-}
+if ( empty( $settings ) || ! isset( $settings['colors'] ) )
+    $settings = $default_settings;
 
-//print"<pre>";print_r($settings);
-
-// pegando todas as paletas
-$palette_dir = TEMPLATEPATH . "/bireme_archives/color_palette/";
-$palettes = array();
-
-foreach(glob($palette_dir . "*.php") as $item) {
-	$item = str_replace($palette_dir, "", $item);
-	$item = str_replace(".php", "", $item);
-
-	$palettes[] = $item;
-}
+$palettes = get_option( "wp_bvs_palettes_settings");
+if ( empty( $palettes ) )
+    $palettes = $palettes_configs;
 
 ?>
 
@@ -29,19 +20,19 @@ foreach(glob($palette_dir . "*.php") as $item) {
 <script src="<?php bloginfo('stylesheet_directory') ?>/bireme_archives/admin/colorpicker/js/colorpicker.js" language="javascript"></script>
 
 <style type="text/css">
-		.colorbox{
-			width: 20px;
-			height: 20px;
-			float: left;
-			border: 1px solid #666;
-			margin: 1px 5px 0 0;
-		}
-		.td-title {
-                        font-size: 125% !important;
-                        text-transform: uppercase;
-                        text-decoration: underline;
-		}
-	</style>
+	.colorbox{
+		width: 20px;
+		height: 20px;
+		float: left;
+		border: 1px solid #666;
+		margin: 1px 5px 0 0;
+	}
+	.td-title {
+        font-size: 125% !important;
+        text-transform: uppercase;
+        text-decoration: underline;
+	}
+</style>
 
 <script language="javascript">
 	$ = jQuery;
@@ -64,11 +55,11 @@ foreach(glob($palette_dir . "*.php") as $item) {
 			$(this).ColorPickerSetColor(this.value);
 		});
 
-                $('#colors-palette').change(function() {
-			$('#imgLoading1').css({'display': "inline"});
-                        $('#submit-palette').val('Y');
-			$('form').submit();
-                });
+        $('#colors-palette').change(function() {
+		    $('#imgLoading1').css({'display': "inline"});
+            $('#submit-palette').val('Y');
+		    $('form').submit();
+        });
 
 		$('#restart-palette').click(function() {
 			var palette = $("#colors-palette").val();
@@ -81,9 +72,9 @@ foreach(glob($palette_dir . "*.php") as $item) {
 			if (dialog) {
 				$('#imgLoading2').css({'display': "inline"});
 				$('#submit-palette').val('R');
-                        	$('form').submit();
+                $('form').submit();
 			}
-                });
+        });
 
 	});
 </script>
@@ -96,12 +87,11 @@ foreach(glob($palette_dir . "*.php") as $item) {
 		<th><label>Paletas disponíveis: </label> </th>
 		<td>
 			<select name="colors[palette]" id="colors-palette">
-				<!--option value=""></option-->
-				<?php foreach($palettes as $item) {
-					$str = str_replace("_", " ", $item);
+				<?php foreach($palettes as $key => $value) {
+					$str = str_replace("_", " ", $key);
 					$str = ucwords($str);
 				?>
-					<option value="<?php echo $item; ?>" <?php selected( $item, $settings['colors']['palette'] ); ?>><?php echo $str; ?></option>
+					<option value="<?php echo $key; ?>" <?php selected( $key, $settings['colors']['palette'] ); ?>><?php echo $str; ?></option>
 				<?php } ?>
 			</select>
 			<span id="imgLoading1"><img src="<?php echo $load_gif; ?>"/></span>
@@ -114,23 +104,16 @@ foreach(glob($palette_dir . "*.php") as $item) {
 	</tr>
 </table>
 
-<!--p class="submit" style="clear: both;" id="submit-palette">
-	<input type="submit" name="Submit"  class="button-primary" value="Update Settings" />
-	<input type="hidden" name="wp_bvs-settings-submit" value="Y" />
-</p>
-
-<h2 class="title">ou defina cores para seu BVS Site</h2-->
-
 <table class="form-table">
 	<tbody>
 		<?php
 		$currentblock = "";
 		foreach($settings['colors'] as $key => $item): ?>
 
-			<?php if($item == "bireme_default") $disabled = "disabled"; ?>
-                        <?php if($key == "palette") continue; ?>
-
 			<?php
+			    if($item == "bireme_default") $disabled = "disabled";
+                if($key == "palette") continue;
+
 				$field = $key;
 				$key_strip = explode("-", $key);
 
@@ -144,8 +127,8 @@ foreach(glob($palette_dir . "*.php") as $item) {
 			<tr>
 				<th><label><?php echo $color_dict[$key]; ?>:</label></th>
 				<td>
-					<input class="colorfield" id="wp_bvs_color_<?php  echo $field; ?>" name="colors[<?php echo $field; ?>]" type="text" value="<?php echo esc_html( stripslashes( $item ) ); ?>" <?php  echo $disabled; ?>>
-					<div class="colorbox" style="background-color: #<?php  echo $item; ?>"></div>
+					<input class="colorfield" id="wp_bvs_color_<?php echo $field; ?>" name="colors[<?php echo $field; ?>]" type="text" value="<?php echo esc_html( stripslashes( $item ) ); ?>" <?php echo $disabled; ?>>
+					<div class="colorbox" style="background-color: #<?php echo $item; ?>"></div>
 				</td>
 			</tr>
 

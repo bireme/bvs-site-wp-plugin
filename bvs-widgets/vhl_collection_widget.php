@@ -17,7 +17,6 @@ class VHL_Collection_Widget extends WP_Widget {
             $columns = $instance['columns'];
             $show_link = $instance['show_link'];
             $order_by = $instance['order_by'];
-            $child_order = $instance['child_order'];
 
             // add subclass thumbnail when collection first level item have featured image associated
             if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
@@ -76,7 +75,6 @@ class VHL_Collection_Widget extends WP_Widget {
         $instance['columns'] = strip_tags($new_instance['columns']);
         $instance['show_link'] = strip_tags($new_instance['show_link']);
         $instance['order_by'] = strip_tags($new_instance['order_by']);
-        $instance['child_order'] = strip_tags($new_instance['child_order']);
         return $instance;
     }
     
@@ -87,7 +85,6 @@ class VHL_Collection_Widget extends WP_Widget {
         $columns = esc_attr($instance['columns']);
         $show_link = esc_attr($instance['show_link']);
         $order_by = esc_attr($instance['order_by']);
-        $child_order = esc_attr($instance['child_order']);
         $post_type_name = $this->get_post_type_name();
 
         ?>
@@ -150,20 +147,6 @@ class VHL_Collection_Widget extends WP_Widget {
                         <option value="ID"<?php if ($order_by == 'ID') echo ' selected'; ?>><?php _e('ID', 'vhl'); ?></option>
                         <option value="post_author"<?php if ($order_by == 'post_author') echo ' selected'; ?>><?php _e('Author', 'vhl'); ?></option>
                         <option value="post_name"<?php if ($order_by == 'post_name') echo ' selected'; ?>><?php _e('Slug', 'vhl'); ?></option>
-                    </select>
-                </label>
-             </p>
-             <p>
-                <label>
-                    <?php _e('Child order:', 'vhl'); ?>
-                    <select name="<?php echo $this->get_field_name('child_order'); ?>" >
-                        <option value="post_title"<?php if ($child_order == 'post_title' || $child_order == '') echo ' selected'; ?> ><?php _e('Title', 'vhl'); ?></option>
-                        <option value="menu_order"<?php if ($child_order == 'menu_order') echo ' selected'; ?>><?php _e('Order field', 'vhl'); ?></option>
-                        <option value="post_date"<?php if ($child_order == 'post_date') echo ' selected'; ?>><?php _e('Published date', 'vhl'); ?></option>
-                        <option value="post_modified"<?php if ($child_order == 'post_modified') echo ' selected'; ?>><?php _e('Last modified', 'vhl'); ?></option>
-                        <option value="ID"<?php if ($child_order == 'ID') echo ' selected'; ?>><?php _e('ID', 'vhl'); ?></option>
-                        <option value="post_author"<?php if ($child_order == 'post_author') echo ' selected'; ?>><?php _e('Author', 'vhl'); ?></option>
-                        <option value="post_name"<?php if ($child_order == 'post_name') echo ' selected'; ?>><?php _e('Slug', 'vhl'); ?></option>
                     </select>
                 </label>
              </p>

@@ -4,16 +4,23 @@
  */
 
 require_once(dirname(__FILE__) . "/default.php");
+include(TEMPLATEPATH . "/bireme_archives/palettes.php");
 
 add_action( 'init', 'wp_bvs_admin_init' );
 add_action( 'admin_menu', 'wp_bvs_settings_page_init' );
 
 function wp_bvs_admin_init() {
-	$settings = get_option( "wp_bvs_theme_settings");
+    global $palettes_configs;
+	$settings = get_option("wp_bvs_theme_settings");
+    $palettes = get_option("wp_bvs_palettes_settings");
 	if ( empty( $settings ) ) {
 		$settings = $default_settings;
 		add_option( "wp_bvs_theme_settings", $settings, '', 'yes' );
 	}
+    if ( empty( $palettes ) ) {
+        $palettes = $palettes_configs;
+        add_option( "wp_bvs_palettes_settings", $palettes, '', 'yes' );
+    }
 }
 
 function wp_bvs_settings_page_init() {
@@ -37,6 +44,7 @@ function wp_bvs_save_theme_settings() {
 
 	global $pagenow;
 	$settings = get_option("wp_bvs_theme_settings");
+    $palettes = get_option("wp_bvs_palettes_settings");
 
 	if ($pagenow == 'themes.php' && $_GET['page'] == 'theme-settings'){
 
@@ -55,49 +63,31 @@ function wp_bvs_save_theme_settings() {
 			case 'colors' :
 				if($_POST['colors']['palette'] == "bireme_default") {
 
-                                        include(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
-                                        $settings['colors'] = $colors;
+                    $settings['colors'] = $palettes["bireme_default"];
+                    $settings['colors'] = array( "palette" => "bireme_default" ) + $settings['colors'];
 
-                                } else {
+                } else {
 
 					if($_POST['submit-palette'] == "Y") {
 
-                                        	include(TEMPLATEPATH . "/bireme_archives/color_palette/".$_POST['colors']['palette'].".php");
-                                        	$settings['colors'] = $colors;
+                        $settings['colors'] = $palettes[$_POST['colors']['palette']];
+                        $settings['colors'] = array( "palette" => $_POST['colors']['palette'] ) + $settings['colors'];
 
 					} elseif($_POST['submit-palette'] == "R") {
 
-						include(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
-                                        	$settings['colors'] = $colors;
-						$settings['colors']['palette'] = $_POST['colors']['palette'];
+                        $settings['colors'] = $palettes["bireme_default"];
+                        $settings['colors'] = array( "palette" => $_POST['colors']['palette'] ) + $settings['colors'];
+                        $palettes[$_POST['colors']['palette']] = $palettes["bireme_default"];
 
-						$palette = file_get_contents(TEMPLATEPATH . "/bireme_archives/color_palette/bireme_default.php");
-						$palette = str_replace("bireme_default", $_POST['colors']['palette'], $palette);
-
-						$handle = fopen(TEMPLATEPATH."/bireme_archives/color_palette/".$_POST['colors']['palette'].".php","w+");
-                                                fwrite($handle, $palette);
-                                                fclose($handle);
 
 					} else {
 
-						$init_tag = file_get_contents(TEMPLATEPATH . "/bireme_archives/default/header.txt");
-						$end_tag  = file_get_contents(TEMPLATEPATH . "/bireme_archives/default/footer.txt");
-						$fbody    = "";
-
-						foreach($_POST['colors'] as $key => $value) {
-							$fbody .= "\"" . $key . "\" => \"" .$value . "\",\n";
-						}
-
-						$handle = fopen(TEMPLATEPATH."/bireme_archives/color_palette/".$_POST['colors']['palette'].".php","w+");
-						fwrite($handle, $init_tag);
-						fwrite($handle, $fbody);
-						fwrite($handle, $end_tag);
-						fclose($handle);
-
-	                                        $settings['colors'] = $_POST['colors'];
+                       $settings['colors'] = $_POST['colors'];
+                       unset($_POST['colors']['palette']);
+                       $palettes[$settings['colors']['palette']] = $_POST['colors'];
 
 					}
-                                }
+                }
 			break;
 
 			case 'layout' :
@@ -116,7 +106,9 @@ function wp_bvs_save_theme_settings() {
 		if ( $settings['wp_bvs_BVSBanner'] )
 			$settings['wp_bvs_BVSBanner'] = stripslashes( esc_textarea( wp_filter_post_kses( $settings['wp_bvs_BVSBanner'] ) ) );
 	}
-	$updated = update_option( "wp_bvs_theme_settings", $settings );
+	
+    update_option( "wp_bvs_theme_settings", $settings );
+    update_option( "wp_bvs_palettes_settings", $palettes );
 }
 
 function wp_bvs_admin_tabs( $current = 'layout' ) {
@@ -140,18 +132,18 @@ function wp_bvs_settings_page() {
 	?>
 
 	<style type="text/css">
-                #imgLoading1, #imgLoading2, #imgLoading3 {
-                        display: none;
-                        position: absolute;
-                        padding: 5px;
-                }
-                #poststuff h3.title {
-                        font-size: 125%;
-                        font-family: "Open Sans", sans-serif;
-                        text-transform: uppercase;
-                        text-decoration: underline;
-                }
-        </style>
+        #imgLoading1, #imgLoading2, #imgLoading3 {
+            display: none;
+            position: absolute;
+            padding: 5px;
+        }
+        #poststuff h3.title {
+            font-size: 125%;
+            font-family: "Open Sans", sans-serif;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    </style>
 
 	<div class="wrap">
 		<h2><?php echo __('Theme Options','vhl'); ?></h2>
