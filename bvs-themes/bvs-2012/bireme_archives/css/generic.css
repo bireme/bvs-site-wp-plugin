@@ -3,7 +3,7 @@
 */
 body {
 	font-size: 0.9rem !important;	
-	}
+}
 .container {
 	width: 1000px;
 	margin: 0 auto;
@@ -18,14 +18,14 @@ body {
 
 .bar div {
 	float: right;
-	}
+}
 .bar div li {
 	float: left;
 	margin: 0px 5px;
 }
 .header {
 	height: 116px;	
-	}
+}
 .headerWidget {
 	float: right;
 	margin-top: 25px;
@@ -33,7 +33,7 @@ body {
 #parent {
 	margin: 12px 0 11px 20px;		
 	float: left;
-	}
+}
 .site_name {
 	float: left;
 	font-size: 150%;
@@ -51,12 +51,12 @@ body {
 	margin:0;
 	padding:0;
 	height: 1px;
-	}
+}
 	
 .archive-title, .page-title, .widget-title, .entry-content th, .comment-content th {
 	text-transform: inherit !important;
-	font-size: 1rem !important;	
-	}
+	font-size: 1rem !important;
+}
 	
 .container h3 {
 	border-bottom: 2px solid;
@@ -70,13 +70,13 @@ body {
 }	
 .column .widget DIV {	
 	padding: 10px;
-	}
+}
 .widget ul {
 	margin: 5px;	
-	}
+}
 .widget ul li {
 	line-height: 150%;	
-	}
+}
 
 /* Themes - 1 columns */
 .vhl-themes li {
@@ -120,7 +120,7 @@ body {
 	font-size: 0.75rem;
 	line-height: 150%;
 	clear: both;	
-	}
+}
 	
 .footer h3 {
 	display:none;
@@ -138,17 +138,17 @@ body {
 
 body.single .site-content {
 	padding: 10px;	
-	}
+}
 	
 .single1column {
 	width: 65% !important;
 	float: left !important;	
-	}
+}
 	
 .single2column {
 	width: 33%;
 	float: left;	
-	}
+}
 
 .column strong.widget-title {
         line-height: 150%;
@@ -211,8 +211,28 @@ strong {
 }
 .childPages .desc.single { width: 94%; }
 
-.category .entry-header p { margin: 20px; }
+.category .archive-title {
+    font-size: 18px !important;
+}
+.category .archive-header {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.category .entry-header img.wp-post-image { margin-bottom: 0 !important; }
+
+.category .entry-header {
+    display: flex;
+    align-items: center;
+}
+.category .entry-header p { margin: 10px; }
 .category .entry-title, .category .archive-title { margin-left: 10px; }
+.category img.wp-post-image { margin: 0 0 0 20px; }
+.category-post {
+    margin-left: 10px;
+    margin-right: 25px;
+}
+
 .vhl-themes div.spacer, .vhl-collection div.spacer { padding: 0; }
 .vhl-collection ul.double { padding-top: 0; }
 .vhl-collection ul.double li {
@@ -230,7 +250,7 @@ strong {
 	padding: 0;
 }
 .twocolumn div.spacer {
-        padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 .widget_recent_entries li { margin-bottom: 10px; }

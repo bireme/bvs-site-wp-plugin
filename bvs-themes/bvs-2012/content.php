@@ -13,13 +13,11 @@ global $level2;
 $all_options = wp_load_alloptions();
 $list = unserialize($all_options['widget_vhl_collection']);
 $ancestors = get_post_ancestors( $post->ID );
+$first_ancestor = ! empty($ancestors) ? implode("", array_slice($ancestors, -1)) : $post->ID;
 
-if($ancestors) {
-    $first_ancestor = array_slice($ancestors, -1);
-    foreach( $list as $key => $value ) {
-        if($value['collection_id'] == $first_ancestor[0])
-            $collection = $list[$key];
-    }
+foreach( $list as $key => $value ) {
+    if($value['collection_id'] == $first_ancestor)
+        $collection = $list[$key];
 }
 
 if ($collection && isset($collection['order_by']))
