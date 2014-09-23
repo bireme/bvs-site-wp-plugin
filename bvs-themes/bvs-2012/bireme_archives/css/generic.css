@@ -221,16 +221,17 @@ strong {
 }
 .category .entry-header img.wp-post-image { margin-bottom: 0 !important; }
 
-.category .entry-header {
-    display: flex;
-    align-items: center;
-}
+.category .entry-header { display: table; }
 .category .entry-header p { margin: 10px; }
 .category .entry-title, .category .archive-title { margin-left: 10px; }
-.category img.wp-post-image { margin: 0 0 0 20px; }
+.category img.wp-post-image {
+    margin: 0 0 0 20px;
+    float: left;
+}
 .category-post {
     margin-left: 10px;
     margin-right: 25px;
+    display: table;
 }
 
 .vhl-themes div.spacer, .vhl-collection div.spacer { padding: 0; }

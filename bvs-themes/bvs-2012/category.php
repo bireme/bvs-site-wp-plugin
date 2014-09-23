@@ -43,7 +43,7 @@ get_header(); ?>
 				        <?php the_post_thumbnail(); ?>
 				        <div class="category-post">
 			                <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-			                <?php //the_excerpt(); ?>
+			                <?php the_excerpt(); ?>
 				        </div>
 				</header>
 				<hr />
