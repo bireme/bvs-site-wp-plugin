@@ -6,7 +6,7 @@ Description: BVS Portal
 Author: BIREME/OPAS/OMS
 Version: 0.1
 Author URI: http://reddes.bvsalud.org/
-Site Wide Only: true
+Network: false
 */
 
 define( 'SYSTEM', strtoupper(PHP_OS) );
