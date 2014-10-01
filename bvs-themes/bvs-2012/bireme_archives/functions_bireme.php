@@ -202,10 +202,6 @@ function bir_has_no_empty_custom_field ($post_id, $custom_field_keys, $single=tr
 
 function scripts_method() {
 	wp_enqueue_script(
-		'jquery_script',
-		get_template_directory_uri() . '/js/jquery.min.js'
-	);
-	wp_enqueue_script(
 		'network_script',
 		get_template_directory_uri() . '/js/network.js'
 	);
