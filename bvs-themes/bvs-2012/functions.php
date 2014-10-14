@@ -449,6 +449,8 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
+add_image_size( 'category-thumb', 120 , 150 );
+
 /*Include BIREME Functions * 
  */
  include("bireme_archives/functions_bireme.php");
