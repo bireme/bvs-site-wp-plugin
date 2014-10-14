@@ -223,7 +223,7 @@ strong {
 
 .category .entry-header { display: table; }
 .category .entry-header p { margin: 10px; }
-.category .entry-title, .category .archive-title { margin-left: 10px; }
+.category .entry-title, .category .archive-title { margin-left: 10px !important; }
 .category img.wp-post-image {
     margin: 0 0 0 20px;
     float: left;
