@@ -292,15 +292,14 @@ ul.double { padding-top: 10px; }
         padding-bottom: 10px;
 }
 .upw-image {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        padding: 0 !important;
+        float: left;
 }
 .upw-content {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        padding: 0 !important;
+        display: table;
 }
 .upw-image img {
-        float: left;
         padding: 3px 10px 0 0;
 }
 .centralize.widget_ultimate_posts ul {
