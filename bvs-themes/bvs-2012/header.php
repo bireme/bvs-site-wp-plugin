@@ -58,10 +58,9 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				</div>
 				<?php
 				// Conditional to show contact link.
-				$contact = trim($contactPage);
-				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && !empty($contact)) { ?>
+				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && !empty($contactPage)) { ?>
 					<div id="contact"> 
-						<span><a href="<?php echo $contact; ?>"><?php echo ucwords($contact); ?></a></span>
+						<span><a href="<?php echo get_permalink($contactPage); ?>"><?php echo get_the_title($contactPage); ?></a></span>
 					</div>
 				<?php } ?>
 				<?php if ($headerMenu != true) wp_nav_menu( array( 'fallback_cb' => 'false' ) ); ?>

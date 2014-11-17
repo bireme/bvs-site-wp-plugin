@@ -32,7 +32,7 @@
 		<tr>
 			<th><label for="wp_bvs_tag_class"><?php echo __('Background image', 'vhl'); ?></label></th>
 			<td>
-				<input id="layout[background]" name="layout[background]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $layout["background"] ) ); ?>"></br>
+				<input id="layout[background]" name="layout[background]" type="text" class="regular-text code layout-background" value="<?php echo esc_html( stripslashes( $layout["background"] ) ); ?>"></br>
 			</td>
 		</tr>
 	</tbody>

@@ -12,8 +12,8 @@
 </tr>
 <tr>
 	<th><label><?php echo strtoupper(__('Logo','vhl'));?></label></th>
-	<td><input id="header[logo-<?php echo $site_lang; ?>]" name="header[logo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["logo-" . $site_lang] ) ); ?>"></td>
-	<td><input id="header[linkLogo-<?php echo $site_lang; ?>]" name="header[linkLogo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $site_lang] ) ); ?>"><br/></td>
+	<td><input id="header[logo-<?php echo $site_lang; ?>]" name="header[logo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-logo" value="<?php echo esc_html( stripslashes( $header["logo-" . $site_lang] ) ); ?>"></td>
+	<td><input id="header[linkLogo-<?php echo $site_lang; ?>]" name="header[linkLogo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-logo-link" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $site_lang] ) ); ?>"><br/></td>
 </tr>
 <tr>
 	<td colspan="3"><hr/></td>
@@ -25,8 +25,8 @@
 </tr>
 <tr>
 	<th><label><?php echo strtoupper(__('Banner','vhl'));?></label></th>
-	<td><input id="header[banner-<?php echo $site_lang; ?>]" name="header[banner-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["banner-" . $site_lang] ) ); ?>"></td>
-	<td><input id="header[bannerLink-<?php echo $site_lang; ?>]" name="header[bannerLink-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $site_lang] ) ); ?>"></td>
+	<td><input id="header[banner-<?php echo $site_lang; ?>]" name="header[banner-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-banner" value="<?php echo esc_html( stripslashes( $header["banner-" . $site_lang] ) ); ?>"></td>
+	<td><input id="header[bannerLink-<?php echo $site_lang; ?>]" name="header[bannerLink-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-banner-link" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $site_lang] ) ); ?>"></td>
 </tr>
 <tr>
 	<th></th>
@@ -62,19 +62,41 @@
 	</td>
 </tr>
 <tr>
-        <td colspan="3"><hr/></td>
+    <td colspan="3"><hr/></td>
 </tr>
 <?php
 // Show contact text field only WP Contact Form 7 Plugin is active.
 if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
 <tr>
-	<th><label for="header[contactPage]"><?php echo __('Contact page','vhl');?></label></th>
-	<td colspan="2">
-		<input id="header[contactPage]" name="header[contactPage]" type="text" class="regular-text code" value="<?php echo esc_html( stripslashes( $header["contactPage"] ) ); ?>"><br/>
-	</td>
+    <th><label for="header[contactPage]"><?php echo __('Contact page','vhl');?></label></th>
+    <td colspan="2">
+        <select id="header[contactPage]" name="header[contactPage]">
+            <option></option>
+        <?php
+            if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+                $default_language = mlf_get_option('default_language');
+                if ($default_language != $site_lang)
+                    $sufix = '_t_' . $site_lang;
+            }
+            else
+                $sufix = '';
+            $args = array(
+                'post_type' => 'page' . $sufix,
+            );
+            $loop = new WP_Query($args);
+
+            while($loop->have_posts()): $loop->the_post();
+            ?>
+                <option value="<?php the_ID(); ?>" <?php $id = get_the_ID(); if ($header["contactPage"] == $id) echo "selected"; ?>><?php the_title(); ?></option>
+            <?php
+            endwhile;
+            wp_reset_query();
+        ?>
+        </select><br />
+    </td>
 </tr>
 <tr>
-        <td colspan="3"><hr/></td>
+    <td colspan="3"><hr/></td>
 </tr>
 <?php } ?>
 <tr>

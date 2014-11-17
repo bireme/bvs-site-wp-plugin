@@ -170,3 +170,36 @@ function simple_fields_metabox_file_select(file_id, file_thumb, file_name) {
     
 }
 // simple-fields-metabox-field-file
+
+$j = jQuery.noConflict();
+
+$j(document).ready(function() {
+
+    var obj_id = '';
+
+        /* user clicks button on custom field, runs below code that opens new window */
+        $j('.header-banner,.header-logo,.layout-background').click(function() {
+            /*Thickbox function aimed to show the media window. This function accepts three parameters:
+            *
+            * Name of the window: "In our case Upload a Image"
+            * URL : Executes a WordPress library that handles and validates files.
+            * ImageGroup : As we are not going to work with groups of images but just with one that why we set it false.
+            */
+            obj_id = $j(this).attr('id');
+            obj_id = '#' + obj_id.replace( /(:|\.|\[|\])/g, "\\$1" );
+            tb_show('Upload a Image', 'media-upload.php?referer=media_page&type=image&TB_iframe=true&width=755&post_id=0', false);
+            return false;
+        });
+        // window.send_to_editor(html) is how WP would normally handle the received data. It will deliver image data in HTML format, so you can put them wherever you want.
+
+        window.send_to_editor = function(html) {
+            var hostname = window.location.hostname;
+            var image_url = $j('img', html).attr('src');
+            if (image_url.indexOf(hostname) != -1) {
+                image_url = image_url.replace(/https?:\/\/[^\/]+/i, '');
+            }
+            $j(obj_id).val(image_url);
+            tb_remove(); // calls the tb_remove() of the Thickbox plugin
+        }
+
+});
