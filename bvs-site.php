@@ -38,8 +38,10 @@ require_once(BVS_PLUGIN_PATH . '/bvs-core/settings.php');
 function vhl_init() {
 
     if (is_admin()) {
-        wp_enqueue_script('vhl-edit', BVS_PLUGIN_URL . 'js/scripts.js');
+        wp_enqueue_style('thickbox');
         wp_enqueue_style ('vhl-edit', BVS_PLUGIN_URL . 'css/styles.css');
+        wp_enqueue_script('thickbox');
+        wp_enqueue_script('vhl-edit', BVS_PLUGIN_URL . 'js/scripts.js');
     }
 
     new VHL_PageLinksTo;
