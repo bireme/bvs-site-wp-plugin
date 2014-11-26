@@ -10,8 +10,7 @@
 global $post;
 global $level2;
 
-$all_options = wp_load_alloptions();
-$list = unserialize($all_options['widget_vhl_collection']);
+$list = get_option( 'widget_vhl_collection' );
 $ancestors = get_post_ancestors( $post->ID );
 $first_ancestor = ! empty($ancestors) ? implode("", array_slice($ancestors, -1)) : $post->ID;
 
