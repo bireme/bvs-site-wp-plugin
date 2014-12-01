@@ -28,37 +28,5 @@
 </div>
 </div><!-- .container -->
 <?php wp_footer(); ?>
-<script type="text/javascript">
-//<![CDATA[
-    $(document).ready(function() {
-       $('.read_more').on('click', function(e) {
-           $(this).parent().hide();
-           $(this).closest('div').next().fadeToggle('slow');
-       });
-       $('.show_excerpt').on('click', function(e) {
-           $(this).parent().hide();
-           $(this).closest('div').prev().children().fadeToggle('slow');
-       });
-    });
-
-    $(document).on("ready", listenWidth);
-    $(document).on("ready", network);
-    $(document).ready($(window).on("resize", listenWidth));
-    $(document).ready($(window).on("resize", network));
-
-    function listenWidth( e ) {
-        if($(window).width()<729)
-        {
-            if ($('body').find('.3_columns').length)
-            {
-                $(".column_1").remove().insertAfter($(".column_3"));
-            }
-        } else {
-           $(".column_1").remove().insertBefore($(".column_2"));
-        }
-    }
-//]]>
-</script>
-<noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

@@ -322,3 +322,7 @@ ul.double { padding-top: 10px; }
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
+
+.vhl-network a {
+   outline: 0 !important;
+}

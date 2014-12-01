@@ -202,10 +202,10 @@ function bir_has_no_empty_custom_field ($post_id, $custom_field_keys, $single=tr
 
 function scripts_method() {
 	wp_enqueue_script(
-		'network_script',
-		get_template_directory_uri() . '/js/network.js'
+		'vhl-functions',
+		get_template_directory_uri() . '/js/functions.js'
 	);
-	wp_localize_script('network_script', 'network_script_vars', array(
+	wp_localize_script('vhl-functions', 'network_script_vars', array(
 			'imgpath' => get_template_directory_uri() . "/bireme_archives/default/",
 			'group' => array('cl_bvs', 'sub_bvs', 'subdev_bvs', 'cl_cvsp', 'cl_scielo', 'sub_scielo', 'subdev_scielo')
 		)
