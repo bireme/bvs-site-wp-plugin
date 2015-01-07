@@ -209,6 +209,7 @@ strong {
         margin-top: 10px;
         width: 143%;
 }
+.childPages .desc p { margin: 0; }
 .childPages .desc.single { width: 94%; }
 
 .category .archive-title {
@@ -325,4 +326,8 @@ ul.double { padding-top: 10px; }
 
 .vhl-network a {
    outline: 0 !important;
+}
+
+.breadcrumb a:visited {
+    color: #21759b;
 }

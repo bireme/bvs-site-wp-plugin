@@ -93,8 +93,8 @@ else
     			                    <?php } ?>
                                     <?php if ($page->post_content) { ?>
                     			        <div class="desc <?php echo $single; ?>">
-                    				        <span class="show_excerpt"><a href="javascript:void(0)">[ Show Excerpt &rarr; ]</a></span>
                     				        <?php echo html_tidy(wpautop($page->post_content)); ?>
+                                            <span class="show_excerpt"><a href="javascript:void(0)">[ &larr; Show Excerpt ]</a></span>
                     				    </div>
                 			        <?php } ?>
                                 </li>

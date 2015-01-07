@@ -250,4 +250,28 @@ function http_request_local( $args, $url ) {
 }
 add_filter( 'http_request_args', 'http_request_local', 5, 2 );
 
+function vhl_breadcrumb() {
+    global $site_lang;
+    $lang = '';
+
+    if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
+        $lang = $site_lang;
+    }
+
+    $breadcrumb = '';
+    $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/".( $lang ) ) ) . '" class="home">Home</a> > ';
+    $after_bc = '</div>';
+    $ancestors = get_post_ancestors();
+    $ancestors = array_reverse($ancestors);
+
+    if( count($ancestors) > 0 ) {
+        foreach( $ancestors as $ancestor) {
+            $breadcrumb .= '<a href="' . get_permalink( $ancestor ) .'">' . get_the_title( $ancestor ) . '</a> > ';
+        }
+    }
+    $breadcrumb .= get_the_title();
+
+    echo $before_bc . $breadcrumb . $after_bc;
+}
+
 ?>
