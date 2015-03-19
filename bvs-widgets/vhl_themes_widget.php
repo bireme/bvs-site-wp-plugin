@@ -3,6 +3,7 @@
 if (function_exists('add_theme_support')) {
     add_theme_support('post-thumbnails');
     add_image_size('vhl-themes', 50, 50, true);
+    add_image_size('vhl-themes-full', 116, 116, true);
 }
 
 /*** VHL Themes Widget ****************/
@@ -46,10 +47,22 @@ class VHL_Themes_Widget extends WP_Widget {
 
                     $cur_title = get_the_title($child->ID);
                     $permalink = get_permalink($child->ID);
+                    $cur_excerpt = $child->post_excerpt; 
 
-                    print "<li>";
+                    if ($thumb_size) {
+                        print "<li class='thumb_120'>";
+                    } else {
+                        print "<li>";
+                    }
 
-                    print "<strong><a href='$permalink' title='$cur_title'>" . get_the_post_thumbnail($child->ID, 'vhl-themes') . $cur_title . "</a></strong>";
+                    if ($thumb_size) {
+                        print "<strong><a href='$permalink' title='$cur_title'>" . get_the_post_thumbnail($child->ID, 'vhl-themes-full') . $cur_title . "</a></strong>";
+                    } else {
+                        print "<strong><a href='$permalink' title='$cur_title'>" . get_the_post_thumbnail($child->ID, 'vhl-themes') . $cur_title . "</a></strong>";
+                    }
+                    if ($show_excerpt) {
+                        print "<p class='excerpt'>" . $cur_excerpt . "</p>";
+                    } 
 
                     print '</li>';
                     $count = 1;
@@ -74,6 +87,8 @@ class VHL_Themes_Widget extends WP_Widget {
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
         $instance['two_columns'] = strip_tags($new_instance['two_columns']);
         $instance['show_link'] = strip_tags($new_instance['show_link']);
+        $instance['show_excerpt'] = strip_tags($new_instance['show_excerpt']);
+        $instance['thumb_size'] = strip_tags($new_instance['thumb_size']);
         return $instance;
     }
 
@@ -81,7 +96,9 @@ class VHL_Themes_Widget extends WP_Widget {
         $collection_id = esc_attr($instance['collection_id']);
         $two_columns = esc_attr($instance['two_columns']);
         $show_link = esc_attr($instance['show_link']);
-        $post_type_name = $this->get_post_type_name();
+        $show_excerpt = esc_attr($instance['show_excerpt']);
+        $thumb_size = esc_attr($instance['thumb_size']);
+	    $post_type_name = $this->get_post_type_name();
 
         ?>
             <p>
@@ -109,6 +126,16 @@ class VHL_Themes_Widget extends WP_Widget {
              <p>
                 <label>
                     <input type="checkbox" name="<?php echo $this->get_field_name('show_link'); ?>" value="true" <?php if ($show_link == 'true'): echo ' checked="true"'; endif?> ><?php _e('Show link to collection page', 'vhl'); ?>
+                </label>
+             </p>
+             <p>
+                <label>
+                    <input type="checkbox" name="<?php echo $this->get_field_name('show_excerpt'); ?>" value="true" <?php if ($show_excerpt == 'true'): echo ' checked="true"'; endif?> ><?php _e('Show excerpt', 'vhl'); ?>
+                </label>
+             </p>
+             <p>
+                <label>
+                    <input type="checkbox" name="<?php echo $this->get_field_name('thumb_size'); ?>" value="true" <?php if ($thumb_size == 'true'): echo ' checked="true"'; endif?> ><?php _e('Use large thumbnails (120px)', 'vhl'); ?>
                 </label>
              </p>
              <p>
