@@ -251,11 +251,12 @@ function http_request_local( $args, $url ) {
 add_filter( 'http_request_args', 'http_request_local', 5, 2 );
 
 function vhl_breadcrumb() {
+    global $mlf_config;
     global $site_lang;
     $lang = '';
 
     if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
-        $lang = $site_lang;
+        if ( $mlf_config['default_language'] != $site_lang ) $lang = $site_lang;
     }
 
     $breadcrumb = '';
