@@ -260,17 +260,20 @@ function vhl_breadcrumb() {
     }
 
     $breadcrumb = '';
+    $title = get_the_title();
     $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/".( $lang ) ) ) . '" class="home">Home</a> > ';
     $after_bc = '</div>';
     $ancestors = get_post_ancestors();
     $ancestors = array_reverse($ancestors);
 
     if( count($ancestors) > 0 ) {
-        foreach( $ancestors as $ancestor) {
-            $breadcrumb .= '<a href="' . get_permalink( $ancestor ) .'">' . get_the_title( $ancestor ) . '</a> > ';
+        foreach($ancestors as $ancestor) {
+            $ancestor_title = get_the_title( $ancestor );
+            if (strlen($ancestor_title) > 50) $ancestor_title = substr($ancestor_title, 0, 50) . "...";
+            $breadcrumb .= '<a href="' . get_permalink( $ancestor ) .'">' . $ancestor_title . '</a> > ';
         }
     }
-    $breadcrumb .= get_the_title();
+    $breadcrumb .= (strlen($title) > 50) ? substr($title, 0, 50) . "..." : $title;
 
     echo $before_bc . $breadcrumb . $after_bc;
 }
