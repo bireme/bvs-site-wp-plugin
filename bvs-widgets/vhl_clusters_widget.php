@@ -33,7 +33,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
                 print "<li>";
                 print "<a href='javascript:vhl_clusters_open_cluster(\"${instance['cluster']}\", \"${cluster_content[0]}\", \"${instance['url']}\");'>";
-                print $this->translate($cluster_content[0], $array_lang) . " (${cluster_content[1]})";
+                print $this->translate($cluster_content[0], $array_lang[$lang_key]) . " (${cluster_content[1]})";
                 print "</a>";
                 print "</li>";
             }
@@ -80,7 +80,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['language_url'] = $language_url;
 
         $instance['language_content'] = file_get_contents($instance['language_url']);
-        $instance['language_content'] = parse_ini_string($instance['language_content']);
+        $instance['language_content'] = parse_ini_string($instance['language_content'], true);
 
         return $instance;
     }
@@ -89,6 +89,8 @@ class VHL_Clusters_Widget extends WP_Widget {
         
         $title = esc_attr($instance['title']);
         $url = esc_attr($instance['url']);
+
+        // var_dump($instance['language_content']);
 
         ?>
             <p>
@@ -112,9 +114,9 @@ class VHL_Clusters_Widget extends WP_Widget {
                             <option></option>
                             <?php foreach(array_keys($instance['clusters']) as $cluster): ?>
                                 <?php if($cluster == $instance['cluster']): ?>
-                                    <option value="<?= $cluster; ?>" selected><?= $cluster; ?></option>
+                                    <option value="<?= $cluster; ?>" selected><?= $this->translate($cluster, $array_lang['REFINE']); ?></option>
                                 <?php else: ?>
-                                    <option value="<?= $cluster; ?>"><?= $cluster; ?></option>
+                                    <option value="<?= $cluster; ?>"><?= $this->translate($cluster, $instance['language_content']['REFINE']); ?></option>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
