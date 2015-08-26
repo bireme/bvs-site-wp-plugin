@@ -20,6 +20,8 @@ class VHL_Clusters_Widget extends WP_Widget {
         extract($args);
 
         echo $before_widget;
+
+        print "<h2>${instance['title']}</h2>";
         
         if(!empty($instance['clusters']) and !empty($instance['cluster'])) {
 
@@ -36,6 +38,7 @@ class VHL_Clusters_Widget extends WP_Widget {
                 print "</li>";
             }
             print "</ul>";
+            print "<div class='clear'></div>";
 
         }
         
