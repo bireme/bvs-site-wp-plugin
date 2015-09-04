@@ -25,6 +25,7 @@ class VHL_Themes_Widget extends WP_Widget {
             $post_type_name = $this->get_post_type_name();
             $id = $collection_id;
 
+            echo "<div class='spacer clear'></div>";
             echo $before_widget;
 
             // title
