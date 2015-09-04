@@ -75,13 +75,16 @@ class VHL_Clusters_Widget extends WP_Widget {
             $instance['url'] = $instance['url'] . "?";
         }
 
-        $this->url = $instance['url'];
-
         $url_dia_ws = file_get_contents($instance['url'] . "&debug=true");
         $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws)[0];
         $url_dia_ws = str_replace('<b>request:</b> ', '', $url_dia_ws);
         $url_dia_ws = trim($url_dia_ws);
         $instance['url_dia_ws'] = $url_dia_ws;
+
+        if(!empty($instance['cluster'])) {
+            
+            $instance['url_dia_ws'] .= '&fb=' . $instance['cluster'] . ":" . $instance['results'];
+        }
         
         $url = $instance['url_dia_ws'];
         $data = json_decode(file_get_contents($url), true);
@@ -107,6 +110,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         $image = esc_attr($instance['image']);
         $columns = esc_attr($instance['columns']);
 
+        // var_dump($instance['url_dia_ws']);
         // var_dump($instance['language_content']);
 
         ?>
