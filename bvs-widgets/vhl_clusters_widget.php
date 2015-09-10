@@ -21,10 +21,13 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         echo $before_widget;
 
-        print "<div class='vhl-clusters-thumb'>";
-        print "<img src='${instance['image']}'>";
-        print "</div>";
-        print "<h2 class='widget-title'>${instance['title']}</h2>";
+        if(!empty($instance['image'])) {
+
+            print "<div class='vhl-clusters-thumb'>";
+            print "<img src='${instance['image']}'>";
+            print "</div>";
+            print "<h2 class='widget-title'>${instance['title']}</h2>";
+        }
         
         if(!empty($instance['clusters']) and !empty($instance['cluster'])) {
 
