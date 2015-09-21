@@ -27,6 +27,7 @@ class VHL_Themes_Widget extends WP_Widget {
 
             echo "<div class='spacer clear'></div>";
             echo $before_widget;
+            echo "<div class='$extra_css'>";
 
             // title
             $col_title = get_the_title($id);
@@ -77,6 +78,7 @@ class VHL_Themes_Widget extends WP_Widget {
             echo "</ul>";
 	    print '<div class="spacer"></div>';
             
+            echo "</div>";
             echo $after_widget;
         }
     }
@@ -96,6 +98,7 @@ class VHL_Themes_Widget extends WP_Widget {
         $instance['show_excerpt'] = strip_tags($new_instance['show_excerpt']);
         $instance['thumb_size'] = strip_tags($new_instance['thumb_size']);
         $instance['thumb_extra_size'] = strip_tags($new_instance['thumb_extra_size']);
+        $instance['extra_css'] = strip_tags($new_instance['extra_css']);
         return $instance;
     }
 
@@ -105,6 +108,7 @@ class VHL_Themes_Widget extends WP_Widget {
         $show_link = esc_attr($instance['show_link']);
         $show_excerpt = esc_attr($instance['show_excerpt']);
         $thumb_size = esc_attr($instance['thumb_size']);
+        $extra_css = esc_attr($instance['extra_css']);
         $post_type_name = $this->get_post_type_name();
 
         ?>
@@ -130,6 +134,12 @@ class VHL_Themes_Widget extends WP_Widget {
                     </select>
                 </label>
              </p>
+             <p>
+                <label for="<?php echo $this->get_field_id('extra_css'); ?>">
+                    <?php _e('CSS Class:', 'vhl'); ?> 
+                    <input class="widefat" id="<?php echo $this->get_field_id('extra_css'); ?>" name="<?php echo $this->get_field_name('extra_css'); ?>" type="text" value="<?php echo $extra_css; ?>" />
+                </label>
+            </p>
              <p>
                 <label>
                     <input type="checkbox" name="<?php echo $this->get_field_name('show_link'); ?>" value="true" <?php if ($show_link == 'true'): echo ' checked="true"'; endif?> ><?php _e('Show link to collection page', 'vhl'); ?>
