@@ -20,8 +20,16 @@ class VHL_Clusters_Widget extends WP_Widget {
         extract($args);
 
         echo $before_widget;
+        echo "<div class='$extra_css'>";
 
-        print "<h2>${instance['title']}</h2>";
+        if(!empty($instance['image'])) {
+
+            print "<div class='vhl-clusters-thumb'>";
+            print "<img src='${instance['image']}'>";
+            print "</div>";
+        }
+        
+        print "<h2 class='widget-title'>${instance['title']}</h2>";
         
         if(!empty($instance['clusters']) and !empty($instance['cluster'])) {
 
@@ -39,7 +47,7 @@ class VHL_Clusters_Widget extends WP_Widget {
                 $lang_key = "REFINE_" . $instance['cluster'];
                 $array_lang = $instance['language_content'];
 
-                print "<li>";
+                print "<li class='vhl_clusters_${instance['columns']}_columns'>";
                 print "<a href='javascript:vhl_clusters_open_cluster(\"${instance['cluster']}\", \"${cluster_content[0]}\", \"${instance['url']}\");'>";
                 print $this->translate($cluster_content[0], $array_lang[$lang_key]) . " (${cluster_content[1]})";
                 print "</a>";
@@ -50,6 +58,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         }
         
+        echo "</div>";
         echo $after_widget;
     }
  
@@ -65,12 +74,13 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['url'] = strip_tags($new_instance['url']);
         $instance['results'] = strip_tags($new_instance['results']);
+        $instance['image'] = strip_tags($new_instance['image']);
+        $instance['columns'] = strip_tags($new_instance['columns']);
+        $instance['extra_css'] = strip_tags($new_instance['extra_css']);
 
         if(!empty($instance['url']) and strpos($instance['url'], '?') === false) {
             $instance['url'] = $instance['url'] . "?";
         }
-
-        $this->url = $instance['url'];
 
         $url_dia_ws = file_get_contents($instance['url'] . "&debug=true");
         $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws);
@@ -78,6 +88,11 @@ class VHL_Clusters_Widget extends WP_Widget {
         $url_dia_ws = str_replace('<b>request:</b> ', '', $url_dia_ws);
         $url_dia_ws = trim($url_dia_ws);
         $instance['url_dia_ws'] = $url_dia_ws;
+
+        if(!empty($instance['cluster'])) {
+            
+            $instance['url_dia_ws'] .= '&fb=' . $instance['cluster'] . ":" . $instance['results'];
+        }
         
         $url = $instance['url_dia_ws'];
         $data = json_decode(file_get_contents($url), true);
@@ -100,7 +115,11 @@ class VHL_Clusters_Widget extends WP_Widget {
         $title = esc_attr($instance['title']);
         $url = esc_attr($instance['url']);
         $results = esc_attr($instance['results']);
+        $image = esc_attr($instance['image']);
+        $columns = esc_attr($instance['columns']);
+        $extra_css = esc_attr($instance['extra_css']);
 
+        // var_dump($instance['url_dia_ws']);
         // var_dump($instance['language_content']);
 
         ?>
@@ -118,6 +137,14 @@ class VHL_Clusters_Widget extends WP_Widget {
             </p>
 
             <?php if(!empty($url)): ?>
+
+                <p id='VhlClustersUseImage'>
+                    <label for="<?php echo $this->get_field_id('image'); ?>">
+                        <?php _e('Endereço da Imagem:', 'vhl'); ?> <i>(<?php _e('empty if not use', 'vhl'); ?>)</i>
+                        <input class="widefat" id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo $image; ?>" />
+                    </label>
+                </p>
+            
                 <p>
                     <label for="<?php echo $this->get_field_id('cluster'); ?>">
                         <?php _e('Cluster:', 'vhl'); ?> 
@@ -138,6 +165,29 @@ class VHL_Clusters_Widget extends WP_Widget {
                     <label for="<?php echo $this->get_field_id('results'); ?>">
                         <?php _e('Number of Results:', 'vhl'); ?> 
                         <input class="widefat" id="<?php echo $this->get_field_id('results'); ?>" name="<?php echo $this->get_field_name('results'); ?>" type="number" value="<?php echo $results; ?>" />
+                    </label>
+                </p>
+
+                <p>
+                    <label for="<?php echo $this->get_field_id('extra_css'); ?>">
+                        <?php _e('CSS Class:', 'vhl'); ?> 
+                        <input class="widefat" id="<?php echo $this->get_field_id('extra_css'); ?>" name="<?php echo $this->get_field_name('extra_css'); ?>" type="text" value="<?php echo $extra_css; ?>" />
+                    </label>
+                </p>
+
+                <p>
+                    <label for="<?php echo $this->get_field_id('columns'); ?>">
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="1" <?php if($columns == 1) print 'checked="true"'; ?> /> <?php _e('One Column', 'vhl'); ?> 
+                    </label>
+                </p>
+                <p>
+                    <label for="<?php echo $this->get_field_id('columns'); ?>">
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="2" <?php if($columns == 2) print 'checked="true"'; ?> /> <?php _e('Two Columns', 'vhl'); ?> 
+                    </label>
+                </p>
+                <p>
+                    <label for="<?php echo $this->get_field_id('columns'); ?>">
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="3" <?php if($columns == 3) print 'checked="true"'; ?>/> <?php _e('Three Columns', 'vhl'); ?> 
                     </label>
                 </p>
             <?php endif; ?>
@@ -163,6 +213,17 @@ class VHL_Clusters_Widget extends WP_Widget {
             }
         /* ]]> */</script>
         <noscript>Your browser does not support JavaScript!</noscript>
+
+        <style>
+            .vhl_clusters_2_columns {
+                width: 50%;
+                float: left;
+            }   
+            .vhl_clusters_3_columns {
+                width: 33%;
+                float: left;
+            }
+        </style>
 
     <?php }
 }
