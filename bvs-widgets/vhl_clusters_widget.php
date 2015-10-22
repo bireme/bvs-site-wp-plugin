@@ -83,7 +83,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         }
 
         $url_dia_ws = file_get_contents($instance['url'] . "&debug=true");
-        $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws)
+        $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws);
         $url_dia_ws = $url_dia_ws[0];
         $url_dia_ws = str_replace('<b>request:</b> ', '', $url_dia_ws);
         $url_dia_ws = trim($url_dia_ws);
