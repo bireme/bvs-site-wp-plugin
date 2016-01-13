@@ -32,7 +32,6 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 	<head>
 	<meta http-equiv="content-type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	
@@ -58,7 +57,7 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				</div>
 				<?php
 				// Conditional to show contact link.
-				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && !empty($contactPage)) { ?>
+				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && isset($contactPage) && !empty($contactPage)) { ?>
 					<div id="contact"> 
 						<span><a href="<?php echo get_permalink($contactPage); ?>"><?php echo get_the_title($contactPage); ?></a></span>
 					</div>

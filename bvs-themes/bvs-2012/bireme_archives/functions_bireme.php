@@ -278,4 +278,16 @@ function vhl_breadcrumb() {
     echo $before_bc . $breadcrumb . $after_bc;
 }
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+    function theme_slug_render_title() {
+        $title  = get_bloginfo('name');
+        if ( is_front_page() || is_home() )
+            $title .= get_bloginfo('description') ? ' | ' . get_bloginfo('description') : '';
+?>
+<title><?php echo $title; ?></title>
+<?php
+    }
+    add_action( 'wp_head', 'theme_slug_render_title' );
+}
+
 ?>
