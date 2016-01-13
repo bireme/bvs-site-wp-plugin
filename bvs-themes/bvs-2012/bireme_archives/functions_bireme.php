@@ -253,6 +253,8 @@ add_filter( 'http_request_args', 'http_request_local', 5, 2 );
 function vhl_breadcrumb() {
     global $mlf_config;
     global $site_lang;
+    global $post;
+
     $lang = '';
 
     if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
@@ -263,7 +265,7 @@ function vhl_breadcrumb() {
     $title = get_the_title();
     $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/".( $lang ) ) ) . '" class="home">Home</a> > ';
     $after_bc = '</div>';
-    $ancestors = get_post_ancestors();
+    $ancestors = get_post_ancestors($post->ID);
     $ancestors = array_reverse($ancestors);
 
     if( count($ancestors) > 0 ) {
