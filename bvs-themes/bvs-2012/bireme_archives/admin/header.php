@@ -81,7 +81,8 @@ if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
             else
                 $sufix = '';
             $args = array(
-                'post_type' => 'page' . $sufix,
+                'post_type'   => 'page' . $sufix,
+                'post_status' => 'publish',
             );
             $loop = new WP_Query($args);
 

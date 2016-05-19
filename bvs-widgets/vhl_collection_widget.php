@@ -12,6 +12,20 @@ class VHL_Collection_Widget extends WP_Widget {
         extract($args);
 
        if ( $instance['collection_id'] != '' ){
+            $collection_id = $instance['collection_id'];
+            $title = $instance['title'];
+
+            if ( function_exists( 'pll_current_language' ) ) {
+                global $polylang;
+                
+                $lang = pll_current_language();
+                $default_language = pll_default_language();
+                $title = pll_translate_string($instance['title'], $lng);
+                $post_ids = $polylang->get_translations('post', $instance['collection_id']);
+
+                if ( $post_ids[$lang] ) $collection_id = $post_ids[$lang];
+            }
+            
             $post_type_name = $this->get_post_type_name();
             $levels = $instance['levels'];
             $columns = $instance['columns'];
@@ -19,31 +33,30 @@ class VHL_Collection_Widget extends WP_Widget {
             $order_by = $instance['order_by'];
 
             // add subclass thumbnail when collection first level item have featured image associated
-            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
-                $before_widget = str_replace('class="', 'class="thumbnail ',$before_widget);
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($collection_id) ) {
+                $before_widget = str_replace('class="', 'class="thumbnail ', $before_widget);
             }
             // add subclass that inform columns selected for the widget
-            $before_widget = str_replace('class="', 'class="' . $columns .' ',$before_widget);
+            $before_widget = str_replace('class="', 'class="' . $columns .' ', $before_widget);
 
             echo $before_widget;
 
-            if( $instance['title'] ){
-                $col_title = $instance['title'];
+            if( $title ){
+                $col_title = $title;
             }else{
-                $col_title = get_the_title($instance['collection_id']);
+                $col_title = get_the_title($collection_id);
             }
 
             if( $show_link ){
-                $before_title .= '<a href="' . get_permalink($instance['collection_id']) . '" title="' . $col_title . '">';
+                $before_title .= '<a href="' . get_permalink($collection_id) . '" title="' . $col_title . '">';
                 $after_title = '</a>' . $after_title;
             }                
 
             echo $before_title, $col_title, $after_title;
 
-            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($instance['collection_id']) ) {
+            if ( current_theme_supports('post-thumbnails') && has_post_thumbnail($collection_id) ) {
                 echo '<div class="vhl_collection_thumb">';
-                //echo get_the_post_thumbnail($instance['collection_id'], 'thumbnail');
-		        echo "<a href='" . get_permalink($instance['collection_id']) . "' title='$col_title'>" . get_the_post_thumbnail($instance['collection_id'], 'thumbnail') . "</a>";
+                echo "<a href='" . get_permalink($collection_id) . "' title='$col_title'>" . get_the_post_thumbnail($collection_id, 'thumbnail') . "</a>";
                 echo '</div>';
             }
 
@@ -53,8 +66,9 @@ class VHL_Collection_Widget extends WP_Widget {
                 echo "<ul>";
             }
 
-            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $instance['collection_id'] . '&sort_column=' . $order_by);
-	        echo "</ul>";
+            wp_list_pages('post_type=' . $post_type_name . '&depth=' . $levels . '&title_li=&child_of=' . $collection_id . '&sort_column=' . $order_by);
+
+            echo "</ul>";
             echo "<div class='spacer'></div>";
             echo $after_widget;
        }
@@ -63,13 +77,7 @@ class VHL_Collection_Widget extends WP_Widget {
     
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        
-        if ( $new_instance['title'] == '' ){
-            $instance['title'] = get_the_title($instance['collection_id']);
-        }else{
-            $instance['title'] = strip_tags($new_instance['title']);
-        }
-       
+        $instance['title'] = strip_tags($new_instance['title']);
         $instance['collection_id'] = strip_tags($new_instance['collection_id']);
         $instance['levels'] = strip_tags($new_instance['levels']);
         $instance['columns'] = strip_tags($new_instance['columns']);
@@ -78,7 +86,10 @@ class VHL_Collection_Widget extends WP_Widget {
         return $instance;
     }
     
-    function form($instance) {        
+    function form($instance) {
+        $lang = get_bloginfo('language');
+        $lang = substr($lang, 0, 2);
+
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
         $levels = esc_attr($instance['levels']);
@@ -102,11 +113,10 @@ class VHL_Collection_Widget extends WP_Widget {
                             <?php echo attribute_escape(__('Select a collection', 'vhl')); ?>
                         </option> 
                         <?php 
-                          $collection_list = get_pages('post_type=' . $post_type_name .'&parent=0'); 
+                          $collection_list = get_posts( array( 'posts_per_page' => -1, 'post_type' => $post_type_name, 'post_parent' => 0, 'post_status' => 'publish', 'lang' => $lang ) );
                           foreach ($collection_list as $col) {
                             // check if the instance have a value for collection_id  
-                            $selected = ($col->ID == $collection_id ? 'selected="true"' : '');
-                              
+                            $selected = ($col->ID == $collection_id ? 'selected="true"' : ''); 
                             $option = '<option value="'. $col->ID.'" ' . $selected . '>';
                             $option .= $col->post_title;
                             $option .= '</option>';
@@ -164,7 +174,7 @@ class VHL_Collection_Widget extends WP_Widget {
             $current_language = strtolower(get_bloginfo('language'));
 
             // mlf register the translation post_type using only first 2 letters of language code (pt-BR = pt)
-            $lng = substr($current_language, 0,2);
+            $lng = substr($current_language, 0, 2);
             if ($mlf_options['default_language'] != $lng){
                 $post_type_name = 'vhl_collection_t_' . $lng;
             }

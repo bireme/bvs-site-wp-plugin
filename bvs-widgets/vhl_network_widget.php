@@ -18,9 +18,17 @@ class VHL_Network_Widget extends WP_Widget {
         // network lang parameter only accept 2 letters language code (pt, es, en)
         $lng = substr($current_language, 0,2);
 
+        $title = $instance['title'];
+
+        if ( function_exists( 'pll_current_language' ) ) {
+            $lng = pll_current_language();
+            $title = pll_translate_string($instance['title'], $lng);
+        }
+        
         echo $before_widget;
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
-            if($instance['title']) echo $before_title, $instance['title'], $after_title;
+            
+            if( $title ) echo $before_title, $title, $after_title;
 
             $rss_url = $this->service_url . '&lang=' . $lng . '&' . $instance['params'];
 
@@ -33,7 +41,6 @@ class VHL_Network_Widget extends WP_Widget {
                 //echo $item->get_description();
                 echo html_tidy($item->get_description());
             }
-
         echo $after_widget;
     }
 

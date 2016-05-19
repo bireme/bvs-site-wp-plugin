@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * DEfinições específicas para BIREME
+ * Definições específicas para BIREME
  *
  */
  /* Load up our theme options page and related code. */
@@ -238,7 +238,7 @@ function html_tidy($src){
     $x->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'.$src);
     $x->formatOutput = true;
     $ret = preg_replace('~<(?:!DOCTYPE|/?(?:html|body|head))[^>]*>s*~i', '', $x->saveHTML());
-    $done=trim(str_replace('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">','',$ret));
+    $done = trim(str_replace('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">','',$ret));
     return $done;
 }
 
@@ -258,12 +258,17 @@ function vhl_breadcrumb() {
     $lang = '';
 
     if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
-        if ( $mlf_config['default_language'] != $site_lang ) $lang = $site_lang;
+        if ( $mlf_config['default_language'] != $site_lang ) $lang = $site_lang . "/";
+    }
+    elseif(is_plugin_active('polylang/polylang.php')) {
+        $site_language = pll_current_language();
+        $default_language = pll_default_language();
+        if ( $default_language != $site_language ) $lang = $site_language . "/";
     }
 
     $breadcrumb = '';
     $title = get_the_title();
-    $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/".( $lang ) ) ) . '" class="home">Home</a> > ';
+    $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/" . $lang ) ) . '" class="home">Home</a> > ';
     $after_bc = '</div>';
     $ancestors = get_post_ancestors($post->ID);
     $ancestors = array_reverse($ancestors);

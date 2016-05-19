@@ -13,16 +13,23 @@ class VHL_Certification_Widget extends WP_Widget {
     function widget($args, $instance) {
         $current_language = strtolower(get_bloginfo('language'));
         $bvs_url = substr(get_bloginfo('home'),7);      //remove http:// from url
-
         $lng = substr($current_language, 0,2); //use first 2 letters of language code (pt-BR = pt)
 
         extract($args);
+
+        $title = $instance['title'];
+
+        if ( function_exists( 'pll_current_language' ) ) {
+            $lng = pll_current_language();
+            $title = pll_translate_string($instance['title'], $lng);
+        }
+        
         echo $before_widget;
             $blank = ($instance['target'] == 'sim') ? '_blank' : '';
-            if($instance['title']) echo $before_title, $instance['title'], $after_title;
+            
+            if( $title ) echo $before_title, $title, $after_title;
 
             echo '<script type="text/javascript" src="' . $this->service_url . 'code.php?bvs_url=' .$bvs_url . '&amp;lang=' . $lng . '">/* certification */</script>';
-
         echo $after_widget;
     }
  

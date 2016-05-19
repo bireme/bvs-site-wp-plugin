@@ -16,8 +16,15 @@ class VHL_Search_Widget extends WP_Widget {
         // network lang parameter only accept 2 letters language code (pt, es, en)
         $lng = substr($current_language, 0,2);
 
+        $title = $instance['title'];
+
+        if ( function_exists( 'pll_current_language' ) ) {
+            $lng = pll_current_language();
+            $title = pll_translate_string($instance['title'], $lng);
+        }
+
         echo $before_widget;
-            if($instance['title']) echo $before_title, $instance['title'], $after_title;
+            if( $title ) echo $before_title, $title, $after_title;
 
              echo '<form action="' . $instance['action'] . '" method="get" id="searchForm" >';
              echo '   <input type="hidden" name="lang" value="' . $lng . '" />';
@@ -27,7 +34,6 @@ class VHL_Search_Widget extends WP_Widget {
              echo '   <input type="text" id="vhl-search-input" class="vhl-search-input" name="q" value="' .__('Search', 'vhl') . '" />';
              echo '   <input type="submit" class="vhl-search-submit submit" name="submit" value="' .__('Search', 'vhl') .'" />';
              echo '</form>';
-
         echo $after_widget;
     }
  

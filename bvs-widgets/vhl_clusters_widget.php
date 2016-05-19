@@ -19,6 +19,19 @@ class VHL_Clusters_Widget extends WP_Widget {
     function widget($args, $instance) {
         extract($args);
 
+        $current_language = strtolower(get_bloginfo('language'));
+        $lang = substr($current_language, 0,2);
+
+        $title = $instance['title'];
+
+        if ( function_exists( 'pll_current_language' ) ) {
+            $lang = pll_current_language();
+            $title = pll_translate_string($instance['title'], $lang);
+            $instance['language_url'] = $instance['url'] . "/locale/$lang/texts.ini";
+            $instance['language_content'] = file_get_contents($instance['language_url']);
+            $instance['language_content'] = parse_ini_string($instance['language_content'], true);
+        }
+
         echo $before_widget;
         echo "<div class='$extra_css'>";
 
@@ -29,30 +42,31 @@ class VHL_Clusters_Widget extends WP_Widget {
             print "</div>";
         }
         
-        print "<h2 class='widget-title'>${instance['title']}</h2>";
+        print "<strong class='widget-title'>${title}</strong>";
         
         if(!empty($instance['clusters']) and !empty($instance['cluster'])) {
 
             print "<ul>";
-            $count = 0;
-            foreach($instance['clusters'][$instance['cluster']] as $cluster_content) {
+                $count = 0;
+                $results = (int)$instance['results'];
+                foreach($instance['clusters'][$instance['cluster']] as $cluster_content) {
+                    if( $count >= $results ) {
+                        break;
+                    } elseif ( !$cluster_content[0] ) {
+                        continue;
+                    } else {
+                        $count++;
+                    }
 
-                if($count >= (int)$instance['results']) {
-                    break;
-                } else {
-                    $count++;
+                    $lang_key = "REFINE_" . $instance['cluster'];
+                    $array_lang = $instance['language_content'];
+
+                    print "<li class='vhl_clusters_${instance['columns']}_columns'>";
+                        print "<a href='javascript:vhl_clusters_open_cluster(\"${instance['cluster']}\", \"${cluster_content[0]}\", \"${instance['url']}\", \"${lang}\");'>";
+                        print $this->translate($cluster_content[0], $array_lang[$lang_key]) . " (${cluster_content[1]})";
+                        print "</a>";
+                    print "</li>";
                 }
-
-
-                $lang_key = "REFINE_" . $instance['cluster'];
-                $array_lang = $instance['language_content'];
-
-                print "<li class='vhl_clusters_${instance['columns']}_columns'>";
-                print "<a href='javascript:vhl_clusters_open_cluster(\"${instance['cluster']}\", \"${cluster_content[0]}\", \"${instance['url']}\");'>";
-                print $this->translate($cluster_content[0], $array_lang[$lang_key]) . " (${cluster_content[1]})";
-                print "</a>";
-                print "</li>";
-            }
             print "</ul>";
             print "<div class='clear'></div>";
 
@@ -78,11 +92,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['columns'] = strip_tags($new_instance['columns']);
         $instance['extra_css'] = strip_tags($new_instance['extra_css']);
 
-        if(!empty($instance['url']) and strpos($instance['url'], '?') === false) {
-            $instance['url'] = $instance['url'] . "?";
-        }
-
-        $url_dia_ws = file_get_contents($instance['url'] . "&debug=true");
+        $url_dia_ws = file_get_contents($instance['url'] . "?debug=true");
         $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws);
         $url_dia_ws = $url_dia_ws[0];
         $url_dia_ws = str_replace('<b>request:</b> ', '', $url_dia_ws);
@@ -90,7 +100,6 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['url_dia_ws'] = $url_dia_ws;
 
         if(!empty($instance['cluster'])) {
-            
             $instance['url_dia_ws'] .= '&fb=' . $instance['cluster'] . ":" . $instance['results'];
         }
         
@@ -98,12 +107,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         $data = json_decode(file_get_contents($url), true);
         $instance['clusters'] = $data['diaServerResponse'][0]['facet_counts']['facet_fields'];
 
-        $language_url = explode("/", $instance['url']);
-        $language_url = str_replace(end($language_url), '', $instance['url']);
-
-        $language_url .= "/locale/$lng/texts.ini";
-        $instance['language_url'] = $language_url;
-
+        $instance['language_url'] = $instance['url'] . "/locale/$lng/texts.ini";
         $instance['language_content'] = file_get_contents($instance['language_url']);
         $instance['language_content'] = parse_ini_string($instance['language_content'], true);
 
@@ -111,16 +115,13 @@ class VHL_Clusters_Widget extends WP_Widget {
     }
     
     function form($instance) {
-        
+
         $title = esc_attr($instance['title']);
         $url = esc_attr($instance['url']);
         $results = esc_attr($instance['results']);
         $image = esc_attr($instance['image']);
         $columns = esc_attr($instance['columns']);
         $extra_css = esc_attr($instance['extra_css']);
-
-        // var_dump($instance['url_dia_ws']);
-        // var_dump($instance['language_content']);
 
         ?>
             <p>
@@ -152,14 +153,14 @@ class VHL_Clusters_Widget extends WP_Widget {
                             <option></option>
                             <?php foreach(array_keys($instance['clusters']) as $cluster): ?>
                                 <?php if($cluster == $instance['cluster']): ?>
-                                    <option value="<?= $cluster; ?>" selected><?= $this->translate($cluster, $array_lang['REFINE']); ?></option>
+                                    <option value="<?= $cluster; ?>" selected><?= $this->translate($cluster, $instance['language_content']['REFINE']); ?></option>
                                 <?php else: ?>
                                     <option value="<?= $cluster; ?>"><?= $this->translate($cluster, $instance['language_content']['REFINE']); ?></option>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
                     </label>
-                </p>                
+                </p>
 
                 <p>
                     <label for="<?php echo $this->get_field_id('results'); ?>">
@@ -198,16 +199,22 @@ class VHL_Clusters_Widget extends WP_Widget {
     function footer( $instance = null ){ ?>
 
         <script type="text/javascript">/* <![CDATA[ */
-            function vhl_clusters_open_cluster(cluster, field, url) {
+            function vhl_clusters_open_cluster(cluster, field, url, lang) {
                 var f = document.createElement("form");
                 f.setAttribute('method',"post");
                 f.setAttribute('action', url);
 
-                var i = document.createElement("input"); //input element, text
-                i.setAttribute('type',"text");
+                var i = document.createElement("input");
+                i.setAttribute('type',"hidden");
                 i.setAttribute('name', "filter["+cluster+"][]");
                 i.setAttribute('value', field);
                 f.appendChild(i);
+
+                var l = document.createElement("input");
+                l.setAttribute('type',"hidden");
+                l.setAttribute('name', "lang");
+                l.setAttribute('value', lang);
+                f.appendChild(l);
 
                 f.submit();
             }
