@@ -184,7 +184,8 @@ $j(document).ready(function() {
             
             window.send_to_editor = function(html) {
                 var hostname = window.location.hostname;
-                var image_url = $j('img', html).attr('src');
+                var src = $j(html).attr('src');
+                var image_url = (src !== undefined) ? src : $j('img', html).attr('src');
                 if (image_url.indexOf(hostname) != -1) {
                     image_url = image_url.replace(/https?:\/\/[^\/]+/i, '');
                 }
