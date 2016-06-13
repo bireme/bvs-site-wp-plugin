@@ -14,6 +14,7 @@ class VHL_Collection_Widget extends WP_Widget {
        if ( $instance['collection_id'] != '' ){
             $collection_id = $instance['collection_id'];
             $title = $instance['title'];
+            $post_type_name = $this->get_post_type_name();
 
             if ( function_exists( 'pll_current_language' ) ) {
                 global $polylang;
@@ -21,12 +22,11 @@ class VHL_Collection_Widget extends WP_Widget {
                 $lang = pll_current_language();
                 $default_language = pll_default_language();
                 $title = pll_translate_string($instance['title'], $lng);
-                $post_ids = $polylang->get_translations('post', $instance['collection_id']);
+                $post_ids = $polylang->model->get_translations($post_type_name, $collection_id);
 
                 if ( $post_ids[$lang] ) $collection_id = $post_ids[$lang];
             }
             
-            $post_type_name = $this->get_post_type_name();
             $levels = $instance['levels'];
             $columns = $instance['columns'];
             $show_link = $instance['show_link'];
@@ -87,9 +87,7 @@ class VHL_Collection_Widget extends WP_Widget {
     }
     
     function form($instance) {
-        $lang = get_bloginfo('language');
-        $lang = substr($lang, 0, 2);
-
+        $lang = defined( 'POLYLANG_VERSION' ) ? pll_default_language() : '';
         $title = esc_attr($instance['title']);
         $collection_id = esc_attr($instance['collection_id']);
         $levels = esc_attr($instance['levels']);

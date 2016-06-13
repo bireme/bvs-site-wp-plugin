@@ -22,17 +22,19 @@ class VHL_Themes_Widget extends WP_Widget {
         if ( $instance['collection_id'] != '' ){
             extract($instance);
 
+            $collection_id = $instance['collection_id'];
+            $post_type_name = $this->get_post_type_name();
+
             if ( function_exists( 'pll_current_language' ) ) {
                 global $polylang;
                 
                 $lang = pll_current_language();
                 $default_language = pll_default_language();
-                $post_ids = $polylang->get_translations('post', $instance['collection_id']);
+                $post_ids = $polylang->model->get_translations($post_type_name, $collection_id);
 
                 if ( $post_ids[$lang] ) $collection_id = $post_ids[$lang];
             }
 
-            $post_type_name = $this->get_post_type_name();
             $id = $collection_id;
 
             echo "<div class='spacer clear'></div>";
