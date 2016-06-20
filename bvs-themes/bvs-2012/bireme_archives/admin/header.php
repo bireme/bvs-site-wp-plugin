@@ -4,17 +4,29 @@
     $current_language = strtolower(get_bloginfo('language'));
     $site_lang = substr($current_language, 0,2);
 
+    if ( defined( 'POLYLANG_VERSION' ) )
+        $langs = pll_languages_list();
+    else
+        $langs = array( $site_lang );
+
 ?>
 <tr>
 	<th></th>
 	<th><?php echo __('Image URL','vhl');?></th>
 	<th><?php echo __('Link','vhl');?></th>
 </tr>
-<tr>
-	<th><label><?php echo strtoupper(__('Logo','vhl'));?></label></th>
-	<td><input id="header[logo-<?php echo $site_lang; ?>]" name="header[logo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-logo" value="<?php echo esc_html( stripslashes( $header["logo-" . $site_lang] ) ); ?>"></td>
-	<td><input id="header[linkLogo-<?php echo $site_lang; ?>]" name="header[linkLogo-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-logo-link" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $site_lang] ) ); ?>"><br/></td>
-</tr>
+
+<?php foreach ($langs as $lang) { ?>
+    <tr>
+    	<th>
+            <label><?php echo strtoupper(__('Logo','vhl'));?></label>
+            <?php echo ( defined( 'POLYLANG_VERSION' ) ) ? '(' . strtoupper( $lang ) . ')' : ''; ?>
+        </th>
+    	<td><input id="header[logo-<?php echo $lang; ?>]" name="header[logo-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-logo" value="<?php echo esc_html( stripslashes( $header["logo-" . $lang] ) ); ?>"></td>
+    	<td><input id="header[linkLogo-<?php echo $lang; ?>]" name="header[linkLogo-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-logo-link" value="<?php echo esc_html( stripslashes( $header["linkLogo-" . $lang] ) ); ?>"><br/></td>
+    </tr>
+<?php } ?>
+
 <tr>
 	<td colspan="3"><hr/></td>
 </tr>
@@ -23,11 +35,17 @@
 	<th><?php echo __('Image URL','vhl');?></th>
 	<th><?php echo __('Link','vhl');?></th>
 </tr>
-<tr>
-	<th><label><?php echo strtoupper(__('Banner','vhl'));?></label></th>
-	<td><input id="header[banner-<?php echo $site_lang; ?>]" name="header[banner-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-banner" value="<?php echo esc_html( stripslashes( $header["banner-" . $site_lang] ) ); ?>"></td>
-	<td><input id="header[bannerLink-<?php echo $site_lang; ?>]" name="header[bannerLink-<?php echo $site_lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-banner-link" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $site_lang] ) ); ?>"></td>
-</tr>
+
+<?php foreach ($langs as $lang) { ?>
+    <tr>
+    	<th>
+            <label><?php echo strtoupper(__('Banner','vhl'));?></label>
+            <?php echo ( defined( 'POLYLANG_VERSION' ) ) ? '(' . strtoupper( $lang ) . ')' : ''; ?>
+        </th>
+    	<td><input id="header[banner-<?php echo $lang; ?>]" name="header[banner-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the URL','vhl');?>" type="text" class="regular-text code header-banner" value="<?php echo esc_html( stripslashes( $header["banner-" . $lang] ) ); ?>"></td>
+    	<td><input id="header[bannerLink-<?php echo $lang; ?>]" name="header[bannerLink-<?php echo $lang; ?>]" placeholder="<?php echo __('Paste the link','vhl');?>" type="text" class="regular-text code header-banner-link" value="<?php echo esc_html( stripslashes( $header["bannerLink-" . $lang] ) ); ?>"></td>
+    </tr>
+<?php } ?>
 <tr>
 	<th></th>
 	<td><input id="header[title_view]" name="header[title_view]" type="checkbox" class="" value="true" <?php if($header['title_view'] == 'true') { echo "checked"; } ?> > <?php echo __('Check to display title on banner','vhl');?></td>
@@ -73,13 +91,23 @@ if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
         <select id="header[contactPage]" name="header[contactPage]">
             <option></option>
         <?php
+            $sufix = '';
+
             if(is_plugin_active('multi-language-framework/multi-language-framework.php')) {
                 $default_language = mlf_get_option('default_language');
+
                 if ($default_language != $site_lang)
                     $sufix = '_t_' . $site_lang;
             }
-            else
-                $sufix = '';
+
+            // if ( defined( 'POLYLANG_VERSION' ) ) {
+            //     $site_lang = pll_current_language();
+            //     $default_language = pll_default_language();
+
+            //     if ($default_language != $site_lang)
+            //         $sufix = '_t_' . $site_lang;
+            // }
+
             $args = array(
                 'post_type'   => 'page' . $sufix,
                 'post_status' => 'publish',
