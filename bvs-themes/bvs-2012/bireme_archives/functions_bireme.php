@@ -8,6 +8,9 @@
 
 include_once(ABSPATH.'wp-admin/includes/plugin.php');
 
+if ( defined( 'POLYLANG_VERSION' ) )
+    require_once(PLL_INC . '/api.php');
+
 $current_language = strtolower(get_bloginfo('language'));
 
 if ($current_language != ''){
