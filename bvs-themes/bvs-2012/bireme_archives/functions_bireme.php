@@ -8,9 +8,6 @@
 
 include_once(ABSPATH.'wp-admin/includes/plugin.php');
 
-if ( defined( 'POLYLANG_VERSION' ) )
-    require_once(PLL_INC . '/api.php');
-
 $current_language = strtolower(get_bloginfo('language'));
 
 if ($current_language != ''){
@@ -264,9 +261,14 @@ function vhl_breadcrumb() {
         if ( $mlf_config['default_language'] != $site_lang ) $lang = $site_lang . "/";
     }
     elseif(is_plugin_active('polylang/polylang.php')) {
-        $site_language = pll_current_language();
-        $default_language = pll_default_language();
-        if ( $default_language != $site_language ) $lang = $site_language . "/";
+        if (function_exists('pll_current_language'))
+            $site_language = pll_current_language();
+
+        if (function_exists('pll_default_language'))
+            $default_language = pll_default_language();
+
+        if ( isset($default_language) && isset($site_language) && $default_language != $site_language )
+            $lang = $site_language . "/";
     }
 
     $breadcrumb = '';
