@@ -21,8 +21,8 @@ if ( empty( $palettes ) )
 
 ?>
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory') ?>/bireme_archives/admin/colorpicker/css/colorpicker.css" type="text/css" />
-<script src="<?php bloginfo('stylesheet_directory') ?>/bireme_archives/admin/colorpicker/js/colorpicker.js" language="javascript"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bireme_archives/admin/colorpicker/css/colorpicker.css" type="text/css" />
+<script src="<?php echo get_template_directory_uri(); ?>/bireme_archives/admin/colorpicker/js/colorpicker.js" language="javascript"></script>
 
 <style type="text/css">
 	.colorbox{

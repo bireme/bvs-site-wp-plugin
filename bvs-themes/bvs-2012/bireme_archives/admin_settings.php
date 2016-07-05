@@ -11,8 +11,10 @@ add_action( 'admin_menu', 'wp_bvs_settings_page_init' );
 
 function wp_bvs_admin_init() {
     global $palettes_configs;
+    global $default_settings;
 	$settings = get_option("wp_bvs_theme_settings");
     $palettes = get_option("wp_bvs_palettes_settings");
+
 	if ( empty( $settings ) ) {
 		$settings = $default_settings;
 		add_option( "wp_bvs_theme_settings", $settings, '', 'yes' );
@@ -43,8 +45,19 @@ function wp_bvs_load_settings_page() {
 function wp_bvs_save_theme_settings() {
 
 	global $pagenow;
+    global $palettes_configs;
+    global $default_settings;
 	$settings = get_option("wp_bvs_theme_settings");
     $palettes = get_option("wp_bvs_palettes_settings");
+
+    if ( empty( $settings ) ) {
+        $settings = $default_settings;
+        add_option( "wp_bvs_theme_settings", $settings, '', 'yes' );
+    }
+    if ( empty( $palettes ) ) {
+        $palettes = $palettes_configs;
+        add_option( "wp_bvs_palettes_settings", $palettes, '', 'yes' );
+    }
 
 	if ($pagenow == 'themes.php' && $_GET['page'] == 'theme-settings'){
 
