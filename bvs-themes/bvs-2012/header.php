@@ -53,7 +53,27 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 		<div class="header">
 			<div class="bar">
 				<div id="otherVersions">
-					<?php if(function_exists('mlf_links_to_languages')) { mlf_links_to_languages(); } ?>	
+					<?php
+						if ( function_exists( 'mlf_links_to_languages' ) )
+							mlf_links_to_languages();
+						elseif ( function_exists( 'pll_the_languages' ) ) {
+							$args = array(
+								'dropdown' => 0,
+								'show_names' => 1,
+								'display_names_as' => 'name',
+								'show_flags' => 0,
+								'hide_if_empty' => 1,
+								'force_home' => 0,
+								'echo' => 0,
+								'hide_if_no_translation' => 1,
+								'hide_current' => 1,
+								'post_id' => null,
+								'raw' => 0
+							);
+
+							echo '<ul>' . pll_the_languages( $args ) . '</ul>';
+						}
+					?>
 				</div>
 				<?php
 				// Conditional to show contact link.
