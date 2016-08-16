@@ -18,7 +18,10 @@ load_plugin_textdomain( 'vhl', false,  BVS_PLUGIN_DIR . '/languages' );
 
 if ( is_admin() ) require_once( TEMPLATEPATH . '/bireme_archives/admin_settings.php' );
 
+global $default_settings;
 $settings = get_option( "wp_bvs_theme_settings" );
+if ( empty( $settings ) ) $settings = $default_settings;
+
 $layout = $settings['layout'];
 $total_columns = $layout['total'];
 $top_sidebar = $layout['top-sidebar'];
