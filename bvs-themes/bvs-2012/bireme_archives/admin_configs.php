@@ -32,7 +32,7 @@
     $general_link_visited = $colors['general-link-visited'];//$settings['colors']['general-link-visited'];
     $general_title_border = $colors['general-title-border'];//$settings['colors']['general-title-border'];
     $header_background_color = $colors['header-background'];//$settings['colors']['header-background']; 
-    $header_title_color = $colors['header-title-frist'];//$settings['colors']['header-title-first'];
+    $header_title_color = $colors['header-title-first'];//$settings['colors']['header-title-first'];
     $header_link_color = $colors['header-link-active'];//$settings['colors']['header-link-active'];
     $top_sidebar = $layout['top-sidebar'];//$settings['layout']['top-sidebar'];
     $footer_sidebar = $layout['footer-sidebar'];//$settings['layout']['footer-sidebar'];
