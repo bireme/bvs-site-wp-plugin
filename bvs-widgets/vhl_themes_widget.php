@@ -37,9 +37,19 @@ class VHL_Themes_Widget extends WP_Widget {
 
             $id = $collection_id;
 
-            echo "<div class='spacer clear'></div>";
+            if ( !empty( $extra_css ) ) {
+                $dom = new DOMDocument;
+                $dom->loadHTML($before_widget);
+                $elements = $dom->getElementsByTagName('aside');
+                foreach($elements as $el) {
+                    $el->setAttribute('class', 
+                        $el->getAttribute('class') . ' ' . $extra_css);
+                }
+                $before_widget = $elements->item(0)->C14N();
+                $before_widget = substr($before_widget, 0, strpos($before_widget, '><')) . '>';
+            }
+
             echo $before_widget;
-            echo "<div class='$extra_css'>";
 
             // title
             $col_title = get_the_title($id);
@@ -88,9 +98,7 @@ class VHL_Themes_Widget extends WP_Widget {
                 }
             }
             echo "</ul>";
-	    print '<div class="spacer"></div>';
-            
-            echo "</div>";
+            print '<div class="spacer"></div>';
             echo $after_widget;
         }
     }
