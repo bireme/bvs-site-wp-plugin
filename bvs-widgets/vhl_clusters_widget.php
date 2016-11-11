@@ -201,7 +201,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         <script type="text/javascript">/* <![CDATA[ */
             function vhl_clusters_open_cluster(cluster, field, url, lang) {
                 var f = document.createElement("form");
-                f.setAttribute('method',"post");
+                f.setAttribute('method',"get");
                 f.setAttribute('action', url);
 
                 var i = document.createElement("input");
