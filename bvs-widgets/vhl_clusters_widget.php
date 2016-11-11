@@ -10,7 +10,7 @@ class VHL_Clusters_Widget extends WP_Widget {
     }
 
     function translate($key, $array_lang) {
-        if(array_key_exists($key, $array_lang)) {
+        if(is_array($array_lang) && array_key_exists($key, $array_lang)) {
             return $array_lang[$key];
         }
         return $key;
