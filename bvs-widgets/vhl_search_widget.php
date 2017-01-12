@@ -28,6 +28,7 @@ class VHL_Search_Widget extends WP_Widget {
 
              echo '<form action="' . $instance['action'] . '" method="get" id="searchForm" >';
              echo '   <input type="hidden" name="lang" value="' . $lng . '" />';
+             echo '   <input type="hidden" name="index" value="tw" />';
              echo '   <input type="hidden" name="home_url" value="' . get_bloginfo('home') . '" />';
              echo '   <input type="hidden" name="home_text" value="' . get_bloginfo('name') . '" />';
              echo '   <label for="vhl-search-input" style="display: none;">' .__('Search', 'vhl'). '</label>';
