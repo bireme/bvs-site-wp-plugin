@@ -1,5 +1,6 @@
 <?php
 
+include_once(BVS_PLUGIN_PATH . '/bvs-widgets/servplat_login_widget.php');
 include_once(BVS_PLUGIN_PATH . '/bvs-widgets/vhl_collection_widget.php');
 include_once(BVS_PLUGIN_PATH . '/bvs-widgets/vhl_network_widget.php');
 include_once(BVS_PLUGIN_PATH . '/bvs-widgets/vhl_search_widget.php');
@@ -8,6 +9,7 @@ include_once(BVS_PLUGIN_PATH . '/bvs-widgets/vhl_themes_widget.php');
 include_once(BVS_PLUGIN_PATH . '/bvs-widgets/vhl_clusters_widget.php');
 
 function register_vhl_widgets() {
+    register_widget("ServPlat_Login_Widget");
     register_widget("VHL_Collection_Widget");
     register_widget("VHL_Network_Widget");
     register_widget("VHL_Search_Widget");
