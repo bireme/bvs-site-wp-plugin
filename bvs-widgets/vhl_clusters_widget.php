@@ -216,6 +216,8 @@ class VHL_Clusters_Widget extends WP_Widget {
                 l.setAttribute('value', lang);
                 f.appendChild(l);
 
+                document.body.appendChild(f);
+
                 f.submit();
             }
         /* ]]> */</script>
