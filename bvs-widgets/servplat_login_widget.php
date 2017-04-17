@@ -47,46 +47,61 @@ class ServPlat_Login_Widget extends WP_Widget {
             if( $title ) echo $before_title, $title, $after_title;
             ?>
             <?php if ( 'box' == $layout ) : ?>
-                <div class="bootstrap-iso">
-                    <div class="well box">
-                        <form id="loginForm" method="POST" action="<?php echo SERVICES_PLATFORM_CLIENT.'/controller/authentication/origin/'.base64_encode(HTTP_HOST); ?>" novalidate="novalidate">
-                            <input type="hidden" name="control" value="business" />
-                            <input type="hidden" name="action" value="authentication" />
-                            <input type="hidden" name="lang" value="<?php echo $lng; ?>" />
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="userID" name="userID" maxlenght="50" placeholder="<?php _e('user', 'vhl') ?>">
-                                <span class="help-block"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="userPass" name="userPass" maxlenght="15" placeholder="<?php _e('password', 'vhl') ?>">
-                                <span class="help-block"></span>
-                            </div>
-                            <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
-                                <span class="help-block"><?php _e('access denied', 'vhl') ?></span>
-                            <? } ?>
-                            <?php if ( $_REQUEST['status'] == 'false' ){ ?>
-                                <span class="help-block"><?php _e('invalid login', 'vhl') ?></span>
-                            <? } ?>
-                            <div class="social-sharing">
-                                <div>
-                                    <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/facebook/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-primary">
-                                        <i class="fa fa-facebook"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/google/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-danger">
-                                        <i class="fa fa-google"></i>
-                                        <span>Google</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-default btn-block"><?php _e('Login', 'vhl') ?></button>
-                            <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/userData.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('registry', 'vhl') ?></a></p>
-                            <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/forgotPassword.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('forgot my password', 'vhl') ?></a></p>
-                        </form>
+                <?php if ( $_COOKIE['userData'] ) : ?>
+                    <?php $userData = json_decode(base64_decode($_COOKIE['userData']),true); ?>
+                    <div class="bootstrap-iso">
+                        <div class="well box">
+                            <?php if ( $userData['fb_data']['picture']['data']['url'] ) : ?>
+                                <img src="<?php echo $userData['fb_data']['picture']['data']['url']; ?>" alt="<?php _e('avatar,', 'vhl'); ?>" class="avatar">
+                            <?php elseif ( $userData['google_data']['picture'] ) : ?>
+                                <img src="<?php echo $userData['google_data']['picture']; ?>" alt="<?php _e('avatar,', 'vhl'); ?>" class="avatar">
+                            <?php endif; ?>
+                            <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
+                            <p><a href="<?php echo SERVICES_PLATFORM_CLIENT.'/controller/authentication'; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
+                        </div>
                     </div>
-                </div>
+                <?php else : ?>
+                    <div class="bootstrap-iso">
+                        <div class="well box">
+                            <form id="loginForm" method="POST" action="<?php echo SERVICES_PLATFORM_CLIENT.'/controller/authentication/origin/'.base64_encode(HTTP_HOST); ?>" novalidate="novalidate">
+                                <input type="hidden" name="control" value="business" />
+                                <input type="hidden" name="action" value="authentication" />
+                                <input type="hidden" name="lang" value="<?php echo $lng; ?>" />
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="userID" name="userID" maxlenght="50" placeholder="<?php _e('user', 'vhl') ?>">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="userPass" name="userPass" maxlenght="15" placeholder="<?php _e('password', 'vhl') ?>">
+                                    <span class="help-block"></span>
+                                </div>
+                                <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
+                                    <span class="help-block"><?php _e('access denied', 'vhl') ?></span>
+                                <? } ?>
+                                <?php if ( $_REQUEST['status'] == 'false' ){ ?>
+                                    <span class="help-block"><?php _e('invalid login', 'vhl') ?></span>
+                                <? } ?>
+                                <div class="social-sharing">
+                                    <div>
+                                        <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/facebook/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-primary">
+                                            <i class="fa fa-facebook"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/google/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-danger">
+                                            <i class="fa fa-google"></i>
+                                            <span>Google</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default btn-block"><?php _e('Login', 'vhl') ?></button>
+                                <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/userData.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('registry', 'vhl') ?></a></p>
+                                <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/forgotPassword.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('forgot my password', 'vhl') ?></a></p>
+                            </form>
+                        </div>
+                    </div>                    
+                <?php endif; ?>
             <?php endif; ?>
             <?php
         echo $after_widget;
@@ -160,6 +175,14 @@ class ServPlat_Login_Widget extends WP_Widget {
 
             .bootstrap-iso .box p {
                 margin: 5px 0 0;
+            }
+
+            .bootstrap-iso .box img.avatar {
+                float: left;
+                margin-top: -2px;
+                margin-right: 10px;
+                width: 50px;
+                height: 50px;
             }
 
             .bootstrap-iso .box .btn,
