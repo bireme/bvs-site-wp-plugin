@@ -1,18 +1,30 @@
 <?php
 
-/*** Services Platform Login Widget ****************/
+if ( ! defined( 'CRYPT_PUBKEY' ) ) {
+        define( 'CRYPT_PUBKEY', 'biremepublicckey' );
+}
+
+if ( ! defined( 'HTTP_HOST' ) ) {
+        define( 'HTTP_HOST', get_bloginfo('url') );
+}
+
+/**
+ * Services Platform Login Widget
+ */
 class ServPlat_Login_Widget extends WP_Widget {
 
-    function ServPlat_Login_Widget() {
-        define('CRYPT_PUBKEY','biremepublicckey');
-        define('SERVICES_PLATFORM_DOMAIN', 'http://platserv2.teste.bvsalud.org');
-        define('SERVICES_PLATFORM_CLIENT', SERVICES_PLATFORM_DOMAIN.'/client');
-        define('SERVICES_PLATFORM_SERVER', SERVICES_PLATFORM_DOMAIN.'/server');
-        define('HTTP_HOST', get_bloginfo('url'));
+    private $servplat_domain;
+    private $servplat_client;
+    private $servplat_server;
+
+    public function __construct() {
+        $this->servplat_domain = 'http://platserv2.teste.bvsalud.org';
+        $this->servplat_client = $this->servplat_domain.'/client';
+        $this->servplat_server = $this->servplat_domain.'/server';
 
         $widget_ops = array('classname' => 'servplat-login', 'description' => __('Adds the Services Platform login on your site', 'vhl') );
         parent::WP_Widget('servplat_login', __('Services Platform Login', 'vhl'), $widget_ops);
-        add_action( 'wp_head', array(&$this, 'header'), 20, 1 );
+        add_action( 'wp_enqueue_scripts', array(&$this, 'servplat_enqueue_style'), 20, 1 );
 
         if ( isset($_REQUEST['userID']) && !empty($_REQUEST['userID']) ) {
             $userID = urlencode($_REQUEST['userID']);
@@ -57,13 +69,13 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 <img src="<?php echo $userData['google_data']['picture']; ?>" alt="<?php _e('avatar,', 'vhl'); ?>" class="avatar">
                             <?php endif; ?>
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo SERVICES_PLATFORM_CLIENT.'/controller/authentication'; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication'; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
                         </div>
                     </div>
                 <?php else : ?>
                     <div class="bootstrap-iso">
                         <div class="well box">
-                            <form id="loginForm" method="POST" action="<?php echo SERVICES_PLATFORM_CLIENT.'/controller/authentication/origin/'.base64_encode(HTTP_HOST); ?>" novalidate="novalidate">
+                            <form id="loginForm" method="POST" action="<?php echo $this->servplat_client.'/controller/authentication/origin/'.base64_encode(HTTP_HOST); ?>" novalidate="novalidate">
                                 <input type="hidden" name="control" value="business" />
                                 <input type="hidden" name="action" value="authentication" />
                                 <input type="hidden" name="lang" value="<?php echo $lng; ?>" />
@@ -83,21 +95,21 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 <? } ?>
                                 <div class="social-sharing">
                                     <div>
-                                        <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/facebook/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-primary">
+                                        <a href="<?php echo $this->servplat_domain.'/connector/facebook/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-primary">
                                             <i class="fa fa-facebook"></i>
                                             <span>Facebook</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="<?php echo SERVICES_PLATFORM_DOMAIN.'/connector/google/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-danger">
+                                        <a href="<?php echo $this->servplat_domain.'/connector/google/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-danger">
                                             <i class="fa fa-google"></i>
                                             <span>Google</span>
                                         </a>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-default btn-block"><?php _e('Login', 'vhl') ?></button>
-                                <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/userData.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('registry', 'vhl') ?></a></p>
-                                <p><a href="<?php echo SERVICES_PLATFORM_SERVER.'/pub/forgotPassword.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('forgot my password', 'vhl') ?></a></p>
+                                <p><a href="<?php echo $this->servplat_server.'/pub/userData.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('registry', 'vhl') ?></a></p>
+                                <p><a href="<?php echo $this->servplat_server.'/pub/forgotPassword.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('forgot my password', 'vhl') ?></a></p>
                             </form>
                         </div>
                     </div>                    
@@ -139,70 +151,10 @@ class ServPlat_Login_Widget extends WP_Widget {
         <?php 
     }
 
-    function header( $instance = null ){                  
-    ?>
-        <link rel='stylesheet' id='bootstrap-iso' href='https://formden.com/static/assets/demos/bootstrap-iso/bootstrap-iso/bootstrap-iso.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='font-awesome' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' type='text/css' media='all' />
-        <style type="text/css">
-            .bootstrap-iso .box {
-                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-                line-height: 1.42857143;
-                color: #333;
-                /*font-size: 14px*/
-                /*background-color: #fff;*/
-            }
-
-            .bootstrap-iso .box div {
-                padding-bottom: 0;
-            }
-
-            .bootstrap-iso .box .social-sharing {
-                display: flex;
-                justify-content: center;
-                padding: 0 0 25px;
-            }
-
-            .bootstrap-iso .box button {
-                margin-bottom: 10px;
-            }
-
-            .bootstrap-iso .box .help-block {
-                color: red;
-                text-align: center;
-                display: block;
-                margin-bottom: 5px;
-            }
-
-            .bootstrap-iso .box p {
-                margin: 5px 0 0;
-            }
-
-            .bootstrap-iso .box img.avatar {
-                float: left;
-                margin-top: -2px;
-                margin-right: 10px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .bootstrap-iso .box .btn,
-            .bootstrap-iso .box .form-control {
-                font-size: 13px;
-            }
-
-            .bootstrap-iso a:visited {
-                color: #337ab7;
-            }
-
-            .bootstrap-iso .social-sharing a:visited {
-                color: #ffffff;
-            }
-
-            .bootstrap-iso .well.box {
-                margin-bottom: 0;
-            }
-        </style>
-    <?php
+    function servplat_enqueue_style() {
+        wp_enqueue_style( 'bootstrap-iso', $this->servplat_client.'/vendors/bootstrap/dist/css/bootstrap-iso.css' ); 
+        wp_enqueue_style( 'servplat-style', $this->servplat_client.'/css/plugin.css' ); 
+        wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' ); 
     }
 
     function decrypt($text,$cKey=CRYPT_PUBKEY){
