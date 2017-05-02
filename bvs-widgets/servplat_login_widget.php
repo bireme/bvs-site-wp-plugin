@@ -1,11 +1,8 @@
 <?php
 
-if ( ! defined( 'CRYPT_PUBKEY' ) ) {
-        define( 'CRYPT_PUBKEY', 'biremepublicckey' );
-}
-
 if ( ! defined( 'HTTP_HOST' ) ) {
-        define( 'HTTP_HOST', get_bloginfo('url') );
+    $path = ( $_SERVER['REDIRECT_URL'] ) ? $_SERVER['REDIRECT_URL'] : '';
+    define( 'HTTP_HOST', get_bloginfo('url').$path );
 }
 
 /**
@@ -24,20 +21,8 @@ class ServPlat_Login_Widget extends WP_Widget {
 
         $widget_ops = array('classname' => 'servplat-login', 'description' => __('Adds the Services Platform login on your site', 'vhl') );
         parent::WP_Widget('servplat_login', __('Services Platform Login', 'vhl'), $widget_ops);
+        add_action( 'init', array(&$this, 'fix_cookie_delay'), 20, 1 );
         add_action( 'wp_enqueue_scripts', array(&$this, 'servplat_enqueue_style'), 20, 1 );
-
-        if ( isset($_REQUEST['userID']) && !empty($_REQUEST['userID']) ) {
-            $userID = urlencode($_REQUEST['userID']);
-            $userID = str_replace("+", "%2B",$userID);
-            $userID = urldecode($userID);
-            $data = $this->unmakeUserTK($userID);
-
-            // Fix cookie delay
-            if ( $data ) {
-                wp_redirect( HTTP_HOST );
-                exit;
-            }
-        }
     }
  
     function widget($args, $instance) {
@@ -45,14 +30,14 @@ class ServPlat_Login_Widget extends WP_Widget {
 
         $current_language = strtolower(get_bloginfo('language'));
         // network lang parameter only accept 2 letters language code (pt, es, en)
-        $lng = substr($current_language, 0,2);
+        $lang = substr($current_language, 0,2);
 
         $title = $instance['title'];
         $layout = $instance['layout'];
 
         if ( function_exists( 'pll_current_language' ) ) {
-            $lng = pll_current_language();
-            $title = pll_translate_string($instance['title'], $lng);
+            $lang = pll_current_language();
+            $title = pll_translate_string($instance['title'], $lang);
         }
 
         echo $before_widget;
@@ -60,7 +45,8 @@ class ServPlat_Login_Widget extends WP_Widget {
             ?>
             <?php if ( 'box' == $layout ) : ?>
                 <?php if ( $_COOKIE['userData'] ) : ?>
-                    <?php $userData = json_decode(base64_decode($_COOKIE['userData']),true); ?>
+                    <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
+                    <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
                         <div class="well box">
                             <?php if ( $userData['fb_data']['picture']['data']['url'] ) : ?>
@@ -68,8 +54,11 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <?php elseif ( $userData['google_data']['picture'] ) : ?>
                                 <img src="<?php echo $userData['google_data']['picture']; ?>" alt="<?php _e('avatar,', 'vhl'); ?>" class="avatar">
                             <?php endif; ?>
-                            <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication'; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
+                            <span style="display: grid;">
+                                <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
+                                <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
+                                <p><a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                            </span>
                         </div>
                     </div>
                 <?php else : ?>
@@ -78,7 +67,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <form id="loginForm" method="POST" action="<?php echo $this->servplat_client.'/controller/authentication/origin/'.base64_encode(HTTP_HOST); ?>" novalidate="novalidate">
                                 <input type="hidden" name="control" value="business" />
                                 <input type="hidden" name="action" value="authentication" />
-                                <input type="hidden" name="lang" value="<?php echo $lng; ?>" />
+                                <input type="hidden" name="lang" value="<?php echo $lang; ?>" />
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="userID" name="userID" maxlenght="50" placeholder="<?php _e('user', 'vhl') ?>">
                                     <span class="help-block"></span>
@@ -112,7 +101,30 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 <p><a href="<?php echo $this->servplat_server.'/pub/forgotPassword.php?c='.base64_encode(HTTP_HOST); ?>"><?php _e('forgot my password', 'vhl') ?></a></p>
                             </form>
                         </div>
-                    </div>                    
+                    </div>
+                <?php endif; ?>
+            <?php elseif ( 'link' == $layout ) : ?>
+                <?php if ( $_COOKIE['userData'] ) : ?>
+                    <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
+                    <?php $userTK = md5($userData['userTK']); ?>
+                    <div class="bootstrap-iso">
+                        <div class="well link">
+                            <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <div class="bootstrap-iso">
+                        <div class="well link">
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
+                            <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
+                                <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
+                            <? } ?>
+                            <?php if ( $_REQUEST['status'] == 'false' ){ ?>
+                                <p class="help-block"><?php _e('invalid login', 'vhl') ?></p>
+                            <? } ?>
+                        </div>
+                    </div>
                 <?php endif; ?>
             <?php endif; ?>
             <?php
@@ -121,7 +133,6 @@ class ServPlat_Login_Widget extends WP_Widget {
  
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['layout'] = strip_tags($new_instance['layout']);
         return $instance;
@@ -157,30 +168,25 @@ class ServPlat_Login_Widget extends WP_Widget {
         wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' ); 
     }
 
-    function decrypt($text,$cKey=CRYPT_PUBKEY){
-        return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256,
-                $cKey, base64_decode($text), MCRYPT_MODE_ECB,
-                mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256,
-                        MCRYPT_MODE_ECB), MCRYPT_RAND)));
-    }
+    function fix_cookie_delay() {
+        if ( isset($_REQUEST['userData']) && !empty($_REQUEST['userData']) ) {
+            $userData = json_decode(base64_decode($_REQUEST['userData']), true);
+            $userTK = $userData['userTK'];
+            $source = $userData['source'];
 
-    function unmakeUserTK($userTK, $force=null){
-        $retValue = false;
-        $tmp1 = explode('%+%',$this->decrypt($userTK, CRYPT_PUBKEY));
-        $valid_email = filter_var($tmp1[0], FILTER_VALIDATE_EMAIL);
+            $data = ( $_REQUEST['userTK'] == md5($userTK) ) ? true : false;
 
-        if(($force === true || $valid_email) && count($tmp1) < 3){
-            $tmp2['userID'] = $tmp1[0];
-            $tmp2['userPass'] = $tmp1[1];
-            $retValue = $tmp2;
-        }elseif($tmp1[2] && in_array($tmp1[2], array('facebook', 'google'))){
-            $tmp2['userID'] = $tmp1[0];
-            $tmp2['userPass'] = $tmp1[1];
-            $tmp2['socialMedia'] = $tmp1[2];
-            $retValue = $tmp2;
+            if ( $data ) {
+                if ( isset($_REQUEST['logout']) && true == $_REQUEST['logout'] )
+                    setcookie('userData','',time() -3600,'/');
+                else
+                    setcookie("userData", $_REQUEST["userData"], 0, '/');
+            }
+
+            wp_redirect( HTTP_HOST );
+            exit;
         }
-
-        return $retValue;
     }
+
 }
 ?>
