@@ -48,7 +48,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
                     <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
-                        <div class="well box">
+                        <div class="well box logged">
                             <?php if ( $userData['fb_data']['picture']['data']['url'] ) : ?>
                                 <img src="<?php echo $userData['fb_data']['picture']['data']['url']; ?>" alt="<?php _e('avatar,', 'vhl'); ?>" class="avatar">
                             <?php elseif ( $userData['google_data']['picture'] ) : ?>
@@ -108,7 +108,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
                     <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
-                        <div class="well link">
+                        <div class="well link logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
                             <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                         </div>
@@ -117,6 +117,29 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <div class="bootstrap-iso">
                         <div class="well link">
                             <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
+                            <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
+                                <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
+                            <? } ?>
+                            <?php if ( $_REQUEST['status'] == 'false' ){ ?>
+                                <p class="help-block"><?php _e('invalid login', 'vhl') ?></p>
+                            <? } ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php elseif ( 'icon' == $layout ) : ?>
+                <?php if ( $_COOKIE['userData'] ) : ?>
+                    <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
+                    <?php $userTK = md5($userData['userTK']); ?>
+                    <div class="bootstrap-iso">
+                        <div class="well icon logged">
+                            <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <div class="bootstrap-iso">
+                        <div class="well icon">
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>"><i class="fa fa-user-circle"></i> <span><?php _e('Sign in', 'vhl'); ?></span></a></p>
                             <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                 <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
                             <? } ?>
@@ -152,9 +175,9 @@ class ServPlat_Login_Widget extends WP_Widget {
                 <label>
                     <?php _e('Display layout:', 'vhl'); ?>                    
                     <select name="<?php echo $this->get_field_name('layout'); ?>" > 
-                        <option value="box" <?php if ($layout == 'box'): echo ' selected="true"'; endif; ?>><?php _e('Box', 'vhl'); ?></option>
-                        <option value="link" <?php if ($layout == 'link'): echo ' selected="true"'; endif; ?>><?php _e('Link', 'vhl'); ?></option>
-                        <option value="icon" <?php if ($layout == 'icon'): echo ' selected="true"'; endif; ?>><?php _e('Icon', 'vhl'); ?></option>
+                        <option value="box" <?php if ('box' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Box', 'vhl'); ?></option>
+                        <option value="link" <?php if ('link' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Link', 'vhl'); ?></option>
+                        <option value="icon" <?php if ('icon' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Icon', 'vhl'); ?></option>
                     </select>
                 </label>
              </p>
@@ -165,15 +188,13 @@ class ServPlat_Login_Widget extends WP_Widget {
     function servplat_enqueue_style() {
         wp_enqueue_style( 'bootstrap-iso', $this->servplat_client.'/vendors/bootstrap/dist/css/bootstrap-iso.css' ); 
         wp_enqueue_style( 'servplat-style', $this->servplat_client.'/css/plugin.css' ); 
-        wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' ); 
+        wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' ); 
     }
 
     function fix_cookie_delay() {
         if ( isset($_REQUEST['userData']) && !empty($_REQUEST['userData']) ) {
             $userData = json_decode(base64_decode($_REQUEST['userData']), true);
             $userTK = $userData['userTK'];
-            $source = $userData['source'];
-
             $data = ( $_REQUEST['userTK'] == md5($userTK) ) ? true : false;
 
             if ( $data ) {
