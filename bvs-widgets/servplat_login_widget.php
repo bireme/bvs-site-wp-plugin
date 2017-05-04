@@ -57,7 +57,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <span style="display: grid;">
                                 <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
                                 <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
-                                <p><a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                                <p><a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                             </span>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <div class="bootstrap-iso">
                         <div class="well link logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                         </div>
                     </div>
                 <?php else : ?>
@@ -133,7 +133,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <div class="bootstrap-iso">
                         <div class="well icon logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/userdata/'.$_COOKIE['userData'].'/userTK/'.$userTK.'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                         </div>
                     </div>
                 <?php else : ?>
@@ -192,20 +192,13 @@ class ServPlat_Login_Widget extends WP_Widget {
     }
 
     function fix_cookie_delay() {
-        if ( isset($_REQUEST['userData']) && !empty($_REQUEST['userData']) ) {
-            $userData = json_decode(base64_decode($_REQUEST['userData']), true);
-            $userTK = $userData['userTK'];
-            $data = ( $_REQUEST['userTK'] == md5($userTK) ) ? true : false;
+        $spauth = ( isset($_GET['spauth']) && true == $_GET['spauth'] ) ? true : false;
+        $splogout = ( isset($_GET['splogout']) && true == $_GET['splogout'] ) ? true : false;
 
-            if ( $data ) {
-                if ( isset($_REQUEST['logout']) && true == $_REQUEST['logout'] )
-                    setcookie('userData','',time() -3600,'/');
-                else
-                    setcookie("userData", $_REQUEST["userData"], 0, '/');
-            }
-
-            wp_redirect( HTTP_HOST );
-            exit;
+        if ( $spauth || $splogout ) {
+            echo '<script language="javascript">';
+            echo 'window.parent.location = window.parent.location.pathname;';
+            echo '</script>';
         }
     }
 
