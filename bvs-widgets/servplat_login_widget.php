@@ -21,7 +21,7 @@ class ServPlat_Login_Widget extends WP_Widget {
 
         $widget_ops = array('classname' => 'servplat-login', 'description' => __('Adds the Services Platform login on your site', 'vhl') );
         parent::WP_Widget('servplat_login', __('Services Platform Login', 'vhl'), $widget_ops);
-        add_action( 'init', array(&$this, 'fix_cookie_delay'), 20, 1 );
+        add_action( 'wp_head', array(&$this, 'fix_cookie_delay'), 20, 1 );
         add_action( 'wp_enqueue_scripts', array(&$this, 'servplat_enqueue_style'), 20, 1 );
     }
  
@@ -208,6 +208,7 @@ class ServPlat_Login_Widget extends WP_Widget {
             echo '<script language="javascript">';
             echo 'window.parent.location = window.parent.location.pathname;';
             echo '</script>';
+            exit;
         }
     }
 
