@@ -34,6 +34,7 @@ class ServPlat_Login_Widget extends WP_Widget {
 
         $title = $instance['title'];
         $layout = $instance['layout'];
+        $iahx = ( $instance['iahx'] ) ? $instance['iahx'] : 'portal';
 
         if ( function_exists( 'pll_current_language' ) ) {
             $lang = pll_current_language();
@@ -68,6 +69,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 <input type="hidden" name="control" value="business" />
                                 <input type="hidden" name="action" value="authentication" />
                                 <input type="hidden" name="lang" value="<?php echo $lang; ?>" />
+                                <input type="hidden" name="iahx" value="<?php echo base64_encode($iahx); ?>" />
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="userID" name="userID" maxlenght="50" placeholder="<?php _e('user', 'vhl') ?>">
                                     <span class="help-block"></span>
@@ -84,13 +86,13 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 <? } ?>
                                 <div class="social-sharing">
                                     <div>
-                                        <a href="<?php echo $this->servplat_domain.'/connector/facebook/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-primary">
+                                        <a href="<?php echo $this->servplat_domain.'/connector/facebook/?origin='.base64_encode(HTTP_HOST).'&iahx='.base64_encode($iahx); ?>" class="btn btn-primary">
                                             <i class="fa fa-facebook"></i>
                                             <span>Facebook</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="<?php echo $this->servplat_domain.'/connector/google/?origin='.base64_encode(HTTP_HOST); ?>" class="btn btn-danger">
+                                        <a href="<?php echo $this->servplat_domain.'/connector/google/?origin='.base64_encode(HTTP_HOST).'&iahx='.base64_encode($iahx); ?>" class="btn btn-danger">
                                             <i class="fa fa-google"></i>
                                             <span>Google</span>
                                         </a>
@@ -116,7 +118,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                 <?php else : ?>
                     <div class="bootstrap-iso">
                         <div class="well link">
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/iahx/'.base64_encode($iahx).'/lang/'.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
                             <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                 <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
                             <? } ?>
@@ -139,7 +141,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                 <?php else : ?>
                     <div class="bootstrap-iso">
                         <div class="well icon">
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>"><i class="fa fa-user-circle"></i> <span><?php _e('Sign in', 'vhl'); ?></span></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/iahx/'.base64_encode($iahx).'/lang/'.$lang; ?>"><i class="fa fa-user-circle"></i> <span><?php _e('Sign in', 'vhl'); ?></span></a></p>
                             <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                 <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
                             <? } ?>
@@ -158,17 +160,25 @@ class ServPlat_Login_Widget extends WP_Widget {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['layout'] = strip_tags($new_instance['layout']);
+        $instance['iahx'] = strip_tags($new_instance['iahx']);
         return $instance;
     }
     
     function form($instance) {
         $title = esc_attr($instance['title']);
         $layout= esc_attr($instance['layout']);
+        $iahx = esc_attr($instance['iahx']);
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
                     <?php _e('Title:', 'vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+                </label>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('iahx'); ?>">
+                    <?php _e('VHL Search URL:', 'vhl'); ?> 
+                    <input class="widefat" id="<?php echo $this->get_field_id('iahx'); ?>" name="<?php echo $this->get_field_name('iahx'); ?>" type="text" value="<?php echo $iahx; ?>" />
                 </label>
             </p>
             <p>
@@ -181,7 +191,6 @@ class ServPlat_Login_Widget extends WP_Widget {
                     </select>
                 </label>
              </p>
-
         <?php 
     }
 
