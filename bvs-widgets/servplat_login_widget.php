@@ -57,7 +57,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <?php endif; ?>
                             <span style="display: grid;">
                                 <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                                <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
+                                <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>" target="_blank"><?php _e('Go to dashboard', 'vhl'); ?></a></p>
                                 <p><a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                             </span>
                         </div>
@@ -112,7 +112,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <div class="bootstrap-iso">
                         <div class="well link logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>" target="_blank"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                         </div>
                     </div>
                 <?php else : ?>
@@ -135,7 +135,7 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <div class="bootstrap-iso">
                         <div class="well icon logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
-                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+                            <p><a href="<?php echo $this->servplat_client.'/controller/authentication/lang/'.$lang; ?>" target="_blank"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $this->servplat_client.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/lang/'.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
                         </div>
                     </div>
                 <?php else : ?>
