@@ -47,7 +47,6 @@ class ServPlat_Login_Widget extends WP_Widget {
             <?php if ( 'box' == $layout ) : ?>
                 <?php if ( $_COOKIE['userData'] ) : ?>
                     <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
-                    <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
                         <div class="well box logged">
                             <?php if ( $userData['fb_data']['picture']['data']['url'] ) : ?>
@@ -108,7 +107,6 @@ class ServPlat_Login_Widget extends WP_Widget {
             <?php elseif ( 'link' == $layout ) : ?>
                 <?php if ( $_COOKIE['userData'] ) : ?>
                     <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
-                    <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
                         <div class="well link logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
@@ -131,7 +129,6 @@ class ServPlat_Login_Widget extends WP_Widget {
             <?php elseif ( 'icon' == $layout ) : ?>
                 <?php if ( $_COOKIE['userData'] ) : ?>
                     <?php $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
-                    <?php $userTK = md5($userData['userTK']); ?>
                     <div class="bootstrap-iso">
                         <div class="well icon logged">
                             <p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
