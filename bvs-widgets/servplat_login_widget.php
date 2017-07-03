@@ -178,9 +178,10 @@ class ServPlat_Login_Widget extends WP_Widget {
                     <input class="widefat" id="<?php echo $this->get_field_id('iahx'); ?>" name="<?php echo $this->get_field_name('iahx'); ?>" type="text" value="<?php echo $iahx; ?>" />
                 </label>
             </p>
+            <p style="font-size: 11px; background: #f7f7f7; border: 1px solid #ebebeb; padding: 4px 6px;"><?php _e('e.g.', 'vhl'); ?> http://pesquisa.bvsalud.org/brasil/</p>
             <p>
                 <label>
-                    <?php _e('Display layout:', 'vhl'); ?>                    
+                    <?php _e('Display layout:', 'vhl'); ?>
                     <select name="<?php echo $this->get_field_name('layout'); ?>" > 
                         <option value="box" <?php if ('box' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Box', 'vhl'); ?></option>
                         <option value="link" <?php if ('link' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Link', 'vhl'); ?></option>
