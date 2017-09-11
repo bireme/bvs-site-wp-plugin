@@ -15,7 +15,7 @@ class ServPlat_Login_Widget extends WP_Widget {
     private $servplat_server;
 
     public function __construct() {
-        $this->servplat_domain = 'http://platserv2.teste.bvsalud.org';
+        $this->servplat_domain = 'http://platserv.bvsalud.org';
         $this->servplat_client = $this->servplat_domain.'/client';
         $this->servplat_server = $this->servplat_domain.'/server';
 
