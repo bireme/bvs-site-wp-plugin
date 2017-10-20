@@ -79,10 +79,10 @@ class ServPlat_Login_Widget extends WP_Widget {
                                 </div>
                                 <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                     <span class="help-block"><?php _e('access denied', 'vhl') ?></span>
-                                <? } ?>
+                                <?php } ?>
                                 <?php if ( $_REQUEST['status'] == 'false' ){ ?>
                                     <span class="help-block"><?php _e('invalid login', 'vhl') ?></span>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="social-sharing">
                                     <div>
                                         <a href="<?php echo $this->servplat_domain.'/connector/facebook/?origin='.base64_encode(HTTP_HOST).'&iahx='.base64_encode($iahx); ?>" class="btn btn-primary">
@@ -119,10 +119,10 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/iahx/'.base64_encode($iahx).'/lang/'.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
                             <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                 <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
-                            <? } ?>
+                            <?php } ?>
                             <?php if ( $_REQUEST['status'] == 'false' ){ ?>
                                 <p class="help-block"><?php _e('invalid login', 'vhl') ?></p>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -141,10 +141,10 @@ class ServPlat_Login_Widget extends WP_Widget {
                             <p><a href="<?php echo $this->servplat_client.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/iahx/'.base64_encode($iahx).'/lang/'.$lang; ?>"><i class="fa fa-user-circle"></i> <span><?php _e('Sign in', 'vhl'); ?></span></a></p>
                             <?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
                                 <p class="help-block"><?php _e('access denied', 'vhl') ?></p>
-                            <? } ?>
+                            <?php } ?>
                             <?php if ( $_REQUEST['status'] == 'false' ){ ?>
                                 <p class="help-block"><?php _e('invalid login', 'vhl') ?></p>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 <?php endif; ?>
