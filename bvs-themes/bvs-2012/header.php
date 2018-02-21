@@ -54,9 +54,9 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 			<div class="bar">
 				<div id="otherVersions">
 					<?php
-						if ( function_exists( 'mlf_links_to_languages' ) )
+						if ( function_exists( 'mlf_links_to_languages' ) ) {
 							mlf_links_to_languages();
-						elseif ( function_exists( 'pll_the_languages' ) ) {
+						} elseif ( function_exists( 'pll_the_languages' ) ) {
 							$args = array(
 								'dropdown' => 0,
 								'show_names' => 1,
@@ -78,8 +78,12 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 				<?php
 				// Conditional to show contact link.
 				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && isset($contactPage) && !empty($contactPage)) { ?>
-					<div id="contact"> 
-						<span><a href="<?php echo get_permalink($contactPage); ?>"><?php echo get_the_title($contactPage); ?></a></span>
+					<div id="contact">
+						<?php if ( function_exists( 'pll_get_post' ) ) : ?>
+							<span><a href="<?php echo get_permalink(pll_get_post($contactPage)); ?>"><?php echo get_the_title(pll_get_post($contactPage)); ?></a></span>
+						<?php else : ?>
+							<span><a href="<?php echo get_permalink($contactPage); ?>"><?php echo get_the_title($contactPage); ?></a></span>
+						<?php endif; ?>
 					</div>
 				<?php } ?>
 				<?php if ($headerMenu != true) wp_nav_menu( array( 'fallback_cb' => 'false' ) ); ?>
