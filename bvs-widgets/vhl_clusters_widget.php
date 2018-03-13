@@ -132,7 +132,7 @@ class VHL_Clusters_Widget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('url'); ?>">
-                    <?php _e('iAHx Url:', 'vhl'); ?> 
+                    <?php _e('iAHx URL:', 'vhl'); ?> 
                     <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
                 </label>
             </p>
@@ -141,7 +141,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
                 <p id='VhlClustersUseImage'>
                     <label for="<?php echo $this->get_field_id('image'); ?>">
-                        <?php _e('Endereço da Imagem:', 'vhl'); ?> <i>(<?php _e('empty if not use', 'vhl'); ?>)</i>
+                        <?php _e('Image Source:', 'vhl'); ?> <i>(<?php _e('empty if not use', 'vhl'); ?>)</i>
                         <input class="widefat" id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo $image; ?>" />
                     </label>
                 </p>

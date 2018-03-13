@@ -4,27 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2014-03-24 09:38-0300\n"
-"PO-Revision-Date: 2014-03-24 09:39-0300\n"
-"Last-Translator: Julio Takayama <takayama@paho.org>\n"
+"POT-Creation-Date: 2018-03-13 14:40-0300\n"
+"PO-Revision-Date: 2018-03-13 15:53-0300\n"
+"Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
-
-#: ../bvs-site.php:57
-msgid "VHL Site Settings"
-msgstr "BVS Site Ajustes"
-
-#: ../bvs-site.php:57
-msgid "VHL Site"
-msgstr "BVS Site"
 
 #: ../bvs-core/post_types.php:35 ../bvs-core/post_types.php:47
 #: ../bvs-widgets/vhl_collection_widget.php:8
@@ -59,9 +51,9 @@ msgstr "Todas las colecciones"
 msgid "View Collection"
 msgstr "Ver colección"
 
-#: ../bvs-core/post_types.php:43 ../bvs-widgets/vhl_search_widget.php:21
-#: ../bvs-widgets/vhl_search_widget.php:26
-#: ../bvs-widgets/vhl_search_widget.php:27
+#: ../bvs-core/post_types.php:43 ../bvs-widgets/vhl_search_widget.php:33
+#: ../bvs-widgets/vhl_search_widget.php:34
+#: ../bvs-widgets/vhl_search_widget.php:35
 msgid "Search"
 msgstr "Búsqueda"
 
@@ -93,15 +85,26 @@ msgstr "Código Google Analytics:"
 msgid "Save Changes"
 msgstr ""
 
+#: ../bvs-site.php:60
+msgid "VHL Site Settings"
+msgstr "BVS Site Ajustes"
+
+#: ../bvs-site.php:60
+msgid "VHL Site"
+msgstr "BVS Site"
+
 #: ../bvs-themes/bvs-2012/404.php:17 ../bvs-themes/bvs-responsive/404.php:17
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr ""
 
 #: ../bvs-themes/bvs-2012/404.php:21 ../bvs-themes/bvs-responsive/404.php:21
+#, fuzzy
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Parece que no podemos encontrar lo que busca. Puede ser que la búsqueda "
+"ayude."
 
 #: ../bvs-themes/bvs-2012/archive.php:29
 #: ../bvs-themes/bvs-responsive/archive.php:29
@@ -138,449 +141,97 @@ msgstr ""
 msgid "About %s"
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/category.php:21
-#: ../bvs-themes/bvs-responsive/category.php:21
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/comments.php:42
-#: ../bvs-themes/bvs-responsive/comments.php:42
-msgid "Comment navigation"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/comments.php:43
-#: ../bvs-themes/bvs-responsive/comments.php:43
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/comments.php:44
-#: ../bvs-themes/bvs-responsive/comments.php:44
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/comments.php:53
-#: ../bvs-themes/bvs-responsive/comments.php:53
-msgid "Comments are closed."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:13
-#: ../bvs-themes/bvs-2012/content-aside.php:20
-#: ../bvs-themes/bvs-2012/content-image.php:17
-#: ../bvs-themes/bvs-2012/content-link.php:18
-#: ../bvs-themes/bvs-2012/content-quote.php:17
-#: ../bvs-themes/bvs-2012/content-status.php:15
-#: ../bvs-themes/bvs-2012/content.php:22
-#: ../bvs-themes/bvs-responsive/content-aside.php:13
-#: ../bvs-themes/bvs-responsive/content-aside.php:20
-#: ../bvs-themes/bvs-responsive/content-image.php:17
-#: ../bvs-themes/bvs-responsive/content-link.php:18
-#: ../bvs-themes/bvs-responsive/content-quote.php:17
-#: ../bvs-themes/bvs-responsive/content-status.php:15
-#: ../bvs-themes/bvs-responsive/content.php:22
-#, php-format
-msgid "Permalink to %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:15
-#: ../bvs-themes/bvs-2012/content-image.php:13
-#: ../bvs-themes/bvs-2012/content-link.php:14
-#: ../bvs-themes/bvs-2012/content-quote.php:13
-#: ../bvs-themes/bvs-2012/content-status.php:21
-#: ../bvs-themes/bvs-2012/content.php:45
-#: ../bvs-themes/bvs-responsive/content-aside.php:15
-#: ../bvs-themes/bvs-responsive/content-image.php:13
-#: ../bvs-themes/bvs-responsive/content-link.php:14
-#: ../bvs-themes/bvs-responsive/content-quote.php:13
-#: ../bvs-themes/bvs-responsive/content-status.php:21
-#: ../bvs-themes/bvs-responsive/content.php:41
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:23
-#: ../bvs-themes/bvs-2012/content-image.php:23
-#: ../bvs-themes/bvs-2012/content-link.php:21
-#: ../bvs-themes/bvs-2012/content-quote.php:20
-#: ../bvs-themes/bvs-2012/content-status.php:27
-#: ../bvs-themes/bvs-2012/content.php:27
-#: ../bvs-themes/bvs-responsive/content-aside.php:23
-#: ../bvs-themes/bvs-responsive/content-image.php:23
-#: ../bvs-themes/bvs-responsive/content-link.php:21
-#: ../bvs-themes/bvs-responsive/content-quote.php:20
-#: ../bvs-themes/bvs-responsive/content-status.php:27
-msgid "Leave a reply"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:23
-#: ../bvs-themes/bvs-2012/content-image.php:23
-#: ../bvs-themes/bvs-2012/content-link.php:21
-#: ../bvs-themes/bvs-2012/content-quote.php:20
-#: ../bvs-themes/bvs-2012/content-status.php:27
-#: ../bvs-themes/bvs-2012/content.php:27
-#: ../bvs-themes/bvs-responsive/content-aside.php:23
-#: ../bvs-themes/bvs-responsive/content-image.php:23
-#: ../bvs-themes/bvs-responsive/content-link.php:21
-#: ../bvs-themes/bvs-responsive/content-quote.php:20
-#: ../bvs-themes/bvs-responsive/content-status.php:27
-msgid "1 Reply"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:23
-#: ../bvs-themes/bvs-2012/content-image.php:23
-#: ../bvs-themes/bvs-2012/content-link.php:21
-#: ../bvs-themes/bvs-2012/content-quote.php:20
-#: ../bvs-themes/bvs-2012/content-status.php:27
-#: ../bvs-themes/bvs-2012/content.php:27
-#: ../bvs-themes/bvs-responsive/content-aside.php:23
-#: ../bvs-themes/bvs-responsive/content-image.php:23
-#: ../bvs-themes/bvs-responsive/content-link.php:21
-#: ../bvs-themes/bvs-responsive/content-quote.php:20
-#: ../bvs-themes/bvs-responsive/content-status.php:27
-msgid "% Replies"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-aside.php:26
-#: ../bvs-themes/bvs-2012/content-image.php:26
-#: ../bvs-themes/bvs-2012/content-link.php:24
-#: ../bvs-themes/bvs-2012/content-page.php:21
-#: ../bvs-themes/bvs-2012/content-quote.php:23
-#: ../bvs-themes/bvs-2012/content-status.php:30
-#: ../bvs-themes/bvs-2012/functions.php:309
-#: ../bvs-themes/bvs-2012/image.php:37
-#: ../bvs-themes/bvs-responsive/content-aside.php:26
-#: ../bvs-themes/bvs-responsive/content-image.php:26
-#: ../bvs-themes/bvs-responsive/content-link.php:24
-#: ../bvs-themes/bvs-responsive/content-page.php:21
-#: ../bvs-themes/bvs-responsive/content-quote.php:23
-#: ../bvs-themes/bvs-responsive/content-status.php:30
-#: ../bvs-themes/bvs-responsive/functions.php:309
-#: ../bvs-themes/bvs-responsive/image.php:37
-msgid "Edit"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-link.php:12
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:16
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:31
-#: ../bvs-themes/bvs-responsive/content-link.php:12
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:5
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:28
-msgid "Link"
-msgstr "Enlace"
-
-#: ../bvs-themes/bvs-2012/content-none.php:13
-#: ../bvs-themes/bvs-2012/index.php:37 ../bvs-themes/bvs-2012/search.php:34
-#: ../bvs-themes/bvs-responsive/content-none.php:13
-#: ../bvs-themes/bvs-responsive/index.php:37
-#: ../bvs-themes/bvs-responsive/search.php:34
-msgid "Nothing Found"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-none.php:17
-#: ../bvs-themes/bvs-responsive/content-none.php:17
-msgid ""
-"Apologies, but no results were found. Perhaps searching will help find a "
-"related post."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content-page.php:18
-#: ../bvs-themes/bvs-2012/content.php:46 ../bvs-themes/bvs-2012/image.php:92
-#: ../bvs-themes/bvs-classic/sidebar.php:13
-#: ../bvs-themes/bvs-responsive/content-page.php:18
-#: ../bvs-themes/bvs-responsive/content.php:42
-#: ../bvs-themes/bvs-responsive/image.php:92
-msgid "Pages:"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/content.php:14
-#: ../bvs-themes/bvs-responsive/content.php:14
-msgid "Featured post"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:64
-#: ../bvs-themes/bvs-responsive/functions.php:64
-msgid "Primary Menu"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:181
-#: ../bvs-themes/bvs-responsive/functions.php:181
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:250
-#: ../bvs-themes/bvs-responsive/functions.php:250
-msgid "Post navigation"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:251
-#: ../bvs-themes/bvs-responsive/functions.php:251
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:252
-#: ../bvs-themes/bvs-responsive/functions.php:252
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:277
-#: ../bvs-themes/bvs-responsive/functions.php:277
-msgid "Pingback:"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:277
-#: ../bvs-themes/bvs-responsive/functions.php:277
-msgid "(Edit)"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:292
-#: ../bvs-themes/bvs-responsive/functions.php:292
-msgid "Post author"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:298
-#: ../bvs-themes/bvs-responsive/functions.php:298
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:304
-#: ../bvs-themes/bvs-responsive/functions.php:304
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:313
-#: ../bvs-themes/bvs-responsive/functions.php:313
-msgid "Reply"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:332
-#: ../bvs-themes/bvs-2012/functions.php:335
-#: ../bvs-themes/bvs-responsive/functions.php:332
-#: ../bvs-themes/bvs-responsive/functions.php:335
-msgid ", "
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:346
-#: ../bvs-themes/bvs-responsive/functions.php:346
-#, php-format
-msgid "View all posts by %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:352
-#: ../bvs-themes/bvs-responsive/functions.php:352
-#, php-format
-msgid ""
-"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
-"\"> by %4$s</span>."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:354
-#: ../bvs-themes/bvs-responsive/functions.php:354
-#, php-format
-msgid ""
-"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
-"span>."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/functions.php:356
-#: ../bvs-themes/bvs-responsive/functions.php:356
-#, php-format
-msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/header.php:86
-#: ../bvs-themes/bvs-responsive/header.php:81
-msgid "Virtual Health Library"
-msgstr "Biblioteca Virtual en Salud"
-
-#: ../bvs-themes/bvs-2012/header.php:87
-#: ../bvs-themes/bvs-responsive/header.php:82
-msgid "VHL Logo"
-msgstr "Logo de la BVS"
-
-#: ../bvs-themes/bvs-2012/image.php:26
-#: ../bvs-themes/bvs-responsive/image.php:26
-#, php-format
-msgid ""
-"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
-"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></"
-"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
-"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
-"a>."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/image.php:41
-#: ../bvs-themes/bvs-responsive/image.php:41
-msgid "&larr; Previous"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/image.php:42
-#: ../bvs-themes/bvs-responsive/image.php:42
-msgid "Next &rarr;"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/index.php:41
-#: ../bvs-themes/bvs-responsive/index.php:41
-msgid ""
-"Apologies, but no results were found for the requested archive. Perhaps "
-"searching will help find a related post."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/search.php:18
-#: ../bvs-themes/bvs-responsive/search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/search.php:38
-#: ../bvs-themes/bvs-responsive/search.php:38
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/tag.php:21 ../bvs-themes/bvs-responsive/tag.php:21
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:21
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:151
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:21
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:151
-msgid "Theme Options"
-msgstr "Opciones del Tema"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:124
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:43
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:84
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:43
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin/layout.php:84
-msgid "Header"
-msgstr "Encabezamiento"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:124
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
-msgid "Colors"
-msgstr "Colores"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:124
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
-msgid "Layout"
-msgstr "Disposición"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:154
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:154
-msgid "Theme options updated"
-msgstr "Opciones actualizadas"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:180
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:180
-msgid "Update"
-msgstr "Actualizar"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:56
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:56
-msgid "Top Auxiliary SideBar"
-msgstr "SideBar del topo de la página"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:74
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:74
-msgid "Column"
-msgstr "Columna"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:88
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:88
-msgid "Footer Auxiliary SideBar"
-msgstr "Barra adicional de pie de página "
-
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:100
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
-#: ../bvs-themes/bvs-classic/functions.php:36
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:100
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin/layout.php:90
-msgid "Footer"
-msgstr "Pie de la página"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:111
-#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:111
-msgid "Level 2"
-msgstr "Nivel 2"
-
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:14
-#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:3
-msgid "Logo"
-msgstr "Logo"
-
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:15
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:30
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:35
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:4
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:27
 msgid "Image URL"
 msgstr "URL de la imagen"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:21
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:16
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:36
+#: ../bvs-themes/bvs-2012/content-link.php:12
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:5
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:28
+#: ../bvs-themes/bvs-responsive/content-link.php:12
+#: ../bvs-widgets/servplat_login_widget.php:187
+msgid "Link"
+msgstr "Enlace"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:22
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:3
+msgid "Logo"
+msgstr "Logo"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:25
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:45
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:9
 msgid "Paste the URL"
 msgstr "Pegar URL"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:22
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:37
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:26
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:46
 msgid "Paste the link"
 msgstr "Pegar link"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:29
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:42
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:26
 msgid "Banner"
 msgstr "Banner"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:42
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:51
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:47
 msgid "Check to display title on banner"
 msgstr "Marcar para exibir título en el encabezado"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:49
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:58
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:54
 msgid "Languages bar"
 msgstr "Barra de idiomas"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:50
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:59
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:55
 msgid "Available languages"
 msgstr "Idiomas disponibles"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:51
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:60
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:56
 msgid "Language bar position"
 msgstr "Posición de la barra de idiomas"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:55
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:64
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:60
 msgid "Check to display available languages"
 msgstr "Marcar para exibir idiomas disponibles"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:57
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:66
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:62
 msgid "Choose language bar position"
 msgstr "Elegir posición de la barra de idiomas"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:59
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:68
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:64
 msgid "Top"
 msgstr "Arriba"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:60
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:69
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:65
 msgid "Bottom"
 msgstr "Abajo"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:71
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:77
+msgid "Header Menu"
+msgstr "Menú del Encabezado"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:79
+msgid "Check to hide header menu"
+msgstr "Marque para ocultar el menú del encabezado"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:89
 msgid "Contact page"
 msgstr "Página de contacto"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:79
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:132
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:73
 msgid "Custom CSS and Javascript"
 msgstr "CSS y Javascript personalizados"
@@ -648,6 +299,23 @@ msgstr "o"
 msgid "Auxiliary SideBars"
 msgstr "Áreas Auxiliares"
 
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:84
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:129
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:46
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin/layout.php:84
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:43
+msgid "Header"
+msgstr "Encabezamiento"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:103
+#: ../bvs-themes/bvs-classic/functions.php:36
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin/layout.php:90
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:100
+msgid "Footer"
+msgstr "Pie de la página"
+
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:9
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:9
 msgid "General Colors"
@@ -679,11 +347,11 @@ msgid "Footer Colors"
 msgstr "Colores del Pie de la página"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:16
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:25
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:33
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:41
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:49
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:57
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:26
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:34
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:42
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:50
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:58
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:16
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:25
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:33
@@ -699,11 +367,11 @@ msgid "Container background"
 msgstr "Fondo del contenedor"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:18
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:26
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:34
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:42
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:50
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:58
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:27
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:35
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:43
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:51
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:59
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:18
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:26
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:34
@@ -729,11 +397,11 @@ msgid "Third level title"
 msgstr "Titulo de tercero nivel"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:22
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:30
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:38
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:46
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:54
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:62
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:31
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:39
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:47
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:55
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:63
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:22
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:30
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:38
@@ -744,11 +412,11 @@ msgid "Visited link"
 msgstr "Enlace visitado"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:23
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:31
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:39
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:47
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:55
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:63
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:32
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:40
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:48
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:56
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:64
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:23
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:31
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:39
@@ -758,16 +426,20 @@ msgstr "Enlace visitado"
 msgid "Active link"
 msgstr "Enlace ativo"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:27
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:24
+msgid "Title border"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:28
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:27
 msgid "Site title"
 msgstr "Titulo do sitio"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:28
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:36
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:44
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:52
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:60
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:29
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:37
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:45
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:53
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:61
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:28
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:36
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:44
@@ -776,11 +448,11 @@ msgstr "Titulo do sitio"
 msgid "Second column title"
 msgstr "Colores de la Segunda Columna"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:29
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:37
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:45
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:53
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:61
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:30
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:38
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:46
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:54
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:62
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:29
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:37
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:45
@@ -789,10 +461,10 @@ msgstr "Colores de la Segunda Columna"
 msgid "Third column title"
 msgstr "Titulo de la tercera columna"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:35
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:43
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:51
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:59
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:36
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:44
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:52
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:60
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:35
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:43
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:51
@@ -800,14 +472,376 @@ msgstr "Titulo de la tercera columna"
 msgid "First column title"
 msgstr "Titulo de la primera columna"
 
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:30
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:162
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:21
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:151
+msgid "Theme Options"
+msgstr "Opciones del Tema"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:129
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
+msgid "Colors"
+msgstr "Colores"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:129
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:124
+msgid "Layout"
+msgstr "Disposición"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:165
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:154
+msgid "Theme options updated"
+msgstr "Opciones actualizadas"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:191
+#: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:180
+msgid "Update"
+msgstr "Actualizar"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:59
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:56
+msgid "Top Auxiliary SideBar"
+msgstr "SideBar del topo de la página"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:77
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:74
+msgid "Column"
+msgstr "Columna"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:91
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:88
+msgid "Footer Auxiliary SideBar"
+msgstr "Barra adicional de pie de página "
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:114
+#: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:111
+msgid "Level 2"
+msgstr "Nivel 2"
+
+#: ../bvs-themes/bvs-2012/category.php:21
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/comments.php:42
+#: ../bvs-themes/bvs-responsive/comments.php:42
+#, fuzzy
+msgid "Comment navigation"
+msgstr "Comentario de navegación"
+
+#: ../bvs-themes/bvs-2012/comments.php:43
+#: ../bvs-themes/bvs-responsive/comments.php:43
+#, fuzzy
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios antiguos"
+
+#: ../bvs-themes/bvs-2012/comments.php:44
+#: ../bvs-themes/bvs-responsive/comments.php:44
+#, fuzzy
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios Recientes &rarr;"
+
+#: ../bvs-themes/bvs-2012/comments.php:53
+#: ../bvs-themes/bvs-responsive/comments.php:53
+#, fuzzy
+msgid "Comments are closed."
+msgstr "Comentarios están cerrados"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:13
+#: ../bvs-themes/bvs-2012/content-aside.php:20
+#: ../bvs-themes/bvs-2012/content-image.php:17
+#: ../bvs-themes/bvs-2012/content-link.php:18
+#: ../bvs-themes/bvs-2012/content-quote.php:17
+#: ../bvs-themes/bvs-2012/content-status.php:15
+#: ../bvs-themes/bvs-2012/content.php:45
+#: ../bvs-themes/bvs-responsive/content-aside.php:13
+#: ../bvs-themes/bvs-responsive/content-aside.php:20
+#: ../bvs-themes/bvs-responsive/content-image.php:17
+#: ../bvs-themes/bvs-responsive/content-link.php:18
+#: ../bvs-themes/bvs-responsive/content-quote.php:17
+#: ../bvs-themes/bvs-responsive/content-status.php:15
+#: ../bvs-themes/bvs-responsive/content.php:22
+#, fuzzy, php-format
+msgid "Permalink to %s"
+msgstr "Enlaces permanente para %s"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:15
+#: ../bvs-themes/bvs-2012/content-image.php:13
+#: ../bvs-themes/bvs-2012/content-link.php:14
+#: ../bvs-themes/bvs-2012/content-quote.php:13
+#: ../bvs-themes/bvs-2012/content-status.php:21
+#: ../bvs-themes/bvs-2012/content.php:68
+#: ../bvs-themes/bvs-responsive/content-aside.php:15
+#: ../bvs-themes/bvs-responsive/content-image.php:13
+#: ../bvs-themes/bvs-responsive/content-link.php:14
+#: ../bvs-themes/bvs-responsive/content-quote.php:13
+#: ../bvs-themes/bvs-responsive/content-status.php:21
+#: ../bvs-themes/bvs-responsive/content.php:41
+#, fuzzy
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:23
+#: ../bvs-themes/bvs-2012/content-image.php:23
+#: ../bvs-themes/bvs-2012/content-link.php:21
+#: ../bvs-themes/bvs-2012/content-quote.php:20
+#: ../bvs-themes/bvs-2012/content-status.php:27
+#: ../bvs-themes/bvs-2012/content.php:50
+#: ../bvs-themes/bvs-responsive/content-aside.php:23
+#: ../bvs-themes/bvs-responsive/content-image.php:23
+#: ../bvs-themes/bvs-responsive/content-link.php:21
+#: ../bvs-themes/bvs-responsive/content-quote.php:20
+#: ../bvs-themes/bvs-responsive/content-status.php:27
+#, fuzzy
+msgid "Leave a reply"
+msgstr "Deje la Respuesta"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:23
+#: ../bvs-themes/bvs-2012/content-image.php:23
+#: ../bvs-themes/bvs-2012/content-link.php:21
+#: ../bvs-themes/bvs-2012/content-quote.php:20
+#: ../bvs-themes/bvs-2012/content-status.php:27
+#: ../bvs-themes/bvs-2012/content.php:50
+#: ../bvs-themes/bvs-responsive/content-aside.php:23
+#: ../bvs-themes/bvs-responsive/content-image.php:23
+#: ../bvs-themes/bvs-responsive/content-link.php:21
+#: ../bvs-themes/bvs-responsive/content-quote.php:20
+#: ../bvs-themes/bvs-responsive/content-status.php:27
+#, fuzzy
+msgid "1 Reply"
+msgstr "1 Responder"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:23
+#: ../bvs-themes/bvs-2012/content-image.php:23
+#: ../bvs-themes/bvs-2012/content-link.php:21
+#: ../bvs-themes/bvs-2012/content-quote.php:20
+#: ../bvs-themes/bvs-2012/content-status.php:27
+#: ../bvs-themes/bvs-2012/content.php:50
+#: ../bvs-themes/bvs-responsive/content-aside.php:23
+#: ../bvs-themes/bvs-responsive/content-image.php:23
+#: ../bvs-themes/bvs-responsive/content-link.php:21
+#: ../bvs-themes/bvs-responsive/content-quote.php:20
+#: ../bvs-themes/bvs-responsive/content-status.php:27
+#, fuzzy
+msgid "% Replies"
+msgstr "% Respuestas"
+
+#: ../bvs-themes/bvs-2012/content-aside.php:26
+#: ../bvs-themes/bvs-2012/content-image.php:26
+#: ../bvs-themes/bvs-2012/content-link.php:24
+#: ../bvs-themes/bvs-2012/content-page.php:21
+#: ../bvs-themes/bvs-2012/content-quote.php:23
+#: ../bvs-themes/bvs-2012/content-status.php:30
+#: ../bvs-themes/bvs-2012/functions.php:309 ../bvs-themes/bvs-2012/image.php:37
+#: ../bvs-themes/bvs-responsive/content-aside.php:26
+#: ../bvs-themes/bvs-responsive/content-image.php:26
+#: ../bvs-themes/bvs-responsive/content-link.php:24
+#: ../bvs-themes/bvs-responsive/content-page.php:21
+#: ../bvs-themes/bvs-responsive/content-quote.php:23
+#: ../bvs-themes/bvs-responsive/content-status.php:30
+#: ../bvs-themes/bvs-responsive/functions.php:309
+#: ../bvs-themes/bvs-responsive/image.php:37
+#, fuzzy
+msgid "Edit"
+msgstr "Editar"
+
+#: ../bvs-themes/bvs-2012/content-none.php:13
+#: ../bvs-themes/bvs-2012/index.php:37 ../bvs-themes/bvs-2012/search.php:34
+#: ../bvs-themes/bvs-responsive/content-none.php:13
+#: ../bvs-themes/bvs-responsive/index.php:37
+#: ../bvs-themes/bvs-responsive/search.php:34
+#, fuzzy
+msgid "Nothing Found"
+msgstr "No se encontró nada"
+
+#: ../bvs-themes/bvs-2012/content-none.php:17
+#: ../bvs-themes/bvs-responsive/content-none.php:17
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/content-page.php:18
+#: ../bvs-themes/bvs-2012/content.php:69 ../bvs-themes/bvs-2012/image.php:92
+#: ../bvs-themes/bvs-classic/sidebar.php:13
+#: ../bvs-themes/bvs-responsive/content-page.php:18
+#: ../bvs-themes/bvs-responsive/content.php:42
+#: ../bvs-themes/bvs-responsive/image.php:92
+#, fuzzy
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: ../bvs-themes/bvs-2012/content.php:37
+#: ../bvs-themes/bvs-responsive/content.php:14
+#, fuzzy
+msgid "Featured post"
+msgstr "Entrada destacada"
+
+#: ../bvs-themes/bvs-2012/functions.php:64
+#: ../bvs-themes/bvs-responsive/functions.php:64
+msgid "Primary Menu"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:181
+#: ../bvs-themes/bvs-responsive/functions.php:181
+#, fuzzy, php-format
+msgid "Page %s"
+msgstr "Página %s"
+
+#: ../bvs-themes/bvs-2012/functions.php:250
+#: ../bvs-themes/bvs-responsive/functions.php:250
+msgid "Post navigation"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:251
+#: ../bvs-themes/bvs-responsive/functions.php:251
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:252
+#: ../bvs-themes/bvs-responsive/functions.php:252
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:277
+#: ../bvs-themes/bvs-responsive/functions.php:277
+#, fuzzy
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../bvs-themes/bvs-2012/functions.php:277
+#: ../bvs-themes/bvs-responsive/functions.php:277
+#, fuzzy
+msgid "(Edit)"
+msgstr "Editar"
+
+#: ../bvs-themes/bvs-2012/functions.php:292
+#: ../bvs-themes/bvs-responsive/functions.php:292
+msgid "Post author"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:298
+#: ../bvs-themes/bvs-responsive/functions.php:298
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:304
+#: ../bvs-themes/bvs-responsive/functions.php:304
+#, fuzzy
+msgid "Your comment is awaiting moderation."
+msgstr "Su comentario está pendiente de moderación."
+
+#: ../bvs-themes/bvs-2012/functions.php:313
+#: ../bvs-themes/bvs-responsive/functions.php:313
+#, fuzzy
+msgid "Reply"
+msgstr "Responder"
+
+#: ../bvs-themes/bvs-2012/functions.php:332
+#: ../bvs-themes/bvs-2012/functions.php:335
+#: ../bvs-themes/bvs-responsive/functions.php:332
+#: ../bvs-themes/bvs-responsive/functions.php:335
+msgid ", "
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:346
+#: ../bvs-themes/bvs-responsive/functions.php:346
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:352
+#: ../bvs-themes/bvs-responsive/functions.php:352
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:354
+#: ../bvs-themes/bvs-responsive/functions.php:354
+#, php-format
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/functions.php:356
+#: ../bvs-themes/bvs-responsive/functions.php:356
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:94
+#: ../bvs-themes/bvs-responsive/header.php:79
+msgid "Virtual Health Library"
+msgstr "Biblioteca Virtual en Salud"
+
+#: ../bvs-themes/bvs-2012/header.php:95
+#: ../bvs-themes/bvs-responsive/header.php:80
+msgid "VHL Logo"
+msgstr "Logo de la BVS"
+
+#: ../bvs-themes/bvs-2012/image.php:26
+#: ../bvs-themes/bvs-responsive/image.php:26
+#, php-format
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></"
+"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
+"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
+"a>."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/image.php:41
+#: ../bvs-themes/bvs-responsive/image.php:41
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: ../bvs-themes/bvs-2012/image.php:42
+#: ../bvs-themes/bvs-responsive/image.php:42
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/index.php:41
+#: ../bvs-themes/bvs-responsive/index.php:41
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/search.php:18
+#: ../bvs-themes/bvs-responsive/search.php:18
+#, fuzzy, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados de la búsqueda: %s"
+
+#: ../bvs-themes/bvs-2012/search.php:38
+#: ../bvs-themes/bvs-responsive/search.php:38
+#, fuzzy
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Lo sentimos, pero nada corresponde a sus criterios de busqueda. Por favor, "
+"inténtelo de nuevo con algunas palabras clave diferentes"
+
+#: ../bvs-themes/bvs-2012/tag.php:21 ../bvs-themes/bvs-responsive/tag.php:21
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
 #: ../bvs-themes/bvs-classic/comments-popup.php:9
 #, php-format
 msgid "Comments on %s"
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:29
+#, fuzzy
 msgid "Comments"
-msgstr ""
+msgstr "% Comentarios"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:31
 #: ../bvs-themes/bvs-classic/comments.php:35
@@ -829,8 +863,9 @@ msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:52
 #: ../bvs-themes/bvs-classic/comments.php:24
+#, fuzzy
 msgid "Pingback"
-msgstr ""
+msgstr "Pingback:"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:52
 #: ../bvs-themes/bvs-classic/comments.php:24
@@ -845,8 +880,9 @@ msgstr ""
 #: ../bvs-themes/bvs-classic/comments-popup.php:62
 #: ../bvs-themes/bvs-classic/comments.php:13
 #: ../bvs-themes/bvs-classic/comments.php:42
+#, fuzzy
 msgid "Leave a comment"
-msgstr ""
+msgstr "Deja un comentário"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:63
 msgid ""
@@ -872,12 +908,14 @@ msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:71
 #: ../bvs-themes/bvs-classic/comments.php:57
+#, fuzzy
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:76
+#, fuzzy
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:81
 msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
@@ -914,16 +952,19 @@ msgid "Enter your password to view comments."
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments.php:11
+#, fuzzy
 msgid "No Comments"
-msgstr ""
+msgstr "Ningún comentario"
 
 #: ../bvs-themes/bvs-classic/comments.php:11
+#, fuzzy
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Comentario"
 
 #: ../bvs-themes/bvs-classic/comments.php:11
+#, fuzzy
 msgid "% Comments"
-msgstr ""
+msgstr "% Comentarios"
 
 #: ../bvs-themes/bvs-classic/comments.php:24
 #: ../bvs-themes/bvs-classic/index.php:16
@@ -941,16 +982,18 @@ msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments.php:57
 #: ../bvs-themes/bvs-classic/comments.php:60
+#, fuzzy
 msgid "(required)"
-msgstr ""
+msgstr "%s es un campo obligatorio"
 
 #: ../bvs-themes/bvs-classic/comments.php:60
 msgid "Mail (will not be published)"
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/comments.php:63
+#, fuzzy
 msgid "Website"
-msgstr ""
+msgstr "Sitio web"
 
 #: ../bvs-themes/bvs-classic/comments.php:67
 #, php-format
@@ -974,13 +1017,15 @@ msgid "Filed under:"
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/index.php:16
+#, fuzzy
 msgid "Tags: "
-msgstr ""
+msgstr "Etiquetas"
 
 #: ../bvs-themes/bvs-classic/index.php:19
 #: ../bvs-themes/bvs-classic/single.php:17
+#, fuzzy
 msgid "(more...)"
-msgstr ""
+msgstr "lea mas"
 
 #: ../bvs-themes/bvs-classic/index.php:24
 #: ../bvs-themes/bvs-classic/single.php:30
@@ -994,8 +1039,9 @@ msgstr ""
 
 #: ../bvs-themes/bvs-classic/index.php:24
 #: ../bvs-themes/bvs-classic/single.php:30
+#, fuzzy
 msgid "Comments (%)"
-msgstr ""
+msgstr "Ningún comentario"
 
 #: ../bvs-themes/bvs-classic/index.php:32
 #: ../bvs-themes/bvs-classic/single.php:35
@@ -1013,20 +1059,23 @@ msgid "Older Posts &raquo;"
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/sidebar.php:15
+#, fuzzy
 msgid "Categories:"
-msgstr ""
+msgstr "Categorías"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:17
+#, fuzzy
 msgid "Search:"
-msgstr ""
+msgstr "Buscar:"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:25
 msgid "Archives:"
 msgstr ""
 
 #: ../bvs-themes/bvs-classic/sidebar.php:30
+#, fuzzy
 msgid "Meta:"
-msgstr ""
+msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:34
 msgid "Syndicate this site using RSS"
@@ -1052,6 +1101,112 @@ msgstr ""
 msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
 msgstr ""
 
+#: ../bvs-themes/bvs-responsive/category.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../bvs-widgets/servplat_login_widget.php:22
+#, fuzzy
+msgid "Adds the Services Platform login on your site"
+msgstr "Anãdir certificado BVS en su sitio"
+
+#: ../bvs-widgets/servplat_login_widget.php:23
+msgid "Services Platform Login"
+msgstr "Login Mi BVS"
+
+#: ../bvs-widgets/servplat_login_widget.php:53
+#: ../bvs-widgets/servplat_login_widget.php:55
+msgid "avatar,"
+msgstr "avatar,"
+
+#: ../bvs-widgets/servplat_login_widget.php:58
+#: ../bvs-widgets/servplat_login_widget.php:112
+#: ../bvs-widgets/servplat_login_widget.php:134
+msgid "Welcome,"
+msgstr "Bienvenido,"
+
+#: ../bvs-widgets/servplat_login_widget.php:59
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Go to dashboard"
+msgstr "Ir al panel de control"
+
+#: ../bvs-widgets/servplat_login_widget.php:60
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Logout"
+msgstr "Salir"
+
+#: ../bvs-widgets/servplat_login_widget.php:73
+msgid "user"
+msgstr "usuario\t"
+
+#: ../bvs-widgets/servplat_login_widget.php:77
+msgid "password"
+msgstr "contraseña"
+
+#: ../bvs-widgets/servplat_login_widget.php:81
+#: ../bvs-widgets/servplat_login_widget.php:121
+#: ../bvs-widgets/servplat_login_widget.php:143
+msgid "access denied"
+msgstr "acceso no permitido"
+
+#: ../bvs-widgets/servplat_login_widget.php:84
+#: ../bvs-widgets/servplat_login_widget.php:124
+#: ../bvs-widgets/servplat_login_widget.php:146
+msgid "invalid login"
+msgstr "login no válido"
+
+#: ../bvs-widgets/servplat_login_widget.php:100
+msgid "Login"
+msgstr "Login\t"
+
+#: ../bvs-widgets/servplat_login_widget.php:101
+msgid "registry"
+msgstr "registrarse"
+
+#: ../bvs-widgets/servplat_login_widget.php:102
+msgid "forgot my password"
+msgstr "olvidé la contraseña"
+
+#: ../bvs-widgets/servplat_login_widget.php:119
+msgid "Login to Services Platform"
+msgstr "Login en Mi BVS"
+
+#: ../bvs-widgets/servplat_login_widget.php:141
+msgid "Sign in"
+msgstr "Entrar"
+
+#: ../bvs-widgets/servplat_login_widget.php:171
+#: ../bvs-widgets/vhl_certification_widget.php:50
+#: ../bvs-widgets/vhl_clusters_widget.php:129
+#: ../bvs-widgets/vhl_collection_widget.php:102
+#: ../bvs-widgets/vhl_network_widget.php:61
+#: ../bvs-widgets/vhl_search_widget.php:54
+msgid "Title:"
+msgstr "Titulo:"
+
+#: ../bvs-widgets/servplat_login_widget.php:177
+msgid "VHL Search URL:"
+msgstr "URL de Búsqueda de la BVS:"
+
+#: ../bvs-widgets/servplat_login_widget.php:181
+msgid "e.g."
+msgstr "ej."
+
+#: ../bvs-widgets/servplat_login_widget.php:184
+msgid "Display layout:"
+msgstr "Layout de visualización:"
+
+#: ../bvs-widgets/servplat_login_widget.php:186
+msgid "Box"
+msgstr "Caja"
+
+#: ../bvs-widgets/servplat_login_widget.php:188
+msgid "Icon"
+msgstr "Icono"
+
 #: ../bvs-widgets/vhl_certification_widget.php:9
 msgid "Adds a VHL certification on your site"
 msgstr "Anãdir certificado BVS en su sitio"
@@ -1060,44 +1215,116 @@ msgstr "Anãdir certificado BVS en su sitio"
 msgid "VHL Certification"
 msgstr "Certificado BVS"
 
-#: ../bvs-widgets/vhl_certification_widget.php:43
-#: ../bvs-widgets/vhl_collection_widget.php:92
-#: ../bvs-widgets/vhl_network_widget.php:53
-#: ../bvs-widgets/vhl_search_widget.php:47
-msgid "Title:"
-msgstr "Titulo:"
-
-#: ../bvs-widgets/vhl_certification_widget.php:50
-#: ../bvs-widgets/vhl_network_widget.php:59
+#: ../bvs-widgets/vhl_certification_widget.php:57
+#: ../bvs-widgets/vhl_network_widget.php:67
 msgid "Parameters:"
 msgstr "Parámetros:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:7
+msgid "Adds a cluster list from iAHx on your site"
+msgstr "Anãdir una lista de clusters del iAHx en su sitio"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:8
+msgid "VHL Clusters"
+msgstr "BVS Clusters"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:135
+msgid "iAHx URL:"
+msgstr "iAHx URL:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:144
+msgid "Image Source:"
+msgstr "Fuente de la Imagen:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:144
+msgid "empty if not use"
+msgstr "vacío si no va a usar"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:151
+msgid "Cluster:"
+msgstr "Cluster:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:167
+msgid "Number of Results:"
+msgstr "Número de Resultados:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:174
+#: ../bvs-widgets/vhl_themes_widget.php:159
+msgid "CSS Class:"
+msgstr "Clase CSS:"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:181
+msgid "One Column"
+msgstr "Una Columna"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:186
+msgid "Two Columns"
+msgstr "Dos Columnas"
+
+#: ../bvs-widgets/vhl_clusters_widget.php:191
+msgid "Three Columns"
+msgstr "Tres Columnas"
 
 #: ../bvs-widgets/vhl_collection_widget.php:7
 msgid "Adds a VHL collection on your site"
 msgstr "Añadir una colección de BVS en su sitio"
 
-#: ../bvs-widgets/vhl_collection_widget.php:98
-#: ../bvs-widgets/vhl_themes_widget.php:89
+#: ../bvs-widgets/vhl_collection_widget.php:108
+#: ../bvs-widgets/vhl_themes_widget.php:137
 msgid "Collection:"
 msgstr "Colección:"
 
-#: ../bvs-widgets/vhl_collection_widget.php:101
-#: ../bvs-widgets/vhl_themes_widget.php:92
+#: ../bvs-widgets/vhl_collection_widget.php:111
+#: ../bvs-widgets/vhl_themes_widget.php:140
 msgid "Select a collection"
 msgstr "Seleccione una colección"
 
-#: ../bvs-widgets/vhl_collection_widget.php:120
-#: ../bvs-widgets/vhl_themes_widget.php:111
+#: ../bvs-widgets/vhl_collection_widget.php:129
+#: ../bvs-widgets/vhl_themes_widget.php:165
 msgid "Show link to collection page"
-msgstr ""
+msgstr "Mostrar enlace a la página de la colección"
 
-#: ../bvs-widgets/vhl_collection_widget.php:125
+#: ../bvs-widgets/vhl_collection_widget.php:134
 msgid "Number of levels to display:"
 msgstr "Número de niveles para mostrar:"
 
-#: ../bvs-widgets/vhl_collection_widget.php:131
+#: ../bvs-widgets/vhl_collection_widget.php:140
 msgid "Number of columns:"
 msgstr "Número de columnas:"
+
+#: ../bvs-widgets/vhl_collection_widget.php:149
+msgid "Order by:"
+msgstr "Ordernar por:"
+
+#: ../bvs-widgets/vhl_collection_widget.php:151
+#, fuzzy
+msgid "Title"
+msgstr "Título:"
+
+#: ../bvs-widgets/vhl_collection_widget.php:152
+msgid "Order field"
+msgstr "Campo Order"
+
+#: ../bvs-widgets/vhl_collection_widget.php:153
+msgid "Published date"
+msgstr "Fecha de publicación"
+
+#: ../bvs-widgets/vhl_collection_widget.php:154
+msgid "Last modified"
+msgstr "Última modificación"
+
+#: ../bvs-widgets/vhl_collection_widget.php:155
+msgid "ID"
+msgstr "ID"
+
+#: ../bvs-widgets/vhl_collection_widget.php:156
+#, fuzzy
+msgid "Author"
+msgstr "Autor"
+
+#: ../bvs-widgets/vhl_collection_widget.php:157
+msgid "Slug"
+msgstr "Slug"
 
 #: ../bvs-widgets/vhl_network_widget.php:10
 msgid "Adds a VHL network on your site"
@@ -1115,18 +1342,34 @@ msgstr "Añadir la búsqueda BVS en su sitio"
 msgid "VHL Search"
 msgstr "Búsqueda BVS"
 
-#: ../bvs-widgets/vhl_search_widget.php:53
+#: ../bvs-widgets/vhl_search_widget.php:60
 msgid "Search URL:"
 msgstr "URL de búsqueda:"
 
-#: ../bvs-widgets/vhl_themes_widget.php:12
+#: ../bvs-widgets/vhl_themes_widget.php:14
 msgid "Adds a VHL theme on your site"
 msgstr "Añadir un tema BVS en su sitio"
 
-#: ../bvs-widgets/vhl_themes_widget.php:13
+#: ../bvs-widgets/vhl_themes_widget.php:15
 msgid "VHL Themes"
 msgstr "Temas BVS"
 
-#: ../bvs-widgets/vhl_themes_widget.php:116
+#: ../bvs-widgets/vhl_themes_widget.php:170
+msgid "Show excerpt"
+msgstr "Mostrar resumen"
+
+#: ../bvs-widgets/vhl_themes_widget.php:175
 msgid "Display in two columns?"
 msgstr "Mostrar en dos columnas?"
+
+#: ../bvs-widgets/vhl_themes_widget.php:180
+msgid "Use large thumbnails (120px)"
+msgstr ""
+
+#: ../bvs-widgets/vhl_themes_widget.php:185
+msgid "Use extra-large thumbnails (240px)"
+msgstr ""
+
+#: ../bvs-widgets/vhl_themes_widget.php:190
+msgid "Use original size thumbnails"
+msgstr ""
