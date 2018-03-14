@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
 "POT-Creation-Date: 2018-03-13 11:15-0300\n"
-"PO-Revision-Date: 2018-03-13 16:05-0300\n"
+"PO-Revision-Date: 2018-03-14 09:46-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: pt_BR\n"
@@ -1130,7 +1130,7 @@ msgstr "avatar,"
 #: ../bvs-widgets/servplat_login_widget.php:112
 #: ../bvs-widgets/servplat_login_widget.php:134
 msgid "Welcome,"
-msgstr "Bem-vindo"
+msgstr "Bem-vindo,"
 
 #: ../bvs-widgets/servplat_login_widget.php:59
 #: ../bvs-widgets/servplat_login_widget.php:113
