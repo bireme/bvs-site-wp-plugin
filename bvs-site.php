@@ -4,13 +4,13 @@ Plugin Name: BVS Site
 Plugin URI: http://reddes.bvsalud.org/projects/bvs-site/
 Description: BVS Portal
 Author: BIREME/OPAS/OMS
-Version: 0.1
+Version: 0.6.0
 Author URI: http://reddes.bvsalud.org/
 Network: false
 */
 
 define( 'SYSTEM', strtoupper(PHP_OS) );
-define( 'BVS_VERSION', '0.3' );
+define( 'BVS_VERSION', '0.6.0' );
 define( 'BVS_SYMBOLIC_LINK', false );
 define( 'BVS_PLUGIN_BASENAME', preg_replace('/\/.*$/', '', plugin_basename(__FILE__)) );
 define( 'BVS_PLUGIN_DIRNAME', '/plugins/' . BVS_PLUGIN_BASENAME . '/' );
