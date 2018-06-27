@@ -40,11 +40,13 @@ class VHL_Themes_Widget extends WP_Widget {
             if ( !empty( $extra_css ) ) {
                 $dom = new DOMDocument;
                 $dom->loadHTML($before_widget);
-                $elements = $dom->getElementsByTagName('aside');
+                $elements = $dom->getElementsByTagName('div');
+
                 foreach($elements as $el) {
                     $el->setAttribute('class', 
                         $el->getAttribute('class') . ' ' . $extra_css);
                 }
+                
                 $before_widget = $elements->item(0)->C14N();
                 $before_widget = substr($before_widget, 0, strpos($before_widget, '><')) . '>';
             }
