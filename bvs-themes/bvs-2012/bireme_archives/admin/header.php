@@ -128,6 +128,21 @@ if(is_plugin_active('contact-form-7/wp-contact-form-7.php')) { ?>
     <td colspan="3"><hr/></td>
 </tr>
 <?php } ?>
+
+<!-- Option form activate login menu  -->
+
+<tr>
+    <th><label for="header[loginMenu]"><?php echo __('Login in the Top Menu','vhl');?></label></th>
+    <td colspan="2">
+        <input id="header[loginMenu]" name="header[loginMenu]" type="checkbox" class="" value="true" <?php if($header['loginMenu'] == 'true') { echo "checked"; } ?> > <label for="header[loginMenu]"> <?php echo __('Check to show login in the top menu','vhl');?></label><br/>
+    </td>
+</tr>
+<tr>
+    <td colspan="3"><hr/></td>
+</tr>
+<!-- End Login Menu -->
+
+
 <tr>
 	<th><label for="header-extrahead"><?php echo __('Custom CSS and Javascript','vhl');?></label></th>
 	<td colspan="2">

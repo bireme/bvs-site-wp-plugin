@@ -76,7 +76,39 @@ if(is_plugin_active('multi-language-framework/multi-language-framework.php'))
 					?>
 				</div>
 				<?php
-				// Conditional to show contact link.
+				// Conditional to show Login BVS option
+
+				if(isset($login_menu)){
+					if ( ! defined( 'HTTP_HOST' ) ) {
+					    $path = ( $_SERVER['REDIRECT_URL'] ) ? $_SERVER['REDIRECT_URL'] : '';
+					    define( 'HTTP_HOST', get_bloginfo('url').$path );
+					}
+
+					$current_language = strtolower(get_bloginfo('language'));
+					$lang = substr($current_language, 0,2);
+					$portal = 'http://platserv.bvsalud.org/client';
+
+					if ( $_COOKIE['userData'] ) : 
+						$userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
+					    <div>
+					    	<p><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?></p>
+					    	<p><a href="<?php echo $portal.'/controller/authentication/?lang='.$lang; ?>" target="_blank"><?php _e('Go to dashboard', 'vhl'); ?></a> | <a href="<?php echo $portal.'/controller/logout/control/business/origin/'.base64_encode(HTTP_HOST).'/?lang='.$lang; ?>" style="color: red;"><?php _e('Logout', 'vhl'); ?></a></p>
+					    </div>
+					<?php else : ?>
+						<div id="loginMenu">
+							<p><a href="<?php echo $portal.'/controller/authentication/control/home/origin/'.base64_encode(HTTP_HOST).'/iahx/'.base64_encode($iahx).'/?lang='.$lang; ?>"><?php _e('Login to Services Platform', 'vhl'); ?></a></p>
+							<?php if ( $_REQUEST['status'] == 'access_denied' ){ ?>
+								<p class="help-block"><?php _e('access denied', 'vhl') ?></p>
+							<?php } ?>
+							<?php if ( $_REQUEST['status'] == 'false' ){ ?>
+								<p class="help-block"><?php _e('invalid login', 'vhl') ?></p>
+							<?php } ?>
+						</div>
+					<?php endif;
+				} 
+
+				// Conditional to show contact link.				
+
 				if(is_plugin_active('contact-form-7/wp-contact-form-7.php') && isset($contactPage) && !empty($contactPage)) { ?>
 					<div id="contact">
 						<?php if ( function_exists( 'pll_get_post' ) ) : ?>

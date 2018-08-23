@@ -37,6 +37,7 @@
     $top_sidebar = $layout['top-sidebar'];//$settings['layout']['top-sidebar'];
     $footer_sidebar = $layout['footer-sidebar'];//$settings['layout']['footer-sidebar'];
     $language_position = $header['language-position'];//$settings['header']['language-position'];
+    $login_menu = $header['loginMenu'];
 ?>
 
 <link rel='stylesheet' id='generic_css'  href='<?php echo get_template_directory_uri(); ?>/bireme_archives/css/generic.css' type='text/css' media='all' />

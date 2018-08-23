@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-03-13 11:15-0300\n"
-"PO-Revision-Date: 2018-03-14 09:46-0300\n"
+"POT-Creation-Date: 2018-08-22 17:06-0300\n"
+"PO-Revision-Date: 2018-08-22 17:07-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: pt_BR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -235,7 +235,15 @@ msgstr "Marcar para ocultar o menu do cabeçalho"
 msgid "Contact page"
 msgstr "Página de contato"
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:132
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:135
+msgid "Login in the Top Menu"
+msgstr "Login no Menu Superior"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:137
+msgid "Check to show login in the top menu"
+msgstr "Habilitar login no cabeçalho"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:147
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:73
 msgid "Custom CSS and Javascript"
 msgstr "CSS e Javascript customizados"
@@ -779,12 +787,12 @@ msgstr ""
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/header.php:94
+#: ../bvs-themes/bvs-2012/header.php:102
 #: ../bvs-themes/bvs-responsive/header.php:79
 msgid "Virtual Health Library"
 msgstr "Biblioteca Virtual em Saúde"
 
-#: ../bvs-themes/bvs-2012/header.php:95
+#: ../bvs-themes/bvs-2012/header.php:103
 #: ../bvs-themes/bvs-responsive/header.php:80
 msgid "VHL Logo"
 msgstr "Logo da BVS"
@@ -817,6 +825,46 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
+
+#: ../bvs-themes/bvs-2012/login_menu.php:15
+#: ../bvs-widgets/servplat_login_widget.php:58
+#: ../bvs-widgets/servplat_login_widget.php:112
+#: ../bvs-widgets/servplat_login_widget.php:134
+msgid "Welcome,"
+msgstr "Bem-vindo,"
+
+#: ../bvs-themes/bvs-2012/login_menu.php:16
+#: ../bvs-widgets/servplat_login_widget.php:59
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Go to dashboard"
+msgstr "Ir para o painel de controle"
+
+#: ../bvs-themes/bvs-2012/login_menu.php:16
+#: ../bvs-widgets/servplat_login_widget.php:60
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Logout"
+msgstr "Sair"
+
+#: ../bvs-themes/bvs-2012/login_menu.php:20
+#: ../bvs-widgets/servplat_login_widget.php:119
+msgid "Login to Services Platform"
+msgstr "Login para a Minha BVS"
+
+#: ../bvs-themes/bvs-2012/login_menu.php:22
+#: ../bvs-widgets/servplat_login_widget.php:81
+#: ../bvs-widgets/servplat_login_widget.php:121
+#: ../bvs-widgets/servplat_login_widget.php:143
+msgid "access denied"
+msgstr "acesso negado"
+
+#: ../bvs-themes/bvs-2012/login_menu.php:25
+#: ../bvs-widgets/servplat_login_widget.php:84
+#: ../bvs-widgets/servplat_login_widget.php:124
+#: ../bvs-widgets/servplat_login_widget.php:146
+msgid "invalid login"
+msgstr "login inválido"
 
 #: ../bvs-themes/bvs-2012/search.php:18
 #: ../bvs-themes/bvs-responsive/search.php:18
@@ -1126,24 +1174,6 @@ msgstr "Login Minha BVS"
 msgid "avatar,"
 msgstr "avatar,"
 
-#: ../bvs-widgets/servplat_login_widget.php:58
-#: ../bvs-widgets/servplat_login_widget.php:112
-#: ../bvs-widgets/servplat_login_widget.php:134
-msgid "Welcome,"
-msgstr "Bem-vindo,"
-
-#: ../bvs-widgets/servplat_login_widget.php:59
-#: ../bvs-widgets/servplat_login_widget.php:113
-#: ../bvs-widgets/servplat_login_widget.php:135
-msgid "Go to dashboard"
-msgstr "Ir para o painel de controle"
-
-#: ../bvs-widgets/servplat_login_widget.php:60
-#: ../bvs-widgets/servplat_login_widget.php:113
-#: ../bvs-widgets/servplat_login_widget.php:135
-msgid "Logout"
-msgstr "Sair"
-
 #: ../bvs-widgets/servplat_login_widget.php:73
 msgid "user"
 msgstr "usuário"
@@ -1151,18 +1181,6 @@ msgstr "usuário"
 #: ../bvs-widgets/servplat_login_widget.php:77
 msgid "password"
 msgstr "senha"
-
-#: ../bvs-widgets/servplat_login_widget.php:81
-#: ../bvs-widgets/servplat_login_widget.php:121
-#: ../bvs-widgets/servplat_login_widget.php:143
-msgid "access denied"
-msgstr "acesso negado"
-
-#: ../bvs-widgets/servplat_login_widget.php:84
-#: ../bvs-widgets/servplat_login_widget.php:124
-#: ../bvs-widgets/servplat_login_widget.php:146
-msgid "invalid login"
-msgstr "login inválido"
 
 #: ../bvs-widgets/servplat_login_widget.php:100
 msgid "Login"
@@ -1175,10 +1193,6 @@ msgstr "registre-se"
 #: ../bvs-widgets/servplat_login_widget.php:102
 msgid "forgot my password"
 msgstr "esqueci minha senha"
-
-#: ../bvs-widgets/servplat_login_widget.php:119
-msgid "Login to Services Platform"
-msgstr "Login para a Minha BVS"
 
 #: ../bvs-widgets/servplat_login_widget.php:141
 msgid "Sign in"
@@ -1255,7 +1269,7 @@ msgid "Number of Results:"
 msgstr "Número de Resultados:"
 
 #: ../bvs-widgets/vhl_clusters_widget.php:174
-#: ../bvs-widgets/vhl_themes_widget.php:159
+#: ../bvs-widgets/vhl_themes_widget.php:161
 msgid "CSS Class:"
 msgstr "Classe CSS:"
 
@@ -1276,17 +1290,17 @@ msgid "Adds a VHL collection on your site"
 msgstr "Adiciona uma Coleção BVS no site"
 
 #: ../bvs-widgets/vhl_collection_widget.php:108
-#: ../bvs-widgets/vhl_themes_widget.php:137
+#: ../bvs-widgets/vhl_themes_widget.php:139
 msgid "Collection:"
 msgstr "Coleção:"
 
 #: ../bvs-widgets/vhl_collection_widget.php:111
-#: ../bvs-widgets/vhl_themes_widget.php:140
+#: ../bvs-widgets/vhl_themes_widget.php:142
 msgid "Select a collection"
 msgstr "Seleciona a coleção"
 
 #: ../bvs-widgets/vhl_collection_widget.php:129
-#: ../bvs-widgets/vhl_themes_widget.php:165
+#: ../bvs-widgets/vhl_themes_widget.php:167
 msgid "Show link to collection page"
 msgstr "Mostrar link para a página da coleção"
 
@@ -1360,22 +1374,22 @@ msgstr "Adiciona um Tema BVS no seu site"
 msgid "VHL Themes"
 msgstr "Temas BVS"
 
-#: ../bvs-widgets/vhl_themes_widget.php:170
+#: ../bvs-widgets/vhl_themes_widget.php:172
 msgid "Show excerpt"
 msgstr "Mostrar resumo"
 
-#: ../bvs-widgets/vhl_themes_widget.php:175
+#: ../bvs-widgets/vhl_themes_widget.php:177
 msgid "Display in two columns?"
 msgstr "Mostrar em duas colunas?"
 
-#: ../bvs-widgets/vhl_themes_widget.php:180
+#: ../bvs-widgets/vhl_themes_widget.php:182
 msgid "Use large thumbnails (120px)"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:185
+#: ../bvs-widgets/vhl_themes_widget.php:187
 msgid "Use extra-large thumbnails (240px)"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:190
+#: ../bvs-widgets/vhl_themes_widget.php:192
 msgid "Use original size thumbnails"
 msgstr ""
