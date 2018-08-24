@@ -18,6 +18,7 @@ body {
 
 .bar div {
 	float: right;
+    margin-left: 10px;
 }
 .bar div li {
 	float: left;
@@ -274,27 +275,43 @@ ul.double { padding-top: 10px; }
     margin-right: 2rem;
 }
 
-.bar #contact A {
+.bar #contact a {
     background: url(../default/bt_contact.gif) no-repeat;
 }
-.bar #loginMenu A {
-   
-    background: url(../default/bt_login.gif) no-repeat;
 
+.bar #loginMenu {
+    color: #fff;
+    display: flex;
 }
-#contact A,  #loginMenu A {
+
+
+.bar #loginMenu a.logout {
+    background: url(../default/bt_login.gif) no-repeat;
+}
+
+.bar #loginMenu a.login {
+    background: url(../default/bt_logout.gif) no-repeat;
+}
+
+.bar #loginMenu p {
+    margin: 0 5px 0;
+}
+
+#contact a,  #loginMenu a {
     padding-left: 20px;
 }
 
 .vhl_collection .entry-content strong {
     display: inline;
 }
+
 .siteInfo li {
 	display: inline-block;
 	margin-right: 6px;
 	padding-right: 6px;
 	border-right: 1px solid;
 }
+
 .siteInfo li:last-child {
 	border-right: none;	
 }
