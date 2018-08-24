@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-03-13 11:08-0300\n"
-"PO-Revision-Date: 2018-03-13 11:08-0300\n"
+"POT-Creation-Date: 2018-08-24 17:00-0300\n"
+"PO-Revision-Date: 2018-08-24 17:00-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -227,7 +227,15 @@ msgstr ""
 msgid "Contact page"
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:132
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:135
+msgid "Login in the Top Menu"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:137
+msgid "Check to show login in the top menu"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:147
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:73
 msgid "Custom CSS and Javascript"
 msgstr ""
@@ -754,12 +762,49 @@ msgstr ""
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/header.php:94
+#: ../bvs-themes/bvs-2012/header.php:110
+#: ../bvs-widgets/servplat_login_widget.php:58
+#: ../bvs-widgets/servplat_login_widget.php:112
+#: ../bvs-widgets/servplat_login_widget.php:134
+msgid "Welcome,"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:111
+msgid "Dashboard"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:111
+#: ../bvs-widgets/servplat_login_widget.php:60
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Logout"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:115
+#: ../bvs-widgets/servplat_login_widget.php:119
+msgid "Login to Services Platform"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:117
+#: ../bvs-widgets/servplat_login_widget.php:81
+#: ../bvs-widgets/servplat_login_widget.php:121
+#: ../bvs-widgets/servplat_login_widget.php:143
+msgid "access denied"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:120
+#: ../bvs-widgets/servplat_login_widget.php:84
+#: ../bvs-widgets/servplat_login_widget.php:124
+#: ../bvs-widgets/servplat_login_widget.php:146
+msgid "invalid login"
+msgstr ""
+
+#: ../bvs-themes/bvs-2012/header.php:132
 #: ../bvs-themes/bvs-responsive/header.php:79
 msgid "Virtual Health Library"
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/header.php:95
+#: ../bvs-themes/bvs-2012/header.php:133
 #: ../bvs-themes/bvs-responsive/header.php:80
 msgid "VHL Logo"
 msgstr ""
@@ -1080,22 +1125,10 @@ msgstr ""
 msgid "avatar,"
 msgstr ""
 
-#: ../bvs-widgets/servplat_login_widget.php:58
-#: ../bvs-widgets/servplat_login_widget.php:112
-#: ../bvs-widgets/servplat_login_widget.php:134
-msgid "Welcome,"
-msgstr ""
-
 #: ../bvs-widgets/servplat_login_widget.php:59
 #: ../bvs-widgets/servplat_login_widget.php:113
 #: ../bvs-widgets/servplat_login_widget.php:135
 msgid "Go to dashboard"
-msgstr ""
-
-#: ../bvs-widgets/servplat_login_widget.php:60
-#: ../bvs-widgets/servplat_login_widget.php:113
-#: ../bvs-widgets/servplat_login_widget.php:135
-msgid "Logout"
 msgstr ""
 
 #: ../bvs-widgets/servplat_login_widget.php:73
@@ -1104,18 +1137,6 @@ msgstr ""
 
 #: ../bvs-widgets/servplat_login_widget.php:77
 msgid "password"
-msgstr ""
-
-#: ../bvs-widgets/servplat_login_widget.php:81
-#: ../bvs-widgets/servplat_login_widget.php:121
-#: ../bvs-widgets/servplat_login_widget.php:143
-msgid "access denied"
-msgstr ""
-
-#: ../bvs-widgets/servplat_login_widget.php:84
-#: ../bvs-widgets/servplat_login_widget.php:124
-#: ../bvs-widgets/servplat_login_widget.php:146
-msgid "invalid login"
 msgstr ""
 
 #: ../bvs-widgets/servplat_login_widget.php:100
@@ -1128,10 +1149,6 @@ msgstr ""
 
 #: ../bvs-widgets/servplat_login_widget.php:102
 msgid "forgot my password"
-msgstr ""
-
-#: ../bvs-widgets/servplat_login_widget.php:119
-msgid "Login to Services Platform"
 msgstr ""
 
 #: ../bvs-widgets/servplat_login_widget.php:141
@@ -1209,7 +1226,7 @@ msgid "Number of Results:"
 msgstr ""
 
 #: ../bvs-widgets/vhl_clusters_widget.php:174
-#: ../bvs-widgets/vhl_themes_widget.php:159
+#: ../bvs-widgets/vhl_themes_widget.php:161
 msgid "CSS Class:"
 msgstr ""
 
@@ -1230,17 +1247,17 @@ msgid "Adds a VHL collection on your site"
 msgstr ""
 
 #: ../bvs-widgets/vhl_collection_widget.php:108
-#: ../bvs-widgets/vhl_themes_widget.php:137
+#: ../bvs-widgets/vhl_themes_widget.php:139
 msgid "Collection:"
 msgstr ""
 
 #: ../bvs-widgets/vhl_collection_widget.php:111
-#: ../bvs-widgets/vhl_themes_widget.php:140
+#: ../bvs-widgets/vhl_themes_widget.php:142
 msgid "Select a collection"
 msgstr ""
 
 #: ../bvs-widgets/vhl_collection_widget.php:129
-#: ../bvs-widgets/vhl_themes_widget.php:165
+#: ../bvs-widgets/vhl_themes_widget.php:167
 msgid "Show link to collection page"
 msgstr ""
 
@@ -1312,22 +1329,22 @@ msgstr ""
 msgid "VHL Themes"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:170
+#: ../bvs-widgets/vhl_themes_widget.php:172
 msgid "Show excerpt"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:175
+#: ../bvs-widgets/vhl_themes_widget.php:177
 msgid "Display in two columns?"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:180
+#: ../bvs-widgets/vhl_themes_widget.php:182
 msgid "Use large thumbnails (120px)"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:185
+#: ../bvs-widgets/vhl_themes_widget.php:187
 msgid "Use extra-large thumbnails (240px)"
 msgstr ""
 
-#: ../bvs-widgets/vhl_themes_widget.php:190
+#: ../bvs-widgets/vhl_themes_widget.php:192
 msgid "Use original size thumbnails"
 msgstr ""

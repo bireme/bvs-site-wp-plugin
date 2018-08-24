@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-08-22 17:06-0300\n"
-"PO-Revision-Date: 2018-08-22 17:07-0300\n"
+"POT-Creation-Date: 2018-08-24 16:54-0300\n"
+"PO-Revision-Date: 2018-08-24 16:59-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: pt_BR\n"
@@ -787,12 +787,49 @@ msgstr ""
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/header.php:102
+#: ../bvs-themes/bvs-2012/header.php:110
+#: ../bvs-widgets/servplat_login_widget.php:58
+#: ../bvs-widgets/servplat_login_widget.php:112
+#: ../bvs-widgets/servplat_login_widget.php:134
+msgid "Welcome,"
+msgstr "Bem-vindo,"
+
+#: ../bvs-themes/bvs-2012/header.php:111
+msgid "Dashboard"
+msgstr "Painel de Controle"
+
+#: ../bvs-themes/bvs-2012/header.php:111
+#: ../bvs-widgets/servplat_login_widget.php:60
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Logout"
+msgstr "Sair"
+
+#: ../bvs-themes/bvs-2012/header.php:115
+#: ../bvs-widgets/servplat_login_widget.php:119
+msgid "Login to Services Platform"
+msgstr "Login para a Minha BVS"
+
+#: ../bvs-themes/bvs-2012/header.php:117
+#: ../bvs-widgets/servplat_login_widget.php:81
+#: ../bvs-widgets/servplat_login_widget.php:121
+#: ../bvs-widgets/servplat_login_widget.php:143
+msgid "access denied"
+msgstr "acesso negado"
+
+#: ../bvs-themes/bvs-2012/header.php:120
+#: ../bvs-widgets/servplat_login_widget.php:84
+#: ../bvs-widgets/servplat_login_widget.php:124
+#: ../bvs-widgets/servplat_login_widget.php:146
+msgid "invalid login"
+msgstr "login inválido"
+
+#: ../bvs-themes/bvs-2012/header.php:132
 #: ../bvs-themes/bvs-responsive/header.php:79
 msgid "Virtual Health Library"
 msgstr "Biblioteca Virtual em Saúde"
 
-#: ../bvs-themes/bvs-2012/header.php:103
+#: ../bvs-themes/bvs-2012/header.php:133
 #: ../bvs-themes/bvs-responsive/header.php:80
 msgid "VHL Logo"
 msgstr "Logo da BVS"
@@ -825,46 +862,6 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-
-#: ../bvs-themes/bvs-2012/login_menu.php:15
-#: ../bvs-widgets/servplat_login_widget.php:58
-#: ../bvs-widgets/servplat_login_widget.php:112
-#: ../bvs-widgets/servplat_login_widget.php:134
-msgid "Welcome,"
-msgstr "Bem-vindo,"
-
-#: ../bvs-themes/bvs-2012/login_menu.php:16
-#: ../bvs-widgets/servplat_login_widget.php:59
-#: ../bvs-widgets/servplat_login_widget.php:113
-#: ../bvs-widgets/servplat_login_widget.php:135
-msgid "Go to dashboard"
-msgstr "Ir para o painel de controle"
-
-#: ../bvs-themes/bvs-2012/login_menu.php:16
-#: ../bvs-widgets/servplat_login_widget.php:60
-#: ../bvs-widgets/servplat_login_widget.php:113
-#: ../bvs-widgets/servplat_login_widget.php:135
-msgid "Logout"
-msgstr "Sair"
-
-#: ../bvs-themes/bvs-2012/login_menu.php:20
-#: ../bvs-widgets/servplat_login_widget.php:119
-msgid "Login to Services Platform"
-msgstr "Login para a Minha BVS"
-
-#: ../bvs-themes/bvs-2012/login_menu.php:22
-#: ../bvs-widgets/servplat_login_widget.php:81
-#: ../bvs-widgets/servplat_login_widget.php:121
-#: ../bvs-widgets/servplat_login_widget.php:143
-msgid "access denied"
-msgstr "acesso negado"
-
-#: ../bvs-themes/bvs-2012/login_menu.php:25
-#: ../bvs-widgets/servplat_login_widget.php:84
-#: ../bvs-widgets/servplat_login_widget.php:124
-#: ../bvs-widgets/servplat_login_widget.php:146
-msgid "invalid login"
-msgstr "login inválido"
 
 #: ../bvs-themes/bvs-2012/search.php:18
 #: ../bvs-themes/bvs-responsive/search.php:18
@@ -1173,6 +1170,12 @@ msgstr "Login Minha BVS"
 #: ../bvs-widgets/servplat_login_widget.php:55
 msgid "avatar,"
 msgstr "avatar,"
+
+#: ../bvs-widgets/servplat_login_widget.php:59
+#: ../bvs-widgets/servplat_login_widget.php:113
+#: ../bvs-widgets/servplat_login_widget.php:135
+msgid "Go to dashboard"
+msgstr "Ir para o painel de controle"
 
 #: ../bvs-widgets/servplat_login_widget.php:73
 msgid "user"
