@@ -92,7 +92,18 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['columns'] = strip_tags($new_instance['columns']);
         $instance['extra_css'] = strip_tags($new_instance['extra_css']);
 
-        $url_dia_ws = file_get_contents($instance['url'] . "?debug=true");
+        $test_url = explode('?', $instance['url'] ); // test parameters in URL
+        if(isset($test_url[1])){
+            $instance['url'] = urldecode($instance['url'] ); 
+            $test_url_sharp = explode('#', $instance['url']); // test for # in URL
+            if(isset($test_url_sharp[1])){
+                 $instance['url'] = $test_url_sharp[0];
+            }
+            $url_dia_ws = file_get_contents($instance['url'].'&debug=true');
+        }else {
+            $url_dia_ws = file_get_contents($instance['url'].'?debug=true');
+        }    
+
         $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws);
         $url_dia_ws = $url_dia_ws[0];
         $url_dia_ws = str_replace('<b>request:</b> ', '', $url_dia_ws);
@@ -126,7 +137,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
-                    <?php _e('Title:', 'vhl'); ?> 
+                    <?php _e('Title:', 'vhl'); ?>
                     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
                 </label>
             </p>
