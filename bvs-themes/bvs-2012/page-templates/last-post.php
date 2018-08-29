@@ -2,6 +2,7 @@
 /*
 Template Name: Latest news
 */
+__('Latest news', 'vhl');
 
 get_header(); 
 
