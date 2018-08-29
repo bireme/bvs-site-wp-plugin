@@ -133,7 +133,10 @@ class VHL_Clusters_Widget extends WP_Widget {
             <p>
                 <label for="<?php echo $this->get_field_id('url'); ?>">
                     <?php _e('iAHx URL:', 'vhl'); ?> 
+                    <?php /*
                     <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
+                    */ ?>
+                    <textarea class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" ><?php echo $url; ?></textarea>
                 </label>
             </p>
 
