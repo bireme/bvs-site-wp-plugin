@@ -7,7 +7,7 @@ __('Latest news', 'vhl');
 get_header();
 ?>
 
-<section id="primary" class="site-content">
+<section id="primary" class="site-content category">
 	<div id="content" role="main">
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -50,8 +50,9 @@ echo paginate_links( array(
 
 endif;
 ?>
-</section>
+
 </div>
+</section>
 
 <?php
 wp_reset_postdata();
