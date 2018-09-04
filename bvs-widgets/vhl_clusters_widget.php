@@ -119,8 +119,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         $data = json_decode(file_get_contents($instance['url_dia_ws']), true);
         $instance['clusters'] = $data['diaServerResponse'][0]['facet_counts']['facet_fields'];
-        $url_clear = explode('?',$instance['url_dia_ws'] );
-        $instance['language_url'] = $url_clear[0]. "/locale/$lng/texts.ini";
+        $instance['language_url'] = $test_url[0]. "/locale/$lng/texts.ini";
         $instance['language_content'] = file_get_contents($instance['language_url']);
         $instance['language_content'] = parse_ini_string($instance['language_content'], true);
 
