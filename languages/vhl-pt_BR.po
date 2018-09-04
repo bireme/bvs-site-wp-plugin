@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-08-24 16:54-0300\n"
-"PO-Revision-Date: 2018-08-24 16:59-0300\n"
+"POT-Creation-Date: 2018-08-29 11:48-0300\n"
+"PO-Revision-Date: 2018-08-29 11:48-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: pt_BR\n"
@@ -862,6 +862,10 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
+
+#: ../bvs-themes/bvs-2012/page-templates/last-post.php:5
+msgid "Latest news"
+msgstr "Últimas Notícias"
 
 #: ../bvs-themes/bvs-2012/search.php:18
 #: ../bvs-themes/bvs-responsive/search.php:18
