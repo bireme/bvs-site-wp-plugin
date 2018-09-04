@@ -116,8 +116,8 @@ class VHL_Clusters_Widget extends WP_Widget {
         if(!empty($instance['cluster'])) {
             $instance['url_dia_ws'] .= '&fb=' . $instance['cluster'] . ":" . $instance['results'];
         }
-
-        $url = $instance['url_dia_ws'];
+        $url_clear = explode('?',$instance['url_dia_ws'] );
+        $url = $url_clear[0];
         $data = json_decode(file_get_contents($url), true);
         $instance['clusters'] = $data['diaServerResponse'][0]['facet_counts']['facet_fields'];
 
