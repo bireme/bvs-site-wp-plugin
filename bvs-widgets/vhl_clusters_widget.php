@@ -15,7 +15,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         }
         return $key;
     }
- 
+
     function widget($args, $instance) {
         extract($args);
 
@@ -27,7 +27,10 @@ class VHL_Clusters_Widget extends WP_Widget {
         if ( function_exists( 'pll_current_language' ) ) {
             $lang = pll_current_language();
             $title = pll_translate_string($instance['title'], $lang);
-            $instance['language_url'] = $instance['url'] . "/locale/$lang/texts.ini";
+
+            $test_url = explode('?', $instance['url'] ); // test parameters in URL
+            $url_clean = $test_url[0];
+            $instance['language_url'] = $url_clean . "/locale/$lang/texts.ini";
             $instance['language_content'] = file_get_contents($instance['language_url']);
             $instance['language_content'] = parse_ini_string($instance['language_content'], true);
         }
@@ -41,9 +44,9 @@ class VHL_Clusters_Widget extends WP_Widget {
             print "<img src='${instance['image']}'>";
             print "</div>";
         }
-        
+
         print "<strong class='widget-title'>${title}</strong>";
-        
+
         if(!empty($instance['clusters']) and !empty($instance['cluster'])) {
 
             print "<ul>";
@@ -71,19 +74,19 @@ class VHL_Clusters_Widget extends WP_Widget {
             print "<div class='clear'></div>";
 
         }
-        
+
         echo "</div>";
         echo $after_widget;
     }
- 
+
     function update($new_instance, $old_instance) {
 
         $current_language = strtolower(get_bloginfo('language'));
         // network lang parameter only accept 2 letters language code (pt, es, en)
         $lng = substr($current_language, 0,2);
-        
+
         $instance = $old_instance;
-        
+
         $instance['cluster'] = strip_tags($new_instance['cluster']);
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['url'] = strip_tags($new_instance['url']);
@@ -94,7 +97,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         $test_url = explode('?', $instance['url'] ); // test parameters in URL
         if(isset($test_url[1])){
-            $instance['url'] = urldecode($instance['url'] ); 
+            $instance['url'] = urldecode($instance['url'] );
             $test_url_sharp = explode('#', $instance['url']); // test for # in URL
             if(isset($test_url_sharp[1])){
                  $instance['url'] = $test_url_sharp[0];
@@ -102,7 +105,7 @@ class VHL_Clusters_Widget extends WP_Widget {
             $url_dia_ws = file_get_contents($instance['url'].'&debug=true');
         }else {
             $url_dia_ws = file_get_contents($instance['url'].'?debug=true');
-        }    
+        }
 
         $url_dia_ws = explode("<br/><!DOCTYPE", $url_dia_ws);
         $url_dia_ws = $url_dia_ws[0];
@@ -113,7 +116,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         if(!empty($instance['cluster'])) {
             $instance['url_dia_ws'] .= '&fb=' . $instance['cluster'] . ":" . $instance['results'];
         }
-        
+
         $url = $instance['url_dia_ws'];
         $data = json_decode(file_get_contents($url), true);
         $instance['clusters'] = $data['diaServerResponse'][0]['facet_counts']['facet_fields'];
@@ -124,7 +127,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         return $instance;
     }
-    
+
     function form($instance) {
 
         $title = esc_attr($instance['title']);
@@ -143,7 +146,7 @@ class VHL_Clusters_Widget extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('url'); ?>">
-                    <?php _e('iAHx URL:', 'vhl'); ?> 
+                    <?php _e('iAHx URL:', 'vhl'); ?>
                     <?php /*
                     <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
                     */ ?>
@@ -159,10 +162,10 @@ class VHL_Clusters_Widget extends WP_Widget {
                         <input class="widefat" id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo $image; ?>" />
                     </label>
                 </p>
-            
+
                 <p>
                     <label for="<?php echo $this->get_field_id('cluster'); ?>">
-                        <?php _e('Cluster:', 'vhl'); ?> 
+                        <?php _e('Cluster:', 'vhl'); ?>
                         <select class='widefat' id="<?php echo $this->get_field_id('cluster'); ?>" name="<?php echo $this->get_field_name('cluster'); ?>">
                             <option></option>
                             <?php foreach(array_keys($instance['clusters']) as $cluster): ?>
@@ -178,36 +181,36 @@ class VHL_Clusters_Widget extends WP_Widget {
 
                 <p>
                     <label for="<?php echo $this->get_field_id('results'); ?>">
-                        <?php _e('Number of Results:', 'vhl'); ?> 
+                        <?php _e('Number of Results:', 'vhl'); ?>
                         <input class="widefat" id="<?php echo $this->get_field_id('results'); ?>" name="<?php echo $this->get_field_name('results'); ?>" type="number" value="<?php echo $results; ?>" />
                     </label>
                 </p>
 
                 <p>
                     <label for="<?php echo $this->get_field_id('extra_css'); ?>">
-                        <?php _e('CSS Class:', 'vhl'); ?> 
+                        <?php _e('CSS Class:', 'vhl'); ?>
                         <input class="widefat" id="<?php echo $this->get_field_id('extra_css'); ?>" name="<?php echo $this->get_field_name('extra_css'); ?>" type="text" value="<?php echo $extra_css; ?>" />
                     </label>
                 </p>
 
                 <p>
                     <label for="<?php echo $this->get_field_id('columns'); ?>">
-                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="1" <?php if($columns == 1) print 'checked="true"'; ?> /> <?php _e('One Column', 'vhl'); ?> 
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="1" <?php if($columns == 1) print 'checked="true"'; ?> /> <?php _e('One Column', 'vhl'); ?>
                     </label>
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id('columns'); ?>">
-                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="2" <?php if($columns == 2) print 'checked="true"'; ?> /> <?php _e('Two Columns', 'vhl'); ?> 
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="2" <?php if($columns == 2) print 'checked="true"'; ?> /> <?php _e('Two Columns', 'vhl'); ?>
                     </label>
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id('columns'); ?>">
-                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="3" <?php if($columns == 3) print 'checked="true"'; ?>/> <?php _e('Three Columns', 'vhl'); ?> 
+                        <input class="widefat" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="radio" value="3" <?php if($columns == 3) print 'checked="true"'; ?>/> <?php _e('Three Columns', 'vhl'); ?>
                     </label>
                 </p>
             <?php endif; ?>
 
-        <?php 
+        <?php
     }
 
     function footer( $instance = null ){ ?>
@@ -241,7 +244,7 @@ class VHL_Clusters_Widget extends WP_Widget {
             .vhl_clusters_2_columns {
                 width: 50%;
                 float: left;
-            }   
+            }
             .vhl_clusters_3_columns {
                 width: 33%;
                 float: left;
