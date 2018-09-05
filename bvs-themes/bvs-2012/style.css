@@ -1002,7 +1002,10 @@ footer.entry-meta {
 	color: #757575;
 	font-weight: normal;
 }
-
+.paginate-links {
+	text-align: center;
+	margin: 25px 0;
+}
 
 /* =Archives
 -------------------------------------------------------------- */
@@ -1435,7 +1438,6 @@ a.comment-edit-link:hover {
 	text-align: right;
 }
 
-
 /* =Plugins
 ----------------------------------------------- */
 
@@ -1444,7 +1446,6 @@ img#wpstats {
 	margin: 0 auto 24px;
 	margin: 0 auto 1.714285714rem;
 }
-
 
 /* =Media queries
 -------------------------------------------------------------- */
