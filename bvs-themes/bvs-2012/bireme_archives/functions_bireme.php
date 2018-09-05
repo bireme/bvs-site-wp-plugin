@@ -138,7 +138,7 @@ if(file_exists($custom_include_file)) {
 
 add_filter('widget_text', 'do_shortcode');
 
-// Display the value of custom fields 
+// Display the value of custom fields
 function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4custom_field="", $single=true, $separator=",") {
 /*
 	Samples for $html4label and $html4custom_field. Keep always the strings "label" and "custom_field", because the function will replace them using regular expression.
@@ -150,10 +150,10 @@ function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4
 		"<li>custom_field</li>"
 		"<dd>custom_field</dd>"
 		"<p>custom_field</p>"
-*/	
+*/
 
 	$customField = get_post_meta($post_id, $key, $single);
-	
+
 	if (!is_array($customField)) {
 		if (trim($customField)!= "") {
 			if ($html4label != "")
@@ -176,9 +176,9 @@ function bir_show_custom_field($post_id, $key, $label="", $html4label="", $html4
 		$lastValue = end($customField);
 		$text = "";
 		foreach ( $customField as $value) {
-			$text .= $value;	
+			$text .= $value;
 			if ($value != $lastValue) $text .= $separator . " ";
-		}	 
+		}
 		if ($html4custom_field != "")
 			echo preg_replace("/custom_field/", $text, $html4custom_field);
 		else
@@ -204,6 +204,7 @@ function bir_has_no_empty_custom_field ($post_id, $custom_field_keys, $single=tr
 }
 
 function scripts_method() {
+    wp_enqueue_script('jquery');
 	wp_enqueue_script(
 		'vhl-functions',
 		get_template_directory_uri() . '/js/functions.js'
@@ -223,7 +224,7 @@ function comment_reply_filter($link){
         if($prefix == mlf_get_option('default_language'))
             $prefix = '';
         else
-            $prefix = '/'.$prefix; 
+            $prefix = '/'.$prefix;
     }
     else
         $prefix = '';
@@ -247,7 +248,7 @@ function html_tidy($src){
 
 function http_request_local( $args, $url ) {
    if ( preg_match('/xml|rss|feed/', $url) ){
-      $args['reject_unsafe_urls'] = false;      
+      $args['reject_unsafe_urls'] = false;
    }
    return $args;
 }
