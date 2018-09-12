@@ -17,6 +17,18 @@ class VHL_Clusters_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
+
+      if ( is_active_widget( false, false, $this->id_base ) ) {
+          if(!isset($instance['date'])){
+            $instance = VHL_Clusters_Widget::update($instance, $instance);
+          }
+          $today = date('Y-m-d');
+          if(strtotime($today) > strtotime($instance['date']) ){
+            $instance = VHL_Clusters_Widget::update($instance, $instance);
+          }
+
+
+      }
         extract($args);
 
         $current_language = strtolower(get_bloginfo('language'));
@@ -122,6 +134,7 @@ class VHL_Clusters_Widget extends WP_Widget {
         $instance['language_url'] = $test_url[0]. "/locale/$lng/texts.ini";
         $instance['language_content'] = file_get_contents($instance['language_url']);
         $instance['language_content'] = parse_ini_string($instance['language_content'], true);
+        $instance['date'] = date('Y-m-d');
 
         return $instance;
     }
@@ -210,6 +223,7 @@ class VHL_Clusters_Widget extends WP_Widget {
 
         <?php
     }
+
 
     function footer( $instance = null ){ ?>
 
