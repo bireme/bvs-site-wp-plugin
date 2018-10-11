@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-08-29 11:48-0300\n"
-"PO-Revision-Date: 2018-08-29 11:48-0300\n"
+"POT-Creation-Date: 2018-08-24 17:01-0300\n"
+"PO-Revision-Date: 2018-09-13 16:41-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: pt_BR\n"
@@ -134,13 +134,13 @@ msgstr "Arquivos"
 #: ../bvs-themes/bvs-responsive/author.php:32
 #, php-format
 msgid "Author Archives: %s"
-msgstr ""
+msgstr "Arquivos do Autor: %s"
 
 #: ../bvs-themes/bvs-2012/author.php:53
 #: ../bvs-themes/bvs-responsive/author.php:53
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Sobre %s"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:15
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:35
@@ -319,6 +319,10 @@ msgstr "Áreas Auxiliares"
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:43
 msgid "Header"
 msgstr "Cabeçalho"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:311
+msgid "Read More"
+msgstr "Leia Mais"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:103
@@ -536,7 +540,7 @@ msgstr "Nível 2"
 #: ../bvs-themes/bvs-2012/category.php:21
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Categoria: %s"
 
 #: ../bvs-themes/bvs-2012/comments.php:42
 #: ../bvs-themes/bvs-responsive/comments.php:42
@@ -705,7 +709,7 @@ msgstr "Página %s"
 #: ../bvs-themes/bvs-2012/functions.php:250
 #: ../bvs-themes/bvs-responsive/functions.php:250
 msgid "Post navigation"
-msgstr ""
+msgstr "Navegação das Postagens"
 
 #: ../bvs-themes/bvs-2012/functions.php:251
 #: ../bvs-themes/bvs-responsive/functions.php:251
@@ -863,10 +867,6 @@ msgid ""
 "searching will help find a related post."
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/page-templates/last-post.php:5
-msgid "Latest news"
-msgstr "Últimas Notícias"
-
 #: ../bvs-themes/bvs-2012/search.php:18
 #: ../bvs-themes/bvs-responsive/search.php:18
 #, fuzzy, php-format
@@ -930,7 +930,7 @@ msgstr ""
 #: ../bvs-themes/bvs-classic/comments-popup.php:58
 #: ../bvs-themes/bvs-classic/comments.php:32
 msgid "No comments yet."
-msgstr ""
+msgstr "Sem comentários ainda"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:62
 #: ../bvs-themes/bvs-classic/comments.php:13
@@ -1400,3 +1400,6 @@ msgstr ""
 #: ../bvs-widgets/vhl_themes_widget.php:192
 msgid "Use original size thumbnails"
 msgstr ""
+
+#~ msgid "Latest news"
+#~ msgstr "Últimas Notícias"

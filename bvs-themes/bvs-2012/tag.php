@@ -12,6 +12,7 @@
  */
 
 get_header(); ?>
+<?php if ( function_exists( 'vhl_breadcrumb' ) ) { vhl_breadcrumb(); } ?>
 
 	<section id="primary" class="site-content">
 		<div id="content" role="main">

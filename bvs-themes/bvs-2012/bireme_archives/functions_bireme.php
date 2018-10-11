@@ -277,6 +277,12 @@ function vhl_breadcrumb() {
 
     $breadcrumb = '';
     $title = get_the_title();
+    if (is_category()) {
+      $title = single_cat_title('', false);
+    }
+    if(is_tag()){
+      $title = single_tag_title( '', false );
+    }
     $before_bc = '<div class="breadcrumb"><a href="' . esc_url( home_url( "/" . $lang ) ) . '" class="home">Home</a> > ';
     $after_bc = '</div>';
     $ancestors = get_post_ancestors($post->ID);
@@ -303,5 +309,14 @@ function theme_slug_render_title() {
 <?php
 }
 add_action( 'wp_head', 'theme_slug_render_title' );
+
+
+function new_excerpt_more( $more ) {
+    return sprintf( '...<a class="read-more" href="%1$s">%2$s</a>',
+        get_permalink( get_the_ID() ),
+        __( 'Read More', 'vhl' )
+    );
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 ?>

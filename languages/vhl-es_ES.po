@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BVS Site 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/bvs-site\n"
-"POT-Creation-Date: 2018-08-29 11:49-0300\n"
-"PO-Revision-Date: 2018-08-29 11:49-0300\n"
+"POT-Creation-Date: 2018-08-24 17:01-0300\n"
+"PO-Revision-Date: 2018-09-13 16:42-0300\n"
 "Last-Translator: Wilson Moura <mourawil@paho.org>\n"
 "Language-Team: RedDes <reddes@gmail.com>\n"
 "Language: es_ES\n"
@@ -317,6 +317,10 @@ msgstr "Áreas Auxiliares"
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:43
 msgid "Header"
 msgstr "Encabezamiento"
+
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:311
+msgid "Read More"
+msgstr "Lea mas"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:103
@@ -859,10 +863,6 @@ msgid ""
 "searching will help find a related post."
 msgstr ""
 
-#: ../bvs-themes/bvs-2012/page-templates/last-post.php:5
-msgid "Latest news"
-msgstr "Ultimas noticias"
-
 #: ../bvs-themes/bvs-2012/search.php:18
 #: ../bvs-themes/bvs-responsive/search.php:18
 #, fuzzy, php-format
@@ -1396,3 +1396,6 @@ msgstr ""
 #: ../bvs-widgets/vhl_themes_widget.php:192
 msgid "Use original size thumbnails"
 msgstr ""
+
+#~ msgid "Latest news"
+#~ msgstr "Ultimas noticias"
