@@ -313,6 +313,10 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
+#: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:311
+msgid "Read More"
+msgstr ""
+
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:90
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:103
 #: ../bvs-themes/bvs-classic/functions.php:36

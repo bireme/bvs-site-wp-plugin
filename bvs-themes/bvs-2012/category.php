@@ -12,13 +12,13 @@
  */
 
 get_header(); ?>
-
+<?php if ( function_exists( 'vhl_breadcrumb' ) ) { vhl_breadcrumb(); } ?>
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Category: %s', 'twentytwelve' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( 'Category: %s', 'vhl' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 
 			<?php if ( category_description() ) : // Show an optional category description ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
@@ -39,7 +39,11 @@ get_header(); ?>
 				        <?php the_post_thumbnail( 'category-thumb' ); ?>
 				        <div class="category-post">
 			                <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+											<p><?php the_author_posts_link(); ?>, <?php echo get_the_date(); ?></p>
+											<p><?php the_category( ', ' ); ?></p>
+											<p></p>
 			                <?php the_excerpt(); ?>
+											<p><?php the_tags( 'Tags: ', ', ', '<br />' ); ?></p>
 				        </div>
 				</header>
 				<hr />

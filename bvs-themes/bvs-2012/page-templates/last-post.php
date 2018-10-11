@@ -6,7 +6,7 @@ __('Latest news', 'vhl');
 
 get_header();
 ?>
-
+<?php if ( function_exists( 'vhl_breadcrumb' ) ) { vhl_breadcrumb(); } ?>
 <section id="primary" class="site-content category">
     <div id="content" role="main">
 <?php
@@ -30,7 +30,11 @@ get_header();
             <?php the_post_thumbnail( 'category-thumb' ); ?>
             <div class="category-post">
                         <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                        <p><?php the_author_posts_link(); ?>, <?php echo get_the_date(); ?></p>
+                        <p><?php the_category( ', ' ); ?></p>
+                        <p></p>
                         <?php the_excerpt(); ?>
+                        <p><?php the_tags( 'Tags: ', ', ', '<br />' ); ?></p>
             </div>
         </header>
         <hr />
