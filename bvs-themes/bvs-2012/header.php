@@ -33,13 +33,13 @@ if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:<?php language_attributes(); ?> <?php language_attributes(); ?> >
 <!--<![endif]-->
-    
+
     <head>
     <meta http-equiv="content-type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    
+
     <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
     <!--[if lt IE 9]>
     <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -102,9 +102,9 @@ if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
 
                         $current_language = strtolower(get_bloginfo('language'));
                         $lang = substr($current_language, 0,2);
-                        $portal = 'http://platserv.bvsalud.org/client';
+                        $portal = 'https://platserv.bvsalud.org/client';
 
-                        if ( $_COOKIE['userData'] ) : 
+                        if ( $_COOKIE['userData'] ) :
                             $userData = json_decode(base64_decode($_COOKIE['userData']), true); ?>
                             <div id="loginMenu">
                                 <p class="welcome"><?php _e('Welcome,', 'vhl'); ?> <?php echo $userData['firstName'] ?>!</p>
@@ -129,7 +129,7 @@ if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
             <div class="top top_<?php echo ($current_language);?>">
                 <?php if($logo) { ?>
                     <div id="parent">
-                        <a href="<?php echo $linkLogo;?>" title="<?php echo __('Virtual Health Library','vhl');?>"> 
+                        <a href="<?php echo $linkLogo;?>" title="<?php echo __('Virtual Health Library','vhl');?>">
                             <img src="<?php echo $logo;?>" alt="<?php echo __('VHL Logo','vhl');?>"/>
                         </a>
                     </div>
@@ -143,5 +143,5 @@ if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
                     <?php dynamic_sidebar( $top ); ?>
                 </div>
             </div>
-            <div class="spacer"></div>    
+            <div class="spacer"></div>
         </div>

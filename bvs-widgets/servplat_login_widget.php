@@ -15,7 +15,7 @@ class ServPlat_Login_Widget extends WP_Widget {
     private $servplat_server;
 
     public function __construct() {
-        $this->servplat_domain = 'http://platserv.bvsalud.org';
+        $this->servplat_domain = 'https://platserv.bvsalud.org';
         $this->servplat_client = $this->servplat_domain.'/client';
         $this->servplat_server = $this->servplat_domain.'/server';
 
@@ -24,7 +24,7 @@ class ServPlat_Login_Widget extends WP_Widget {
         add_action( 'wp_head', array(&$this, 'fix_cookie_delay'), 20, 1 );
         add_action( 'wp_enqueue_scripts', array(&$this, 'servplat_enqueue_style'), 20, 1 );
     }
- 
+
     function widget($args, $instance) {
         extract($args);
 
@@ -152,7 +152,7 @@ class ServPlat_Login_Widget extends WP_Widget {
             <?php
         echo $after_widget;
     }
- 
+
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -160,7 +160,7 @@ class ServPlat_Login_Widget extends WP_Widget {
         $instance['iahx'] = strip_tags($new_instance['iahx']);
         return $instance;
     }
-    
+
     function form($instance) {
         $title = esc_attr($instance['title']);
         $layout= esc_attr($instance['layout']);
@@ -168,13 +168,13 @@ class ServPlat_Login_Widget extends WP_Widget {
         ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
-                    <?php _e('Title:', 'vhl'); ?> 
+                    <?php _e('Title:', 'vhl'); ?>
                     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
                 </label>
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('iahx'); ?>">
-                    <?php _e('VHL Search URL:', 'vhl'); ?> 
+                    <?php _e('VHL Search URL:', 'vhl'); ?>
                     <input class="widefat" id="<?php echo $this->get_field_id('iahx'); ?>" name="<?php echo $this->get_field_name('iahx'); ?>" type="text" value="<?php echo $iahx; ?>" />
                 </label>
             </p>
@@ -182,20 +182,20 @@ class ServPlat_Login_Widget extends WP_Widget {
             <p>
                 <label>
                     <?php _e('Display layout:', 'vhl'); ?>
-                    <select name="<?php echo $this->get_field_name('layout'); ?>" > 
+                    <select name="<?php echo $this->get_field_name('layout'); ?>" >
                         <option value="box" <?php if ('box' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Box', 'vhl'); ?></option>
                         <option value="link" <?php if ('link' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Link', 'vhl'); ?></option>
                         <option value="icon" <?php if ('icon' == $layout): echo ' selected="true"'; endif; ?>><?php _e('Icon', 'vhl'); ?></option>
                     </select>
                 </label>
              </p>
-        <?php 
+        <?php
     }
 
     function servplat_enqueue_style() {
-        wp_enqueue_style( 'bootstrap-iso', $this->servplat_client.'/vendors/bootstrap/dist/css/bootstrap-iso.css' ); 
-        wp_enqueue_style( 'servplat-style', $this->servplat_client.'/css/plugin.css' ); 
-        wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' ); 
+        wp_enqueue_style( 'bootstrap-iso', $this->servplat_client.'/vendors/bootstrap/dist/css/bootstrap-iso.css' );
+        wp_enqueue_style( 'servplat-style', $this->servplat_client.'/css/plugin.css' );
+        wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
     }
 
     function fix_cookie_delay() {
