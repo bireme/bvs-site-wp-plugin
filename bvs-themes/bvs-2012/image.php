@@ -11,6 +11,12 @@
 
 get_header(); ?>
 
+    <?php if(function_exists('bcn_display')): // Breadcrumb NavXT's breadcrumb trail ?>
+    <div class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
+        <?php bcn_display();?>
+    </div>
+    <?php endif; ?>
+
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
