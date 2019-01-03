@@ -306,7 +306,7 @@ add_action( 'wp_head', 'theme_slug_render_title' );
 
 function breadcrumb_title_swapper($title, $type, $id) {
     if(in_array('home', $type)) {
-        $title = __('Home');
+        $title = __('Home', 'vhl');
     }
 
     return $title;
