@@ -12,15 +12,13 @@ jQuery(document).ready(function($) {
 	});
 
 	function listenWidth() {
-	    if($(window).width()<729)
-	    {
-	        if ($('body').find('.3_columns').length)
-	        {
+	    if ( $(window).width() < 729 ) {
+	        if ( $('body').find('.3_columns').length ) {
 	            $(".column_1").remove().insertAfter($(".column_3"));
-	        }
-	    } else {
-	       $(".column_1").remove().insertBefore($(".column_2"));
-	    }
+		    } else if ( $('body').find('.2_columns').length ) {
+		       $(".column_1").remove().insertBefore($(".column_2"));
+		    }
+		}
 	}
     listenWidth();
 
