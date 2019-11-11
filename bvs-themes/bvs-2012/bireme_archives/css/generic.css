@@ -165,7 +165,7 @@ body.single .site-content {
         margin-bottom: 5px;
 }
 strong {
-        display: block;
+        /*display: block;*/
         font-size: 1.17em;
         -webkit-margin-before: 1em;
         -webkit-margin-after: 1em;
