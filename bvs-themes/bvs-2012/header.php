@@ -54,7 +54,10 @@ if (is_plugin_active('multi-language-framework/multi-language-framework.php')) {
     </head>
 
     <body <?php body_class(); ?>>
-    <div class="container <?php echo $total_columns;?>_columns">
+
+        <?php wp_body_open(); ?>
+
+        <div class="container <?php echo $total_columns;?>_columns">
         <div class="header">
             <div class="bar">
                 <div id="otherVersions">
