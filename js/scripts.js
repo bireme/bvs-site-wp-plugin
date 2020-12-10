@@ -58,12 +58,12 @@
 
 
 
-    $(".simple-fields-metabox-field-file-select").live("click", function() {
+    $(".simple-fields-metabox-field-file-select").on("click", function() {
         var input = $(this).closest(".simple-fields-metabox-field").find(".simple-fields-metabox-field-file-fileID");
         simple_fields_metabox_field_file_select_input_selectedID = input;
     });
     
-    $(".simple-fields-file-browser-file-select").live("click", function() {
+    $(".simple-fields-file-browser-file-select").on("click", function() {
         var file_id = $(this).closest("li").find("input[name='simple-fields-file-browser-list-file-id']").val();
         var file_thumb = $(this).closest("li").find(".thumbnail img").attr("src");
         var file_name = $(this).closest("li").find("h3").text();
@@ -71,7 +71,7 @@
         self.parent.tb_remove();
     });
 
-    $(".simple-fields-metabox-field-file-clear").live("click", function() {
+    $(".simple-fields-metabox-field-file-clear").on("click", function() {
         var $li = $(this).closest(".simple-fields-metabox-field-file");
         $li.find(".simple-fields-metabox-field-file-fileID").val("");
         $li.find(".simple-fields-metabox-field-file-selected-image").text("");
@@ -80,7 +80,7 @@
     });
 
     // media buttons
-    $(".simple_fields_tiny_media_button").live("click", function(){
+    $(".simple_fields_tiny_media_button").on("click", function(){
         var id = $(this).closest(".simple-fields-metabox-field").find("textarea").attr("id");
         simple_fields_focusTextArea(id);
         simple_fields_thickbox($(this).get(0));
@@ -121,7 +121,7 @@
             }); 
         }
         
-      $(".addButton").live("click", function () {
+      $(".addButton").on("click", function () {
             var inputDiv="#" + $(this).closest('div').attr("id");
             var inputId=$(this).closest('div').find('input').attr("name");
            
@@ -135,7 +135,7 @@
             counter++;
       });
 
-     $(".removeButton").live("click", function () {
+     $(".removeButton").on("click", function () {
         counter--;
         $("#TextBoxDiv" + counter).remove();
 
