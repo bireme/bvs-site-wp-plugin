@@ -30,7 +30,7 @@ class VHL_Themes_Widget extends WP_Widget {
                 
                 $lang = pll_current_language();
                 $default_language = pll_default_language();
-                $post_ids = $polylang->model->get_translations($post_type_name, $collection_id);
+                $post_ids = pll_get_post_translations($collection_id);
 
                 if ( $post_ids[$lang] ) $collection_id = $post_ids[$lang];
             }
