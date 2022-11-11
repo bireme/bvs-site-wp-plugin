@@ -79,22 +79,22 @@ msgstr "Integración con Google Analytics"
 
 #: ../bvs-core/settings.php:16
 msgid "Google Analytics Code:"
-msgstr "Código Google Analytics:"
+msgstr "Código de Google Analytics:"
 
 #: ../bvs-core/settings.php:19
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardas cambios"
 
 #: ../bvs-site.php:60
 msgid "VHL Site Settings"
-msgstr "BVS Site Ajustes"
+msgstr "Ajustes deL sitio BVS"
 
 #: ../bvs-site.php:60
 msgid "VHL Site"
-msgstr "BVS Site"
+msgstr "Sitio BVS"
 
 #: ../bvs-themes/bvs-2012/404.php:17 ../bvs-themes/bvs-responsive/404.php:17
-msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgid "Esto es vergonzoso, no es así?"
 msgstr ""
 
 #: ../bvs-themes/bvs-2012/404.php:21 ../bvs-themes/bvs-responsive/404.php:21
@@ -110,36 +110,36 @@ msgstr ""
 #: ../bvs-themes/bvs-responsive/archive.php:29
 #, php-format
 msgid "Daily Archives: %s"
-msgstr ""
+msgstr "Archivos diarios"
 
 #: ../bvs-themes/bvs-2012/archive.php:31
 #: ../bvs-themes/bvs-responsive/archive.php:31
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr ""
+msgstr "Archivos mensuales"
 
 #: ../bvs-themes/bvs-2012/archive.php:33
 #: ../bvs-themes/bvs-responsive/archive.php:33
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr ""
+msgstr "Archivos anuales"
 
 #: ../bvs-themes/bvs-2012/archive.php:35
 #: ../bvs-themes/bvs-responsive/archive.php:35
 msgid "Archives"
-msgstr ""
+msgstr "Archivos"
 
 #: ../bvs-themes/bvs-2012/author.php:32
 #: ../bvs-themes/bvs-responsive/author.php:32
 #, php-format
 msgid "Author Archives: %s"
-msgstr ""
+msgstr "Archivos del autor"
 
 #: ../bvs-themes/bvs-2012/author.php:53
 #: ../bvs-themes/bvs-responsive/author.php:53
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Acerca %s"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:15
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:35
@@ -172,17 +172,17 @@ msgstr "Pegar URL"
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:26
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:46
 msgid "Paste the link"
-msgstr "Pegar link"
+msgstr "Pegar el enlace"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:42
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:26
 msgid "Banner"
-msgstr "Banner"
+msgstr "Encabezado"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:51
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:47
 msgid "Check to display title on banner"
-msgstr "Marcar para exibir título en el encabezado"
+msgstr "Marcar para exhibir título en el encabezado"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:58
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:54
@@ -202,7 +202,7 @@ msgstr "Posición de la barra de idiomas"
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:64
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:60
 msgid "Check to display available languages"
-msgstr "Marcar para exibir idiomas disponibles"
+msgstr "Marcar para exhibir idiomas disponibles"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:66
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:62
@@ -233,13 +233,13 @@ msgstr "Página de contacto"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:135
 msgid "Login in the Top Menu"
-msgstr ""
+msgstr "Inicio de sesión desde el menú superior"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:137
 #, fuzzy
 #| msgid "Check to hide header menu"
 msgid "Check to show login in the top menu"
-msgstr "Marque para ocultar el menú del encabezado"
+msgstr "Marque para ocultar el menú superior"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/header.php:147
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/header.php:73
@@ -307,7 +307,7 @@ msgstr "o"
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:79
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/layout.php:79
 msgid "Auxiliary SideBars"
-msgstr "Áreas Auxiliares"
+msgstr "Barras laterales Auxiliares"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/layout.php:84
 #: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:129
@@ -369,7 +369,7 @@ msgstr "Colores del Pie de la página"
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:49
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:57
 msgid "Background"
-msgstr "Fondo de la pagina"
+msgstr "Fondo de la página"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:17
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:17
@@ -394,17 +394,17 @@ msgstr "Texto"
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:19
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:19
 msgid "First level title"
-msgstr "Titulo de primero nivel "
+msgstr "Título de primero nivel"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:20
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:20
 msgid "Second level title"
-msgstr "Titulo de segundo nivel"
+msgstr "Título de segundo nivel"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:21
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:21
 msgid "Third level title"
-msgstr "Titulo de tercero nivel"
+msgstr "Título de tercero nivel"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:22
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:31
@@ -438,12 +438,12 @@ msgstr "Enlace ativo"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:24
 msgid "Title border"
-msgstr ""
+msgstr "Borde del título"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:28
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:27
 msgid "Site title"
-msgstr "Titulo do sitio"
+msgstr "Titulo del sitio"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:29
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:37
@@ -469,7 +469,7 @@ msgstr "Colores de la Segunda Columna"
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:53
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:61
 msgid "Third column title"
-msgstr "Titulo de la tercera columna"
+msgstr "Título de la tercera columna"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:36
 #: ../bvs-themes/bvs-2012/bireme_archives/admin/structure.php:44
@@ -480,7 +480,7 @@ msgstr "Titulo de la tercera columna"
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:51
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin/structure.php:59
 msgid "First column title"
-msgstr "Titulo de la primera columna"
+msgstr "Título de la primera columna"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:30
 #: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:162
@@ -502,7 +502,7 @@ msgstr "Disposición"
 #: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:165
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:154
 msgid "Theme options updated"
-msgstr "Opciones actualizadas"
+msgstr "Opciones del tema actualizadas"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/admin_settings.php:191
 #: ../bvs-themes/bvs-responsive/bireme_archives/admin_settings.php:180
@@ -512,7 +512,7 @@ msgstr "Actualizar"
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:59
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:56
 msgid "Top Auxiliary SideBar"
-msgstr "SideBar del topo de la página"
+msgstr "Barra lateral auxiliar superior"
 
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:77
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:74
@@ -522,7 +522,7 @@ msgstr "Columna"
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:91
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:88
 msgid "Footer Auxiliary SideBar"
-msgstr "Barra adicional de pie de página "
+msgstr "Barra auxiliar de pie de página "
 
 #: ../bvs-themes/bvs-2012/bireme_archives/functions_bireme.php:114
 #: ../bvs-themes/bvs-responsive/bireme_archives/functions_bireme.php:111
@@ -532,7 +532,7 @@ msgstr "Nivel 2"
 #: ../bvs-themes/bvs-2012/category.php:21
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Categoría: %s"
 
 #: ../bvs-themes/bvs-2012/comments.php:42
 #: ../bvs-themes/bvs-responsive/comments.php:42
@@ -605,7 +605,7 @@ msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</span>"
 #: ../bvs-themes/bvs-responsive/content-status.php:27
 #, fuzzy
 msgid "Leave a reply"
-msgstr "Deje la Respuesta"
+msgstr "Deje una Respuesta"
 
 #: ../bvs-themes/bvs-2012/content-aside.php:23
 #: ../bvs-themes/bvs-2012/content-image.php:23
@@ -620,7 +620,7 @@ msgstr "Deje la Respuesta"
 #: ../bvs-themes/bvs-responsive/content-status.php:27
 #, fuzzy
 msgid "1 Reply"
-msgstr "1 Responder"
+msgstr "1 respuesta"
 
 #: ../bvs-themes/bvs-2012/content-aside.php:23
 #: ../bvs-themes/bvs-2012/content-image.php:23
@@ -668,8 +668,8 @@ msgstr "No se encontró nada"
 #: ../bvs-themes/bvs-2012/content-none.php:17
 #: ../bvs-themes/bvs-responsive/content-none.php:17
 msgid ""
-"Apologies, but no results were found. Perhaps searching will help find a "
-"related post."
+"Disculpas, pero no se encontraron resultados. Tal vez la búsqueda ayude a encontrar una "
+"publicación relacionada."
 msgstr ""
 
 #: ../bvs-themes/bvs-2012/content-page.php:18
@@ -691,7 +691,7 @@ msgstr "Entrada destacada"
 #: ../bvs-themes/bvs-2012/functions.php:64
 #: ../bvs-themes/bvs-responsive/functions.php:64
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menú principal"
 
 #: ../bvs-themes/bvs-2012/functions.php:181
 #: ../bvs-themes/bvs-responsive/functions.php:181
@@ -702,17 +702,17 @@ msgstr "Página %s"
 #: ../bvs-themes/bvs-2012/functions.php:250
 #: ../bvs-themes/bvs-responsive/functions.php:250
 msgid "Post navigation"
-msgstr ""
+msgstr "Navegación de entradas"
 
 #: ../bvs-themes/bvs-2012/functions.php:251
 #: ../bvs-themes/bvs-responsive/functions.php:251
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Entradas antiguas"
 
 #: ../bvs-themes/bvs-2012/functions.php:252
 #: ../bvs-themes/bvs-responsive/functions.php:252
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Entradas recientes <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../bvs-themes/bvs-2012/functions.php:277
 #: ../bvs-themes/bvs-responsive/functions.php:277
@@ -724,18 +724,18 @@ msgstr "Pingback:"
 #: ../bvs-themes/bvs-responsive/functions.php:277
 #, fuzzy
 msgid "(Edit)"
-msgstr "Editar"
+msgstr "(Editar)"
 
 #: ../bvs-themes/bvs-2012/functions.php:292
 #: ../bvs-themes/bvs-responsive/functions.php:292
 msgid "Post author"
-msgstr ""
+msgstr "Entradas del autor"
 
 #: ../bvs-themes/bvs-2012/functions.php:298
 #: ../bvs-themes/bvs-responsive/functions.php:298
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s en %2$s"
 
 #: ../bvs-themes/bvs-2012/functions.php:304
 #: ../bvs-themes/bvs-responsive/functions.php:304
@@ -754,13 +754,13 @@ msgstr "Responder"
 #: ../bvs-themes/bvs-responsive/functions.php:332
 #: ../bvs-themes/bvs-responsive/functions.php:335
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../bvs-themes/bvs-2012/functions.php:346
 #: ../bvs-themes/bvs-responsive/functions.php:346
 #, php-format
 msgid "View all posts by %s"
-msgstr ""
+msgstr "Ver todas las entradas por %s"
 
 #: ../bvs-themes/bvs-2012/functions.php:352
 #: ../bvs-themes/bvs-responsive/functions.php:352
@@ -776,13 +776,14 @@ msgstr ""
 msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
 "span>."
-msgstr ""
+msgstr "Esta entrada fue publicada en %1$s el %3$s<span class=\"by-author\"> por %4$s</"
+"span>."
 
 #: ../bvs-themes/bvs-2012/functions.php:356
 #: ../bvs-themes/bvs-responsive/functions.php:356
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
-msgstr ""
+msgstr "Esta entrada fue publicada en %3$s<span class=\"by-author\"> por %4$s</span>."
 
 #: ../bvs-themes/bvs-2012/header.php:110
 #: ../bvs-widgets/servplat_login_widget.php:58
@@ -805,7 +806,7 @@ msgstr "Salir"
 #: ../bvs-themes/bvs-2012/header.php:115
 #: ../bvs-widgets/servplat_login_widget.php:119
 msgid "Login to Services Platform"
-msgstr "Login en Mi BVS"
+msgstr "Inicio de sesión en Mi BVS"
 
 #: ../bvs-themes/bvs-2012/header.php:117
 #: ../bvs-widgets/servplat_login_widget.php:81
@@ -819,7 +820,7 @@ msgstr "acceso no permitido"
 #: ../bvs-widgets/servplat_login_widget.php:124
 #: ../bvs-widgets/servplat_login_widget.php:146
 msgid "invalid login"
-msgstr "login no válido"
+msgstr "Inicio de sesión no válido"
 
 #: ../bvs-themes/bvs-2012/header.php:132
 #: ../bvs-themes/bvs-responsive/header.php:79
@@ -850,14 +851,15 @@ msgstr "&larr; Anterior"
 #: ../bvs-themes/bvs-2012/image.php:42
 #: ../bvs-themes/bvs-responsive/image.php:42
 msgid "Next &rarr;"
-msgstr ""
+msgstr "Siguiente &rarr;"
 
 #: ../bvs-themes/bvs-2012/index.php:41
 #: ../bvs-themes/bvs-responsive/index.php:41
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
-msgstr ""
+msgstr "Disculpe, pero no se encontraron resultados para el archivo solicitado. Quizás "
+"buscando ayudará a encontrar una entrada relacionada.""
 
 #: ../bvs-themes/bvs-2012/page-templates/last-post.php:5
 msgid "Latest news"
@@ -876,41 +878,43 @@ msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
-"Lo sentimos, pero nada corresponde a sus criterios de busqueda. Por favor, "
+"Lo sentimos, pero nada corresponde a sus criterios de búsqueda. Por favor, "
 "inténtelo de nuevo con algunas palabras clave diferentes"
 
 #: ../bvs-themes/bvs-2012/tag.php:21 ../bvs-themes/bvs-responsive/tag.php:21
 #, php-format
 msgid "Tag Archives: %s"
-msgstr ""
+msgstr "Etiquetas de los Archivos: %s"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:9
 #, php-format
 msgid "Comments on %s"
-msgstr ""
+msgstr "Comentarios en %s"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:29
 #, fuzzy
 msgid "Comments"
-msgstr "% Comentarios"
+msgstr "Comentarios"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:31
 #: ../bvs-themes/bvs-classic/comments.php:35
 msgid ""
 "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on "
 "this post."
-msgstr ""
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed para los comentarios sobre "
+"esta entrada."
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:34
 msgid ""
 "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this "
 "entry is:"
-msgstr ""
+msgstr "La dirección <abbr title=\"Universal Resource Locator\">URL</abbr> para rastrear esta "
+"entrada es:"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:52
 #: ../bvs-themes/bvs-classic/comments.php:24
 msgid "Trackback"
-msgstr ""
+msgstr "Rastreo"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:52
 #: ../bvs-themes/bvs-classic/comments.php:24
@@ -921,41 +925,43 @@ msgstr "Pingback:"
 #: ../bvs-themes/bvs-classic/comments-popup.php:52
 #: ../bvs-themes/bvs-classic/comments.php:24
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:58
 #: ../bvs-themes/bvs-classic/comments.php:32
 msgid "No comments yet."
-msgstr ""
+msgstr "Aún sin comentarios."
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:62
 #: ../bvs-themes/bvs-classic/comments.php:13
 #: ../bvs-themes/bvs-classic/comments.php:42
 #, fuzzy
 msgid "Leave a comment"
-msgstr "Deja un comentário"
+msgstr "Deja un comentario"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:63
 msgid ""
 "Line and paragraph breaks automatic, e-mail address never displayed, "
 "<acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
 msgstr ""
+"Saltos de línea y párrafo automáticos, la dirección de correo electrónico nunca se muestra, "
+"<acronym title=\"Hypertext Markup Language\">HTML</acronym> permitido:"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:67
 #: ../bvs-themes/bvs-classic/comments.php:52
 #, php-format
 msgid "Logged in as %s."
-msgstr ""
+msgstr "Ingresado como %s."
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:67
 #: ../bvs-themes/bvs-classic/comments.php:52
 msgid "Log out of this account"
-msgstr ""
+msgstr "Salir de esta cuenta"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:67
 #: ../bvs-themes/bvs-classic/comments.php:52
 msgid "Log out &raquo;"
-msgstr ""
+msgstr "Salir &raquo;"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:71
 #: ../bvs-themes/bvs-classic/comments.php:57
@@ -966,24 +972,24 @@ msgstr "Nombre"
 #: ../bvs-themes/bvs-classic/comments-popup.php:76
 #, fuzzy
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "Correo electrónico"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:81
 msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
-msgstr ""
+msgstr "<abbr title=\"Universal Resource Locator\">URL</abbr>"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:86
 msgid "Your Comment"
-msgstr ""
+msgstr "Su comentario"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:99
 #: ../bvs-themes/bvs-classic/comments.php:81
 msgid "Sorry, the comment form is closed at this time."
-msgstr ""
+msgstr "Lo sentimos, el formulario de comentarios está cerrado en este momento."
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:104
 msgid "Close this window."
-msgstr ""
+msgstr "Cerrar esta ventana"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:115
 #, php-format
@@ -991,21 +997,24 @@ msgid ""
 "<cite>Powered by <a href=\"http://wordpress.org\" title=\"%s"
 "\"><strong>WordPress</strong></a></cite>"
 msgstr ""
+"<cite>Impulsado por <a href=\"http://wordpress.org\" title=\"%s"
+"\"><strong>WordPress</strong></a></cite>"
 
 #: ../bvs-themes/bvs-classic/comments-popup.php:115
 #: ../bvs-themes/bvs-classic/sidebar.php:38
 msgid ""
 "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
+"Desarrollado por WordPress, plataforma semántica de publicación personal de última generación."
 
 #: ../bvs-themes/bvs-classic/comments.php:8
 msgid "Enter your password to view comments."
-msgstr ""
+msgstr "Ingrese su contraseña para ver los comentarios."
 
 #: ../bvs-themes/bvs-classic/comments.php:11
 #, fuzzy
 msgid "No Comments"
-msgstr "Ningún comentario"
+msgstr "Sin comentario"
 
 #: ../bvs-themes/bvs-classic/comments.php:11
 #, fuzzy
@@ -1020,16 +1029,16 @@ msgstr "% Comentarios"
 #: ../bvs-themes/bvs-classic/comments.php:24
 #: ../bvs-themes/bvs-classic/index.php:16
 msgid "Edit This"
-msgstr ""
+msgstr "Editar esto"
 
 #: ../bvs-themes/bvs-classic/comments.php:37
 msgid "TrackBack <abbr title=\"Universal Resource Locator\">URL</abbr>"
-msgstr ""
+msgstr "TrackBack <abbr title=\"Universal Resource Locator\">URL</abbr>"
 
 #: ../bvs-themes/bvs-classic/comments.php:45
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "Debe haber <a href=\"%s\">iniciado sesión</a> para publicar un comentario."
 
 #: ../bvs-themes/bvs-classic/comments.php:57
 #: ../bvs-themes/bvs-classic/comments.php:60
@@ -1039,7 +1048,7 @@ msgstr "%s es un campo obligatorio"
 
 #: ../bvs-themes/bvs-classic/comments.php:60
 msgid "Mail (will not be published)"
-msgstr ""
+msgstr "Correo (no será visible por nadie)"
 
 #: ../bvs-themes/bvs-classic/comments.php:63
 #, fuzzy
@@ -1049,7 +1058,7 @@ msgstr "Sitio web"
 #: ../bvs-themes/bvs-classic/comments.php:67
 #, php-format
 msgid "You can use these tags: %s"
-msgstr ""
+msgstr "Puede usar estas etiquetas: %s"
 
 #: ../bvs-themes/bvs-classic/functions.php:12
 msgid "Column 1"
@@ -1065,7 +1074,7 @@ msgstr "Columna 3"
 
 #: ../bvs-themes/bvs-classic/index.php:16
 msgid "Filed under:"
-msgstr ""
+msgstr "Archivado bajo"
 
 #: ../bvs-themes/bvs-classic/index.php:16
 #, fuzzy
@@ -1076,38 +1085,38 @@ msgstr "Etiquetas"
 #: ../bvs-themes/bvs-classic/single.php:17
 #, fuzzy
 msgid "(more...)"
-msgstr "lea mas"
+msgstr "(más...)"
 
 #: ../bvs-themes/bvs-classic/index.php:24
 #: ../bvs-themes/bvs-classic/single.php:30
 msgid "Comments (0)"
-msgstr ""
+msgstr "Comentarios (0)"
 
 #: ../bvs-themes/bvs-classic/index.php:24
 #: ../bvs-themes/bvs-classic/single.php:30
 msgid "Comments (1)"
-msgstr ""
+msgstr "Comentarios (1)"
 
 #: ../bvs-themes/bvs-classic/index.php:24
 #: ../bvs-themes/bvs-classic/single.php:30
 #, fuzzy
 msgid "Comments (%)"
-msgstr "Ningún comentario"
+msgstr "Comentarios (%)"
 
 #: ../bvs-themes/bvs-classic/index.php:32
 #: ../bvs-themes/bvs-classic/single.php:35
 msgid "Sorry, no posts matched your criteria."
-msgstr ""
+msgstr "Lo sentimos, ninguna entrada coincide con tus criterios."
 
 #: ../bvs-themes/bvs-classic/index.php:35
 #: ../bvs-themes/bvs-classic/single.php:43
 msgid "&laquo; Newer Posts"
-msgstr ""
+msgstr "&laquo; Entradas recientes"
 
 #: ../bvs-themes/bvs-classic/index.php:35
 #: ../bvs-themes/bvs-classic/single.php:43
 msgid "Older Posts &raquo;"
-msgstr ""
+msgstr "Entradas antiguas &raquo;"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:15
 #, fuzzy
@@ -1121,50 +1130,50 @@ msgstr "Buscar:"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:25
 msgid "Archives:"
-msgstr ""
+msgstr "Archivos:"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:30
 #, fuzzy
 msgid "Meta:"
-msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Meta:"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:34
 msgid "Syndicate this site using RSS"
-msgstr ""
+msgstr "Sindicar este sitio usando RSS"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:34
 msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
-msgstr ""
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:35
 msgid "The latest comments to all posts in RSS"
-msgstr ""
+msgstr "Los últimos comentarios a todas las publicaciones en RSS"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:35
 msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
-msgstr ""
+msgstr "Comentarios <abbr title=\"Really Simple Syndication\">RSS</abbr>"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:36
 msgid "This page validates as XHTML 1.0 Transitional"
-msgstr ""
+msgstr "Esta página valida como XHTML 1.0 Transicional"
 
 #: ../bvs-themes/bvs-classic/sidebar.php:36
 msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
-msgstr ""
+msgstr "Válido <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
 
 #: ../bvs-themes/bvs-responsive/category.php:21
 #, php-format
 msgid "Category Archives: %s"
-msgstr ""
+msgstr "Categoría de archivos: %s"
 
 #: ../bvs-widgets/servplat_login_widget.php:22
 #, fuzzy
 msgid "Adds the Services Platform login on your site"
-msgstr "Anãdir certificado BVS en su sitio"
+msgstr "Añadir certificado BVS en su sitio"
 
 #: ../bvs-widgets/servplat_login_widget.php:23
 msgid "Services Platform Login"
-msgstr "Login Mi BVS"
+msgstr "Inicio de sesión en Mi BVS"
 
 #: ../bvs-widgets/servplat_login_widget.php:53
 #: ../bvs-widgets/servplat_login_widget.php:55
@@ -1179,7 +1188,7 @@ msgstr "Ir al panel de control"
 
 #: ../bvs-widgets/servplat_login_widget.php:73
 msgid "user"
-msgstr "usuario\t"
+msgstr "usuario"
 
 #: ../bvs-widgets/servplat_login_widget.php:77
 msgid "password"
@@ -1187,7 +1196,7 @@ msgstr "contraseña"
 
 #: ../bvs-widgets/servplat_login_widget.php:100
 msgid "Login"
-msgstr "Login\t"
+msgstr "Inicio de sesión"
 
 #: ../bvs-widgets/servplat_login_widget.php:101
 msgid "registry"
@@ -1208,7 +1217,7 @@ msgstr "Entrar"
 #: ../bvs-widgets/vhl_network_widget.php:61
 #: ../bvs-widgets/vhl_search_widget.php:54
 msgid "Title:"
-msgstr "Titulo:"
+msgstr "Título:"
 
 #: ../bvs-widgets/servplat_login_widget.php:177
 msgid "VHL Search URL:"
@@ -1220,7 +1229,7 @@ msgstr "ej."
 
 #: ../bvs-widgets/servplat_login_widget.php:184
 msgid "Display layout:"
-msgstr "Layout de visualización:"
+msgstr "Diseño de pantalla:"
 
 #: ../bvs-widgets/servplat_login_widget.php:186
 msgid "Box"
@@ -1317,7 +1326,7 @@ msgstr "Número de columnas:"
 
 #: ../bvs-widgets/vhl_collection_widget.php:149
 msgid "Order by:"
-msgstr "Ordernar por:"
+msgstr "Ordenar por:"
 
 #: ../bvs-widgets/vhl_collection_widget.php:151
 #, fuzzy
@@ -1326,7 +1335,7 @@ msgstr "Título:"
 
 #: ../bvs-widgets/vhl_collection_widget.php:152
 msgid "Order field"
-msgstr "Campo Order"
+msgstr "Campo de pedido"
 
 #: ../bvs-widgets/vhl_collection_widget.php:153
 msgid "Published date"
@@ -1387,12 +1396,12 @@ msgstr "Mostrar en dos columnas?"
 
 #: ../bvs-widgets/vhl_themes_widget.php:182
 msgid "Use large thumbnails (120px)"
-msgstr ""
+msgstr "Usar miniaturas grandes (120px)"
 
 #: ../bvs-widgets/vhl_themes_widget.php:187
 msgid "Use extra-large thumbnails (240px)"
-msgstr ""
+msgstr "Usar miniaturas extra-grandes (240px)"
 
 #: ../bvs-widgets/vhl_themes_widget.php:192
 msgid "Use original size thumbnails"
-msgstr ""
+msgstr "Usar tamaño original de las miniaturas"
