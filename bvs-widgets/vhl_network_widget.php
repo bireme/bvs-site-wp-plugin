@@ -32,11 +32,11 @@ class VHL_Network_Widget extends WP_Widget {
 
             $rss_url = $this->service_url . '&lang=' . $lng . '&' . $instance['params'];
 
-            $rss = fetch_feed($rss_url);
-            $rss->strip_htmltags(false);
-            $rss->strip_attributes(false);
+	    $rss = fetch_feed($rss_url);
 
             if (!is_wp_error( $rss ) ) { // Checks that the object is created correctly
+                $rss->strip_htmltags(false);
+                $rss->strip_attributes(false);
                 $item = $rss->get_item(0);
                 //echo $item->get_description();
                 echo html_tidy($item->get_description());
