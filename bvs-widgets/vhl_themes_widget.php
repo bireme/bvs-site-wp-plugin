@@ -10,9 +10,9 @@ if (function_exists('add_theme_support')) {
 /*** VHL Themes Widget ****************/
 class VHL_Themes_Widget extends WP_Widget {
 
-    function VHL_Themes_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-themes', 'description' => __('Adds a VHL theme on your site', 'vhl') );
-        parent::WP_Widget('vhl_themes', __('VHL Themes', 'vhl'), $widget_ops);
+        parent::__construct('vhl_themes', __('VHL Themes', 'vhl'), $widget_ops);
     }
 
     function widget($args, $instance) {

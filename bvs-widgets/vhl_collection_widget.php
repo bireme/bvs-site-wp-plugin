@@ -3,9 +3,9 @@
 /*** VHL Collection Widget ****************/
 class VHL_Collection_Widget extends WP_Widget {
 
-    function VHL_Collection_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-collection', 'description' => __('Adds a VHL collection on your site', 'vhl') );
-        parent::WP_Widget('vhl_collection', __('VHL Collection', 'vhl'), $widget_ops);
+        parent::__construct('vhl_collection', __('VHL Collection', 'vhl'), $widget_ops);
     }
  
     function widget($args, $instance) {

@@ -5,9 +5,9 @@ class VHL_Certification_Widget extends WP_Widget {
 
     var $service_url = 'http://cert.bvsalud.org/';
 
-    function VHL_Certification_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-certification', 'description' => __('Adds a VHL certification on your site', 'vhl') );
-        parent::WP_Widget('vhl_certification', __('VHL Certification', 'vhl'), $widget_ops);
+        parent::__construct('vhl_certification', __('VHL Certification', 'vhl'), $widget_ops);
     }
  
     function widget($args, $instance) {

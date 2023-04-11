@@ -3,9 +3,9 @@
 /*** VHL Search Widget ****************/
 class VHL_Search_Widget extends WP_Widget {
 
-    function VHL_Search_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-search', 'description' => __('Adds a VHL search on your site', 'vhl') );
-        parent::WP_Widget('vhl_search', __('VHL Search', 'vhl'), $widget_ops);
+        parent::__construct('vhl_search', __('VHL Search', 'vhl'), $widget_ops);
         add_action( 'wp_footer', array(&$this, 'footer'), 20, 1 );
     }
  

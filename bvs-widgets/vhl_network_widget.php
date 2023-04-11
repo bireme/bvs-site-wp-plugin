@@ -6,9 +6,9 @@ class VHL_Network_Widget extends WP_Widget {
 
     var $service_url = 'http://srv.bvsalud.org/bvsnet/rss?bvs=bvsalud.org';
 
-    function VHL_Network_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-network', 'description' => __('Adds a VHL network on your site', 'vhl') );
-        parent::WP_Widget('vhl_network', __('VHL Network','vhl'), $widget_ops);
+        parent::__construct('vhl_network', __('VHL Network','vhl'), $widget_ops);
     }
 
     function widget($args, $instance) {

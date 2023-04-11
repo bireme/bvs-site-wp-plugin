@@ -14,13 +14,13 @@ class ServPlat_Login_Widget extends WP_Widget {
     private $servplat_client;
     private $servplat_server;
 
-    public function __construct() {
+    function __construct() {
         $this->servplat_domain = 'https://platserv.bvsalud.org';
         $this->servplat_client = $this->servplat_domain.'/client';
         $this->servplat_server = $this->servplat_domain.'/server';
 
         $widget_ops = array('classname' => 'servplat-login', 'description' => __('Adds the Services Platform login on your site', 'vhl') );
-        parent::WP_Widget('servplat_login', __('Services Platform Login', 'vhl'), $widget_ops);
+        parent::__construct('servplat_login', __('Services Platform Login', 'vhl'), $widget_ops);
         add_action( 'wp_head', array(&$this, 'fix_cookie_delay'), 20, 1 );
         add_action( 'wp_enqueue_scripts', array(&$this, 'servplat_enqueue_style'), 20, 1 );
     }

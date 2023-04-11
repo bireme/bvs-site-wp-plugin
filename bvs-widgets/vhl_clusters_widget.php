@@ -3,9 +3,9 @@
 /*** VHL Clusters Widget ****************/
 class VHL_Clusters_Widget extends WP_Widget {
 
-    function VHL_Clusters_Widget() {
+    function __construct() {
         $widget_ops = array('classname' => 'vhl-clusters', 'description' => __('Adds a cluster list from iAHx on your site', 'vhl') );
-        parent::WP_Widget('vhl_clusters', __('VHL Clusters', 'vhl'), $widget_ops);
+        parent::__construct('vhl_clusters', __('VHL Clusters', 'vhl'), $widget_ops);
         add_action( 'wp_footer', array(&$this, 'footer'), 20, 1 );
     }
 
