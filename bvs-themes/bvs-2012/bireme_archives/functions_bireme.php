@@ -246,6 +246,7 @@ function html_tidy($src){
     return $done;
 }
 
+if(!function_exists('http_request_local')):
 function http_request_local( $args, $url ) {
    if ( preg_match('/xml|rss|feed/', $url) ){
       $args['reject_unsafe_urls'] = false;
@@ -253,6 +254,7 @@ function http_request_local( $args, $url ) {
    return $args;
 }
 add_filter( 'http_request_args', 'http_request_local', 5, 2 );
+endif;
 
 function vhl_breadcrumb() {
     global $mlf_config;
